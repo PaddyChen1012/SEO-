@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>距離星期五 4點4分4秒 還有</div>
+    <i></i>  <i></i>  <i></i>  <i></i>
+    <script>
+        var aI = document.getElementsByTagName("i");
+
+        setInterval(function() {  // 設置倒數計時: 結束時間 - 當前時間
+
+        // 當前時間
+        var time = new Date();
+        nowDay = time.getDay();
+        nowHours = time.getHours();
+        nowMinutes = time.getMinutes();
+        nowSeconds = time.getSeconds();
+        var nowTime = (nowDay * 60 * 60 * 24) + (nowHours * 60 * 60) + (nowMinutes * 60) + nowSeconds; // 獲取當前毫秒數
+        // 設置結束時間 
+        endDay = 3;
+        endHours = 15;
+        endMinutes = 8;
+        endSeconds = 0;
+        var endTime = (endDay * 60 * 60 * 24) + (endHours * 60 * 60) + (endMinutes * 60) + endSeconds ;
+        var offsetTime = 0;
+        var sec = 0;
+        var min = 0;
+        var hr = 0;
+        var dy = 0; 
+        if(endTime < nowTime){
+            endTime += 604800
+            offsetTime = (endTime - nowTime); // ** 以秒為單位
+            sec = parseInt(offsetTime % 60); // 秒
+            min = parseInt((offsetTime / 60) % 60); // 分 ex: 90秒
+            hr = parseInt((offsetTime / 60 / 60) % 24); // 時
+            dy = parseInt(offsetTime / 60 / 60 / 24); //日
+        }else{
+            offsetTime = (endTime - nowTime);
+            sec = parseInt(offsetTime % 60); // 秒
+            min = parseInt((offsetTime / 60) % 60); // 分 ex: 90秒
+            hr = parseInt((offsetTime / 60 / 60) % 24); // 時
+            dy = parseInt(offsetTime / 60 / 60 / 24); //日
+        }
+
+            aI[0].textContent = dy + "日";
+            aI[1].textContent = hr + "時";
+            aI[2].textContent = min + "分";
+            aI[3].textContent = sec + "秒";
+        }, 1000);
+    </script>
+</body>
+</html>
