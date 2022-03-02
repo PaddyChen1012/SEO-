@@ -18,7 +18,7 @@
         gtag('config', 'G-WQWFNJ89KK');
     </script>
     <style>
-        body{background: url(images/36e3d8f3b7e7b1991df87d7a54ae4b2a.jpg)no-repeat center/cover fixed;}
+        body{position: relative;background: url(images/36e3d8f3b7e7b1991df87d7a54ae4b2a.jpg)no-repeat center/cover fixed;}
         nav::before{content:'';position:absolute;top:0;left:0;width:100%;height:65%;background-color:rgb(165,42,42);z-index:-1;}
         nav::after{content:'';position:absolute;top:16px;left:16px;width:calc(100% - 32px);height:calc(65% - 32px);border:2px solid rgba(255,234,174,1);z-index:-1;}
         nav img{max-width:320px;;z-index:1;}
@@ -40,16 +40,28 @@
         .slide li img{width:100%;}
         .sign-up-button{background:url(images/btn.png)no-repeat center/contain;color:rgba(255,251,195,1);text-decoration:none;padding:calc(1.375rem + 1.5vw) calc(1.4rem + 1.5vw);}
         .sign-up-button:hover{color:rgba(255,251,195,1);-webkit-filter:drop-shadow(0px 0px 10px rgba(255,220,11,1));}
+        .iframe-box{width: 90%;height: 73vh;max-height: 480px;overflow: hidden;}
+        .img-box{bottom: 80px;}
+        .img-box::before,.img-box::after{content: '';position: absolute;width: 160px;height: 160px;}
+        .img-box::before{left: 0;background: url(images/money.png)no-repeat center/cover;}
+        .img-box::after{right: 0;background: url(images/boom.png)no-repeat center/contain;}
+        .iframe{width: 100%;height: 125vh;vertical-align: top;}
+        .sign-up-box{bottom: -95px;}
+        .sign-up-box img{width: 240px;}
+        @media screen and (max-width:500px) {
+            .img-box{bottom: 40px;}
+            .img-box::before,.img-box::after{content: '';position: absolute;width: 80px;height: 80px;}
+        }
     </style>
 </head>
 <body>
     <nav class="position-relative text-center">
         <img src="images/logo.png" alt="">
     </nav>
-    <div class="wrap" id="wrap">
+    <div class="wrap mb-5" id="wrap">
         <h1 class="position-relative text-center font-weight-bold mx-auto">แอพสล็อตออนไลน์อันดับ 1</h1>
         <div class="width mx-auto">
-            <div class="slide" id="slide">
+            <div class="slide mx-auto" id="slide">
                 <ul>
                     <li><a href="https://bit.ly/3qg1QAc" target="_self"><img src="images/1.png" alt=""/></a></li>
                     <li><a href="https://bit.ly/3qg1QAc" target="_self"><img src="images/2.png" alt=""/></a></li>
@@ -60,7 +72,16 @@
         <div class="w-100 text-center py-5">
             <a class="h1 sign-up-button" href="https://bit.ly/3qg1QAc">สมัครรับเครดิตฟรี</a>
         </div>
+        <div class="position-absolute w-100 text-center sign-up-box">
+            <img class="img-fluid" src="images/logo.png" alt="">
+        </div>
     </div>
+    
+    <div class="iframe-box mx-auto mb-4">
+        <iframe id="iframe1" class="iframe" scrollong="no" src="https://bit.ly/3qg1QAc" frameborder="0"></iframe>
+    </div>
+
+    <div class="position-absolute w-100 img-box"></div>
 
 
     <script src="js/jquery-3.5.1.slim.min.js"></script>
@@ -147,7 +168,6 @@
         var ul = document.querySelector('.slide>ul') //获取存放旋转轮播图的容器；这里是定位父元素
         var arrow = document.querySelector('.arrow') //获取存放左右切换按钮容器
         var slideList = ul.children //每一个轮播图容器集合
-        console.log(ul)
         var timer = null //开启定时器实现自动轮播
         // 3.给容器添加数据，渲染好界面
         function renderData(){
@@ -165,7 +185,8 @@
                     renderData()
                     num++
                 }else{
-                    myInterval()
+                    // myInterval()
+                    num=0
                 }
                 
             }, 1000)
