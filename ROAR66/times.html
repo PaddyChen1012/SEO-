@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div>距離星期五 4點4分4秒 還有</div>
+    <div>距離星期三 15點8分0秒 還有</div>
     <i></i>  <i></i>  <i></i>  <i></i>
     <script>
         var aI = document.getElementsByTagName("i");
@@ -20,11 +20,12 @@
         nowHours = time.getHours();
         nowMinutes = time.getMinutes();
         nowSeconds = time.getSeconds();
+        console.log(nowDay,nowHours,nowMinutes,nowSeconds)
         var nowTime = (nowDay * 60 * 60 * 24) + (nowHours * 60 * 60) + (nowMinutes * 60) + nowSeconds; // 獲取當前毫秒數
         // 設置結束時間 
-        endDay = 3;
-        endHours = 15;
-        endMinutes = 8;
+        endDay = 1;
+        endHours = 4;
+        endMinutes = 0;
         endSeconds = 0;
         var endTime = (endDay * 60 * 60 * 24) + (endHours * 60 * 60) + (endMinutes * 60) + endSeconds ;
         var offsetTime = 0;
