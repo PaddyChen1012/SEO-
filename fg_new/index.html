@@ -16,11 +16,11 @@
         .box{position:relative;top:0;left:0;width:100%;height:100%;overflow:hidden;}
         .wrap{position:absolute;top:0;left:0;width:100%;height:100%;background:url(images/LP0411BG_1920x1080.jpg)no-repeat center/cover;transition:all .4s ease;}
         .btn{position:absolute;right:32.5%;bottom:15%;transform:translate(50%,50%);}
-        .ph.btn{right:50%;bottom:8%;width:70%;}
+        .ph.btn{right:50%;bottom:12%;width:70%;}
         .shadow{content:'';position:absolute;bottom:-10px;left:30%;width:40%;height:20px;background:rgba(0,0,0,.5);border-radius:50%;}
         img{width:100%;}
-        .animation{animation:animation infinite alternate ease .8s both;}
-        .animation1{animation:animation1 infinite alternate ease .8s both;}
+        .animation{animation:animation infinite alternate ease .6s both;}
+        .animation1{animation:animation1 infinite alternate ease .6s both;}
         @keyframes animation {
             0%{transform:translateY(0px) scale(1,1);}
             100%{transform:translateY(45px) scale(1.2,.8);}
@@ -35,6 +35,10 @@
             .ph{display:flex;}
             .wrap{background:url(images/LP0411BG_1080x1920.jpg)no-repeat center/cover;}
             .focus{width:150px;height:150px;}
+            @keyframes animation {
+                0%{transform:translateY(0px) scale(1,1);}
+                100%{transform:translateY(20px) scale(1.2,.8);}
+            }
         }
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
