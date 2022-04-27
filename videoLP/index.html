@@ -22,6 +22,8 @@
         }
         .video{
             overflow: hidden;
+            display: flex;
+            justify-content: center;
         }
         .v-1{
             position: absolute;
@@ -51,6 +53,12 @@
             clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
         }
         .home-gif{height: 110%;}
+        @media screen and (max-width:500px) {
+            .video{width: 100%;}
+            .v-1{left: 0;height: 35%;clip-path: polygon(0% 0%, 97% 0%, 97% 82%, 0% 100%);}
+            .v-2{top: 30%;left: 0;height: 50%;clip-path: polygon(5% 13%, 100% 0%, 100% 99%, 2% 79%);}
+            .v-3{top: 70%;left: 0;height: 35%;clip-path: polygon(3% 2%, 96% 31%, 98% 100%, 0% 100%);}
+        }
     </style>
 </head>
 <body>
@@ -63,14 +71,14 @@
         </div>
         <div class="video v-2">
             <video class="home-gif" loop muted autoplay playsinline webkit-playsinline>
-                <source src="images/35932871a.webm" type="video/webm"/>
-                <source src="images/35932871a.mp4" type="video/mp4"/>
+                <source src="images/39675561a.webm" type="video/webm"/>
+                <source src="images/39675561a.mp4" type="video/mp4"/>
             </video>
         </div>
         <div class="video v-3">
             <video class="home-gif" loop muted autoplay playsinline webkit-playsinline>
-                <source src="images/35932871a.webm" type="video/webm"/>
-                <source src="images/35932871a.mp4" type="video/mp4"/>
+                <source src="images/39909031a.webm" type="video/webm"/>
+                <source src="images/39909031a.mp4" type="video/mp4"/>
             </video>
         </div>
     </div>
