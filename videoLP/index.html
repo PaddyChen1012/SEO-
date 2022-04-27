@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@500&display=swap" rel="stylesheet">
+    <style>
+        *{
+            position: relative;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrap{
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+        }
+        .video{
+            overflow: hidden;
+        }
+        .v-1{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 56%;
+            height: 60%;
+            background: #ff0;
+            clip-path: polygon(0% 0%, 88% 0%, 95% 65%, 0% 98%);
+        }
+        .v-2{
+            position: absolute;
+            top: 40%;
+            left: 0;
+            width: 60%;
+            height: 60%;
+            background: #f0f;
+            clip-path: polygon(0% 34%, 89% 0%, 99% 100%, 0% 100%);
+        }
+        .v-3{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            background: #f00;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
+        }
+        .v-1 .home-gif,
+        .v-2 .home-gif{width:100%;}
+        .v-3 .home-gif{height: 100%;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="video v-1">
+            <video class="home-gif" loop muted autoplay playsinline webkit-playsinline>
+                <source src="images/35932871a.webm" type="video/webm" />
+            </video>
+        </div>
+        <div class="video v-2">
+            <video class="home-gif" loop muted autoplay playsinline webkit-playsinline>
+                <source src="images/35932871a.webm" type="video/webm" />
+            </video>
+        </div>
+        <div class="video v-3">
+            <video class="home-gif" loop muted autoplay playsinline webkit-playsinline>
+                <source src="images/35932871a.webm" type="video/webm" />
+            </video>
+        </div>
+    </div>
+
+</body>
+</html>
