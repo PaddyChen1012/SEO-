@@ -48,8 +48,17 @@
             clip-path: polygon(0% 0%, 86.3% 0%, 100% 100%, 0% 100%);
         }
         .home-gif{width: 100%;}
-        .btn{position: absolute;top: 38%;left: 58%;width: 35%;}
+        .btn{position: absolute;top: 38%;left: 58%;width: 35%;animation: btn alternate .8s infinite both;}
         .btn img{width: 100%;}
+        .hand{position: absolute;top: 45%;left: 85%;width: 10%;animation: hand alternate .8s infinite both;}
+        @keyframes hand {
+            0%{transform: rotateZ(0deg);}
+            100%{transform: rotateZ(-10deg);}
+        }
+        @keyframes btn {
+            0%{transform: scale(1);}
+            100%{transform: scale(.95);}
+        }
         @media screen and (max-width:500px) {
             .pc{display:none;}
             .ph{display:flex;}
@@ -57,9 +66,19 @@
             .v-1{top: 2.4%;left: 4.2%;height: 31.2%;clip-path: polygon(0% 0%, 100% 0%, 100% 88%, 0% 100%);background: #000;}
             .v-2{top: 67.4%;left: 4.2%;height: 30.5%;clip-path: polygon(0% 14%, 100% 0%, 100% 100%, 0% 100%);background: #000;}
             .home-gif{width: auto;height: 100%;}
-            .btn{position: absolute;top: 52%;left: 56%;width: 60%;}
+            .btn{position: absolute;top: 48%;left: 5%;width: 90%;}
+            .hand{top: 57%;left: 45%;width: 20%;}
         }
     </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-225506502-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-225506502-2');
+    </script>
 </head>
 <body>
     <div class="wrap">
@@ -77,8 +96,9 @@
                 <source src="images/39675561a.mp4" type="video/mp4"/>
             </video>
         </div>
-        <a class="btn pc" href=""><img src="images/LP0428_700x220.png" alt=""></a>
-        <a class="btn ph" href=""><img src="images/LP0428_645x235.png" alt=""></a>
+        <a class="btn pc" href="https://www.betg11.com/signup/?pid=EricTF"><img src="images/LP0428_700x220.png" alt=""></a>
+        <a class="btn ph" href="https://www.betg11.com/signup/?pid=EricTF"><img src="images/LP0428_645x235.png" alt=""></a>
+        <img class="hand" src="images/download-removebg-preview.png" alt="">
     </div>
 </body>
 </html>
