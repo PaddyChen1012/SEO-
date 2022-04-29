@@ -15,10 +15,14 @@
             padding: 0;
             box-sizing: border-box;
         }
+        .pc{display:flex;}
+        .ph{display:none;}
         .wrap{
-            width: 100vw;
+            width: 100%;
             height: 100vh;
-            background: #000;
+        display: flex;}
+        .bg{
+            width: 100%;
         }
         .video{
             overflow: hidden;
@@ -27,42 +31,40 @@
         }
         .v-1{
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 56%;
-            height: 60%;
-            background: #ff0;
-            clip-path: polygon(0% 0%, 88% 0%, 95% 65%, 0% 98%);
+            top: 4.6%;
+            left: 2.7%;
+            width: 44.7%;
+            height: 38.4%;
+            align-items: flex-end;
+            clip-path: polygon(0% 0%, 87% 0%, 100% 100%, 0% 100%);
         }
         .v-2{
             position: absolute;
-            top: 40%;
-            left: 0;
-            width: 60%;
-            height: 60%;
-            background: #f0f;
-            clip-path: polygon(0% 34%, 89% 0%, 90.5% 100%, 0% 100%);
+            top: 46.5%;
+            left: 2.6%;
+            width: 52.5%;
+            height: 49.5%;
+            align-items: flex-start;
+            clip-path: polygon(0% 0%, 86.3% 0%, 100% 100%, 0% 100%);
         }
-        .v-3{
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 50%;
-            height: 100%;
-            background: #f00;
-            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%, 8% 39%);
-        }
-        .home-gif{height: 110%;}
+        .home-gif{width: 100%;}
+        .btn{position: absolute;top: 38%;left: 58%;width: 35%;}
+        .btn img{width: 100%;}
         @media screen and (max-width:500px) {
-            .video{width: 100%;}
-            .v-1{left: 0;height: 35%;clip-path: polygon(0% 0%, 97% 0%, 97% 82%, 0% 100%);}
-            .v-2{top: 30%;left: 0;height: 50%;clip-path: polygon(5% 13%, 100% 0%, 100% 99%, 2% 79%);}
-            .v-3{top: 70%;left: 0;height: 35%;clip-path: polygon(3% 2%, 96% 31%, 98% 100%, 0% 100%);}
+            .pc{display:none;}
+            .ph{display:flex;}
+            .video{width: 91.7%;}
+            .v-1{top: 2.4%;left: 4.2%;height: 31.2%;clip-path: polygon(0% 0%, 100% 0%, 100% 88%, 0% 100%);background: #000;}
+            .v-2{top: 67.4%;left: 4.2%;height: 30.5%;clip-path: polygon(0% 14%, 100% 0%, 100% 100%, 0% 100%);background: #000;}
+            .home-gif{width: auto;height: 100%;}
+            .btn{position: absolute;top: 52%;left: 56%;width: 60%;}
         }
     </style>
 </head>
 <body>
     <div class="wrap">
+        <img class="bg pc" src="images/LP0428_BG_1920x1080.jpg" alt="">
+        <img class="bg ph" src="images/LP0428_BG_1080x1920.jpg" alt="">
         <div class="video v-1">
             <video class="home-gif" loop muted autoplay playsinline webkit-playsinline>
                 <source src="images/35932871a.webm" type="video/webm"/>
@@ -75,12 +77,8 @@
                 <source src="images/39675561a.mp4" type="video/mp4"/>
             </video>
         </div>
-        <div class="video v-3">
-            <video class="home-gif" loop muted autoplay playsinline webkit-playsinline>
-                <source src="images/39909031a.webm" type="video/webm"/>
-                <source src="images/39909031a.mp4" type="video/mp4"/>
-            </video>
-        </div>
+        <a class="btn pc" href=""><img src="images/LP0428_700x220.png" alt=""></a>
+        <a class="btn ph" href=""><img src="images/LP0428_645x235.png" alt=""></a>
     </div>
 </body>
 </html>

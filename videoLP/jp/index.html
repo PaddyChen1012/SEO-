@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@500&display=swap" rel="stylesheet">
+    <style>
+        *{
+            position: relative;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .pc{display:flex;}
+        .ph{display:none;}
+        .wrap{
+            width: 100%;
+            height: 100vh;
+        display: flex;}
+        .bg{
+            width: 100%;
+        }
+        .video{
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        .v-1{
+            position: absolute;
+            top: 4.6%;
+            left: 2.7%;
+            width: 44.7%;
+            height: 38.4%;
+            align-items: flex-end;
+            clip-path: polygon(0% 0%, 87% 0%, 100% 100%, 0% 100%);
+        }
+        .v-2{
+            position: absolute;
+            top: 46.5%;
+            left: 2.6%;
+            width: 52.5%;
+            height: 49.5%;
+            align-items: flex-start;
+            clip-path: polygon(0% 0%, 86.3% 0%, 100% 100%, 0% 100%);
+        }
+        .home-gif{width: 100%;}
+        .btn{position: absolute;top: 52%;left: 56%;width: 35%;}
+        .btn img{width: 100%;}
+        @media screen and (max-width:500px) {
+            .pc{display:none;}
+            .ph{display:flex;}
+            .video{width: 91.7%;}
+            .v-1{top: 2.4%;left: 4.2%;height: 31.2%;clip-path: polygon(0% 0%, 100% 0%, 100% 88%, 0% 100%);background: #000;}
+            .v-2{top: 67.4%;left: 4.2%;height: 30.5%;clip-path: polygon(0% 14%, 100% 0%, 100% 100%, 0% 100%);background: #000;}
+            .home-gif{width: auto;height: 100%;}
+            .btn{position: absolute;top: 52%;left: 20%;width: 60%;}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <img class="bg pc" src="images/LP0428-2_BG_1920x1080.jpg" alt="">
+        <img class="bg ph" src="images/LP0428-2_BG_1080x1920.jpg" alt="">
+        <div class="video v-1">
+            <video class="home-gif" loop muted autoplay playsinline webkit-playsinline>
+                <source src="images/19168081a.webm" type="video/webm"/>
+                <source src="images/19168081a.mp4" type="video/mp4"/>
+            </video>
+        </div>
+        <div class="video v-2">
+            <video class="home-gif" loop muted autoplay playsinline webkit-playsinline>
+                <source src="images/24568941a.webm" type="video/webm"/>
+                <source src="images/24568941a.mp4" type="video/mp4"/>
+            </video>
+        </div>
+        <a class="btn pc" href=""><img src="images/LP0428-2_600x185.png" alt=""></a>
+        <a class="btn ph" href=""><img src="images/LP0428-2_645x235.png" alt=""></a>
+    </div>
+</body>
+</html>
