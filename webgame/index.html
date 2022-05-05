@@ -1,53 +1,75 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>การแบ่งปันข้อเสนอ</title>
+    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/517402_10680911_2008768_2cac98b1_image-removebg-preview(1).png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/517402_10680911_2008768_2cac98b1_image-removebg-preview(1).png" type="image/x-icon">
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:'Maitree', serif;}
-        body{width:100vw;height:100vh;overflow:hidden;}
+        *{
+            position: relative;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         .pc{display:flex;}
         .ph{display:none;}
-        .box{position:relative;top:0;left:0;width:100%;height:100%;overflow: hidden;}
-        .wrap{position:absolute;top:0;left:0;width:100%;height:100%;background:url(images/LP0412BBG_1920x1080.jpg)no-repeat center/cover;transition:all .4s ease;}
-        .btn{position:absolute;right:30%;bottom:11%;transform:translate(50%,50%);}
-        .ph.btn{right:50%;bottom:8%;width:70%;}
-        img{width:100%;}
-        .focus{position:absolute;bottom:100%;right:25%;width:250px;height:250px;animation:animation1  alternate ease 4s forwards;transform:translate(50%,50%);pointer-events:none;}
-        .animation{animation:animation infinite alternate linear .6s both ;}
-        @keyframes animation {
-            0%{-webkit-filter:drop-shadow(0px 0px 0px rgb(248,55,161));}
-            100%{-webkit-filter:drop-shadow(0px 0px 30px rgb(248,55,161));}
+        .wrap{
+            width: 100%;
+            height: 100vh;
+        display: flex;}
+        .bg{
+            width: 100%;
         }
-        @keyframes animation1 {
-            0%{bottom:100%;right:25%;opacity:.2;}
-            22%{bottom:60%;right:35%;opacity:.85;}
-            46%{bottom: 74%;right: 20%;opacity:.8;}
-            68%{bottom:40%;right:16%;opacity:.65;}
-            84%{bottom: 33%;right: 38%;opacity:.9;}
-            98%{bottom: 11%;right: 30%;opacity:1;}
-            100%{bottom: 11%;right: 30%;opacity:.5;}
+        .video{
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        .v-1{
+            position: absolute;
+            top: 4.6%;
+            left: 2.7%;
+            width: 44.7%;
+            height: 38.4%;
+            align-items: center;
+            clip-path: polygon(0% 0%, 87% 0%, 100% 100%, 0% 100%);
+        }
+        .v-2{
+            position: absolute;
+            top: 46.5%;
+            left: 2.6%;
+            width: 52.5%;
+            height: 49.5%;
+            align-items: flex-start;
+            clip-path: polygon(0% 0%, 86.3% 0%, 100% 100%, 0% 100%);
+        }
+        .home-gif{width: 100%;}
+        .btn{position: absolute;top: 52%;left: 56%;width: 35%;animation: btn alternate .8s infinite both;}
+        .btn img{width: 100%;}
+        .hand{position: absolute;top: 60%;left: 85%;width: 10%;animation: hand alternate .8s infinite both;}
+        @keyframes hand {
+            0%{transform: rotateZ(0deg);}
+            100%{transform: rotateZ(-10deg);}
+        }
+        @keyframes btn {
+            0%{transform: scale(1);}
+            100%{transform: scale(.95);}
         }
         @media screen and (max-width:500px) {
-            h1{font-size:1.5rem;}
             .pc{display:none;}
             .ph{display:flex;}
-            .wrap{background:url(images/LP0412DBG_1080x1920.jpg)no-repeat center/contain;}
-            .focus{width:150px;height:150px;}
-            @keyframes animation1 {
-                0%{bottom:100%;right:25%;opacity:.2;}
-                22%{bottom:60%;right:65%;opacity:.85;}
-                46%{bottom: 74%;right: 30%;opacity:.8;}
-                68%{bottom:40%;right:46%;opacity:.65;}
-                84%{bottom: 33%;right: 88%;opacity:.9;}
-                98%{right:50%;bottom:8%;opacity:1;}
-                100%{right:50%;bottom:8%;opacity:.5;}
-            }
+            .video{width: 91.7%;}
+            .v-1{top: 2.4%;left: 4.2%;height: 31.2%;clip-path: polygon(0% 0%, 100% 0%, 100% 88%, 0% 100%);background: #000;}
+            .v-2{top: 67.4%;left: 4.2%;height: 30.5%;clip-path: polygon(0% 14%, 100% 0%, 100% 100%, 0% 100%);background: #000;}
+            .home-gif{width: auto;height: 100%;}
+            .btn{position: absolute;top: 48%;left: 5%;width: 90%;}
+            .hand{top: 57%;left: 45%;width: 20%;}
         }
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -61,15 +83,28 @@
     </script>
 </head>
 <body>
-    <div class="box">
-        <div id="wrap" class="wrap"></div>
-        <a class="btn animation pc" href="https://www.betg11.com/signup/?pid=EricTF"><img src="images/LP0412BButton_1920x1080.png" alt=""></a>
-        <a class="btn animation ph" href="https://www.betg11.com/signup/?pid=EricTF"><img src="images/LP0412DButton_1080x1920.png" alt=""></a>
-        <div class="focus"><img src="images/780-removebg-preview.png" alt=""></div>
+    <div class="wrap">
+        <img class="bg pc" src="images/LP0428-2_BG_1920x1080.jpg" alt="">
+        <img class="bg ph" src="images/LP0428-2_BG_1080x1920.jpg" alt="">
+        <div class="video v-1">
+            <a class="" href="https://www.betg11.com/signup/?pid=EricEricTF">
+                <video class="home-gif" loop muted autoplay playsinline webkit-playsinline>
+                    <source class="pc" src="images/19168081a.webm" type="video/webm"/>
+                    <source class="ph" src="images/24568941a.mp4" type="video/mp4"/>
+                </video>
+            </a>
+        </div>
+        <div class="video v-2">
+            <a class="" href="https://www.betg11.com/signup/?pid=EricEricTF">
+                <video class="home-gif" loop muted autoplay playsinline webkit-playsinline>
+                    <source class="pc" src="images/24568941a.webm" type="video/webm"/>
+                    <source class="ph" src="images/19168081a.mp4" type="video/mp4"/>
+                </video>
+            </a>
+        </div>
+        <a class="btn pc" href="https://www.betg11.com/?pid=EricTF"><img src="images/LP0428-2_600x185.png" alt=""></a>
+        <a class="btn ph" href="https://www.betg11.com/?pid=EricTF"><img src="images/LP0428-2_645x235.png" alt=""></a>
+        <img class="hand" src="images/download-removebg-preview.png" alt="">
     </div>
-    <script>
-        let body = document.querySelector('body')
-        body.style.height = window.innerHeight + 'px';
-    </script>
 </body>
 </html>
