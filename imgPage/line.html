@@ -47,8 +47,8 @@
         
         .animation{animation: animation infinite alternate linear .8s both ;}
         @keyframes animation {
-            0%{-webkit-filter:drop-shadow(0px 0px 0px #ff0);}
-            100%{-webkit-filter:drop-shadow(0px 0px 10px #ff0);}
+            0%{transform: scale(1);-webkit-filter:drop-shadow(0px 0px 0px #ff0);}
+            100%{transform: scale(1.2);-webkit-filter:drop-shadow(0px 0px 10px #ff0);}
         }
         @media screen and (max-width:500px) {
             .pc{display:none;}
