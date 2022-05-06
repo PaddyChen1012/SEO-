@@ -13,54 +13,87 @@
             padding:0;
             box-sizing:border-box;
         }
-        .pc{display:block;}
-        .ph{display:none;}
+        body{{overflow-x:hidden;}}
+        .pc{display:block;overflow-x:hidden;}
+        .ph{display:none;overflow-x:hidden;}
         .wrap{
             position:relative;
             width:100%;
-            height:100vh;
+            height:56.25vw;
         }
-        .wrap-0{background: url(images/LPBG_1920x1080.jpg)no-repeat center/cover;}
-        .wrap-1{background: url(images/LP1BG_1920x1080.jpg)no-repeat center/cover;}
-        .wrap-2{background: url(images/LP2BG_1920x1080.jpg)no-repeat center/cover;}
-        .wrap-3{background: url(images/LP3BG_1920x1080.jpg)no-repeat center/cover;}
-        .wrap-4{background: url(images/LP4BG_1920x1080.jpg)no-repeat center/cover;}
-        .wrap-5{background: url(images/LP5BG_1920x1080.jpg)no-repeat center/cover;}
-        .wrap-6{background: url(images/LP6BG_1920x1080.jpg)no-repeat center/cover;}
 
-        .wrap a{position:absolute;width: 30%;}
+        .wrap-0{background:linear-gradient(180deg,transparent 90%,black 100%),url(images/LPBG_1920x1080.jpg)}
+        .wrap-1{background:linear-gradient(180deg,black 0%,transparent 10%,transparent 90%,black 100%),url(images/LP1BG_1920x1080.jpg)}
+        .wrap-2{background:linear-gradient(180deg,black 0%,transparent 10%,transparent 90%,black 100%),url(images/LP2BG_1920x1080.jpg)}
+        .wrap-3{background:linear-gradient(180deg,black 0%,transparent 10%,transparent 90%,black 100%),url(images/LP3BG_1920x1080.jpg)}
+        .wrap-4{background:linear-gradient(180deg,black 0%,transparent 10%,transparent 90%,black 100%),url(images/LP4BG_1920x1080.jpg)}
+        .wrap-5{background:linear-gradient(180deg,black 0%,transparent 10%,transparent 90%,black 100%),url(images/LP5BG_1920x1080.jpg)}
+        .wrap-6{background:linear-gradient(180deg,black 0%,transparent 10%),url(images/LP6BG_1920x1080.jpg)}
+
+
+        .wrap a{position:absolute;width:30%;}
         .wrap-0 a{bottom:10%;right:48%;}
         .wrap-1 a{bottom:7%;right:48%;}
         .wrap-2 a{bottom:7%;right:64%;}
         .wrap-3 a{bottom:0%;right:5%;}
         .wrap-5 a{bottom:3%;right:63%;}
         .wrap-6 a{bottom:3%;right:63%;}
+        .wrap{background-repeat:no-repeat;background-position:center;background-size:cover;}
+
+        .wrap a.img-link{display: block;}
+        .wrap-2 a.img-link{
+            top: 27%;
+            left: 41.5%;
+            width: 54.5vw;
+            height: 25.5vw;
+        }
+        .wrap-3 a.img-link{
+            top: 24.5%;
+            left: 5%;
+            width: 54.5vw;
+            height: 23.5vw;
+        }
+        .wrap-5 a.img-link{
+            top: 18%;
+            left: 49%;
+            width: 32vw;
+            height: 31vw;
+        }
+        .wrap-6 a.img-link{
+            top: 21.5%;
+            left: 41.5%;
+            width: 51vw;
+            height: 29vw;
+        }
+
 
         img{width:100%;}
 
-        .feedbackwrap-box{display: flex;align-items: center;justify-content: center;width: 100%;height: 100%;margin: 0 auto;}
+        .feedbackwrap-box{display:flex;align-items:center;justify-content:center;width:100%;height:100%;margin:0 auto;}
         .slide {position:relative;width:450px;height:450px;padding:0;margin:auto;}
         .slide ul{position:relative;width:100%;height:100%;padding:0;}
         .slide li{position:absolute;left:50%;top:65%;border-radius:10px;/*border:3px solid #ff8190*/;transition:all .8s ease;transform:translate(-50%,-50%);overflow:hidden;}
-        .slide li a{position: relative;}
+        .slide li a{position:relative;}
         .slide li a,.slide li img{width:100%;}
         
-        .animation{animation: animation infinite alternate linear .8s both ;}
+        .animation{animation:animation infinite alternate linear .8s both ;}
         @keyframes animation {
-            0%{transform: scale(1);-webkit-filter:drop-shadow(0px 0px 0px #ff0);}
-            100%{transform: scale(1.2);-webkit-filter:drop-shadow(0px 0px 10px #ff0);}
+            0%{transform:scale(1);-webkit-filter:drop-shadow(0px 0px 0px #ff0);}
+            100%{transform:scale(1.2);-webkit-filter:drop-shadow(0px 0px 10px #ff0);}
         }
         @media screen and (max-width:500px) {
             .pc{display:none;}
             .ph{display:block;}
 
-            .wrap-0{background: url(images/LPBG_1080x1920.jpg)no-repeat center/cover;}
-            .wrap-1{background: url(images/LP1BG_1080x1920.jpg)no-repeat center/cover;}
-            .wrap-2{background: url(images/LP2BG_1080x1920.jpg)no-repeat center/cover;}
-            .wrap-3{background: url(images/LP3BG_1080x1920.jpg)no-repeat center/cover;}
-            .wrap-4{background: url(images/LP4BG_1080x1920.jpg)no-repeat center/cover;}
-            .wrap-5{background: url(images/LP5BG_1080x1920.jpg)no-repeat center/cover;}
-            .wrap-6{background: url(images/LP6BG_1080x1920.jpg)no-repeat center/cover;}
+            .wrap{height:178vw;}
+            .wrap-0{background:linear-gradient(180deg,transparent 90%,black 100%),url(images/LPBG_1080x1920.jpg)}
+            .wrap-1{background:linear-gradient(180deg,black 0%,transparent 10%,transparent 90%,black 100%),url(images/LP1BG_1080x1920.jpg)}
+            .wrap-2{background:linear-gradient(180deg,black 0%,transparent 10%,transparent 90%,black 100%),url(images/LP2BG_1080x1920.jpg)}
+            .wrap-3{background:linear-gradient(180deg,black 0%,transparent 10%,transparent 90%,black 100%),url(images/LP3BG_1080x1920.jpg)}
+            .wrap-4{background:linear-gradient(180deg,black 0%,transparent 10%,transparent 90%,black 100%),url(images/LP4BG_1080x1920.jpg)}
+            .wrap-5{background:linear-gradient(180deg,black 0%,transparent 10%,transparent 90%,black 100%),url(images/LP5BG_1080x1920.jpg)}
+            .wrap-6{background:linear-gradient(180deg,black 0%,transparent 10%),url(images/LP6BG_1080x1920.jpg)}
+            .wrap{background-size:contain;}
             
             .wrap a{width:60%;}
             .wrap-0 a{bottom:1%;right:20%;}
@@ -71,6 +104,31 @@
             .wrap-5 a{bottom:44%;right:20%;}
             .wrap-6 a{bottom:45%;right:20%;}
 
+            .wrap-2 a.img-link{
+                top: 56%;
+                left: 4%;
+                width: 92vw;
+                height: 43vw;
+            }
+            .wrap-3 a.img-link{
+                top: 57%;
+                left: 4%;
+                width: 93.5vw;
+                height: 41vw;
+            }
+            .wrap-5 a.img-link{
+                top: 57%;
+                left: 23.5%;
+                width: 52.5vw;
+                height: 50.5vw;
+            }
+            .wrap-6 a.img-link{
+                top: 56.5%;
+                left: 5.5%;
+                width: 88vw;
+                height: 50vw;
+            }
+
             .slide {position:relative;width:270px;height:270px;padding:0;margin:auto;}
             .slide li{top:15%}
         }
@@ -78,7 +136,7 @@
     </style>
 </head>
 <body>
-    <div class="wrap pc">
+    <div class="pc">
         <div class="wrap wrap-0">
             <a class="animation" href="https://lin.ee/GYc1WNs"><img src="images/LP0308(mobile)_660x240_new.png" alt="" srcset=""></a>
         </div>
@@ -86,9 +144,11 @@
             <a class="animation" href="https://lin.ee/GYc1WNs"><img src="images/LP1Button_700x200.png" alt="" srcset=""></a>
         </div>
         <div class="wrap wrap-2">
+            <a href="https://pse.is/betg11" class="img-link"></a>
             <a class="animation" href="https://pse.is/betg11"><img src="images/LP1Button_700x200.png" alt="" srcset=""></a>
         </div>
         <div class="wrap wrap-3">
+            <a href="https://pse.is/pay69slot" class="img-link"></a>
             <a class="animation" href="https://pse.is/pay69slot"><img src="images/LP3Button_750x250.png" alt="" srcset=""></a>
         </div>
         <div class="wrap wrap-4">
@@ -109,9 +169,11 @@
             <!-- feedbackwrap end -->
         </div>
         <div class="wrap wrap-5">
+            <a href="https://pse.is/taotong88" class="img-link"></a>
             <a class="animation" href="https://pse.is/taotong88"><img src="images/LP5Button_725x200.png" alt="" srcset=""></a>
         </div>
         <div class="wrap wrap-6">
+            <a href="https://tinyurl.com/y7fesszw" class="img-link"></a>
             <a class="animation" href="https://tinyurl.com/y7fesszw"><img src="images/LP6Button_700x200.png" alt="" srcset=""></a>
         </div>
     </div>
@@ -124,9 +186,11 @@
             <a class="animation" href="https://lin.ee/GYc1WNs"><img src="images/LP1Button_700x200.png" alt="" srcset=""></a>
         </div>
         <div class="wrap wrap-2">
+            <a href="https://pse.is/betg11" class="img-link"></a>
             <a class="animation" href="https://pse.is/betg11"><img src="images/LP1Button_700x200.png" alt="" srcset=""></a>
         </div>
         <div class="wrap wrap-3">
+            <a href="https://pse.is/pay69slot" class="img-link"></a>
             <a class="animation" href="https://pse.is/pay69slot"><img src="images/LP3Button_750x250.png" alt="" srcset=""></a>
         </div>
         <div class="wrap wrap-4">
@@ -148,9 +212,11 @@
             <a class="animation" href="https://pse.is/betg11"><img src="images/big-prize.png" alt="" srcset=""></a>
         </div>
         <div class="wrap wrap-5">
+            <a href="https://pse.is/taotong88" class="img-link"></a>
             <a class="animation" href="https://pse.is/taotong88"><img src="images/LP5Button_725x200.png" alt="" srcset=""></a>
         </div>
         <div class="wrap wrap-6">
+            <a href="https://tinyurl.com/y7fesszw" class="img-link"></a>
             <a class="animation" href="https://tinyurl.com/y7fesszw"><img src="images/LP6Button_700x200.png" alt="" srcset=""></a>
         </div>
     </div>
