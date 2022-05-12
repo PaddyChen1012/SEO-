@@ -32,7 +32,7 @@
             justify-content: center;
         }
         .video a{display: contents;}
-        .v-1{
+        .v-1,.img-1{
             position: absolute;
             top: 4.6%;
             left: 2.7%;
@@ -41,7 +41,7 @@
             align-items: flex-end;
             clip-path: polygon(0% 0%, 87% 0%, 100% 100%, 0% 100%);
         }
-        .v-2{
+        .v-2,.img-2{
             position: absolute;
             top: 46.5%;
             left: 2.6%;
@@ -54,6 +54,27 @@
         .btn{position: absolute;top: 38%;left: 58%;width: 35%;animation: btn alternate .8s infinite both;}
         .btn img{width: 100%;}
         .hand{position: absolute;top: 45%;left: 85%;width: 10%;animation: hand alternate .8s infinite both;}
+        .img a{display:block;width:100%;height:100%;overflow:hidden;}
+        .img_box{
+            position:absolute;
+            left:0;
+            top:0;
+            display:flex;
+            justify-content:center;
+            width:100%;
+            height:100%;
+        }
+        .img_box li {
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            float:left;
+            list-style:none;
+            width:100%;
+        }
+        .img_box img{width:100%;}
+        .btn-2{top:40%;}
+        .hand-2{top:50%;}
         @keyframes hand {
             0%{transform: rotateZ(0deg);}
             100%{transform: rotateZ(-10deg);}
@@ -66,8 +87,8 @@
             .pc{display:none;}
             .ph{display:flex;}
             .video{width: 91.7%;}
-            .v-1{top: 2.4%;left: 4.2%;height: 31.2%;clip-path: polygon(0% 0%, 100% 0%, 100% 88%, 0% 100%);background: #000;}
-            .v-2{top: 67.4%;left: 4.2%;height: 30.5%;clip-path: polygon(0% 14%, 100% 0%, 100% 100%, 0% 100%);background: #000;}
+            .v-1,.img-1{top: 2.4%;left: 4.2%;height: 31.2%;clip-path: polygon(0% 0%, 100% 0%, 100% 88%, 0% 100%);background: #000;}
+            .v-2,.img-2{top: 67.4%;left: 4.2%;height: 30.5%;clip-path: polygon(0% 14%, 100% 0%, 100% 100%, 0% 100%);background: #000;}
             .home-gif{width: auto;height: 100%;}
             .btn{position: absolute;top: 48%;left: 5%;width: 90%;}
             .hand{top: 57%;left: 45%;width: 20%;}
@@ -107,5 +128,97 @@
         <a class="btn ph" href="https://www.betg11.com/signup/?pid=EricTF"><img src="images/LP0428_645x235.png" alt=""></a>
         <img class="hand" src="images/download-removebg-preview.png" alt="">
     </div>
+    <div class="wrap">
+        <img class="bg pc" src="images/LP0511-2_BG_1920x1080.jpg" alt="">
+        <img class="bg ph" src="images/LP0511-2_BG_1080x1920.jpg" alt="">
+        <div class="img img-1">
+            <a class="" href="https://taotong88.com/?pid=14">
+                <ul class="img_box">
+                    <li class="game"><img class="w-100" src="images/spe109_s04_058.jpg" alt=""></li>
+                    <li class="game"><img class="w-100" src="images/491311.jpg" alt=""></li>
+                    <li class="game"><img class="w-100" src="images/spe041_s05_77.jpg" alt=""></li>
+                    <li class="game"><img class="w-100" src="images/spe109_s04_058.jpg" alt=""></li>
+                    <li class="game"><img class="w-100" src="images/491311.jpg" alt=""></li>
+                </ul>
+            </a>
+        </div>
+        <div class="img img-2">
+            <a class="" href="https://taotong88.com/?pid=14">
+                <ul class="img_box">
+                    <li class="game"><img class="w-100" src="images/spe278_s01_031.jpg" alt=""></li>
+                    <li class="game"><img class="w-100" src="images/spe165_s02_041.jpg" alt=""></li>
+                    <li class="game"><img class="w-100" src="images/spe184_s01_161.jpg" alt=""></li>
+                    <li class="game"><img class="w-100" src="images/spe278_s01_031.jpg" alt=""></li>
+                    <li class="game"><img class="w-100" src="images/spe165_s02_041.jpg" alt=""></li>
+                </ul>
+            </a>
+        </div>
+        <a class="btn btn-2 pc" href="https://taotong88.com/app/?pid=14"><img src="images/LP0511-2_750x230.png" alt=""></a>
+        <a class="btn btn-2 ph" href="https://taotong88.com/app/?pid=14"><img src="images/LP0511-2_665x290.png" alt=""></a>
+        <img class="hand hand-2" src="images/download-removebg-preview.png" alt="">
+    </div>
+    <script>
+        // let img_box = document.querySelector('.img_box');
+        let img_box_all = document.querySelectorAll('.img_box');
+        for(i=0; i<img_box_all.length; i++){
+            let img_box = img_box_all[i];
+            let imgsWidth = img_box.offsetWidth
+            let imgs = img_box.querySelectorAll('img');
+            // 记录第几张图片
+            let index = 0;  
+            let timer = null;
+
+            // 设置图片容器大小
+            // imgContainerW：img_box本身宽度，为400
+            let imgContainerW = imgsWidth
+            img_box.style.width = imgContainerW * imgs.length + 'px'
+            // 设置容器位置
+            img_box.style.left = 0 + 'px';
+
+            function swapImg() {
+                // 修改img_box的定位，往左偏移 index * imgContainerW
+                img_box.style.left = -index * imgContainerW + 'px';
+            }
+
+            function swapFormat() {
+                index++;  // 进入下一张图片
+                // 如果是在最后一张图片
+                console.log(img_box)
+                if (index >= (imgs.length - 2)) {
+                    // 此处是为了防止频繁点击按钮，index++，导致index超过4，变成5、6、7...
+                    // 当index>=4，我们强行让其等于4,类似防抖
+                    index = (imgs.length - 2);  
+                    img_box.style.transition = 'all, linear, 1s';
+                    img_box.style.left = -index * imgContainerW + 'px';
+                    
+                    // 此处就是我们为实现无缝轮播，做的手脚 
+                    // 通过延时定时器，当图片过渡完，立刻马上切换到第一张图片
+                    setTimeout(function() {
+                        index = 0;  // 第一张图片
+                        img_box.style.transition = '';  // 无过度
+                        swapImg();
+                    }, 1500)
+                
+                    // 如果是其它图片，正常过渡切换
+                } else {
+                    img_box.style.transition = 'all, linear, 1.5s';
+                    swapImg();
+                }
+            }
+
+            // 添加定时器，调用函数
+            timer = setInterval(swapFormat, 3000)
+
+            // 当鼠标在图片上、左箭头、右箭头时清除定时器，即图片不轮播
+            img_box.addEventListener('mouseover', function() {
+                clearInterval(timer)
+            })
+
+            // 当鼠标离开图片、左箭头、右箭头时开启定时器，即图片继续轮播
+            img_box.addEventListener('mouseout', function() {
+                timer = setInterval(swapFormat, 3000)
+            })
+        }
+    </script>
 </body>
 </html>
