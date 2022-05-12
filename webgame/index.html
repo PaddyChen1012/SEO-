@@ -12,87 +12,89 @@
     <link rel="shortcut icon" href="images/517402_10680911_2008768_2cac98b1_image-removebg-preview(1).png" type="image/x-icon">
     <style>
         *{
-            position: relative;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            position:relative;
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
         .pc{display:flex;}
         .ph{display:none;}
         .wrap{
-            width: 100%;
-            height: 100vh;
-            display: flex;
+            width:100%;
+            height:100vh;
+            display:flex;
         }
         .bg{
-            width: 100%;
+            width:100%;
         }
         .video{
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
+            overflow:hidden;
+            display:flex;
+            justify-content:center;
         }
-        .video a{display: contents;}
+        .video a{display:contents;}
         .v-1,.img-1{
-            position: absolute;
-            top: 4.6%;
-            left: 2.7%;
-            width: 44.7%;
-            height: 38.4%;
-            align-items: center;
-            clip-path: polygon(0% 0%, 87% 0%, 100% 100%, 0% 100%);
+            position:absolute;
+            top:4.6%;
+            left:2.7%;
+            width:44.7%;
+            height:38.4%;
+            align-items:center;
+            clip-path:polygon(0% 0%, 87% 0%, 100% 100%, 0% 100%);
         }
         .v-2,.img-2{
-            position: absolute;
-            top: 46.5%;
-            left: 2.6%;
-            width: 52.5%;
-            height: 49.5%;
-            align-items: flex-start;
-            clip-path: polygon(0% 0%, 86.3% 0%, 100% 100%, 0% 100%);
+            position:absolute;
+            top:46.5%;
+            left:2.6%;
+            width:52.5%;
+            height:49.5%;
+            align-items:flex-start;
+            clip-path:polygon(0% 0%, 86.3% 0%, 100% 100%, 0% 100%);
         }
-        .home-gif{width: 100%;}
-        .btn{position: absolute;top: 52%;left: 56%;width: 35%;animation: btn alternate .8s infinite both;}
-        .btn img{width: 100%;}
-        .hand{position: absolute;top: 60%;left: 85%;width: 10%;animation: hand alternate .8s infinite both;}
-        .img a{display: block;width: 100%;height: 100%;overflow: hidden;}
+        .home-gif{width:100%;}
+        .btn{position:absolute;top:52%;left:56%;width:35%;animation:btn alternate .8s infinite both;}
+        .btn img{width:100%;}
+        .hand{position:absolute;top:60%;left:85%;width:10%;animation:hand alternate .8s infinite both;}
+        .img a{display:block;width:100%;height:100%;overflow:hidden;}
         .img_box{
             position:absolute;
             left:0;
             top:0;
             display:flex;
             justify-content:center;
-            width: 100%;
-            height: 100%;
+            width:100%;
+            height:100%;
         }
         .img_box li {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
             float:left;
             list-style:none;
-            width: 100%;
+            width:100%;
         }
-        .img_box img{width: 100%;}
+        .img_box img{width:100%;}
+        .btn-2{top:40%;}
+        .hand-2{top:50%;}
 
         @keyframes hand {
-            0%{transform: rotateZ(0deg);}
-            100%{transform: rotateZ(-10deg);}
+            0%{transform:rotateZ(0deg);}
+            100%{transform:rotateZ(-10deg);}
         }
         @keyframes btn {
-            0%{transform: scale(1);}
-            100%{transform: scale(.95);}
+            0%{transform:scale(1);}
+            100%{transform:scale(.95);}
         }
         @media screen and (max-width:500px) {
             .pc{display:none;}
             .ph{display:flex;}
-            .video,.img{width: 91.7%;}
-            .v-1,.img-1{top: 2.4%;left: 4.2%;height: 31.2%;clip-path: polygon(0% 0%, 100% 0%, 100% 88%, 0% 100%);background: #000;}
-            .v-2,.img-2{top: 67.4%;left: 4.2%;height: 30.5%;clip-path: polygon(0% 14%, 100% 0%, 100% 100%, 0% 100%);background: #000;}
-            .home-gif{width: auto;height: 100%;}
-            .btn{position: absolute;top: 48%;left: 5%;width: 90%;}
-            .hand{top: 57%;left: 45%;width: 20%;}
-            .img_box img {width: 110%;}
+            .video,.img{width:91.7%;}
+            .v-1,.img-1{top:2.4%;left:4.2%;height:31.2%;clip-path:polygon(0% 0%, 100% 0%, 100% 88%, 0% 100%);background:#000;}
+            .v-2,.img-2{top:67.4%;left:4.2%;height:30.5%;clip-path:polygon(0% 14%, 100% 0%, 100% 100%, 0% 100%);background:#000;}
+            .home-gif{width:auto;height:100%;}
+            .btn{position:absolute;top:48%;left:5%;width:90%;}
+            .hand{top:57%;left:45%;width:20%;}
+            .img_box img {width:110%;}
         }
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -154,9 +156,9 @@
                 </ul>
             </a>
         </div>
-        <a class="btn pc" href="https://taotong88.com/app/?pid=14"><img src="images/LP0511_750x230.png" alt=""></a>
-        <a class="btn ph" href="https://taotong88.com/app/?pid=14"><img src="images/LP0511_665x290.png" alt=""></a>
-        <img class="hand" src="images/download-removebg-preview.png" alt="">
+        <a class="btn btn-2 pc" href="https://taotong88.com/app/?pid=14"><img src="images/LP0511_750x230.png" alt=""></a>
+        <a class="btn btn-2 ph" href="https://taotong88.com/app/?pid=14"><img src="images/LP0511_665x290.png" alt=""></a>
+        <img class="hand hand-2" src="images/download-removebg-preview.png" alt="">
     </div>
     <script>
         // let img_box = document.querySelector('.img_box');
