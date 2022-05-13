@@ -133,7 +133,7 @@
         <img class="bg pc" src="images/LP0511-2_BG_1920x1080.jpg" alt="">
         <img class="bg ph" src="images/LP0511-2_BG_1080x1920.jpg" alt="">
         <div class="img img-1">
-            <a class="" href="https://taotong88.com/?pid=14">
+            <a name="tt_link" class="" href="https://taotong88.com/?pid=14">
                 <ul class="img_box">
                     <li class="game"><img class="w-100" src="images/spe109_s04_058.jpg" alt=""></li>
                     <li class="game"><img class="w-100" src="images/Melody-Marks-in-mesh-Stockings-bounces-on-a-Cock_011_big.jpg" alt=""></li>
@@ -144,7 +144,7 @@
             </a>
         </div>
         <div class="img img-2">
-            <a class="" href="https://taotong88.com/?pid=14">
+            <a name="tt_link" class="" href="https://taotong88.com/?pid=14">
                 <ul class="img_box">
                     <li class="game"><img class="w-100" src="images/Naughty-Bella-Rolland-seduces-possible-business-partner-with-her-sexy-_017_big.jpg" alt=""></li>
                     <li class="game"><img class="w-100" src="images/spe165_s02_041.jpg" alt=""></li>
@@ -155,7 +155,7 @@
             </a>
         </div>
         <a class="btn btn-2 pc" href="https://taotong88.com/?pid=14"><img src="images/LP0511-2_750x230.png" alt=""></a>
-        <a class="btn btn-2 ph" href="https://taotong88.com/app/?pid=14"><img src="images/LP0511-2_665x290.png" alt=""></a>
+        <a name="tt_link" class="btn btn-2 ph" href="https://taotong88.com/app/?pid=14"><img src="images/LP0511-2_665x290.png" alt=""></a>
         <img class="hand hand-2" src="images/download-removebg-preview.png" alt="">
     </div>
     <script>
@@ -184,7 +184,6 @@
             function swapFormat() {
                 index++;  // 进入下一张图片
                 // 如果是在最后一张图片
-                console.log(img_box)
                 if (index >= (imgs.length - 2)) {
                     // 此处是为了防止频繁点击按钮，index++，导致index超过4，变成5、6、7...
                     // 当index>=4，我们强行让其等于4,类似防抖
@@ -219,6 +218,17 @@
             img_box.addEventListener('mouseout', function() {
                 timer = setInterval(swapFormat, 3000)
             })
+        }
+
+        let link = document.querySelectorAll('[name=tt_link]')
+        if(window.innerWidth<500){
+            for(j=0; j<link.length; j++){
+                link[j].setAttribute('href','https://taotong88.com/app/?pid=14')
+            }
+        }else{
+            for(j=0; j<link.length; j++){
+                link[j].setAttribute('href','https://taotong88.com/?pid=14')
+            }
         }
     </script>
 </body>
