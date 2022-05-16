@@ -15,28 +15,48 @@
         body{width:100%;height:100vh;}
         .pc{display:flex;}
         .ph{display:none;}
-        .box{position:relative;top:0;left:0;width:100%;height:100%;display: flex;align-items: center;flex-wrap: wrap;}
-        .wrap{width:100%;height: 56.25vw;background:linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 10%),url(images/LP_BG_1920x1080.jpg)no-repeat center/cover;transition:all .4s ease;}
+        .box{position:relative;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;flex-wrap:wrap;}
+        .wrap{width:100%;height:56.25vw;background:linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 10%),url(images/LP_BG_1920x1080.jpg)no-repeat center/cover;transition:all .4s ease;overflow: hidden;}
         .btn{position:absolute;right:50%;bottom:12%;width:40%;transform:translate(50%,50%);}
-        .light{position: absolute;width: 100%;height: 100%;overflow: hidden;}
-        .light::before{content: '';position: absolute;width: 40vw;height: 100%;background: url(images/4295-removebg-preview.png)no-repeat center/cover;z-index: 1;}
-        .ph.btn{right:50%;bottom: 10%;width:70%;}
+        
+        
+        .light{position:absolute;width:100%;height:100%;overflow:hidden;z-index: 0;}
+        .light::before{content:'';position:absolute;width:40vw;height:100%;background: url(images/4295-removebg-preview.png)no-repeat center/contain;-webkit-filter:drop-shadow(0px 0px 10px #f00);z-index:1;}
+        
+        
+        .light1{position: absolute;top: 0;left: 0;display: flex;justify-content: space-between;width: 100%;height: 100%;z-index: 1;}
+        .light1 img{height: 100%;width: unset;z-index: 1;}
+        .light1 img:nth-child(1){transform: scale(1.5) translate(-15%,-15%);}
+        .light1 img:nth-child(2){transform: scale(1.05) translate(15%,15%);}
+
+
+        .ph.btn{right:50%;bottom:14%;width:70%;}
         img{width:100%;}
         .animation{animation:animation infinite normal ease 2.4s both;}
+        .animation1{animation:animation1 infinite alternate ease 2.4s both;}
+        .animation2{animation:animation2 infinite normal linear 16s both;}
         @keyframes animation {
-            0%{width: 0%;}
-            100%{width: 100%;}
+            0%{width:0%;}
+            100%{width:100%;}
         }
+        @keyframes animation1 {
+            0%{-webkit-filter:drop-shadow(0px 0px 2px #f00);opacity: 0;}
+            100%{-webkit-filter:drop-shadow(0px 0px 5px #f00);opacity: .75;}
+        }
+        @keyframes animation2 {
+            0%{transform: scale(1) translate(15%,15%) rotateZ(0deg);}
+            20%{transform: scale(1.25) translate(15%,15%) rotateZ(120deg);}
+            60%{transform: scale(0.8) translate(15%,15%) rotateZ(180deg);}
+            85%{transform: scale(1.1) translate(15%,15%) rotateZ(270deg);}
+            100%{transform: scale(1) translate(15%,15%) rotateZ(360deg);}
+        }
+        
         @media screen and (max-width:500px) {
             h1{font-size:1.5rem;}
             .pc{display:none;}
             .ph{display:flex;}
             .wrap{height:178vw;background:linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 10%),url(images/LP_BG_1080x1920.jpg)no-repeat center/contain;}
-            .focus{width:150px;height:150px;}
-            @keyframes animation {
-                0%{transform:translateY(0px) scale(1,1);}
-                100%{transform:translateY(20px) scale(1.2,.8);}
-            }
+            .light::before{width:70vw;}
         }
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -55,10 +75,12 @@
         <div id="wrap" class="wrap">
             <a class="btn pc" href="https://www.betg11.com/signup/?pid=EricPL">
                 <div class="light animation"></div>
+                <div class="light1 animation1"><img class="animation1" src="images/1632439040-8b2fc43de8e68f272a9c1ef1350ccbb6-removebg-preview.png" alt=""><img class="animation2" src="images/1632439140-27c9a4fec91555baa91100ee90a6d339-removebg-preview.png" alt=""></div>
                 <img class="" src="images/Button_610x170.png" alt="">
             </a>
             <a class="btn ph" href="https://www.betg11.com/signup/?pid=EricPL">
                 <div class="light animation"></div>
+                <div class="light1 animation1"><img class="animation1" src="images/1632439040-8b2fc43de8e68f272a9c1ef1350ccbb6-removebg-preview.png" alt=""><img class="animation2" src="images/1632439140-27c9a4fec91555baa91100ee90a6d339-removebg-preview.png" alt=""></div>
                 <img class="" src="images/Button_610x170.png" alt="">
             </a>
         </div>
