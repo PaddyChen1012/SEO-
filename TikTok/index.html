@@ -70,9 +70,17 @@
                 <img class="btn-w w-1 ph" src="images/1-title4_900x1600.png" alt="">
                 <img class="btn-w w-2 pc" src="images/1-title5_1920x1080.png" alt="">
                 <img class="btn-w w-2 ph" src="images/1-title5_900x1600.png" alt="">
-                <img class="btn" src="images/1-btn_1920x1080.png" alt="">
+                <a id="tt_link" href="https://taotong88.com/app?pid=16#/"><img class="btn" src="images/1-btn_1920x1080.png" alt=""></a>
             </div>
         </div>
     </div>
+    <script>
+        let link = document.querySelector('#tt_link')
+        if(window.innerWidth<500){
+            link.setAttribute('href','https://taotong88.com/app/?pid=14')
+        }else{
+            link.setAttribute('href','https://taotong88.com/?pid=14')
+        }
+    </script>
 </body>
 </html>
