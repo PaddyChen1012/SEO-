@@ -9,20 +9,20 @@
     <title>MDL 97</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box;font-family:'Maitree', serif;}
-        body{width:100vw;height:100vh;background-color:#000;overflow:hidden;}
+        body{width:100%;height:100vh;background-color:#000;overflow-x: hidden;}
         .pc{display:flex;}
         .ph{display:none;}
-        .box{position:relative;top:0;left:0;width:100%;height:100%;overflow:hidden;}
-        .wrap{position:absolute;top:0;left:0;width:100%;height:100%;background:url(images/LP0425_BG_1280x670.jpg)no-repeat center/contain;}
-        .wrap::before{content:'';position:absolute;width:100%;height:100%;background:linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,1) 100%);}
-        .btn-box{position:absolute;bottom:0%;left:10%;display:flex;width:80%;justify-content:space-between;}
-        .btn-box a{display:block;margin-bottom:1rem;}
+        .box{position:relative;top:0;left:0;width:100%;height:100%;}
+        .wrap{position:relative;width:100%;height:51vw;background: url(images/LP0517_870x560.png)no-repeat 61.5% 10%/65%,url(images/LP0517-BG_1280x670.jpg)no-repeat center/cover;}
+        .wrap::before{content:'';position:absolute;width:100%;height:100%;}
+        .btn-box{position:absolute;bottom:1%;left:10%;display:flex;width: 80%;justify-content:space-between;}
+        .btn-box a{display:block;margin:0 auto;}
         img{width:100%;}
         @media screen and (max-width:500px) {
             h1{font-size:1.5rem;}
             .pc{display:none;}
             .ph{display:flex;}
-            .wrap{background:url(images/LP0425_BG_428x926.jpg)no-repeat center/contain;}
+            .wrap{height:178vw;background:url(images/LP0517_428x680.png) no-repeat center 20%/90%,url(images/LP0517-BG_428x926.jpg) center/cover;}
             .wrap::before{content:unset;}
             .btn-box{bottom:0%;left:10%;display:block;width:80%;}
             .btn-box a{margin-bottom:0;}
@@ -42,14 +42,8 @@
     <div class="box">
         <div id="wrap" class="wrap"></div>
         <div class="btn-box">
-            <a href="https://mdl97.com/register?pid=10"><img src="images/LP0425_Button1_350x135.png"></a>
-            <a href="https://mdl97.com/?pid=fb"><img src="images/LP0425_Button2_350x135.png"></a>
-            <a href="viber://chat/?number=%2B959400948705"><img src="images/LP0425_Button3_350x135.png"></a>
+            <a href="https://mdl97.com/?pid=fb"><img src="images/LP0517-Button_340x140.png"></a>
         </div>
     </div>
-    <script>
-        let body = document.querySelector('body')
-        body.style.height = window.innerHeight + 'px';
-    </script>
 </body>
 </html>
