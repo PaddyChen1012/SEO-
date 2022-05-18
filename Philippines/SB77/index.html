@@ -24,7 +24,7 @@
         .box-1 a:first-child{margin-bottom:1rem;}
         .btn-box a:nth-child(1){animation:translateY .6s linear .4s alternate backwards;}
         .btn-box a:nth-child(2){animation:translateY .6s linear alternate backwards;}
-        .btn-box a:nth-child(2) img{animation: shadow .6s infinite 1s ease alternate backwards;z-index:1;}
+        .btn-box a:nth-child(2) img{z-index:1;}
         img{width:100%;}
         @keyframes shock {
             0%{transform:translateX(0px);}
@@ -36,10 +36,24 @@
             0%{transform:translateY(-100vh);}
             100%{transform:translateY(0px);}
         }
-        @keyframes shadow {
-            0%{-webkit-filter:drop-shadow(0px 0px 0px #f82c27);}
-            100%{-webkit-filter:drop-shadow(0px 0px 15px #f82c27);}
+
+        /* 火焰動畫 */
+        .light{position:absolute;height:50%;overflow:hidden;z-index:1;}
+        .light1{top: -25%;}
+        .light2{bottom: -20%;transform: rotateZ(180deg);}
+        .box-2 .light::before{width: 20vw;}
+        .light::before{content:'';position:absolute;width:32.8vw;height:100%;background:url(images/fire.png)no-repeat center/contain;z-index:1;}
+        .animation{animation:animation infinite normal ease 4.8s both;}
+        .animation1{animation:animation1 infinite normal ease 4.8s both;}
+        @keyframes animation {
+            0%{left: 0;right: 100%;}
+            100%{left: 0;right: 0;}
         }
+        @keyframes animation1 {
+            0%{left: 100%;right: 0;}
+            100%{left: 0;right: 0;}
+        }
+
         @media screen and (max-width:500px) {
             h1{font-size:1.5rem;}
             .pc{display:none;}
@@ -60,12 +74,20 @@
             <div class="btn-box box-1">
                 <a href="https://t.me/+dDeEdzrFNFgwZjNl"><img src="images/LP0421_S-Button1_743x196.png"></a>
                 <!-- <a href=""><img src="images/LP0421_S-Button2_743x196.png"></a> -->
-                <a class="ss_link" href="https://www.ssbet77.com/register?pid=3"><img src="images/LP0421_S-Button3_743x196.png"></a>
+                <a class="ss_link" href="https://www.ssbet77.com/register?pid=3">
+                    <div class="light light1 animation"></div>
+                    <div class="light light2 animation1"></div>
+                    <img src="images/LP0421_S-Button3_743x196.png">
+                </a>
             </div>
         </div>
         <div id="wrap" class="wrap wrap-2">
             <div class="btn-box box-2">
-                <a class="ss_link" href="https://www.ssbet77.com/register?pid=3"><img src="images/LP0517_480x150.png"></a>
+                <a class="ss_link" href="https://www.ssbet77.com/register?pid=3">
+                    <div class="light light1 animation"></div>
+                    <div class="light light2 animation1"></div>
+                    <img src="images/LP0517_480x150.png">
+                </a>
             </div>
         </div>
     </div>
