@@ -24,8 +24,8 @@
         img{width:100%;}
         .animation{animation:animation infinite alternate ease .6s both;}
         @keyframes animation {
-            0%{transform:scale(1);}
-            100%{transform:scale(1.1);}
+            0%{-webkit-filter: drop-shadow(0px 0px 0px #d6ffe2);}
+            100%{-webkit-filter: drop-shadow(0px 0px 30px #d6ffe2);}
         }
         @media screen and (max-width:992px) and (pointer:coarse) {
             h1{font-size:1.5rem;}
@@ -56,7 +56,7 @@
 <body>
     <div class="box">
         <div id="wrap" class="wrap"></div>
-        <div class="btn-box">
+        <div class="btn-box animation">
             <a name="mm_link" class="pc" href="https://betjee.com/af/J24cTkAh/gooad"><img src="images/LP0519_750x160.png"></a>
             <a name="mm_link" class="ph" href="https://betjee.com/af/J24cTkAh/gooad"><img src="images/LP0519_700x90.png" alt=""></a>
         </div>
