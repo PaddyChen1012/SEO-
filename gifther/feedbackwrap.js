@@ -51,9 +51,15 @@ function animate(ele,cssObj,fn){
 // 1.给每个图片设置相应的位置，透明度，层级
 var spinArr = [
     {  
-        width:80,
+        width:40,
         left:0,
         opacity:.4,
+        zIndex:2
+    },
+    {  
+        width:80,
+        left:25,
+        opacity:.6,
         zIndex:3
     },
     {   
@@ -64,22 +70,30 @@ var spinArr = [
     },
     {  
         width:80,
+        left:75,
+        opacity:.6,
+        zIndex:3
+    },
+    {  
+        width:40,
         left:100,
         opacity:.4,
-        zIndex:3
+        zIndex:2
     }
 ]
 // 2.获取相应的元素
 var slide = document.querySelectorAll(".slide") //最外层容器
 var ul = document.querySelectorAll('.slide>ul') //获取存放旋转轮播图的容器；这里是定位父元素
 var arrow = document.querySelector('.arrow') //获取存放左右切换按钮容器
-console.log(ul)
 var timer = null //开启定时器实现自动轮播
 // 3.给容器添加数据，渲染好界面
+console.log(ul)
 if(window.innerWidth > 500){
     var slideList = ul[0].children //每一个轮播图容器集合
+    console.log(1)
 }else{
-    var slideList = ul[1].children 
+    var slideList = ul[1].children
+    console.log(2) 
 }
 function renderData(){
 	for(var i = 0;i<slideList.length;i++){
