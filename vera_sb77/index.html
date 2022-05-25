@@ -188,7 +188,7 @@
             .wrap-1{background:url(images/LP0520_BG_1080x1920.jpg)no-repeat center/cover;}
             .wrap-2{background:linear-gradient(180deg, black 0%, transparent 2%, transparent 98%, black 100%),url(images/LP0520-2_BG_1080x1920.jpg)no-repeat center/cover;}
             .wrap-3{background:linear-gradient(180deg, black 0%, transparent 2%, transparent 98%, black 100%),url(images/LP0520-3_BG_1080x1920.jpg)no-repeat center/cover;}
-            .wrap-4{padding-bottom: 115vh;background:linear-gradient(180deg, black 0%, transparent 2%),url(images/LP0520-4_1080x1600.jpg)no-repeat top/contain, #b95a48;}
+            .wrap-4{background:linear-gradient(180deg, black 0%, transparent 2%),url(images/LP0520-4_1080x1600.jpg)no-repeat top/contain, #b95a48;}
             .wrap::before{content:unset;}
             .btn-box{bottom:40%;width:85%;}
             .box-1{bottom:40%;width:66%;}
@@ -211,6 +211,9 @@
                 padding: 0 2rem;
                 transform: translateY(-50%);
             }
+        }
+        @media screen and (max-height:700px) {
+            .wrap-4{padding-bottom: 115vh;}
         }
     </style>
 </head>
