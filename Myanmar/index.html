@@ -23,7 +23,7 @@
         .b-4{left:61.5%;}
         .btn-box{position:absolute;bottom:1%;left:10%;display:flex;width:80%;justify-content:space-between;}
         .btn-box a{display:block;margin:0 auto;}
-        img{width:100%;}
+        img{margin:auto;}
         @media screen and (max-width:992px) and (pointer:coarse) {
             h1{font-size:1.5rem;}
             .pc{display:none;}
@@ -56,20 +56,28 @@
 
         gtag('config', 'UA-225506502-4');
     </script>
+    <!-- Hotjar Tracking Code for https://mdl97.net/ -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2996226,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
 </head>
 <body>
-    <div class="box">
-        <img class="logo" src="images/LP0517-LOGO_165x125.png" alt="">
-        <div id="wrap" class="wrap">
-            <a name="mm_link" class="bubble b-1" href="https://mdl97.com/register?pid=10"></a>
-            <a name="mm_link" class="bubble b-2" href="https://mdl97.com/register?pid=10"></a>        
-            <a name="mm_link" class="bubble b-3" href="https://mdl97.com/register?pid=10"></a>
-            <a name="mm_link" class="bubble b-4" href="https://mdl97.com/register?pid=10"></a>
+    <a name="mm_link" href="https://mdl97.com/register?pid=10">
+        <div class="box">
+            <img class="logo" src="images/LP0517-LOGO_165x125.png" alt="">
+            <div id="wrap" class="wrap"></div>
+            <div class="btn-box">
+                <img src="images/LP0517-Button_340x140.png">
+            </div>
         </div>
-        <div class="btn-box">
-            <a name="mm_link" href="https://mdl97.com/register?pid=10"><img src="images/LP0517-Button_340x140.png"></a>
-        </div>
-    </div>
+    </a>
 
     <script>
         let link = document.querySelectorAll('[name=mm_link]')
@@ -85,10 +93,9 @@
     </script>
     <script>
         const myTimeout = setTimeout(redirect, 5000);
-
         function redirect() {
             if(window.innerWidth<500){
-                window.location.href = "https://mdl97.com/app#/register?pid=10";
+                window.location.href = "https://mdl97.com/register?pid=10";
             }else{
                 window.location.href = "https://mdl97.com/register?pid=10";
             }

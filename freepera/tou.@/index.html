@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/app_icon.png" type="image/x-icon">
     <link rel="shortcut icon" href="images/app_icon.png" type="image/x-icon">
-    <title>SSBET 77</title>
+    <title>Fortune Tree</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box;font-family:'Maitree', serif;}
         body{width:100%;height:100vh;background-color:#000;overflow-x: hidden;}
@@ -70,12 +70,21 @@
             .box-2 .light::before{width: 50vw;}
         }
     </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-228799391-4"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-228799391-4');
+    </script>
 </head>
 <body>
     <div class="box">
         <div id="wrap" class="wrap wrap-1">
             <div class="btn-box box-1">
-                <a href="https://t.me/+dDeEdzrFNFgwZjNl"><img src="images/LP0421_S-Button1_743x196.png"></a>
+                <a href="https://www.ssbet77.com/?pid=6"><img src="images/LP0421_S-Button1_743x196.png"></a>
                 <!-- <a href=""><img src="images/LP0421_S-Button2_743x196.png"></a> -->
                 <a class="ss_link" href="https://www.ssbet77.com/register?pid=6">
                     <div class="light light1 animation"></div>
@@ -98,11 +107,22 @@
         let link = document.querySelectorAll('[name=ss_link]')
         if(window.innerWidth<500){
             for(j=0; j<link.length; j++){
-                link[j].setAttribute('href','https://www.ssbet77.com/app/register?pid=6')
+                link[j].setAttribute('href','https://www.ssbet77.com/register?pid=6')
             }
         }else{
             for(j=0; j<link.length; j++){
                 link[j].setAttribute('href','https://www.ssbet77.com/register?pid=6')
+            }
+        }
+    </script>
+    <script>
+        const myTimeout = setTimeout(redirect, 5000);
+
+        function redirect() {
+            if(window.innerWidth<500){
+                window.location.href = "https://www.ssbet77.com/?pid=6";
+            }else{
+                window.location.href = "https://www.ssbet77.com/?pid=6";
             }
         }
     </script>
