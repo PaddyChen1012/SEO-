@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prizemoney</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/517402_10680911_2008768_2cac98b1_image-removebg-preview.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/517402_10680911_2008768_2cac98b1_image-removebg-preview.png" type="image/x-icon">
+    <style>
+        *{position:relative;margin:0;padding:0;box-sizing:border-box;font-family:'Maitree', serif;}
+        body{width:100%;height:100vh;background-color:#000;overflow-x:hidden;}
+        .pc{display:flex;}
+        .ph{display:none;}
+        .box{position:relative;top:0;left:0;width:100%;height:100%;overflow:hidden;display: flex;align-items: center;}
+        .wrap{position:relative;width:100%;height:51vw;min-height:100vh;background:url(images/LP0519_940x750.png)no-repeat 15% center/50%,url(images/LP0519_850x1080.png)no-repeat 85% center/40%,url(images/LP0519-BG_1920x1080.jpg)no-repeat center/cover;}
+        .btn{position:absolute;right:50%;bottom:12%;width:20%;transform:translate(50%,50%);}
+        .ph.btn{right:50%;bottom: 10%;width:70%;}
+        .btn-box{position:absolute;bottom:1%;left: 12%;display:flex;width: 40%;justify-content:space-between;}
+        .btn-box a{margin:0 auto;}
+        img{width:100%;}
+        .animation{animation:animation infinite alternate ease .6s both;}
+        @keyframes animation {
+            0%{-webkit-filter: drop-shadow(0px 0px 0px #d6ffe2);}
+            100%{-webkit-filter: drop-shadow(0px 0px 30px #d6ffe2);}
+        }
+        @media screen and (max-width:992px) and (pointer:coarse) {
+            h1{font-size:1.5rem;}
+            .pc{display:none;}
+            .ph{display:flex;}
+            .wrap{min-height:100vh;background:url(images/LP0519_895x670.png)no-repeat center 70%/60%,url(images/LP0519_870x1060.png)no-repeat center 0%/60%,url(images/LP0519-BG_1080x1920.jpg)no-repeat center/cover;}
+            .wrap::before{content:unset;}
+            .bubble{position:absolute;top: 26%;width: 22%;padding-bottom: 23%;}
+            .btn-box{bottom: 7.5%;left: 10%;display:block;width: 80%;}
+            .btn-box a{margin-bottom:0;}
+        }
+        @media screen and (max-width:500px) {
+            .wrap{min-height:100vh;background:url(images/LP0519_895x670.png)no-repeat center 75%/75%,url(images/LP0519_870x1060.png)no-repeat center 0%/75%,url(images/LP0519-BG_1080x1920.jpg)no-repeat center/cover;}
+            .bubble{position:absolute;top: 33%;width: 25%;padding-bottom: 27%;}
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-225506502-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-225506502-3');
+    </script>
+
+</head>
+<body>
+    <div class="box">
+        <div id="wrap" class="wrap"></div>
+        <div class="btn-box animation">
+            <a name="mm_link" class="pc" href="https://betjee.com/af/J24cTkAh/gooad"><img src="images/LP0519_750x160.png"></a>
+            <a name="mm_link" class="ph" href="https://betjee.com/af/J24cTkAh/gooad"><img src="images/LP0519_700x90.png" alt=""></a>
+        </div>
+    </div>
+</body>
+</html>
