@@ -52,7 +52,7 @@ function animate(ele,cssObj,fn){
 var spinArr = [
     {  
         width:40,
-        left:0,
+        left:50,
         opacity:.4,
         zIndex:2
     },
@@ -74,12 +74,6 @@ var spinArr = [
         opacity:.6,
         zIndex:3
     },
-    {  
-        width:40,
-        left:100,
-        opacity:.4,
-        zIndex:2
-    }
 ]
 // 2.获取相应的元素
 var slide = document.querySelector(".slide") //最外层容器
