@@ -16,34 +16,24 @@
         .pc{display:flex;}
         .ph{display:none;}
         .box{position:relative;top:0;left:0;width:100%;height:100%;display: flex;align-items: center;flex-wrap: wrap;}
-        .wrap{width:100%;height: 56.25vw;background:linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 10%),url(images/LP0411BG_1920x1080.jpg)no-repeat center/cover;transition:all .4s ease;}
-        .w-1{background:linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 10%),url(images/LP0513_BG_1920x1080.jpg)no-repeat center/cover;}
-        .btn{position:absolute;right:32.5%;bottom:20%;width:40%;transform:translate(50%,50%);}
-        .btn-1{right: 70%;bottom: 15%;}
-        .ph.btn{right:50%;bottom: 10%;width:70%;}
-        .shadow{content:'';position:absolute;bottom:-10px;left:30%;width:40%;height:20px;background:rgba(0,0,0,.5);border-radius:50%;}
+        .wrap{width:100%;height: 55.25vw;background:linear-gradient(180deg,rgba(0,0,0,0) 90%, rgba(0,0,0,1) 100%), url(images/LP0630-BG_1920x1080.jpg)no-repeat center/contain #000;}
+        .w-1{background:linear-gradient(0deg,rgba(0,0,0,0) 90%, rgba(0,0,0,1) 100%), url(images/LP0630-2-BG_1920x1080.jpg)no-repeat center/contain #000;}
+        .btn{position:absolute;right:50%;bottom:10%;width:35%;transform:translate(50%,50%);}
+        .btn-1{right: 50%;bottom: 10%;}
+        .ph.btn{right:50%;bottom: 10%;width:80%;}
         img{width:100%;}
         .animation{animation:animation infinite alternate ease .6s both;}
-        .animation1{animation:animation1 infinite alternate ease .6s both;}
         @keyframes animation {
-            0%{transform:translateY(0px) scale(1,1);}
-            100%{transform:translateY(45px) scale(1.2,.8);}
-        }
-        @keyframes animation1 {
-            0%{background:rgba(0,0,0,.5);transform:scale(1,1);}
-            100%{background:rgba(0,0,0,.8);transform:scale(2,1);}
+            0%{-webkit-filter:drop-shadow(0px 0px 1px #d3bd49);}
+            100%{-webkit-filter:drop-shadow(0px 0px 20px #d3bd49);}
         }
         @media screen and (max-width:500px) {
             h1{font-size:1.5rem;}
             .pc{display:none;}
             .ph{display:flex;}
-            .wrap{height:178vw;background:linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 10%),url(images/LP0411BG_1080x1920.jpg)no-repeat center/contain;}
-            .w-1{background:linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 10%),url(images/LP0513_BG_1080X1920.jpg)no-repeat center/cover;}
+            .wrap{height:178vw;background:linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 10%), url(images/LP0630-BG_1080x1920.jpg)no-repeat center/contain #000;}
+            .w-1{background:linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 10%), url(images/LP0630-2-BG_1080x1920.jpg)no-repeat center/cover #000;}
             .focus{width:150px;height:150px;}
-            @keyframes animation {
-                0%{transform:translateY(0px) scale(1,1);}
-                100%{transform:translateY(20px) scale(1.2,.8);}
-            }
         }
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -61,29 +51,22 @@
     <div class="box">
         <div id="wrap" class="wrap">
             <a class="btn pc" href="https://www.betg11.com/signup/?pid=EricPL">
-                <div class="shadow animation1"></div>
-                <img class="animation" src="images/LP1Button_700x200.png" alt="">
+                <img class="animation" src="images/LP0630-Button1_600x150.png" alt="">
             </a>
             <a class="btn ph" href="https://www.betg11.com/signup/?pid=EricPL">
-                <div class="shadow animation1"></div>
-                <img class="animation" src="images/LP1Button_700x200.png" alt="">
+                <img class="animation" src="images/LP0630-Button1_600x150.png" alt="">
             </a>
         </div>
         <div id="wrap" class="wrap w-1">
             <a name="tt_link" class="btn btn-1 pc" href="https://taotong88.com/?pid=14">
-                <div class="shadow animation1"></div>
-                <img class="animation" src="images/LP0513_670x180.png" alt="">
+                <img class="animation" src="images/LP0630-Button2_600x150.png" alt="">
             </a>
             <a name="tt_link" class="btn btn-1 ph" href="https://taotong88.com/?pid=14">
-                <div class="shadow animation1"></div>
-                <img class="animation" src="images/LP0513_670x180.png" alt="">
+                <img class="animation" src="images/LP0630-Button2_600x150.png" alt="">
             </a>
         </div>
     </div>
     <script>
-        let body = document.querySelector('body')
-        body.style.height = window.innerHeight + 'px';
-
         let link = document.querySelectorAll('[name=tt_link]')
         if(window.innerWidth<500){
             for(j=0; j<link.length; j++){
@@ -94,6 +77,8 @@
                 link[j].setAttribute('href','https://taotong88.com/?pid=14')
             }
         }
+
+        // setTimeout("javascript:window.location.href = 'https://taotong88.com/?pid=14'",3000);
     </script>
 </body>
 </html>
