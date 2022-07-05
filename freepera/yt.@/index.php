@@ -1,3 +1,6 @@
+<?php
+    header('Location: https://nba-2k12-patch.en.softonic.com/',true,301);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
