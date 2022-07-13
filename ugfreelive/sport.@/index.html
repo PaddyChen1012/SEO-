@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UG live sport</title>
+    <link rel="icon" href="images/7691.png_300-removebg-preview.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/7691.png_300-removebg-preview.png" type="image/x-icon">
+    <style>
+        *{position:relative;margin:0;padding:0;box-sizing:border-box;font-family:'Maitree', serif;}
+        body{width:100%;height:100vh;background-color:#03081c;overflow-x:hidden;}
+        .pc{display:flex;}
+        .ph{display:none;}
+        .box{position:relative;top:0;left:0;width:100%;height:100%;overflow:hidden;display: flex;align-items: center;}
+        .wrap{position:relative;width:100%;height:51vw;min-height:100vh;background:url(images/ugfreelive0617_1920x1080_bg.jpg)no-repeat center/cover;}
+        .btn-box{position:absolute;bottom:0%;left: 31%;display:flex;width: 42%;justify-content:space-between;}
+        .btn-box a{margin:0 auto;}
+        img{width:100%;}
+        .animation{animation:animation infinite alternate ease .6s both;}
+        @keyframes animation {
+            0%{-webkit-filter: drop-shadow(0px 0px 0px #edcf42);}
+            100%{-webkit-filter: drop-shadow(0px 0px 20px #edcf42);}
+        }
+        @media screen and (max-width:992px) and (pointer:coarse) {
+            .pc{display:none;}
+            .ph{display:flex;}
+            .wrap{min-height:100vh;background:url(images/ugfreelive0617_1080x1920_bg.jpg)no-repeat center/contain;}
+            .btn-box{bottom: 4.5%;left: 10%;display:block;width: 90%;}
+            .btn-box a{margin-bottom:0;}
+        }
+        @media screen and (max-width:500px) {
+            .wrap{min-height:100vh;background:url(images/ugfreelive0617_1080x1920_bg.jpg)no-repeat center/contain;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="wrap"></div>
+        <div class="btn-box animation">
+            <a name="mm_link" class="" href="https://www.betg11.com/sportgame/?pid=rainmarket"><img src="images/ugfreelive0617_903x221.png"></a>
+        </div>
+    </div>
+</body>
+</html>

