@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luckpera</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <style>
+        *{box-sizing:border-box;padding:0;margin:0;}
+        body{width:100%;height:100vh;background-color:#000;overflow-x:hidden;}
+        .wrap{position:relative;;width:100%;height:100%;overflow:hidden;}
+        .wrap-1{background:url(images/LP0720_PHL63_1920x1080.jpg)no-repeat center/contain;}
+        .wrap-2{background:url(images/LP0720_1920x1080.jpg)no-repeat center/contain;}
+        .wrap::after,.wrap::before{content:'';position:absolute;top:0;width:100%;height:100%;transform:rotateY(180deg);opacity:.1;}
+        .wrap-1::after,.wrap-1::before{background:url(images/LP0720_PHL63_1920x1080.jpg)no-repeat center/contain;}
+        .wrap-2::after,.wrap-2::before{background:url(images/LP0720_1920x1080.jpg)no-repeat center/contain;}
+        .wrap::after{left:-87.65%;}
+        .wrap::before{right:-87.65%;}
+        .btn{position:absolute;display:flex;}
+        .btn-1{bottom:0;right:17%;width:25%;}
+        .btn-2{bottom:15%;right:13%;width:25%;}
+        img{width:100%;}
+        .shadow{position:absolute;bottom:-5%;width:100%;height:10%;background:linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);z-index:1;}
+        .animation{animation:animation .8s infinite ease alternate;}
+        @media screen and (max-width:500px) {
+            .wrap-1{background:url(images/LP0720_PHL63_1080x1920.jpg)no-repeat center/contain;}
+            .wrap-2{background:url(images/LP0720_1080x1920.jpg)no-repeat center/contain;}
+            .wrap::after,.wrap::before{content:none;}
+            .btn{bottom:50%;right:5%;display:flex;width:80%;}
+            .btn-1{bottom:50%;}
+            .btn-2{bottom:30%;}
+        }
+        @keyframes animation {
+            0%{transform:scale(1);}
+            100%{transform:scale(1.05);}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap wrap-1">
+        <a class="btn btn-1 animation" href="https://phl63.com/register?pid=3&openExternalBrowser=1"><img src="images/orange-applynow.png" alt=""></a>
+    </div>
+    <div class="shadow"></div>
+    <div class="wrap wrap-2">
+        <a class="btn btn-2 animation" href="https://fhm63.com/"><img src="images/orange-applynow.png" alt=""></a>
+    </div>
+</body>
+</html>
