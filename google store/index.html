@@ -37,7 +37,8 @@
             transition: box-shadow .2s ease-in-out;
             z-index: 1;
         }
-        header.shadow{
+        header.shadow,
+        .frame-title.shadow{
             box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 20%);
         }
         nav{
@@ -459,6 +460,101 @@
         }
 
 
+        
+        .introduction-frame{
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(32,33,36,.6);
+            z-index: 2;
+        }
+        .introduction-frame.show{
+            display: flex;
+        }
+        .frame-warp{
+            position: relative;
+            background-color: #fff;
+            border-radius: 8px;
+            border-width: 0;
+            box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);
+            max-width: calc(100vw - 32px);
+            max-height: 720px;
+            height: 100%;
+            overflow: hidden;
+        }
+        .frame-warp .frame-title{
+            position: absolute;
+            display: flex;
+            width: 100%;
+            background-color: #fff;
+            padding: 24px 32px;
+        }
+        .frame-title>img{
+            height: 48px;
+            width: 48px;
+            border-radius: 8px;
+            box-shadow: 0 -1px 5px rgb(0 0 0 / 9%), 0 3px 5px rgb(0 0 0 / 6%), 0 1px 2px rgb(0 0 0 / 30%), 0 1px 3px rgb(0 0 0 / 15%);
+            margin-right: 16px;
+        }
+        .frame-title div>img{
+            height: calc(48px - 1.25rem);
+        }
+        .frame-title div>div{
+            font-size: .875rem;
+            font-weight: 400;
+            letter-spacing: .0178571429em;
+            line-height: 1rem;
+        }
+        .frame-title button{
+            font-size: 24px;
+            width: 48px;
+            height: 48px;
+            background: #fff;
+            border: none;
+            padding: 12px;
+            margin-left: auto;
+        }
+        .frame-main{
+            flex-grow: 1;
+            margin: 0 32px;
+            overflow: scroll;
+            height: calc(100% - 28px);
+        }
+        .frame-main::-webkit-scrollbar {
+            display: none;
+        }
+        .frame-main img{
+            width: 100%;
+        }
+        .frame-line{
+            border-top: 1px #e8eaed solid;
+            margin-top: 24px;
+            width: 100%;
+        }
+        .frame-list{
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 1px #e8eaed solid;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+        }
+        .frame-list>div{
+            width: 50%;
+            margin-top: 24px;
+        }
+        .frame-list>div,
+        .frame-list>div>div{
+            line-height: 1.25rem;
+            font-size: .875rem;
+            letter-spacing: .0178571429em;
+            font-weight: 500;
+        }
+
 
         @media screen and (min-width: 600px){
             nav{
@@ -622,7 +718,7 @@
                             <img class="game-icon" src="images/P69_500x500.png" alt="">
                         </div>
                         <div>
-                            <h1>Pay69 Slots</h1>
+                            <img src="images/PAY69_title.jpg" alt="">
                             <div class="writer">
                                 <a href="">
                                     <span>Cherry_Red</span>
@@ -668,7 +764,7 @@
                         <section>
                             <div class="introduction-title">
                                 <h2>เกี่ยวกับเกมนี้</h2>
-                                <button>
+                                <button id="introduction-btn">
                                     <span class="material-symbols-outlined">arrow_forward</span>
                                 </button>
                                 <div class="introduction-main">
@@ -740,21 +836,21 @@
                             <a href="" class="developer-new-1">
                                 <span class="material-symbols-outlined">language</span>
                                 <div class="developer-new-box">
-                                    <div class="developer-new-title">網站</div>
+                                    <div class="developer-new-title">เว็บไซต์</div>
                                     <div class="developer-new-main">https://captain.abc12.link</div>
                                 </div>
                             </a>
                             <a href="" class="developer-new-2">
                                 <span class="material-symbols-outlined">mail</span>
                                 <div class="developer-new-box">
-                                    <div class="developer-new-title">電子郵件</div>
+                                    <div class="developer-new-title">อีเมล</div>
                                     <div class="developer-new-main">cherryred89989@gmail.com</div>
                                 </div>
                             </a>
                             <a href="" class="developer-new-3">
                                 <span class="material-symbols-outlined">verified_user</span>
                                 <div class="developer-new-box">
-                                    <div class="developer-new-title">隱私權政策</div>
+                                    <div class="developer-new-title">นโยบายความเป็นส่วนตัว</div>
                                     <div class="developer-new-main">https://sites.google.com/view/taixiu-phat-tai-privacy/</div>
                                 </div>
                             </a>
@@ -798,6 +894,57 @@
             </footer>
         </div>
     </main>
+
+    <div id="introduction-frame" class="introduction-frame">
+        <div class="frame-warp">
+            <div id="frame-header" class="frame-title">
+                <img src="images/P69_500x500.png" alt="">
+                <div>
+                    <img src="images/PAY69_title.jpg" alt="">
+                    <div>เกี่ยวกับเกมนี้</div>
+                </div>
+                <button id="close-btn">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div id="frame-main" class="frame-main">
+                <div class="frame-scroll">
+                    <img src="images/pay69.jpg" alt="">
+                    <div class="frame-line"></div>
+                    <div class="frame-list">
+                        <div>
+                            版本
+                            <div>1.0.0</div>
+                        </div>
+                        <div>
+                            อัปเดตเมื่อ
+                            <div>2022/05/13</div>
+                        </div>
+                        <div>
+                            Android最低版本要求
+                            <div>4.4版本以上</div>
+                        </div>
+                        <div>
+                            ดาวน์โหลด
+                            <div>50,000+</div>
+                        </div>
+                        <div>
+                            內容分級
+                            <div>18 歲以上 • 模擬賭博瞭解詳情</div>
+                        </div>
+                        <div>
+                            權限
+                            <div>查看詳細資料</div>
+                        </div>
+                        <div>
+                            提供者
+                            <div>Cherry_Red</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script>
         let developerNew = document.querySelector('#developer-new')
@@ -806,6 +953,7 @@
 
         developerBtn.addEventListener('click',function(){
             if(developerNew.classList.contains('show') == false){
+                console.log(developerBtn.childNodes)
                 developerNew.classList.add('show')
             }else{
                 developerNew.classList.remove('show')
@@ -816,6 +964,33 @@
                 header.classList.add('shadow')
             }else{
                 header.classList.remove('shadow')
+            }
+        })
+
+    </script>
+    <script>
+        let frameMain = document.querySelector('#frame-main')
+        let frameHeader = document.querySelector('#frame-header')
+        let introductionFrame = document.querySelector('#introduction-frame')
+        let introductionBtn = document.querySelector('#introduction-btn')
+        let closeBtn = document.querySelector('#close-btn')
+
+        introductionBtn.addEventListener('click',function(){
+            if(introductionFrame.classList.contains('show') == false){
+                console.log(developerBtn.childNodes)
+                introductionFrame.classList.add('show')
+            }else{
+                introductionFrame.classList.remove('show')
+            }
+        })
+        closeBtn.addEventListener('click',function(){
+            introductionFrame.classList.remove('show')
+        })
+        frameMain.addEventListener('scroll',function(){
+            if(frameMain.scrollTop>0){
+                frameHeader.classList.add('shadow')
+            }else{
+                frameHeader.classList.remove('shadow')
             }
         })
 
