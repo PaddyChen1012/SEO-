@@ -38,7 +38,7 @@
             z-index: 1;
         }
         header.shadow,
-        .frame-title.shadow{
+        .introduction-frame-header.shadow{
             box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 20%);
         }
         nav{
@@ -214,6 +214,9 @@
             margin-bottom: 16px;
             overflow-x: scroll;
         }
+        .img-box::-webkit-scrollbar {
+            display: none;
+        }
         .img-box>div{display: flex;}
         .introduction-box,
         .safety-box,
@@ -313,9 +316,11 @@
             background-color: transparent;
             border-radius: 16px;
             border: 1px #dfe0e4 solid;
+            display: flex;
+            align-items: center;
         }
-        .kind-btn span{
-            color: #5f6368;
+        .kind-btn img{
+            height: 60%;
         }
 
         .safety-list {
@@ -461,11 +466,13 @@
 
 
         
-        .introduction-frame{
+        .introduction-frame,
+        .img-frame{
             position: fixed;
             top: 0;
             left: 0;
             display: none;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
             width: 100vw;
@@ -473,10 +480,49 @@
             background-color: rgba(32,33,36,.6);
             z-index: 2;
         }
-        .introduction-frame.show{
+        .introduction-frame.show,
+        .img-frame.show{
             display: flex;
         }
-        .frame-warp{
+        .introduction-frame-header button,
+        .img-frame-header button{
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            width: 48px;
+            height: 48px;
+            border: none;
+            padding: 12px;
+        }
+
+        .img-frame-header{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 64px;
+            background-color: #000;
+        }
+        .img-frame-header button{
+            background: transparent;
+            margin-left: 16px;
+        }
+        .img-frame-header span{
+            color: #e8eaed;
+        }
+        .img-frame-main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: calc(100% - 64px);
+        }
+        .img-frame-main img{
+            width: 100%;
+            max-height: 90%;
+            max-width: 80%;
+        }
+
+        .introduction-frame-warp{
             position: relative;
             background-color: #fff;
             border-radius: 8px;
@@ -487,48 +533,43 @@
             height: 100%;
             overflow: hidden;
         }
-        .frame-warp .frame-title{
+        .introduction-frame-warp .introduction-frame-header{
             position: absolute;
             display: flex;
             width: 100%;
             background-color: #fff;
             padding: 24px 32px;
         }
-        .frame-title>img{
+        .introduction-frame-header>img{
             height: 48px;
             width: 48px;
             border-radius: 8px;
             box-shadow: 0 -1px 5px rgb(0 0 0 / 9%), 0 3px 5px rgb(0 0 0 / 6%), 0 1px 2px rgb(0 0 0 / 30%), 0 1px 3px rgb(0 0 0 / 15%);
             margin-right: 16px;
         }
-        .frame-title div>img{
+        .introduction-frame-header div>img{
             height: calc(48px - 1.25rem);
         }
-        .frame-title div>div{
+        .introduction-frame-header div>div{
             font-size: .875rem;
             font-weight: 400;
             letter-spacing: .0178571429em;
             line-height: 1rem;
         }
-        .frame-title button{
-            font-size: 24px;
-            width: 48px;
-            height: 48px;
+        .introduction-frame-header button{
             background: #fff;
-            border: none;
-            padding: 12px;
             margin-left: auto;
         }
-        .frame-main{
+        .introduction-frame-main{
             flex-grow: 1;
             margin: 0 32px;
             overflow: scroll;
             height: calc(100% - 28px);
         }
-        .frame-main::-webkit-scrollbar {
+        .introduction-frame-main::-webkit-scrollbar {
             display: none;
         }
-        .frame-main img{
+        .introduction-frame-main img{
             width: 100%;
         }
         .frame-line{
@@ -733,7 +774,7 @@
                         </div>
                         <div class="download-old">
                             <div class="download-frequency">18+</div> 
-                            <div class="download-word">18歲以上</div> 
+                            <div class="download-word">ประเภท18+</div> 
                         </div>
                     </div>
                     <div class="like-list">
@@ -755,9 +796,9 @@
                 <div class="left-side">
                     <div class="img-box">
                         <div>
-                            <img src="https://play-lh.googleusercontent.com/7Zv2NPKfiV9UoNaIqoMp_brhBoqJe2Y4YxCGe_L0Cr9c1DnQaRVK02IZa3IbbKB9i-oL=w526-h296-rw" alt="">
-                            <img src="https://play-lh.googleusercontent.com/7Zv2NPKfiV9UoNaIqoMp_brhBoqJe2Y4YxCGe_L0Cr9c1DnQaRVK02IZa3IbbKB9i-oL=w526-h296-rw" alt="">
-                            <img src="https://play-lh.googleusercontent.com/7Zv2NPKfiV9UoNaIqoMp_brhBoqJe2Y4YxCGe_L0Cr9c1DnQaRVK02IZa3IbbKB9i-oL=w526-h296-rw" alt="">
+                            <img name="img-btn" src="https://play-lh.googleusercontent.com/7Zv2NPKfiV9UoNaIqoMp_brhBoqJe2Y4YxCGe_L0Cr9c1DnQaRVK02IZa3IbbKB9i-oL=w526-h296-rw" alt="">
+                            <img name="img-btn" src="https://play-lh.googleusercontent.com/7Zv2NPKfiV9UoNaIqoMp_brhBoqJe2Y4YxCGe_L0Cr9c1DnQaRVK02IZa3IbbKB9i-oL=w526-h296-rw" alt="">
+                            <img name="img-btn" src="https://play-lh.googleusercontent.com/7Zv2NPKfiV9UoNaIqoMp_brhBoqJe2Y4YxCGe_L0Cr9c1DnQaRVK02IZa3IbbKB9i-oL=w526-h296-rw" alt="">
                         </div>
                     </div>
                     <div class="introduction-box">
@@ -772,10 +813,10 @@
                                 </div>
                                 <div class="updata-time">
                                     <div class="updata-word">อัปเดตเมื่อ</div>
-                                    <div class="updata-date">2022/08/15</div>
+                                    <div class="updata-date">13 พ.ค. 2565</div>
                                 </div>
                                 <div class="kind-box">
-                                    <button class="kind-btn"><span>คาสิโน</span></button>
+                                    <button class="kind-btn"><img src="images/คาสิโน.jpg" alt=""></button>
                                 </div>
                             </div>
                         </section>
@@ -896,24 +937,24 @@
     </main>
 
     <div id="introduction-frame" class="introduction-frame">
-        <div class="frame-warp">
-            <div id="frame-header" class="frame-title">
+        <div class="introduction-frame-warp">
+            <div id="introduction-frame-header" class="introduction-frame-header">
                 <img src="images/P69_500x500.png" alt="">
                 <div>
                     <img src="images/PAY69_title.jpg" alt="">
                     <div>เกี่ยวกับเกมนี้</div>
                 </div>
-                <button id="close-btn">
+                <button id="introduction-close-btn">
                     <span class="material-symbols-outlined">close</span>
                 </button>
             </div>
-            <div id="frame-main" class="frame-main">
+            <div id="introduction-frame-main" class="introduction-frame-main">
                 <div class="frame-scroll">
                     <img src="images/pay69.jpg" alt="">
                     <div class="frame-line"></div>
                     <div class="frame-list">
                         <div>
-                            版本
+                            เวอร์ชัน
                             <div>1.0.0</div>
                         </div>
                         <div>
@@ -921,28 +962,38 @@
                             <div>2022/05/13</div>
                         </div>
                         <div>
-                            Android最低版本要求
-                            <div>4.4版本以上</div>
+                            เวอร์ชัน ที่กำหนด
+                            <div>4.4 และสูงกว่า</div>
                         </div>
                         <div>
                             ดาวน์โหลด
                             <div>50,000+</div>
                         </div>
                         <div>
-                            內容分級
-                            <div>18 歲以上 • 模擬賭博瞭解詳情</div>
+                            การจัดประเภทเนื้อหา
+                            <div>ประเภท18+ การพนันจำลอง ดูข้อมูลเพิ่มเติม</div>
                         </div>
                         <div>
-                            權限
-                            <div>查看詳細資料</div>
+                            สิทธิ์
+                            <div>ดูรายละเอียด</div>
                         </div>
                         <div>
-                            提供者
+                            เสนอโดย
                             <div>Cherry_Red</div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div id="img-frame" class="img-frame">
+        <div id="img-frame-header" class="img-frame-header">
+            <button id="img-close-btn">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+        <div class="img-frame-main">
+            <img id="frame-big-img" src="" alt="">
         </div>
     </div>
     
@@ -969,11 +1020,11 @@
 
     </script>
     <script>
-        let frameMain = document.querySelector('#frame-main')
-        let frameHeader = document.querySelector('#frame-header')
+        let frameMain = document.querySelector('#introduction-frame-main')
+        let frameHeader = document.querySelector('#introduction-frame-header')
         let introductionFrame = document.querySelector('#introduction-frame')
         let introductionBtn = document.querySelector('#introduction-btn')
-        let closeBtn = document.querySelector('#close-btn')
+        let intrCloseBtn = document.querySelector('#introduction-close-btn')
 
         introductionBtn.addEventListener('click',function(){
             if(introductionFrame.classList.contains('show') == false){
@@ -983,7 +1034,7 @@
                 introductionFrame.classList.remove('show')
             }
         })
-        closeBtn.addEventListener('click',function(){
+        intrCloseBtn.addEventListener('click',function(){
             introductionFrame.classList.remove('show')
         })
         frameMain.addEventListener('scroll',function(){
@@ -993,7 +1044,22 @@
                 frameHeader.classList.remove('shadow')
             }
         })
-
+    </script>
+    <script>
+        let imgBtn = document.querySelectorAll('[name=img-btn]')
+        let imgFrame = document.querySelector('#img-frame')
+        let bigImg = document.querySelector('#frame-big-img')
+        let imgCloseBtn = document.querySelector('#img-close-btn')
+        
+        for (i=0; i<imgBtn.length; i++){
+            imgBtn[i].addEventListener('click', function(){
+                imgFrame.classList.add('show')
+                bigImg.setAttribute('src',this.src)
+            })
+        }
+        imgCloseBtn.addEventListener('click',function(){
+            imgFrame.classList.remove('show')
+        })
     </script>
 </body>
 </html>
