@@ -537,7 +537,7 @@
             display: flex;
             width: 100%;
             background-color: #fff;
-            border-radius: 8px;
+            border-radius: 8px 8px 0 0;
             padding: 24px 32px;
         }
         .introduction-frame-header>img{
@@ -1020,6 +1020,7 @@
 
     </script>
     <script>
+        let bodyEl = document.body
         let frameMain = document.querySelector('#introduction-frame-main')
         let frameHeader = document.querySelector('#introduction-frame-header')
         let introductionFrame = document.querySelector('#introduction-frame')
@@ -1027,6 +1028,7 @@
         let intrCloseBtn = document.querySelector('#introduction-close-btn')
 
         introductionBtn.addEventListener('click',function(){
+            bodyEl.style = "position:fixed";
             if(introductionFrame.classList.contains('show') == false){
                 console.log(developerBtn.childNodes)
                 introductionFrame.classList.add('show')
@@ -1035,6 +1037,7 @@
             }
         })
         intrCloseBtn.addEventListener('click',function(){
+            bodyEl.style = "position:relative";
             introductionFrame.classList.remove('show')
         })
         frameMain.addEventListener('scroll',function(){
@@ -1053,11 +1056,13 @@
         
         for (i=0; i<imgBtn.length; i++){
             imgBtn[i].addEventListener('click', function(){
+                bodyEl.style = "position:fixed";
                 imgFrame.classList.add('show')
                 bigImg.setAttribute('src',this.src)
             })
         }
         imgCloseBtn.addEventListener('click',function(){
+            bodyEl.style = "position:relative";
             imgFrame.classList.remove('show')
         })
     </script>
