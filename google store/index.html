@@ -520,6 +520,21 @@
             max-height: 90%;
             max-width: 80%;
         }
+        .img-frame-main button{
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            font-size: 24px;
+            padding: 12px;
+        }
+        .img-frame-main button:nth-child(1){left: 24px;}
+        .img-frame-main button:nth-child(3){right: 24px;}
+        .img-frame-main button span{margin: 0;}
 
         .introduction-frame-warp{
             position: relative;
@@ -796,9 +811,9 @@
                 <div class="left-side">
                     <div class="img-box">
                         <div>
-                            <img name="img-btn" src="https://play-lh.googleusercontent.com/7Zv2NPKfiV9UoNaIqoMp_brhBoqJe2Y4YxCGe_L0Cr9c1DnQaRVK02IZa3IbbKB9i-oL=w526-h296-rw" alt="">
-                            <img name="img-btn" src="https://play-lh.googleusercontent.com/7Zv2NPKfiV9UoNaIqoMp_brhBoqJe2Y4YxCGe_L0Cr9c1DnQaRVK02IZa3IbbKB9i-oL=w526-h296-rw" alt="">
-                            <img name="img-btn" src="https://play-lh.googleusercontent.com/7Zv2NPKfiV9UoNaIqoMp_brhBoqJe2Y4YxCGe_L0Cr9c1DnQaRVK02IZa3IbbKB9i-oL=w526-h296-rw" alt="">
+                            <img name="img-btn" data-num="0" src="https://play-lh.googleusercontent.com/PfaMniPnr3NI5Fb69dBNv88TjJC5j5aKoirY_0eWACsYzQjikbSZGfFODgKZlSc9SA=w526-h296" alt="">
+                            <img name="img-btn" data-num="1" src="https://play-lh.googleusercontent.com/mYlKN32uxuIGezTneo6t6AEUBSIqkd84zREobZ-JXqrEshLVIvyK8Gg-e2NZvzCwY9k=w526-h296" alt="">
+                            <img name="img-btn" data-num="2" src="https://play-lh.googleusercontent.com/7Zv2NPKfiV9UoNaIqoMp_brhBoqJe2Y4YxCGe_L0Cr9c1DnQaRVK02IZa3IbbKB9i-oL=w526-h296" alt="">
                         </div>
                     </div>
                     <div class="introduction-box">
@@ -993,7 +1008,9 @@
             </button>
         </div>
         <div class="img-frame-main">
+            <button id="img-frame-before"><span class="material-symbols-outlined">navigate_before</span></button>
             <img id="frame-big-img" src="" alt="">
+            <button id="img-frame-next"><span class="material-symbols-outlined">navigate_next</span></button>
         </div>
     </div>
     
@@ -1019,7 +1036,9 @@
         })
 
     </script>
+
     <script>
+        // 遊戲介紹
         let bodyEl = document.body
         let frameMain = document.querySelector('#introduction-frame-main')
         let frameHeader = document.querySelector('#introduction-frame-header')
@@ -1048,23 +1067,62 @@
             }
         })
     </script>
+
     <script>
+        // 大圖片
         let imgBtn = document.querySelectorAll('[name=img-btn]')
         let imgFrame = document.querySelector('#img-frame')
         let bigImg = document.querySelector('#frame-big-img')
         let imgCloseBtn = document.querySelector('#img-close-btn')
-        
+        let imgBeforeBtn = document.querySelector('#img-frame-before')
+        let imgNextBtn = document.querySelector('#img-frame-next')
+        let imgSrcArry = []
+
         for (i=0; i<imgBtn.length; i++){
+            imgSrcArry[i] = imgBtn[i].src
             imgBtn[i].addEventListener('click', function(){
                 bodyEl.style = "position:fixed";
                 imgFrame.classList.add('show')
-                bigImg.setAttribute('src',this.src)
+                let num =  parseInt(this.dataset.num)
+                changeBtn(num)
+                changeImg(num)
             })
         }
         imgCloseBtn.addEventListener('click',function(){
             bodyEl.style = "position:relative";
             imgFrame.classList.remove('show')
+            return
         })
+        function changeImg(num){
+            imgBeforeBtn.addEventListener('click',function(){
+                num--
+                bigImg.setAttribute('src',imgSrcArry[num])
+                changeBtn(num)
+                return 
+            })
+            imgNextBtn.addEventListener('click',function(){
+                num++
+                bigImg.setAttribute('src',imgSrcArry[num])
+                changeBtn(num)
+                return 
+            })
+        }
+        function changeBtn(num){
+            if(num == 0){
+                imgBeforeBtn.style = "display: none;"
+                imgNextBtn.style = "display: flex;"
+                bigImg.setAttribute('src',imgSrcArry[num])
+            }else if(num == 1){
+                imgBeforeBtn.style = "display: flex;"
+                imgNextBtn.style = "display: flex;"
+                bigImg.setAttribute('src',imgSrcArry[num])
+            }else{
+                imgBeforeBtn.style = "display: flex;"
+                imgNextBtn.style = "display: none;"
+                bigImg.setAttribute('src',imgSrcArry[num])
+            }
+            return
+        }
     </script>
 </body>
 </html>
