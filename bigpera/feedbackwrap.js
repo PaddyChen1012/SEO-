@@ -87,10 +87,13 @@ var ul = document.querySelectorAll('.slide>ul') //获取存放旋转轮播图的
 var arrow = document.querySelector('.arrow') //获取存放左右切换按钮容器
 var timer = null //开启定时器实现自动轮播
 // 3.给容器添加数据，渲染好界面
+console.log(ul)
 if(window.innerWidth > 500){
     var slideList = ul[0].children //每一个轮播图容器集合
+    console.log(1)
 }else{
     var slideList = ul[1].children
+    console.log(2) 
 }
 function renderData(){
 	for(var i = 0;i<slideList.length;i++){
