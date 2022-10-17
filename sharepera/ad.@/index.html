@@ -12,14 +12,17 @@
     <link rel="shortcut icon" href="images/517402_10680911_2008768_2cac98b1_image-removebg-preview.png" type="image/x-icon">
     <style>
         *{position:relative;margin:0;padding:0;box-sizing:border-box;font-family:'Maitree', serif;}
-        body{width:100%;height:100vh;background-color:#000;overflow-x:hidden;}
+        body{background-color:#000;padding: 0;margin: 0;overflow: hidden;}
         .pc{display:flex;}
         .ph{display:none;}
-        .box{position:relative;top:0;left:0;width:100%;height:100%;overflow:hidden;display: flex;align-items: center;}
-        .wrap{position:relative;width:100%;height:51vw;min-height:100vh;background:url(images/LP0622-BG_1920x1080.jpg)no-repeat center/contain;}
+        .page-container {position:relative;top:0;transition:all 1000ms ease;touch-action:none;}
+        .wrap{position:relative;width:100%;height: 100vh;}
+        .wrap-0{background:linear-gradient(180deg, black 0%, transparent 5%,transparent 95%, black 100%),url(images/LP0622-BG_1920x1080.jpg)no-repeat center/contain;}
+        .wrap-1{background:linear-gradient(180deg, black 0%, transparent 5%,transparent 95%, black 100%),url(images/LP1014_1920x1080.jpg)no-repeat center/contain;}
+        .wrap-2{background:linear-gradient(180deg, black 0%, transparent 5%,transparent 95%, black 100%),url(images/LP1014-2_1920x1080.jpg)no-repeat center/contain;}
         .btn{position:absolute;right:50%;bottom:12%;width:20%;transform:translate(50%,50%);}
         .ph.btn{right:50%;bottom: 10%;width:70%;}
-        .btn-box{position:absolute;bottom:1%;left: 30%;display:flex;width: 40%;justify-content:space-between;}
+        .btn-box{position:absolute;bottom:3%;left: 30%;display:flex;width: 40%;justify-content:space-between;}
         .btn-box a{margin:0 auto;}
         img{width:100%;}
         .animation{animation:animation infinite alternate ease .6s both;}
@@ -31,14 +34,19 @@
             h1{font-size:1.5rem;}
             .pc{display:none;}
             .ph{display:flex;}
-            .wrap{min-height:100vh;background:url(images/LP0622-BG_1080x1920.jpg)no-repeat center/contain;}
+            .wrap-0{background:linear-gradient(180deg, black 0%, transparent 5%,transparent 95%, black 100%),url(images/LP0622-BG_1080x1920.jpg)no-repeat center/contain;}
+            .wrap-1{background:linear-gradient(180deg, black 0%, transparent 5%,transparent 95%, black 100%),url(images/LP1014_1080x1920.jpg)no-repeat center/contain;}
+            .wrap-2{background:linear-gradient(180deg, black 0%, transparent 5%,transparent 95%, black 100%),url(images/LP1014-2_1080x1920.jpg)no-repeat center/contain;}
             .wrap::before{content:unset;}
             .bubble{position:absolute;top: 26%;width: 22%;padding-bottom: 23%;}
             .btn-box{bottom: 7.5%;left: 10%;display:block;width: 80%;}
+            .btn-box-1{bottom: 2%;}
             .btn-box a{margin-bottom:0;}
         }
         @media screen and (max-width:500px) {
-            .wrap{min-height:100vh;background:url(images/LP0622-BG_1080x1920.jpg)no-repeat center/contain;}
+            .wrap-0{background:linear-gradient(180deg, black 0%, transparent 5%,transparent 95%, black 100%),url(images/LP0622-BG_1080x1920.jpg)no-repeat center/contain;}
+            .wrap-1{background:linear-gradient(180deg, black 0%, transparent 5%,transparent 95%, black 100%),url(images/LP1014_1080x1920.jpg)no-repeat center/contain;}
+            .wrap-2{background:linear-gradient(180deg, black 0%, transparent 5%,transparent 95%, black 100%),url(images/LP1014-2_1080x1920.jpg)no-repeat center/contain;}
             .bubble{position:absolute;top: 33%;width: 25%;padding-bottom: 27%;}
         }
     </style>
@@ -53,12 +61,103 @@
     </script>
 </head>
 <body>
-    <div class="box">
-        <div id="wrap" class="wrap"></div>
-        <div class="btn-box animation">
-            <a name="mm_link" class="pc" href="https://betjee.com/af/J24cTkAh/TH_FB"><img src="images/LP0622_700x150.png"></a>
-            <a name="mm_link" class="ph" href="https://betjee.com/af/J24cTkAh/TH_FB"><img src="images/LP0622_700x150.png" alt=""></a>
+    <div class="page-container" style="top:0;">
+        <div class="wrap wrap-0">
+            <div class="btn-box animation">
+                <a name="mm_link" class="pc" href="https://betjee.com/af/J24cTkAh/TH_FB"><img src="images/LP0622_700x150.png"></a>
+                <a name="mm_link" class="ph" href="https://betjee.com/af/J24cTkAh/TH_FB"><img src="images/LP0622_700x150.png"></a>
+            </div>
+        </div>
+        <div class="wrap wrap-1"></div>
+        <div class="wrap wrap-2">
+            <div class="btn-box btn-box-1 animation">
+                <a name="mm_link" class="pc" href="https://betjee.com/af/J24cTkAh/TH_FB"><img src="images/LP0622_700x150.png"></a>
+                <a name="mm_link" class="ph" href="https://betjee.com/af/J24cTkAh/TH_FB"><img src="images/LP0622_700x150.png"></a>
+            </div>
         </div>
     </div>
+    <script>
+        var container = document.querySelector('.page-container')
+        // 獲取瀏覽器視窗高度
+        var viewHeight = document.documentElement.clientHeight
+        // 獲取滾動的頁數
+        var pageNum = document.querySelectorAll('.wrap').length
+        // 初始化當前位置, 距離原始頂部距離
+        var currentPosition = 0
+        // 設置頁面高度
+        container.style.height = viewHeight + 'px'
+        // 向下滾動頁面
+        function goDown () {
+            if (currentPosition > - viewHeight * (pageNum - 1)) {
+                currentPosition = currentPosition - viewHeight
+                container.style.top = currentPosition + 'px'
+            }
+        }
+        // 向上滾動頁面
+        function goUp () {
+            if (currentPosition < 0) {
+                currentPosition = currentPosition + viewHeight
+                container.style.top = currentPosition + 'px'
+            }
+        }
+        </script>
+        <script>
+        // 節流函數
+        function throttle (fn, delay) {
+            let baseTime = 0
+            return function () {
+                const currentTime = Date.now()
+                if (baseTime + delay < currentTime) {
+                fn.apply(this, arguments)
+                baseTime = currentTime
+                }
+            }
+        }
+        </script>
+        <script>
+        // 初始鼠標滾動
+        var handlerWheel = throttle(scrollMove, 500)
+        let changClass = document.querySelector('.page-container')
+        let thisPage = 0
+        let pageNumber = changClass.children
+        let scrollMax = pageNumber.length - 1
+        let i = 0
+        // https://developer.mozilla.org/en-US/docs/Web/API/Element/mousewheel_event#The_detail_property
+        // firefox的頁面滾動事件其他瀏覽器不一樣
+        if (navigator.userAgent.toLowerCase().indexOf('firefox') === -1) {
+            document.addEventListener('mousewheel', handlerWheel, false)
+        } else {
+            document.addEventListener('DOMMouseScroll', handlerWheel, false)
+        }
+        function scrollMove (e) {
+            // 用頁面移動距離換算成目前的頁面
+            nowTop = Math.abs(parseInt(container.style.top))
+            let thisPage = nowTop / viewHeight
+            i = thisPage
+            if (e.deltaY > 0) {
+                goDown();
+            } else {
+                goUp()
+            }
+        } 
+        
+        </script>
+        <script>
+        // 處理移動端滑動
+        var touchStartY = 0
+        document.addEventListener('touchstart', event => {
+            touchStartY = event.touches[0].pageY
+        })
+        var handleTouchEnd = throttle(touchEnd, 500)
+        document.addEventListener('touchend', handleTouchEnd)
+        function touchEnd (e) {
+            var touchEndY = e.changedTouches[0].pageY
+            if (touchEndY - touchStartY < 0) { // 向上滑動, 頁面向下滾動
+                goDown();
+            } else {
+                goUp();
+            }
+        }
+        </script>
 </body>
 </html>
