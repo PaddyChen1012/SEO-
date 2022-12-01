@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/demo-01.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/demo-01.png" type="image/x-icon">
+    <title>THB 999</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        body {
+            background: -webkit-linear-gradient(315deg, #0a141c 0, #283436 100%);
+            background: -o-linear-gradient(315deg, #0a141c 0, #283436 100%);
+            background: linear-gradient(135deg, #0a141c 0, #283436 100%);
+        }
+
+        .download-box {
+            position: fixed;
+            display: grid;
+            grid-template-columns: 20% 55% 25%;
+            justify-items: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 50%;
+            background-color: rgba(255, 255, 255, .5);
+            padding: 16px;
+            z-index: 3;
+        }
+
+        .download-box img {
+            width: 100%;
+        }
+
+        .download-msg {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #fff;
+            -webkit-text-shadow: 0 0 2px #f2af07;
+            text-shadow: 0 0 10px #f2af07;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30%;
+            height: 100%;
+            max-width: 400px;
+            background: -webkit-linear-gradient(top, #283a39 68%, #060606);
+            background: -o-linear-gradient(top, #283a39 68%, #060606);
+            background: linear-gradient(180deg, #283a39 68%, #060606);
+            border-radius: 15px;
+            -webkit-box-shadow: inset 0 0 2px 2px #f2af07, inset 0 0 1px 2px #fff, inset 0 0 2px 4px #f2af07;
+            box-shadow: inset 0 0 2px 2px #f2af07, inset 0 0 1px 2px #fff, inset 0 0 2px 4px #f2af07;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 16px 0 32px;
+        }
+
+        .download-box .download-btn {
+            width: 100%;
+            margin: 0;
+        }
+
+        .warp {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .warp-img {
+            width: 50%;
+            z-index: 1;
+        }
+
+        .img-box {
+            display: grid;
+            width: 50%;
+            grid-template-columns: repeat(2, 50%);
+            justify-items: center;
+            align-items: center;
+            margin: 32px 0;
+        }
+
+        .img-box img {
+            width: 75%;
+        }
+
+        footer {
+            text-align: center;
+        }
+
+        footer p {
+            color: #fff;
+        }
+
+        footer a {
+            color: #f2af07;
+        }
+
+        .animation {
+            animation: animation infinite alternate linear .8s both;
+        }
+
+        .bulb-board-wrapper {
+            display: inline-flex;
+            width: 30%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        .bulb-board-wrapper:active {
+            transform: scale(0.7);
+        }
+
+        .btn {
+            font-size: 1.3em;
+            text-align: center;
+            text-decoration: none;
+            color: rgba(254, 234, 145, 1);
+            background: rgba(77, 76, 84, 1);
+            outline: none;
+            position: relative;
+            display: inline-block;
+            padding: 22px;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: inset 1px -1px 7px -1px #000;
+            font-weight: bold;
+        }
+
+        .btn:active {
+            box-shadow: inset -1px -1px 7px -1px #000;
+        }
+
+        .bulb-board {
+            position: relative;
+            display: inline-block;
+            padding: 15px;
+            /* background-color: #2c127e; */
+            background-color: rgba(53, 53, 62, 1);
+            border-radius: 10px;
+            overflow: hidden;
+            transform-origin: top center;
+            box-shadow: 2px 2px 9px 0px #000;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .bulb {
+            position: absolute;
+        }
+
+        .top-bulb,
+        .bottom-bulb {
+            width: calc(100% - 30px);
+            height: 15px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        .top-bulb {
+            top: 0;
+        }
+
+        .right-bulb,
+        .left-bulb {
+            height: 100%;
+            width: 15px;
+            bottom: 0;
+        }
+
+        .right-bulb {
+            right: 0;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        .left-bulb {
+            left: 0;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .bulb>ul>li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(236, 204, 104, 0.1);
+            animation-name: flash-1;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            position: relative;
+        }
+
+        .bulb>ul>li:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .bulb>ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+        }
+
+        .top-bulb>ul,
+        .bottom-bulb>ul {
+            flex-direction: row;
+        }
+
+        .right-bulb>ul,
+        .left-bulb>ul {
+            flex-direction: column;
+        }
+        /*Animation */
+        @keyframes flash-1 {
+            0% {
+                background: #f0b600;
+                background: rgba(236, 204, 104, 1);
+            }
+
+            100% {
+                background: rgba(236, 204, 104, 0.1);
+            }
+        }
+        @keyframes animation {
+            0% {
+                -webkit-filter: drop-shadow(0px 0px 0px #f2af07);
+            }
+
+            100% {
+                -webkit-filter: drop-shadow(0px 0px 20px #f2af07);
+            }
+        }
+        
+        @media screen and (max-width:500px) {
+            .download-box {
+                grid-template-columns: 20% 40% 40%;
+                width: 100%;
+                padding: 8px;
+            }
+
+            .download-msg h1 {
+                line-height: 1.75rem;
+                font-size: 1.5rem !important;
+            }
+
+            .download-msg h3 {
+                font-weight: 100;
+                font-size: .7rem !important;
+            }
+
+            .download-box .download-btn {
+                height: 90%;
+                font-size: 1.5rem !important;
+            }
+
+            .warp-img {
+                margin-top: 25%;
+            }
+
+            .warp-img,
+            .img-box {
+                width: 100%;
+            }
+
+            .bulb-board-wrapper {
+                width: 75%;
+                font-size: 2rem;
+            }
+
+            .img-box img {
+                width: 90%;
+            }
+        }
+        @media (max-width: 768px) {
+            .btn-primary {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+
+            .bulb-board {
+                padding: 16px;
+            }
+
+            .top-bulb,
+            .bottom-bulb {
+                height: 16px;
+            }
+
+            .right-bulb,
+            .left-bulb {
+                width: 16px;
+            }
+
+            .bulb>ul>li {
+                width: 8px;
+                height: 8px;
+            }
+
+            .right-bulb {
+                border-top-right-radius: 2px;
+                border-bottom-right-radius: 2px;
+            }
+
+            .left-bulb {
+                border-top-left-radius: 2px;
+                border-bottom-left-radius: 2px;
+            }
+        }
+
+        .delay01 {
+            animation-delay: 0.1s;
+        }
+
+        .delay02 {
+            animation-delay: 0.2s;
+        }
+
+        .delay03 {
+            animation-delay: 0.3s;
+        }
+
+        .delay04 {
+            animation-delay: 0.4s;
+        }
+
+        .delay05 {
+            animation-delay: 0.5s;
+        }
+
+        .delay06 {
+            animation-delay: 0.6s;
+        }
+
+        .delay07 {
+            animation-delay: 0.7s;
+        }
+
+        .delay08 {
+            animation-delay: 0.8s;
+        }
+
+        .delay09 {
+            animation-delay: 0.9s;
+        }
+
+        .delay1 {
+            animation-delay: 1s;
+        }
+
+        .delay12 {
+            animation-delay: 1.2s;
+        }
+
+        .delay13 {
+            animation-delay: 1.3s;
+        }
+
+        .delay14 {
+            animation-delay: 1.4s;
+        }
+
+        .delay15 {
+            animation-delay: 1.5s;
+        }
+
+        .delay16 {
+            animation-delay: 1.6s;
+        }
+
+        .delay17 {
+            animation-delay: 1.7s;
+        }
+
+        .delay18 {
+            animation-delay: 1.8s;
+        }
+
+        .delay19 {
+            animation-delay: 1.9s;
+        }
+
+        .delay20 {
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="download-box">
+        <img src="images/demo-01.png" alt="">
+        <div class="download-msg">
+            <h1>THB 999</h1>
+            <h3>
+                <p>โปรดดาวน์โหลดและติดตั้ง</p>
+                <p>เราปกป้องความเป็นส่วนตัวของคุณ</p>
+            </h3>
+        </div>
+        <a id="download-btn" class="download-btn animation" href="https://thb999.freepera.com/THB999_150_20221115.apk">ดาวน์โหลด</a>
+    </div>
+    <div class="warp">
+        <img class="warp-img" src="images/LP1114(thb999)_1040x1040.png" alt="">
+        <!-- <a class="download-btn animation" href="https://thb999.freepera.com/THB999_150_20221115.apk">ดาวน์โหลด</a> -->
+        <a href="https://thb999.freepera.com/THB999_150_20221115.apk" class='bulb-board-wrapper'>
+            <div class='bulb-board'>
+                <div class="btn-animation btn delay07"><span>ดาวน์โหลด</span></div>
+                <div class='top-bulb bulb'>
+                    <ul>
+                        <li class="delay01"></li>
+                        <li class="delay02"></li>
+                        <li class="delay03"></li>
+                        <li class="delay04"></li>
+                        <li class="delay05"></li>
+                        <li class="delay06"></li>
+                    </ul>
+                </div>
+                <div class='right-bulb bulb'>
+                    <ul>
+                        <li class="delay07"></li>
+                        <li class="delay08"></li>
+                        <li class="delay09"></li>
+                    </ul>
+                </div>
+                <div class='bottom-bulb bulb'>
+                    <ul>
+                        <li class="delay16"></li>
+                        <li class="delay15"></li>
+                        <li class="delay14"></li>
+                        <li class="delay13"></li>
+                        <li class="delay12"></li>
+                        <li class="delay1"></li>
+                    </ul>
+                </div>
+                <div class='left-bulb bulb'>
+                    <ul>
+                        <li class="delay19"></li>
+                        <li class="delay18"></li>
+                        <li class="delay17"></li>
+                    </ul>
+                </div>
+            </div>
+        </a>
+        <div class="img-box">
+            <img src="images/LP1012-baccarat_500x500.png" alt="">
+            <img src="images/LP1012-fishing_500x500.png" alt="">
+            <img src="images/LP1012-lottery_500x500.png" alt="">
+            <img src="images/LP1012-slot_500x500.png" alt="">
+        </div>
+    </div>
+    <footer>
+        <p>เกมนี้เหมาะสำหรับกลุ่มอายุ 18 ปีขึ้นไปเท่านั้น</p>
+        <div>
+            <a href="https://thb999.freepera.com/THB999_150_20221115.apk">เกี่ยวกับเรา</a>
+            <a href="https://thb999.freepera.com/THB999_150_20221115.apk">ข้อตกลงและเงื่อนไข</a>
+            <a href="https://thb999.freepera.com/THB999_150_20221115.apk">นโยบายความเป็นส่วนตัว</a>
+            <a href="https://thb999.freepera.com/THB999_150_20221115.apk">นโยบายการยกเลิกและการคืนเงิน</a>
+        </div>
+        <p>Copyright 2022 3 THB 999 All rights reseved</p>
+    </footer>
+</body>
+<script>
+    let downloadMsg = document.querySelector('.download-msg')
+    let downloadBtn = document.querySelector('#download-btn')
+    window.onload = function () {
+        h1Size = window.innerWidth / 500
+        h2Size = window.innerWidth / 750
+        h3Size = window.innerWidth / 1000
+        downloadMsg.children[0].style.fontSize = h1Size + 'rem';
+        downloadMsg.children[1].style.fontSize = h3Size + 'rem';
+        downloadBtn.style.fontSize = h2Size + 'rem';
+    }
+    window.onresize = function () {
+        h1Size = window.innerWidth / 500
+        h2Size = window.innerWidth / 750
+        h3Size = window.innerWidth / 1000
+        downloadMsg.children[0].style.fontSize = h1Size + 'rem';
+        downloadMsg.children[1].style.fontSize = h3Size + 'rem';
+        downloadBtn.style.fontSize = h2Size + 'rem';
+    }
+</script>
+
+</html>

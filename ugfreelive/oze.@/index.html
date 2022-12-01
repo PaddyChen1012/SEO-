@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.PAP2drY.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.PAP2drY.ico" type="image/x-icon">
+    <title>OZE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        body {
+            background: #000;
+        }
+
+        .download-box {
+            position: fixed;
+            display: grid;
+            grid-template-columns: 20% 55% 25%;
+            justify-items: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 50%;
+            background-color: rgba(255, 255, 255, .5);
+            padding: 16px;
+            z-index: 3;
+        }
+
+        .download-box img {
+            width: 100%;
+        }
+
+        .download-msg {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #ffffb2;
+            -webkit-text-shadow: 0 0 2px #c49a5a;
+            text-shadow: 0 0 10px #c49a5a;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30%;
+            height: 100%;
+            max-width: 400px;
+            background: -webkit-linear-gradient(180deg, #222 0%, #000 68%, #555 100%);
+            background: -o-linear-gradient(180deg, #222 0%, #000 68%, #555 100%);
+            background: linear-gradient(180deg, #222 0%, #000 68%, #555 100%);
+            border-radius: 15px;
+            -webkit-box-shadow: inset 0 0 2px 2px #ffffb2, inset 0 0 1px 2px #fff, inset 0 0 2px 4px #eeb229;
+            box-shadow: inset 0 0 2px 2px #ffffb2, inset 0 0 1px 2px #fff, inset 0 0 2px 4px #eeb229;
+            color: #ffffb2;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 16px 0 32px;
+        }
+
+        .download-box .download-btn {
+            width: 100%;
+            margin: 0;
+        }
+
+        .warp {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .warp-img {
+            margin-bottom: -6%;
+            width: 50%;
+            z-index: 1;
+        }
+
+        .img-box {
+            display: grid;
+            width: 50%;
+            grid-template-columns: repeat(2, 50%);
+            justify-items: center;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .img-icon{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 200px;
+            padding: 2rem;
+            background: -webkit-linear-gradient(180deg, #222 0%, #000 82%, #555 100%);
+            background: -o-linear-gradient(180deg, #222 0%, #000 82%, #555 100%);
+            background: linear-gradient(180deg, #222 0%, #000 82%, #555 100%);
+            border-radius: 15px;
+            -webkit-box-shadow: inset 0 0 2px 2px #ffffb2, inset 0 0 1px 2px #fff, inset 0 0 2px 4px #eeb229;
+            box-shadow: inset 0 0 2px 2px #ffffb2, inset 0 0 1px 2px #fff, inset 0 0 2px 4px #eeb229;
+            margin-bottom: 4rem;
+        }
+
+        .img-box img {
+            width: 100%;
+        }
+
+        .bulb-board-wrapper{
+            z-index: 1;
+        }
+
+        .img-icon span{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            color: #ffffb2;
+            font-size: 1.5rem;
+            font-weight: bolder;
+            font-family: 'Charmonman', cursive;
+            font-family: 'Playfair Display', serif;
+            padding: .5rem 0;
+            text-align: center;
+        }
+
+        .button{
+            cursor: pointer;
+            text-shadow: 0 0.125rem 0.1875rem #000000cc;
+            background-color: transparent;
+            background-repeat: no-repeat,no-repeat,no-repeat;
+            background-size: 4rem 100%,4rem 100%,calc(100% - 8rem + 2px) 100%;
+            background-position: 0,100%,left calc(4rem - 1px) top 0;
+            background-image: url(images/btn_img_confirm_normal_left.6665b3f.png),url(images/btn_img_confirm_normal_right.925e4ae.png),url(images/btn_img_confirm_normal_midle.png);
+            border: 0;
+            color: #fff1bb;
+            font-family: 'Charmonman', cursive;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            padding: 1rem 4rem;
+        }
+
+        footer {
+            text-align: center;
+        }
+
+        footer p {
+            color: #fff;
+        }
+
+        footer a {
+            color: #c49a5a;
+        }
+
+        .animation {
+            animation: animation infinite alternate linear .8s both;
+        }
+
+        /*Animation */
+        @keyframes animation {
+            0% {
+                -webkit-filter: drop-shadow(0px 0px 0px #c49a5a);
+            }
+
+            100% {
+                -webkit-filter: drop-shadow(0px 0px 20px #c49a5a);
+            }
+        }
+        @media (max-width: 768px) {
+            .warp-img {
+                margin-top: 16%;
+                margin-bottom: -16%;
+                width: 150%
+            }
+            .img-icon {
+                width: 90%;
+            }
+            .button {
+                background-size: 6rem 100%,6rem 100%,calc(100% - 12rem + 2px) 100%;
+                background-position: 0,100%,left calc(6rem - 1px) top 0;
+                background-image: url(images/btn_img_confirm_normal_left.6665b3f.png),url(images/btn_img_confirm_normal_right.925e4ae.png),url(images/btn_img_confirm_normal_midle.png);
+                font-size: 2rem;
+                padding: 2rem 8rem;
+            }
+        }
+        @media screen and (max-width:500px) {
+            .download-box {
+                grid-template-columns: 20% 40% 40%;
+                width: 100%;
+                padding: 8px;
+            }
+
+            .download-msg h1 {
+                line-height: 1.75rem;
+                font-size: 1.5rem !important;
+            }
+
+            .download-msg h3 {
+                font-weight: 100;
+                font-size: .7rem !important;
+            }
+
+            .download-box .download-btn {
+                height: 90%;
+                font-size: 1.5rem !important;
+            }
+
+            .warp-img {
+                margin-top: 25%;
+                width: 150%;
+            }
+
+            .img-box {
+                width: 100%;
+            }
+
+            .img-icon {
+                margin-bottom: 1rem;
+            }
+            .button{
+                background-size: 4rem 100%,4rem 100%,calc(100% - 8rem + 2px) 100%;
+                background-position: 0,100%,left calc(4rem - 1px) top 0;
+                padding: 1rem 4rem;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="download-box">
+        <img src="images/oze_icon_180x180.png">
+        <div class="download-msg">
+            <h1>OZE</h1>
+            <h3>
+                <p>Please feel to download and install</p>
+                <p>We protect your privac and security</p>
+            </h3>
+        </div>
+        <a id="download-btn" class="download-btn animation" href="https://oze.ugfreelive.com/OZE_20221125.apk">Nhận thưởng</a>
+    </div>
+    <div class="warp">
+        <img class="warp-img" src="images/1622604606996_uv3y2u.png">
+        <!-- <a class="download-btn animation" href="https://oze.ugfreelive.com/OZE_20221125.apk">Download</a> -->
+        <a href="https://oze.ugfreelive.com/OZE_20221125.apk" class='bulb-board-wrapper'>
+            <button type="button" class="button">Nhận thưởng</button>
+        </a>
+        <div class="img-box">
+            <div class="img-icon"><img src="images/Diamond.png"><span>Kim cương</span></div>
+            <div class="img-icon"><img src="images/inbox.png"><span>Hòm thư</span></div>
+            <div class="img-icon"><img src="images/Mission.png"><span>Nhiệm vụ</span></div>
+            <div class="img-icon"><img src="images/Rank.png"><span>Xếp hàng</span></div>
+        </div>
+    </div>
+    <footer>
+        <p>This game is only meant for the 18+ age group</p>
+        <div>
+            <a href="https://oze.ugfreelive.com/OZE_20221125.apk">About Us</a>
+            <a href="https://oze.ugfreelive.com/OZE_20221125.apk">Terms & Conditions</a>
+            <a href="https://oze.ugfreelive.com/OZE_20221125.apk">Privacy Policy</a>
+            <a href="https://oze.ugfreelive.com/OZE_20221125.apk">Cancellation & Refund Policy</a>
+        </div>
+        <p>Copyright 2022 OZE All rights reseved</p>
+    </footer>
+</body>
+<script>
+    let downloadMsg = document.querySelector('.download-msg')
+    let downloadBtn = document.querySelector('#download-btn')
+    window.onload = function () {
+        h1Size = window.innerWidth / 500
+        h2Size = window.innerWidth / 750
+        h3Size = window.innerWidth / 1000
+        downloadMsg.children[0].style.fontSize = h1Size + 'rem';
+        downloadMsg.children[1].style.fontSize = h3Size + 'rem';
+        downloadBtn.style.fontSize = h2Size + 'rem';
+    }
+    window.onresize = function () {
+        h1Size = window.innerWidth / 500
+        h2Size = window.innerWidth / 750
+        h3Size = window.innerWidth / 1000
+        downloadMsg.children[0].style.fontSize = h1Size + 'rem';
+        downloadMsg.children[1].style.fontSize = h3Size + 'rem';
+        downloadBtn.style.fontSize = h2Size + 'rem';
+    }
+</script>
+
+</html>

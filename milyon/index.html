@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        /* All */
+        html,body {padding: 0;margin: 0;overflow: hidden;}
+        *{box-sizing: border-box;padding: 0;margin: 0;}
+        .page-item:nth-child(1){background: url(images/ruslan-leschev-bg-01.jpg)no-repeat center/cover;}
+        .page-item:nth-child(2){background: no-repeat center/cover;
+            background-image: -webkit-cross-fade(linear-gradient(0deg, #000, #000), url(images/valentin-perouelle-noam-valentin-perouelle-1.jpg), 50%);
+            background-image: cross-fade(linear-gradient(0deg, #000, #000), url(images/valentin-perouelle-noam-valentin-perouelle-1.jpg), 50%);
+        }
+        .page-item:nth-child(3){background: url(images/ruslan-leschev-bg-02.jpg)no-repeat center/cover;}
+        .page-item:nth-child(4){background: url(images/Product.jpg)no-repeat center/cover;} 
+        .page-container {position:relative;top:0;transition:all 1000ms ease;touch-action:none;}
+        .logo{top: 0%;width: 185px;z-index: 100;transition: all .4s ease;}
+        /* .tag-box{position:fixed;display:flex;flex-direction:column;top:calc(50% - 120px);left:2%;width:160px;height:240px;z-index:1;}
+        .tag-btn{width:100%;height:100%;cursor:pointer;transition:all .8s ease;}
+        .active.tag-btn {background-color:cornflowerblue;} */
+        .page-item {display:flex;position:relative;justify-content:center;align-items:center;width:100%;height:100%;transition:all .8s ease;}
+        /* 濃霧出現效果 */
+        .active.tag-btn, .active.page-item {
+            -webkit-mask: url(images/masky.png);
+            -webkit-mask-size: 3000% 100%;
+            -webkit-mask-position: 0 0;
+            -webkit-animation: mask .8s steps(24) forwards;
+            -webkit-animation-delay: .4s;
+        }
+        @keyframes mask{from{-webkit-mask-position:0 0}to{-webkit-mask-position:100% 0}}
+        
+        /* Page_1 */
+        .active .mascot {
+            top:5%;
+            left:40%;
+            width: 20%;
+            -webkit-animation: mascot alternate linear .8s both;
+            -webkit-animation-delay: 2s;
+        }
+        @keyframes mascot{0%{opacity: 0;transform: translateY(100px);}100%{opacity: 1;transform: translateY(0px);}}
+        #page0.active .logo{
+            top:45%;
+            left:34.6%;
+            width:30%;
+            -webkit-animation: logo alternate linear .8s both;
+            -webkit-animation-delay: 1s;
+        }
+        @keyframes logo{0%{opacity: 0;transform: translateY(100px);}100%{opacity: 1;transform: translateY(0px);}}
+        /* Page_2 */
+        .banner {
+            width: 700px;
+            height: 245px;
+            cursor: pointer;
+            text-shadow: 0 0.125rem 0.1875rem #000000cc;
+            background-color: transparent;
+            background-repeat: no-repeat, no-repeat, no-repeat;
+            background-size: 103px 100%, 103px 100%, calc(100% - 206px + 2px) 90%;
+            background-position: 0, 100%, left calc(50% - 1px) top 50%;
+            background-image: url(images/btn-l.png), url(images/btn-r.png), url(images/btn-m.png);
+            border: 0;
+            color: #fff1bb;
+            font-size: 2rem;
+        }
+
+        .banner-img {
+            top: 50%;
+            left: 50%;
+            width: calc(100% - 210px);
+            font-weight: bolder;
+            transform: translate(-50%,-50%);
+            /* animation: btnAnimation2 alternate linear .4s 1.8s both; */
+        }
+
+        .active .banner {
+            animation: btnAnimation1 alternate linear .8s 1s both;
+        }
+
+        @keyframes btnAnimation1 {
+            0%{
+                transform: rotateZ(-360deg);
+                width: 206px;
+            }
+            75%{
+                transform: rotateZ(0deg);
+            }
+            75% {
+                width: 206px;
+            }
+
+            100% {
+                width: 700px;
+            }
+        }
+
+        /* Page_3 */
+        .game-icon{
+            top: 50%;
+            left: 50%;
+            width: 40%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+        .active .game-bg{
+            animation: rotate infinite linear 16s 1.8s both;
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+        #page2 span {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            bottom: 10%;
+            left: 20%;
+            width: 60%;
+            height: 10%;
+            background: #7a3e00;
+            border-radius: 5px;
+            -webkit-box-shadow: inset 0 0 2px 2px #f3bd39, inset 0 0 1px 2px #59200a, inset 0 0 2px 4px #bd6609;
+            box-shadow: inset 0 0 2px 2px #f3bd39, inset 0 0 1px 2px #59200a, inset 0 0 2px 4px #bd6609;
+            color: #ffffb2;
+            font-size: 1.5rem;
+            font-weight: bolder;
+            text-align: center;
+        }
+        /* Page_4 */
+
+        /* RWD 響應式 */
+        @media screen and (max-width:500px) {
+            .tag-box{display:none;}
+        }
+    </style>
+</head>
+<body oncontextmenu="return false">
+    <!-- <div id="loading-page" class="justify-content-center align-items-center text-light" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;display:flex;background-color: #000;z-index: 3;">加載中...</div> -->
+    <!-- <div class="tag-box">
+        <div data-num="0" class="d-flex align-items-center justify-content-center text-light font-weight-bolder tag-btn active">頁面測試</div>
+        <div data-num="1" class="d-flex align-items-center justify-content-center text-light font-weight-bolder tag-btn">頁面測試</div>
+        <div data-num="2" class="d-flex align-items-center justify-content-center text-light font-weight-bolder tag-btn">頁面測試</div>
+        <div data-num="3" class="d-flex align-items-center justify-content-center text-light font-weight-bolder tag-btn">頁面測試</div>
+    </div> -->
+    <div class="page-container" style="top:0;">
+        <div class="page-item active" id="page0">
+            <img class="position-absolute mascot" src="images/photo_2022-11-02_14-06-49-removebg-preview.png" alt="">
+            <img class="position-fixed logo" src="images/milyon-LOBYLOGO.png" alt="">
+        </div>
+        <div class="page-item" id="page1">
+            <div class="row w-100 h-75 mt-auto">
+                <div class="col-12 col-md-6 d-flex align-items-center justify-content-end"><div class="position-relative banner"><img class="position-absolute banner-img" src="images/PromotionInfoLanguage.png" alt=""></div></div>
+                <div class="col-12 col-md-6 d-flex align-items-center justify-content-start"><div class="position-relative banner"><img class="position-absolute banner-img" src="images/PromotionInfoLanguage.png" alt=""></div></div>
+                <div class="col-12 col-md-6 d-flex align-items-center justify-content-end"><div class="position-relative banner"><img class="position-absolute banner-img" src="images/PromotionInfoLanguage.png" alt=""></div></div>
+                <div class="col-12 col-md-6 d-flex align-items-center justify-content-start"><div class="position-relative banner"><img class="position-absolute banner-img" src="images/PromotionInfoLanguage.png" alt=""></div></div>
+            </div>
+        </div>
+        <div class="page-item" id="page2">
+            <div class="row w-100 h-50 mt-auto">
+                <div class="col-6 col-md-3 d-flex align-items-center justify-content-center">
+                    <img class="position-absolute game-icon" src="images/slots.png" alt=""><img class="w-100 game-bg" src="images/icon-bg.png" alt="">
+                    <span>Slot</span>
+                </div>
+                <div class="col-6 col-md-3 d-flex align-items-center justify-content-center">
+                    <img class="position-absolute game-icon" src="images/fishing.png" alt=""><img class="w-100 game-bg" src="images/icon-bg.png" alt="">
+                    <span>Fisher</span>
+                </div>
+                <div class="col-6 col-md-3 d-flex align-items-center justify-content-center">
+                    <img class="position-absolute game-icon" src="images/sport.png" alt=""><img class="w-100 game-bg" src="images/icon-bg.png" alt="">
+                    <span>Sport</span>
+                </div>
+                <div class="col-6 col-md-3 d-flex align-items-center justify-content-center">
+                    <img class="position-absolute game-icon" src="images/live-game.png" alt=""><img class="w-100 game-bg" src="images/icon-bg.png" alt="">
+                    <span>Live</span>
+                </div>
+            </div>
+        </div>
+        <div class="page-item" id="page3">
+            <div class="page h-100 py-3"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script>
+    var container = document.querySelector('.page-container')
+    // 獲取瀏覽器視窗高度
+    var viewHeight = document.documentElement.clientHeight
+    // 獲取滾動的頁數
+    var pageNum = document.querySelectorAll('.page-item').length
+    // 初始化當前位置, 距離原始頂部距離
+    var currentPosition = 0
+    // 設置頁面高度
+    container.style.height = viewHeight + 'px'
+    // 向下滾動頁面
+    function goDown () {
+        if (currentPosition > - viewHeight * (pageNum - 1)) {
+            currentPosition = currentPosition - viewHeight
+            container.style.top = currentPosition + 'px'
+        }
+    }
+    // 向上滾動頁面
+    function goUp () {
+        if (currentPosition < 0) {
+            currentPosition = currentPosition + viewHeight
+            container.style.top = currentPosition + 'px'
+        }
+    }
+    </script>
+    <script>
+    // 節流函數
+    function throttle (fn, delay) {
+        let baseTime = 0
+        return function () {
+            const currentTime = Date.now()
+            if (baseTime + delay < currentTime) {
+            fn.apply(this, arguments)
+            baseTime = currentTime
+            }
+        }
+    }
+    </script>
+    <script>
+    // 初始鼠標滾動
+    var handlerWheel = throttle(scrollMove, 1000)
+    let changClass = document.querySelector('.page-container')
+    // let tagClass = document.querySelector('.tag-box')
+    let thisPage = 0
+    let pageNumber = changClass.children
+    let scrollMax = pageNumber.length - 1
+    let i = 0
+    // let tagBtn = document.querySelectorAll('.tag-btn')
+    // https://developer.mozilla.org/en-US/docs/Web/API/Element/mousewheel_event#The_detail_property
+    // firefox的頁面滾動事件其他瀏覽器不一樣
+    if (navigator.userAgent.toLowerCase().indexOf('firefox') === -1) {
+        document.addEventListener('mousewheel', handlerWheel, false)
+    } else {
+        document.addEventListener('DOMMouseScroll', handlerWheel, false)
+    }
+    function scrollMove (e) {
+        // 用頁面移動距離換算成目前的頁面
+        nowTop = Math.abs(parseInt(container.style.top))
+        let thisPage = nowTop / viewHeight
+        i = thisPage
+        if (e.deltaY > 0) {
+            goDown();
+            if (i < scrollMax) {
+                changClass.children[thisPage].classList.remove('active');
+                // tagClass.children[thisPage].classList.remove('active');
+                thisPage ++;
+                changClass.children[thisPage].classList.add('active');
+                // tagClass.children[thisPage].classList.add('active');
+                i++
+            } else {
+                return
+            }
+        } else {
+            goUp()
+            if (i > 0) {
+                changClass.children[thisPage].classList.remove('active');
+                // tagClass.children[thisPage].classList.remove('active');
+                thisPage --;
+                changClass.children[thisPage].classList.add('active');
+                // tagClass.children[thisPage].classList.add('active');
+                i--
+            } else {
+                return
+            }
+        }
+    } 
+    
+    // // 點擊跳轉並加入class
+    // for(j=0;j<pageNumber.length;j++){
+    //     let btnNum = tagBtn[j].dataset.num;
+    //     tagBtn[j].addEventListener('click',function(i){
+    //         for(k=0;k<pageNumber.length;k++){
+    //             tagClass.children[k].classList.remove('active')
+    //             changClass.children[k].classList.remove('active')
+    //         }
+    //         currentPosition = - btnNum*viewHeight
+    //         container.style.top =currentPosition + 'px'
+    //         changClass.children[btnNum].classList.add('active')
+    //         tagClass.children[btnNum].classList.add('active')
+    //     },false)
+    // }
+    </script>
+    <script>
+    // 處理移動端滑動
+    var touchStartY = 0
+    document.addEventListener('touchstart', event => {
+        touchStartY = event.touches[0].pageY
+    })
+    var handleTouchEnd = throttle(touchEnd, 500)
+    document.addEventListener('touchend', handleTouchEnd)
+    function touchEnd (e) {
+        var touchEndY = e.changedTouches[0].pageY
+        if (touchEndY - touchStartY < 0) { // 向上滑動, 頁面向下滾動
+            goDown();
+        } else {
+            goUp();
+        }
+    }
+    </script>
+    <script>
+        // 調整視窗重整
+        window.onresize = function(){
+            window.location.reload();
+        }
+        // 載入完成後延遲執行
+        // document.onreadystatechange = subSomething;
+        // function delay(n){
+        //     return new Promise(function(resolve){
+        //         setTimeout(resolve,n*1000);
+        //     });
+        // }
+        // async function subSomething(){
+        //     if(document.readyState == "complete"){
+        //         await delay(1);
+        //         document.querySelector('#loading-page').style.display = 'none'
+        //     }
+        // }
+    </script>    
+</body>
+</html>
