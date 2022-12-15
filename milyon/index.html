@@ -5,400 +5,230 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <style>
-        /* All */
-        html,
-        body {
-            padding: 0;
-            margin: 0;
-            overflow: hidden;
-        }
+    <title>The Best Online Casino Milyon88</title>
+    <meta name="description"  content="Milyon88 online casino is an excellent choice for those looking for an exciting gaming experience. The variety of games ensures that there is something for everyone." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="The best online casino Milyon 88" />
+    <meta property="og:description" content="Milyon88 online casino is an excellent choice for those looking for an exciting gaming experience. The variety of games ensures that there is something for everyone." />
+    <meta property="og:url" content="https://www.miyon88.com/" />
+    <meta property="og:site_name" content="The best online casino Milyon 88" />
+    <meta property="og:image" content="images/milyon-logo.webp" />
+    <meta name="keywords" content="online casino, SLOT GAME, FISHER GAME, SABONG, LOTTERY">
+    <link rel="icon" href="images/milyonLOGO.webp" type="image/x-icon">
+    <link rel="shortcut icon" href="images/milyonLOGO.webp" type="image/x-icon">
+    <link preloadsss href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link preload rel="stylesheet" href="style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-251000630-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-        * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
+        gtag('config', 'UA-251000630-2');
+    </script>
 
-        .page-item:nth-child(1) {
-            background: url(images/ruslan-leschev-bg-01.jpg)no-repeat center/cover;
-        }
-
-        .page-item:nth-child(2) {
-            background: no-repeat center/cover;
-            background-image: -webkit-cross-fade(linear-gradient(0deg, #000, #000), url(images/valentin-perouelle-noam-valentin-perouelle-1.jpg), 50%);
-            background-image: cross-fade(linear-gradient(0deg, #000, #000), url(images/valentin-perouelle-noam-valentin-perouelle-1.jpg), 50%);
-        }
-
-        .page-item:nth-child(3) {
-            background: url(images/ruslan-leschev-bg-02.jpg)no-repeat center/cover;
-        }
-
-        .page-item:nth-child(4) {
-            background: url(images/Product.jpg)no-repeat center/cover;
-        }
-
-        .page-container {
-            position: relative;
-            top: 0;
-            transition: all 1000ms ease;
-            touch-action: none;
-        }
-
-        .logo {
-            top: 0%;
-            width: 185px;
-            z-index: 100;
-            transition: all .4s ease;
-        }
-
-        /* .tag-box{position:fixed;display:flex;flex-direction:column;top:calc(50% - 120px);left:2%;width:160px;height:240px;z-index:1;}
-        .tag-btn{width:100%;height:100%;cursor:pointer;transition:all .8s ease;}
-        .active.tag-btn {background-color:cornflowerblue;} */
-        .page-item {
-            display: flex;
-            position: relative;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            transition: all .8s ease;
-        }
-
-        .active .tilte-h2 {
-            display: none;
-        }
-
-        .tilte-h2 {
-            display: flex;
-            top: 115px;
-            left: calc(50% - 180px);
-            height: 120px;
-            width: 360px;
-            background-color: transparent;
-            background-repeat: no-repeat, no-repeat, no-repeat;
-            background-size: 50px 100%, 50px 100%, calc(100% - 100px + 2px) 100%;
-            background-position: 0, 100%, left calc(50% - 1px) top 50%;
-            background-image: url(images/frame-l.png), url(images/frame-r.png), url(images/frame-m.png);
-            color: #f8ef7a;
-            font-size: 2.25rem;
-            -webkit-animation: title alternate linear .8s both;
-            -webkit-animation-delay: 2s;
-            z-index: 10;
-        }
-
-        @keyframes title {
-            0% {
-                opacity: 0;
-                transform: translateY(-100px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0px);
-            }
-        }
-
-        /* 濃霧出現效果 */
-        .active.tag-btn,
-        .active.page-item {
-            -webkit-mask: url(images/masky.png);
-            -webkit-mask-size: 3000% 100%;
-            -webkit-mask-position: 0 0;
-            -webkit-animation: mask .8s steps(24) forwards;
-            -webkit-animation-delay: .4s;
-        }
-
-        @keyframes mask {
-            from {
-                -webkit-mask-position: 0 0
-            }
-
-            to {
-                -webkit-mask-position: 100% 0
-            }
-        }
-
-        /* Page_1 */
-        .active .mascot {
-            top: 5%;
-            left: 40%;
-            width: 20%;
-            -webkit-animation: mascot alternate linear .8s both;
-            -webkit-animation-delay: 2s;
-        }
-
-        @keyframes mascot {
-            0% {
-                opacity: 0;
-                transform: translateY(100px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0px);
-            }
-        }
-
-        #page0.active .logo {
-            top: 45%;
-            left: 34.6%;
-            width: 30%;
-            -webkit-animation: logo alternate linear .8s both;
-            -webkit-animation-delay: 1s;
-        }
-
-        @keyframes logo {
-            0% {
-                opacity: 0;
-                transform: translateY(100px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0px);
-            }
-        }
-
-        /* Page_2 */
-        .banner {
-            width: 700px;
-            height: 245px;
-            cursor: pointer;
-            text-shadow: 0 0.125rem 0.1875rem #000000cc;
-            background-color: transparent;
-            background-repeat: no-repeat, no-repeat, no-repeat;
-            background-size: 103px 100%, 103px 100%, calc(100% - 206px + 2px) 90%;
-            background-position: 0, 100%, left calc(50% - 1px) top 50%;
-            background-image: url(images/btn-l.png), url(images/btn-r.png), url(images/btn-m.png);
-            border: 0;
-            color: #fff1bb;
-            font-size: 2rem;
-        }
-
-        .banner-img {
-            top: 50%;
-            left: 50%;
-            width: calc(100% - 210px);
-            font-weight: bolder;
-            transform: translate(-50%, -50%);
-            /* animation: btnAnimation2 alternate linear .4s 1.8s both; */
-        }
-
-        .active .banner {
-            animation: btnAnimation1 alternate linear .8s 1s both;
-        }
-
-        @keyframes btnAnimation1 {
-            0% {
-                transform: rotateZ(-360deg);
-                width: 206px;
-            }
-
-            75% {
-                transform: rotateZ(0deg);
-            }
-
-            75% {
-                width: 206px;
-            }
-
-            100% {
-                width: 700px;
-            }
-        }
-
-        /* Page_3 */
-        .game-icon {
-            top: 50%;
-            left: 50%;
-            width: 30%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-        }
-
-        .active .game-bg {
-            animation: rotate infinite linear 16s 1.8s both;
-        }
-
-        @keyframes rotate {
-            0% {
-                transform: rotateZ(0deg);
-            }
-
-            100% {
-                transform: rotateZ(360deg);
-            }
-        }
-
-        #page2 span {
-            position: absolute;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            bottom: 10%;
-            left: 20%;
-            width: 60%;
-            height: 20%;
-            background: #7a3e00;
-            border-radius: 20px;
-            -webkit-box-shadow: inset 0 0 2px 2px #f3bd39, inset 0 0 1px 2px #59200a, inset 0 0 2px 4px #bd6609;
-            box-shadow: inset 0 0 2px 2px #f3bd39, inset 0 0 1px 2px #59200a, inset 0 0 2px 4px #bd6609;
-            color: #ffffb2;
-            font-size: 1.5rem;
-            font-weight: bolder;
-            text-align: center;
-        }
-
-        /* Page_4 */
-
-        /* RWD 響應式 */
-        @media screen and (max-width:500px) {
-            .tag-box {
-                display: none;
-            }
-        }
-    </style>
 </head>
 
 <body oncontextmenu="return false">
-    <!-- <div id="loading-page" class="justify-content-center align-items-center text-light" style="position: absolute;width: 100%;height: 100%;top: 0;left: 0;display:flex;background-color: #000;z-index: 3;">加載中...</div> -->
-    <!-- <div class="tag-box">
-        <div data-num="0" class="d-flex align-items-center justify-content-center text-light font-weight-bolder tag-btn active">頁面測試</div>
-        <div data-num="1" class="d-flex align-items-center justify-content-center text-light font-weight-bolder tag-btn">頁面測試</div>
-        <div data-num="2" class="d-flex align-items-center justify-content-center text-light font-weight-bolder tag-btn">頁面測試</div>
-        <div data-num="3" class="d-flex align-items-center justify-content-center text-light font-weight-bolder tag-btn">頁面測試</div>
-    </div> -->
     <div class="page-container" style="top:0;">
         <div class="page-item active" id="page0">
-            <img class="position-absolute mascot" src="images/photo_2022-11-02_14-06-49-removebg-preview.png" alt="">
-            <img class="position-fixed logo" src="images/milyon-LOBYLOGO.png" alt="">
+            <img class="position-absolute mascot" src="images/photo_2022-11-02_14-06-49-removebg-preview.webp" alt="">
+            <div class="position-relative h-75 stone-wall">
+                <p class="position-absolute rounded-2"> The bonuses also make it a great choice, as they offer generous welcome bonuses and promotions. The customer service is also top-notch and they always strive to make sure their customers are satisfied. With all these features, Milyon88 is one of the best online casinos out there.</p>
+            </div>
+            <img class="position-fixed logo" src="images/milyon-LOBYLOGO.webp" alt="">
+            <div class="tag-box d-flex align-items-center justify-content-around w-100">
+                <button class="border-0 bg-transparent text-white fs-2 fw-bold py-2 px-4 rounded-3" name="tag-btn">Promotion</button>
+                <button class="border-0 bg-transparent text-white fs-2 fw-bold py-2 px-4 rounded-3" name="tag-btn">Game Introduction</button>
+                <button class="border-0 bg-transparent text-white fs-2 fw-bold py-2 px-4 rounded-3" name="tag-btn">RANKING D&T</button>
+            </div>
+            <div class="position-absolute play-box">
+                <img class="play-icon" src="images/a2c05db68c5057e31388c5347c00655c-removebg-preview.webp" alt="">
+                <a class="h-50 play-btn" href="https://www.milyon88.com/?pid=seo2brand1"></a>
+            </div>
             <h2 id="title" class="position-fixed align-items-center justify-content-center tilte-h2">Promotion</h2>
         </div>
         <div class="page-item" id="page1">
             <div class="row w-100 h-75 mt-auto">
-                <div class="col-12 col-md-6 d-flex align-items-center justify-content-end">
-                    <div class="position-relative banner"><img class="position-absolute banner-img"
-                            src="images/PromotionInfoLanguage.png" alt=""></div>
+                <div class="col-12 col-lg-6 d-flex align-items-center justify-content-end">
+                    <div class="position-relative banner">
+                        <a class="d-flex align-items-center justify-content-center w-100 h-100" href="https://www.milyon88.com/?pid=seo2brand1"><img class="banner-img" src="images/banner_1.webp" alt=""></a>
+                    </div>
                 </div>
-                <div class="col-12 col-md-6 d-flex align-items-center justify-content-start">
-                    <div class="position-relative banner"><img class="position-absolute banner-img"
-                            src="images/PromotionInfoLanguage.png" alt=""></div>
+                <div class="col-12 col-lg-6 d-flex align-items-center justify-content-start">
+                    <div class="position-relative banner">
+                        <a class="d-flex align-items-center justify-content-start w-100 h-100" href="https://www.milyon88.com/?pid=seo2brand1"><img class="banner-img" src="images/banner_2.webp" alt=""></a>
+                    </div>
                 </div>
-                <div class="col-12 col-md-6 d-flex align-items-center justify-content-end">
-                    <div class="position-relative banner"><img class="position-absolute banner-img"
-                            src="images/PromotionInfoLanguage.png" alt=""></div>
+                <div class="col-12 col-lg-6 d-flex align-items-center justify-content-end">
+                    <div class="position-relative banner">
+                        <a class="d-flex align-items-center justify-content-center w-100 h-100" href="https://www.milyon88.com/?pid=seo2brand1"><img class="banner-img" src="images/banner_3.webp" alt=""></a>
+                    </div>
                 </div>
-                <div class="col-12 col-md-6 d-flex align-items-center justify-content-start">
-                    <div class="position-relative banner"><img class="position-absolute banner-img"
-                            src="images/PromotionInfoLanguage.png" alt=""></div>
+                <div class="col-12 col-lg-6 d-flex align-items-center justify-content-start">
+                    <div class="position-relative banner">
+                        <a class="d-flex align-items-center justify-content-center w-100 h-100" href="https://www.milyon88.com/?pid=seo2brand1"><img class="banner-img" src="images/banner_4.webp" alt=""></a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="page-item" id="page2">
             <div class="row w-100 h-75 mt-auto" style="justify-content: inherit;">
-                <div class="col-6 col-md-3 d-flex align-items-center justify-content-center">
-                    <img class="position-absolute game-icon" src="images/slots.png" alt="">
-                    <img class="w-75 game-bg" src="images/icon-bg.png" alt="">
+                <div class="position-relative col-6 col-md-4 d-flex align-items-center justify-content-center">
+                    <a href="https://www.milyon88.com/?pid=seo2brand1"><img class="position-absolute game-icon" src="images/slots.webp" alt=""> </a>
+                    <img class="w-75 game-bg" src="images/icon-bg.webp" alt="">
                     <span>Slot</span>
                 </div>
-                <div class="col-6 col-md-3 d-flex align-items-center justify-content-center">
-                    <img class="position-absolute game-icon" src="images/fishing.png" alt="">
-                    <img class="w-75 game-bg" src="images/icon-bg.png" alt="">
+                <div class="position-relative col-6 col-md-4 d-flex align-items-center justify-content-center">
+                    <a href="https://www.milyon88.com/?pid=seo2brand1"><img class="position-absolute game-icon" src="images/fishing.webp" alt=""></a>
+                    <img class="w-75 game-bg" src="images/icon-bg.webp" alt="">
                     <span>Fisher</span>
                 </div>
-                <div class="col-6 col-md-3 d-flex align-items-center justify-content-center">
-                    <img class="position-absolute game-icon" src="images/sport.png" alt="">
-                    <img class="w-75 game-bg" src="images/icon-bg.png" alt="">
+                <div class="position-relative col-6 col-md-4 d-flex align-items-center justify-content-center">
+                    <a href="https://www.milyon88.com/?pid=seo2brand1"><img class="position-absolute game-icon" src="images/sport.webp" alt=""></a>
+                    <img class="w-75 game-bg" src="images/icon-bg.webp" alt="">
                     <span>Sport</span>
                 </div>
-                <div class="col-6 col-md-3 d-flex align-items-center justify-content-center">
-                    <img class="position-absolute game-icon" src="images/live-game.png" alt="">
-                    <img class="w-75 game-bg" src="images/icon-bg.png" alt="">
+                <div class="position-relative col-6 col-md-4 d-flex align-items-center justify-content-center">
+                    <a href="https://www.milyon88.com/?pid=seo2brand1"><img class="position-absolute game-icon" src="images/live-game.webp" alt=""></a>
+                    <img class="w-75 game-bg" src="images/icon-bg.webp" alt="">
                     <span>Live</span>
                 </div>
-                <div class="col-6 col-md-3 d-flex align-items-center justify-content-center">
-                    <img class="position-absolute game-icon" src="images/icon_rooster.png" alt="">
-                    <img class="w-75 game-bg" src="images/icon-bg.png" alt="">
+                <div class="position-relative col-6 col-md-4 d-flex align-items-center justify-content-center">
+                    <a href="https://www.milyon88.com/?pid=seo2brand1"><img class="position-absolute game-icon" src="images/icon_rooster.webp" alt=""></a>
+                    <img class="w-75 game-bg" src="images/icon-bg.webp" alt="">
                     <span>Sabong</span>
                 </div>
-                <div class="col-6 col-md-3 d-flex align-items-center justify-content-center">
-                    <img class="position-absolute game-icon" src="images/lottery.png" alt="">
-                    <img class="w-75 game-bg" src="images/icon-bg.png" alt="">
+                <div class="position-relative col-6 col-md-4 d-flex align-items-center justify-content-center">
+                    <a href="https://www.milyon88.com/?pid=seo2brand1"><img class="position-absolute game-icon" src="images/lottery.webp" alt=""></a>
+                    <img class="w-75 game-bg" src="images/icon-bg.webp" alt="">
                     <span>Lottery</span>
                 </div>
-                <div class="col-6 col-md-3 d-flex align-items-center justify-content-center">
-                    <img class="position-absolute game-icon" src="images/other-game.png" alt="">
-                    <img class="w-75 game-bg" src="images/icon-bg.png" alt="">
+                <div class="position-relative col-6 col-md-4 d-flex align-items-center justify-content-center">
+                    <a href="https://www.milyon88.com/?pid=seo2brand1"><img class="position-absolute game-icon" src="images/other-game.webp" alt=""></a>
+                    <img class="w-75 game-bg" src="images/icon-bg.webp" alt="">
                     <span>Other Game</span>
                 </div>
             </div>
         </div>
         <div class="page-item" id="page3">
-            <div class="page h-100 py-3"></div>
+            <div class="row w-100 h-100 align-items-xxl-center align-items-end justify-content-around">
+                <div class="iframe-box p-0">
+                    <img src="images/dragon.webp" alt="">
+                </div>
+                <div class="dt-box px-2">
+                    <div class="dt-card w-100 h-100">
+                        <div
+                            class="card-face d-flex flex-column align-items-center justify-content-center w-100 h-100 card-front">
+                            <img class="w-50 dt-img" src="images/D&T.webp" alt="">
+                            <h3 class="dt-msg text-center">Rules & Guide</h3>
+                        </div>
+                        <div class="card-face d-flex align-items-end w-100 h-100 card-back">
+                            <div class="card-msg">
+                                <h4 class="dt-msg text-center">【Ranking List Rules】</h4>
+                                <p>Daily Champion: Awarded to player with highest winning credits on the daily ranking
+                                    list.
+                                <p>Weekly Champion: When the seventh daily champion is generated, the weekly champion is
+                                    awarded to the daily champion with highest winning credit out of all seven daily
+                                    champions.</p>
+                                <p>Monthly Champion: When the fourth weekly champion is generated, the monthly champion
+                                    is
+                                    awarded to the player who won the most times of daily champions during the four-week
+                                    period.</p>
+                                <div class="w-100 text-center">
+                                    <a href="https://www.milyon88.com/?pid=seo2brand1">
+                                        <img class="w-50" src="images/f6a0c089fa3ce5012a53d7c580eb0e0b-removebg-preview.webp" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="iframe-box p-0">
+                    <img src="images/tiger.webp" alt="">
+                </div>
+            </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
-    <script>
-        var container = document.querySelector('.page-container')
+    <script defer>
+        var container = document.querySelector('.page-container');
         // 獲取瀏覽器視窗高度
-        var viewHeight = document.documentElement.clientHeight
+        var viewHeight = document.documentElement.clientHeight;
         // 獲取滾動的頁數
-        var pageNum = document.querySelectorAll('.page-item').length
+        var pageNum = document.querySelectorAll('.page-item').length;
         // 初始化當前位置, 距離原始頂部距離
-        var currentPosition = 0
+        var currentPosition = 0;
         // 設置頁面高度
-        container.style.height = viewHeight + 'px'
+        container.style.height = viewHeight + 'px';
         // 向下滾動頁面
         function goDown() {
             if (currentPosition > - viewHeight * (pageNum - 1)) {
-                currentPosition = currentPosition - viewHeight
-                container.style.top = currentPosition + 'px'
+                currentPosition = currentPosition - viewHeight;
+                container.style.top = currentPosition + 'px';
             }
         }
         // 向上滾動頁面
         function goUp() {
             if (currentPosition < 0) {
-                currentPosition = currentPosition + viewHeight
-                container.style.top = currentPosition + 'px'
+                currentPosition = currentPosition + viewHeight;
+                container.style.top = currentPosition + 'px';
             }
         }
+        // 下一頁
+        function nextPage() {
+            goDown();
+            if (i < scrollMax) {
+                changClass.children[thisPage].classList.remove('active');
+                thisPage++;
+                changClass.children[thisPage].classList.add('active');
+                i++;
+            }
+        }
+        // 上一頁
+        function prePage() {
+            goUp()
+            if (i > 0) {
+                changClass.children[thisPage].classList.remove('active');
+                thisPage--;
+                changClass.children[thisPage].classList.add('active');
+                i--;
+            }
+        }
+
     </script>
-    <script>
+    <script defer>
         // 節流函數
         function throttle(fn, delay) {
-            let baseTime = 0
+            let baseTime = 0;
             return function () {
-                const currentTime = Date.now()
+                const currentTime = Date.now();
                 if (baseTime + delay < currentTime) {
-                    fn.apply(this, arguments)
-                    baseTime = currentTime
+                    fn.apply(this, arguments);
+                    baseTime = currentTime;
                 }
             }
         }
     </script>
-    <script>
+    <script defer>
         // 初始鼠標滾動
         var handlerWheel = throttle(scrollMove, 1000);
-        let changClass = document.querySelector('.page-container');
-        let title = document.querySelector('#title')
-        // let tagClass = document.querySelector('.tag-box');
-        let thisPage = 0;
-        let pageNumber = changClass.children;
-        let scrollMax = pageNumber.length - 1;
-        let i = 0;
-        // let tagBtn = document.querySelectorAll('.tag-btn');
+        var changClass = document.querySelector('.page-container');
+        var title = document.querySelector('#title')
+        var thisPage = 0;
+        var pageNumber = changClass.children;
+        var scrollMax = pageNumber.length - 1;
+        var i = 0;
         // https://developer.mozilla.org/en-US/docs/Web/API/Element/mousewheel_event#The_detail_property
         // firefox的頁面滾動事件其他瀏覽器不一樣
         if (navigator.userAgent.toLowerCase().indexOf('firefox') === -1) {
@@ -410,98 +240,80 @@
             // 用頁面移動距離換算成目前的頁面
             nowTop = Math.abs(parseInt(container.style.top));
             let thisPage = nowTop / viewHeight;
-            i = thisPage;
             if (e.deltaY > 0) {
-                goDown();
-                if (i < scrollMax) {
-                    changClass.children[thisPage].classList.remove('active');
-                    // tagClass.children[thisPage].classList.remove('active');
-                    thisPage++;
-                    changClass.children[thisPage].classList.add('active');
-                    // tagClass.children[thisPage].classList.add('active');
-                    i++
-                } else {
-                    return
-                }
+                nextPage();
             } else {
-                goUp()
-                if (i > 0) {
-                    changClass.children[thisPage].classList.remove('active');
-                    // tagClass.children[thisPage].classList.remove('active');
-                    thisPage--;
-                    changClass.children[thisPage].classList.add('active');
-                    // tagClass.children[thisPage].classList.add('active');
-                    i--
-                } else {
-                    return
-                }
+                prePage();
             }
-            switch (thisPage) {
+            titleMsg();
+        }
+
+        // 處理移動端滑動
+        var touchStartY = 0;
+        document.addEventListener('touchstart', event => {
+            touchStartY = event.touches[0].pageY;
+        })
+        var handleTouchEnd = throttle(touchEnd, 1000);
+        document.addEventListener('touchend', handleTouchEnd);
+        function touchEnd(e) {
+            var touchEndY = e.changedTouches[0].pageY;
+            if (touchEndY - touchStartY < 0) { // 向上滑動, 頁面向下滾動
+                nextPage();
+            } else if (touchEndY - touchStartY > 0){ // 向上滑動, 頁面向下滾動
+                prePage();
+            }
+            titleMsg();
+        }
+
+        function changePage(num){
+            for(k=0; k<num+1; k++){
+                nextPage();
+            }
+            titleMsg();
+        }
+
+        let tagBtn = document.querySelectorAll('[name=tag-btn]');
+        for(let i=0;i<tagBtn.length;i++){
+            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
+                tagBtn[i].addEventListener('touchend', function() {
+                    changePage(i+1)
+                    console.log('ph')
+                }, false);
+            }else{
+                tagBtn[i].addEventListener('click', function() {
+                    changePage(i)
+                    console.log('pc')
+                }, false);
+            }
+        }
+        function titleMsg(){
+            switch (i) {
                 case (1):
-                    title.textContent = 'Promotion'
+                    title.textContent = 'Promotion';
                     break
                 case (2):
-                    title.textContent = 'Game Introduction'
+                    title.textContent = 'Game Introduction';
                     break
                 case (3):
-                    title.textContent = '3'
+                    title.textContent = 'RANKING D&T';
                     break
                 default:
                     break;
             }
         }
-
-    // // 點擊跳轉並加入class
-    // for(j=0;j<pageNumber.length;j++){
-    //     let btnNum = tagBtn[j].dataset.num;
-    //     tagBtn[j].addEventListener('click',function(i){
-    //         for(k=0;k<pageNumber.length;k++){
-    //             tagClass.children[k].classList.remove('active');
-    //             changClass.children[k].classList.remove('active');
-    //         }
-    //         currentPosition = - btnNum*viewHeight;
-    //         container.style.top =currentPosition + 'px';
-    //         changClass.children[btnNum].classList.add('active');
-    //         tagClass.children[btnNum].classList.add('active');
-    //     },false)
-    // }
     </script>
-    <script>
-        // 處理移動端滑動
-        var touchStartY = 0
-        document.addEventListener('touchstart', event => {
-            touchStartY = event.touches[0].pageY;
-        })
-        var handleTouchEnd = throttle(touchEnd, 500)
-        document.addEventListener('touchend', handleTouchEnd);
-        function touchEnd(e) {
-            var touchEndY = e.changedTouches[0].pageY;
-            if (touchEndY - touchStartY < 0) { // 向上滑動, 頁面向下滾動
-                goDown();
-            } else {
-                goUp();
-            }
-        }
-    </script>
-    <script>
+    <script defer>
         // 調整視窗重整
         window.onresize = function () {
             window.location.reload();
         }
-        // 載入完成後延遲執行
-        // document.onreadystatechange = subSomething;
-        // function delay(n){
-        //     return new Promise(function(resolve){
-        //         setTimeout(resolve,n*1000);
-        //     });
-        // }
-        // async function subSomething(){
-        //     if(document.readyState == "complete"){
-        //         await delay(1);
-        //         document.querySelector('#loading-page').style.display = 'none'
-        //     }
-        // }
+        
+        let dtCard = document.querySelector('.dt-card')
+        dtCard.addEventListener('click', function () {
+            dtCard.classList.toggle('active');
+        }, false)
     </script>
+
 </body>
 
 </html>
