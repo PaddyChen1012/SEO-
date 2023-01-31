@@ -1,100 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/MDL97_APP_200x200.png" type="image/x-icon">
     <link rel="shortcut icon" href="images/MDL97_APP_200x200.png" type="image/x-icon">
-    <title>MDL 97</title>
+    <title>MDL97</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:'Maitree', serif;}
-        body{width:100%;background-color:#000;overflow-x:hidden;}
-        .pc{display:flex;}
-        .ph{display:none;}
-        .box{position:relative;top:0;left:0;width:100%;height:100%;}
-        .wrap{position:relative;width:100%;padding-bottom:56.25%;min-height:100vh;background:url(images/LP0609-BG_1920x1080.jpg)no-repeat top/cover;}
-        .wrap::before{content:'';position:absolute;width:100%;height:100%;}
-        .bubble{position:absolute;top: 46%;width: 10%;padding-bottom: 10.5%;}
-        .b-1{left: 28.5%;}
-        .b-2{left:39.5%;}
-        .b-3{left:50.5%;}
-        .b-4{left:61.5%;}
-        .btn-box{position:absolute;bottom: 1%;left:10%;display:flex;width:50%;justify-content:space-between;-webkit-filter: drop-shadow(0px 0px 10px #000);}
-        .btn-box a{display:block;margin:0 auto;}
-        img{margin:auto;}
-        @media screen and (max-width:992px) and (pointer:coarse) {
-            h1{font-size:1.5rem;}
-            .pc{display:none !important;}
-            .ph{display:flex !important;}
-            .wrap{min-height:100vh;background:url(images/LP1003-BG_1080x1920.jpg)no-repeat top/cover;}
-            .wrap::before{content:unset;}
-            .bubble{position:absolute;top: 26%;width: 22%;padding-bottom: 23%;}
-            .b-1{left: 26.5%;}
-            .b-2{left: 50.5%;}
-            .b-3{top: 45%;left: 26.5%;}
-            .b-4{top: 45%;left:50.5%;}
-            .btn-box{bottom: calc(0*(1vh - 1vw));left: 20%;display:block;width: 60%;}
-            .btn-box a{margin-bottom:0;}
-            .btn-box img{width: 100%;}
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Oswald', sans-serif;
         }
-        @media screen and (max-width:500px) and (pointer:coarse) {
-            .wrap{min-height:178vw;background:url(images/LP1003-BG_1080x1920.jpg)no-repeat top/contain;}
-            .bubble{position:absolute;top: 33%;width: 25%;padding-bottom: 27%;}
-        }
-    </style>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-230425355-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'UA-230425355-1');
-    </script>
-    <!-- Hotjar Tracking Code for https://tou.mdl97.net/ -->
-    <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:2996182,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
+        body {
+            background: url(images/6614b5564b7874dcfb2bed2a321821c1.jpg)no-repeat center/cover;
+        }
+
+        .download-box {
+            position: fixed;
+            display: grid;
+            grid-template-columns: 20% 55% 25%;
+            justify-items: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 50%;
+            background-color: rgba(255, 255, 255, .5);
+            padding: 16px;
+            z-index: 3;
+        }
+
+        .download-box img {
+            width: 100%;
+        }
+
+        .download-msg {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #ffffb2;
+            -webkit-text-shadow: 0 0 2px #c49a5a;
+            text-shadow: 0 0 10px #c49a5a;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30%;
+            height: 100%;
+            max-width: 400px;
+            background: -webkit-linear-gradient(180deg, #222 0%, #000 68%, #555 100%);
+            background: -o-linear-gradient(180deg, #222 0%, #000 68%, #555 100%);
+            background: linear-gradient(180deg, #222 0%, #000 68%, #555 100%);
+            border-radius: 15px;
+            -webkit-box-shadow: inset 0 0 2px 2px #ffffb2, inset 0 0 1px 2px #fff, inset 0 0 2px 4px #eeb229;
+            box-shadow: inset 0 0 2px 2px #ffffb2, inset 0 0 1px 2px #fff, inset 0 0 2px 4px #eeb229;
+            color: #ffffb2;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 16px 0 32px;
+        }
+
+        .download-box .download-btn {
+            width: 100%;
+            margin: 0;
+        }
+
+        .warp {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .warp-img {
+            margin-bottom: -6%;
+            width: 50%;
+            -webkit-filter:drop-shadow(0px 0px 40px #000);
+            z-index: 1;
+        }
+
+        .img-box {
+            display: grid;
+            width: 50%;
+            grid-template-columns: repeat(2, 50%);
+            justify-items: center;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .img-icon{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 200px;
+            padding: 0 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .img-box img {
+            width: 100%;
+        }
+
+        .bulb-board-wrapper{
+            z-index: 1;
+        }
+
+        .img-icon span{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            color: #ffffb2;
+            font-size: 1.5rem;
+            font-weight: bolder;
+            font-family: 'Charmonman', cursive;
+            font-family: 'Playfair Display', serif;
+            padding: .5rem 0;
+            text-align: center;
+        }
+
+        .button{
+            cursor: pointer;
+            text-shadow: 0 0.125rem 0.1875rem #000000cc;
+            background-color: transparent;
+            background-repeat: no-repeat,no-repeat,no-repeat;
+            background-size: 4rem 100%,4rem 100%,calc(100% - 8rem + 2px) 100%;
+            background-position: 0,100%,left calc(4rem - 1px) top 0;
+            background-image: url(images/btn_img_confirm_normal_left.6665b3f.png),url(images/btn_img_confirm_normal_right.925e4ae.png),url(images/btn_img_confirm_normal_midle.png);
+            border: 0;
+            color: #fff1bb;
+            font-family: 'Charmonman', cursive;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            padding: 1rem 4rem;
+        }
+
+        footer {
+            text-align: center;
+        }
+
+        footer p {
+            color: #fff;
+        }
+
+        footer a {
+            color: #c49a5a;
+        }
+
+        .animation {
+            animation: animation infinite alternate linear .8s both;
+        }
+
+        /*Animation */
+        @keyframes animation {
+            0% {
+                -webkit-filter: drop-shadow(0px 0px 0px #c49a5a);
+            }
+
+            100% {
+                -webkit-filter: drop-shadow(0px 0px 20px #c49a5a);
+            }
+        }
+        @media (max-width: 768px) {
+            .warp-img {
+                margin-top: 16%;
+                margin-bottom: -16%;
+                width: 150%
+            }
+            .img-icon {
+                width: 90%;
+            }
+            .button {
+                background-size: 6rem 100%,6rem 100%,calc(100% - 12rem + 2px) 100%;
+                background-position: 0,100%,left calc(6rem - 1px) top 0;
+                background-image: url(images/btn_img_confirm_normal_left.6665b3f.png),url(images/btn_img_confirm_normal_right.925e4ae.png),url(images/btn_img_confirm_normal_midle.png);
+                font-size: 2rem;
+                padding: 2rem 8rem;
+            }
+        }
+        @media screen and (max-width:500px) {
+            .download-box {
+                grid-template-columns: 20% 40% 40%;
+                width: 100%;
+                padding: 8px;
+            }
+
+            .download-msg h1 {
+                line-height: 1.75rem;
+                font-size: 1.5rem !important;
+            }
+
+            .download-msg h3 {
+                font-weight: 100;
+                font-size: .7rem !important;
+            }
+
+            .download-box .download-btn {
+                height: 90%;
+                font-size: 1.5rem !important;
+            }
+
+            .warp-img {
+                margin-top: 25%;
+                width: 100%;
+            }
+
+            .img-box {
+                width: 100%;
+            }
+
+            .img-icon {
+                margin-bottom: 1rem;
+            }
+            .button{
+                background-size: 4rem 100%,4rem 100%,calc(100% - 8rem + 2px) 100%;
+                background-position: 0,100%,left calc(4rem - 1px) top 0;
+                padding: 1rem 4rem;
+            }
+        }
+
+    </style>
 </head>
+
 <body>
-    <a name="mm_link" href="https://mdl97.com/register?pid=10">
-        <div class="box">
-            <div id="wrap" class="wrap"></div>
-            <div class="btn-box pc">
-                <img src="images/LP0517-Button_340x140.png">
-            </div>
+    <div class="download-box">
+        <img src="images/MDL97_APP_200x200.png">
+        <div class="download-msg">
+            <h1>MDL97</h1>
+            <h3>
+                <p>Please feel to download and install</p>
+                <p>We protect your privac and security</p>
+            </h3>
         </div>
-    </a>
-    
-    <!-- <script>
-        let link = document.querySelectorAll('[name=mm_link]')
-        if(window.innerWidth<500){
-            for(j=0; j<link.length; j++){
-                link[j].setAttribute('href','https://mdl97.com/register?pid=14')
-            }
-        }else{
-            for(j=0; j<link.length; j++){
-                link[j].setAttribute('href','https://mdl97.com/register?pid=14')
-            }
-        }
-    </script> -->
-    <!-- <script>
-        const myTimeout = setTimeout(redirect, 5000);
-        function redirect() {
-            if(window.innerWidth<500){
-                window.location.href = "https://mdl97.com/register?pid=14";
-            }else{
-                window.location.href = "https://mdl97.com/register?pid=14";
-            }
-        }
-    </script> -->
+        <a id="download-btn" class="download-btn animation" href="https://mdl97.com/register?pid=10">Register</a>
+    </div>
+    <div class="warp">
+        <img class="warp-img" src="images/LP1206(MDL97)_1040x1040.png">
+        <!-- <a class="download-btn animation" href="https://mdl97.com/register?pid=10">Download</a> -->
+        <a href="https://mdl97.com/register?pid=10" class='bulb-board-wrapper'>
+            <img src="images/LP0517-Button_340x140.png" alt="">
+        </a>
+        <div class="img-box">
+            <div class="img-icon"><img src="images/ICON-1.png"></div>
+            <div class="img-icon"><img src="images/ICON-2.png"></div>
+            <div class="img-icon"><img src="images/ICON-3.png"></div>
+            <div class="img-icon"><img src="images/ICON-4.png"></div>
+        </div>
+    </div>
+    <footer>
+        <p>This game is only meant for the 18+ age group</p>
+        <div>
+            <a href="https://mdl97.com/register?pid=10">About Us</a>
+            <a href="https://mdl97.com/register?pid=10">Terms & Conditions</a>
+            <a href="https://mdl97.com/register?pid=10">Privacy Policy</a>
+            <a href="https://mdl97.com/register?pid=10">Cancellation & Refund Policy</a>
+        </div>
+        <p>Copyright 2022 MDL97 All rights reseved</p>
+    </footer>
 </body>
+<script>
+    let downloadMsg = document.querySelector('.download-msg')
+    let downloadBtn = document.querySelector('#download-btn')
+    window.onload = function () {
+        h1Size = window.innerWidth / 500
+        h2Size = window.innerWidth / 750
+        h3Size = window.innerWidth / 1000
+        downloadMsg.children[0].style.fontSize = h1Size + 'rem';
+        downloadMsg.children[1].style.fontSize = h3Size + 'rem';
+        downloadBtn.style.fontSize = h2Size + 'rem';
+    }
+    window.onresize = function () {
+        h1Size = window.innerWidth / 500
+        h2Size = window.innerWidth / 750
+        h3Size = window.innerWidth / 1000
+        downloadMsg.children[0].style.fontSize = h1Size + 'rem';
+        downloadMsg.children[1].style.fontSize = h3Size + 'rem';
+        downloadBtn.style.fontSize = h2Size + 'rem';
+    }
+</script>
+
 </html>

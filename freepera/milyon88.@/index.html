@@ -11,9 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Playfair+Display:wght@600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
     <style>
         * {
             padding: 0;
@@ -22,8 +20,12 @@
             font-family: 'Oswald', sans-serif;
         }
 
+        .pc {display: block;}
+        .ph {display: none;}
+        .w-100{width: 100%;}
+
         body {
-            background: url(images/milyon88-background.jpg);
+            background: url(images/milyon88-background.jpg) center/contain fixed;
         }
 
         .download-box {
@@ -98,7 +100,6 @@
             grid-template-columns: repeat(2, 50%);
             justify-items: center;
             align-items: center;
-            margin-top: 4rem;
         }
 
         .img-icon {
@@ -111,11 +112,11 @@
             max-width: 250px;
             padding: 3rem;
             background: url(images/icon-bg.png)no-repeat center/contain;
-            margin-bottom: 4rem;
+            margin-top: 4rem;
         }
 
         .img-box img {
-            width: 79%;
+            width: 80%;
         }
 
         .bulb-board-wrapper {
@@ -158,6 +159,46 @@
             display: block;
             font-weight: bolder;
             animation: btnAnimation2 alternate linear .4s 1.8s both;
+        }
+
+        .register-pg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .register-pg img{
+            max-width: 100%;
+            max-height: 100vh;
+        }
+
+        .video-box{
+            position: relative;
+            width: 80%;
+            height: 0;
+            padding-bottom: 45%;
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 2px 2px #f3bd39, inset 0 0 1px 2px #59200a, inset 0 0 2px 4px #bd6609;
+            box-shadow: 0 0 2px 2px #f3bd39,0 0 1px 2px #59200a,0 0 2px 4px #bd6609;
+            overflow: hidden;
+        }
+
+        .register-pg video{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .register-btn {
+            padding: 10px;
+            width: 180px;
+            z-index: 1;
+        }
+
+        .register-btn img {
+            width: 100%;
         }
 
         footer {
@@ -230,6 +271,8 @@
         }
 
         @media screen and (max-width:500px) {
+            .pc {display: none;}
+            .ph {display: block;}
             .download-box {
                 grid-template-columns: 20% 40% 40%;
                 width: 100%;
@@ -269,6 +312,15 @@
                 background-size: 2.575rem 100%, 2.575rem 100%, calc(100% - 5.15rem + 2px) 100%;
                 background-position: 0, 100%, left calc(2.575rem - 1px) top 50%;
             }
+
+            .video-box{
+                position: relative;
+                width: 90%;
+                height: 0;
+                padding-bottom: 160%;
+                border-radius: 10px;
+                overflow: hidden;
+            }
             @keyframes btnAnimation1 {
                 0%{
                     transform: rotateZ(-360deg);
@@ -307,12 +359,34 @@
         <a href="https://www.milyon88.com/?pid=ATad01" class='bulb-board-wrapper'>
             <button type="button" class="button"><span class="button-span">Sign up</span></button>
         </a>
+
         <div class="img-box">
-            <div class="img-icon"><img src="images/Slot game.png"><span>Slot</span></div>
-            <div class="img-icon"><img src="images/Fisher game.png"><span>Fisher</span></div>
-            <div class="img-icon"><img src="images/Live game.png"><span>Live</span></div>
-            <div class="img-icon"><img src="images/Sport.png"><span>Sport</span></div>
+            <a href="https://www.milyon88.com/?pid=ATad01" class="img-icon"><img src="images/Slot game.png"><span>Slot</span></a>
+            <a href="https://www.milyon88.com/?pid=ATad01" class="img-icon"><img src="images/Fisher game.png"><span>Fisher</span></a>
+            <a href="https://www.milyon88.com/?pid=ATad01" class="img-icon"><img src="images/Live game.png"><span>Live</span></a>
+            <a href="https://www.milyon88.com/?pid=ATad01" class="img-icon"><img src="images/Sport.png"><span>Sport</span></a>
         </div>
+
+        <div id="register-pg" class="register-pg">
+            <img src="images/register.webp">
+        </div>
+
+        <a class="register-btn" href="https://www.milyon88.com/?pid=ATad01"><img src="images/registerBtn.webp"></a>
+
+        <a class="pc" href="https://www.milyon88.com/?pid=ATad01">
+            <img class="w-100" src="images/LD1229_1920x1080.jpg">
+            <img class="w-100" src="images/LD1229-2_1920x1080.jpg">
+            <img class="w-100" src="images/LD1229-3_1920x1080.jpg">
+            <img class="w-100" src="images/LD1229-4_1920x1080.jpg">
+        </a>
+
+        <a class="ph" href="https://www.milyon88.com/?pid=ATad01">
+            <img class="w-100" src="images/LD1229_1080x1920.jpg">
+            <img class="w-100" src="images/LD1229-2_1080x1920.jpg">
+            <img class="w-100" src="images/LD1229-3_1080x1920.jpg">
+            <img class="w-100" src="images/LD1229-4_1080x1920.jpg">
+        </a>
+        
     </div>
     <footer>
         <p>This game is only meant for the 18+ age group</p>
@@ -345,6 +419,19 @@
         downloadMsg.children[1].style.fontSize = h3Size + 'rem';
         downloadBtn.style.fontSize = h2Size + 'rem';
     }
+
+    let registerPg = document.querySelector('#register-pg')
+    let crateVideo = function (){
+        registerPg.style.margin = '4rem 0 0rem';
+        if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
+            registerPg.innerHTML = '<div class="video-box"><video src="images/M88CS_916.mp4" x-webkit-airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint" controls preload autoplay></video></div>';
+        }else{
+            registerPg.innerHTML = '<div class="video-box"><video src="images/M88CS_169.mp4" x-webkit-airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint" controls preload autoplay></video></div>';
+        }
+        registerPg.removeEventListener("click",crateVideo,false);
+    }
+    registerPg.addEventListener('click', crateVideo)
+
 </script>
 
 </html>
