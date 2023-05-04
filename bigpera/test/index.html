@@ -101,10 +101,6 @@
         var num2 = document.getElementById("num2").value;
         var num3 = document.getElementById("num3").value;
 
-        // 計算兩數相加
-        var sum = (parseInt(num1) + parseInt(num2)) * 0.97;
-        document.getElementById("total").value = sum;
-
         var x = Math.floor(parseInt(num3) / 7);
         if((num3 % 7) !== 0){
             var y = (num3 % 7) / 7;
@@ -119,6 +115,10 @@
             console.log('y:' + y);
             document.getElementById("result").value = (0.5 ** x) * 100 + '%';
         }
+
+        // 計算兩數相加
+        var sum = (parseInt(num1) + parseInt(num2)) * (0.97 ** x);
+        document.getElementById("total").value = sum;
     }
 </script>
 </html>
