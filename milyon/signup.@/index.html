@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/milyon-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/milyon-logo.png" type="image/x-icon">
+    <title>Milyon 88</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        body{
+            background-color: #000;
+        }
+
+        section{
+            margin: auto;
+            max-width: 1080px;
+        }
+
+        .download-box {
+            position: fixed;
+            display: grid;
+            grid-template-columns: 20% 55% 25%;
+            justify-items: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 50%;
+            background-color: rgba(255, 255, 255, .5);
+            padding: 16px;
+            z-index: 3;
+        }
+
+        .download-box img {
+            width: 100%;
+        }
+
+        .download-msg {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #ffffb2;
+            -webkit-text-shadow: 0 0 2px #c49a5a;
+            text-shadow: 0 0 10px #c49a5a;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30%;
+            height: 100%;
+            max-width: 400px;
+            background: -webkit-linear-gradient(180deg, #1e0c00 0%, #1e0c00 5%, #3b1000 78%, #832f02 100%);
+            background: -o-linear-gradient(180deg, #1e0c00 0%, #1e0c00 5%, #3b1000 78%, #832f02 100%);
+            background: linear-gradient(180deg, #1e0c00 0%, #1e0c00 5%, #3b1000 78%, #832f02 100%);
+            border-radius: 15px;
+            -webkit-box-shadow: inset 0 0 2px 2px #f3bd39, inset 0 0 1px 2px #59200a, inset 0 0 2px 4px #bd6609;
+            box-shadow: inset 0 0 2px 2px #f3bd39, inset 0 0 1px 2px #59200a, inset 0 0 2px 4px #bd6609;
+            color: #ffffb2;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 16px 0 32px;
+        }
+
+        .download-box .download-btn {
+            width: 100%;
+            margin: 0;
+        }
+
+        .warp {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 177.8%;
+            overflow: hidden;
+        }
+        .warp-1{background: url(images/1080x1920_M88LP-p1.jpg)no-repeat center/contain;}
+        .warp-2{background: url(images/1080x1920_M88LP-p2.jpg)no-repeat center/contain;}
+        .warp-3{background: url(images/1080x1920_M88LP-p3.jpg)no-repeat center/contain;}
+        .warp-4{background: url(images/1080x1920_M88LP-p4.jpg)no-repeat center/contain;}
+        .warp-5{background: url(images/1080x1920_M88LP-p5.jpg)no-repeat center/contain;}
+        .warp-6{background: url(images/1080x1920_M88LP-p6.jpg)no-repeat center/contain;}
+        .warp-7{background: url(images/1080x1920_M88LP-p7.jpg)no-repeat center/contain;}
+        .warp-8{background: url(images/1080x1920_M88LP-p8.jpg)no-repeat center/contain;}
+
+        .img-box{
+            position: absolute;
+            top: 37%;
+            left: 50%;
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            width: 90%;
+            height: 40.3%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .warp-img {
+            width: 100%;
+        }
+
+        .btn{
+            position: absolute;
+            left: 50%;
+            width: 75%;
+            height: 0;
+            border-radius: 120px;
+            transform: translateX(-50%);
+        }
+
+        .btn-custom-1{
+            bottom: 3%;
+            padding-bottom: 10vw;
+            background: linear-gradient(180deg, #f4f2c3 0%, #fafae4 100%);
+        }
+
+
+        .btn-custom-2 div,
+        .btn-custom-1 div{
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 16px);
+            height: calc(100% - 16px);
+            font-size: 6vw;
+            border-radius: 120px;
+        }
+
+        .btn-custom-1 div{
+            background: linear-gradient(180deg, #f7c807 0%, #ffee6c 25%, #e69201 50%, #ffee6c 85%, #fbc902 100%);
+        }
+
+        .btn-custom-2 span,
+        .btn-custom-1 span{
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 12px);
+            height: calc(100% - 12px);
+            border-radius: 120px;
+            color: #ffe726;
+            font-weight: bolder;
+            text-shadow: 3px 3px #000;
+        }
+
+        .btn-custom-1 span{
+            background: linear-gradient(180deg, #592527 0%, #87302e 25%, #5c1012 50%, #842e2c 85%, #5b2928 100%);
+        }
+
+        .btn span::before,
+        .btn span::after{
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            background: #fff;
+            border-radius: 120px;
+            box-shadow: 0 0 75px 30px #fff;
+        }
+
+        .btn span::before{
+            top: 0;
+            right: 38%;
+        }
+
+        .btn span::after{
+            bottom: 8px;
+            left: 6%;
+        }
+
+
+        .btn-custom-2{
+            bottom: 10%;
+            padding-bottom: 15vw;
+            background: linear-gradient(180deg, #f9dbff 0%, #fcebff 100%);
+        }
+
+        .btn-custom-2 div{
+            background: linear-gradient(180deg, #f2aeff 0%, #f8d5ff 25%, #ca6ddb 50%, #f8d5ff 85%, #f0a0ff 100%);
+        }
+
+        .btn-custom-2 span{
+            background: linear-gradient(180deg, #660a77 0%, #802391 25%, #570168 50%, #7f2290 85%, #6b0f7c 100%);
+        }
+
+        footer {
+            text-align: center;
+        }
+
+        footer p {
+            color: #fff;
+        }
+
+        footer a {
+            color: #c49a5a;
+        }
+
+        .animation {
+            animation: animation infinite alternate linear .8s both;
+        }
+
+        /*Animation */
+        @keyframes animation {
+            0% {
+                -webkit-filter: drop-shadow(0px 0px 0px #c49a5a);
+            }
+
+            100% {
+                -webkit-filter: drop-shadow(0px 0px 20px #c49a5a);
+            }
+        }
+
+
+
+        @media (max-width: 768px) {
+
+        }
+
+        @media screen and (max-width:500px) {
+            .download-box {
+                grid-template-columns: 20% 40% 40%;
+                width: 100%;
+                padding: 8px;
+            }
+
+            .download-msg h1 {
+                line-height: 1.75rem;
+                font-size: 1.5rem !important;
+            }
+
+            .download-msg h3 {
+                font-weight: 100;
+                font-size: .7rem !important;
+            }
+
+            .download-box .download-btn {
+                height: 90%;
+                font-size: 1.5rem !important;
+            }
+
+            .btn {
+                padding-bottom: 20vw;
+            }
+
+            .btn-custom-2 div,
+            .btn-custom-1 div{
+                top: 4px;
+                left: 4px;
+                width: calc(100% - 8px);
+                height: calc(100% - 8px);
+            }
+
+            .btn-custom-2 span,
+            .btn-custom-1 span{
+                position: absolute;
+                top: 3px;
+                left: 3px;
+                width: calc(100% - 6px);
+                height: calc(100% - 6px);
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="download-box">
+        <img src="images/milyon-logo.png">
+        <div class="download-msg">
+            <h1>Milyon 88</h1>
+            <h3>
+                <p>Please feel free to download and install</p>
+                <p>We protect your privacy and security</p>
+            </h3>
+        </div>
+        <a id="download-btn" class="download-btn animation" href="https://signup.miyon88.com/registered.php?pid=ATad11">Sign Up</a>
+    </div>
+    <section>
+        <div class="warp warp-1">
+            <div class="img-box">
+                <img class="warp-img" src="images/FBAD1124-3_1024x1024.png">
+            </div>
+            <a class="btn btn-custom-1" href="https://signup.miyon88.com/registered.php?pid=ATad11"><div><span>Sign Up</span></div></a>
+        </div>
+        <div class="warp warp-2"></div>
+        <div class="warp warp-3"></div>
+        <div class="warp warp-4"></div>
+        <div class="warp warp-5"></div>
+        <div class="warp warp-6"></div>
+        <div class="warp warp-7"></div>
+        <div class="warp warp-8">
+            <a class="btn btn-custom-2" href="https://signup.miyon88.com/registered.php?pid=ATad11"><div><span>Sign Up</span></div></a>
+        </div>
+    </section>
+    <footer>
+        <p>This game is only meant for the 21+ age group</p>
+        <!-- <div>
+            <a href="https://signup.miyon88.com/registered.php?pid=ATad11">About Us</a>
+            <a href="https://signup.miyon88.com/registered.php?pid=ATad11">Terms & Conditions</a>
+            <a href="https://signup.miyon88.com/registered.php?pid=ATad11">Privacy Policy</a>
+            <a href="https://signup.miyon88.com/registered.php?pid=ATad11">Cancellation & Refund Policy</a>
+        </div> -->
+        <p>Copyright 2023 Milyon 88 All rights reseved</p>
+    </footer>
+
+</body>
+<script>
+    let downloadMsg = document.querySelector('.download-msg')
+    let downloadBtn = document.querySelector('#download-btn')
+    window.onload = function () {
+        h1Size = window.innerWidth / 500
+        h2Size = window.innerWidth / 750
+        h3Size = window.innerWidth / 1000
+        downloadMsg.children[0].style.fontSize = h1Size + 'rem';
+        downloadMsg.children[1].style.fontSize = h3Size + 'rem';
+        downloadBtn.style.fontSize = h2Size + 'rem';
+    }
+    window.onresize = function () {
+        h1Size = window.innerWidth / 500
+        h2Size = window.innerWidth / 750
+        h3Size = window.innerWidth / 1000
+        downloadMsg.children[0].style.fontSize = h1Size + 'rem';
+        downloadMsg.children[1].style.fontSize = h3Size + 'rem';
+        downloadBtn.style.fontSize = h2Size + 'rem';
+    }
+
+</script>
+
+</html>

@@ -613,3 +613,23 @@ body {
         width: 90%;
     }
 }
+
+
+.registered {
+    background: url(images/popbg.webp)no-repeat center/cover;
+    color: #fff;
+}
+.data-box {
+    border: 2px solid #deab03!important;
+    background: #071c17;
+    box-shadow: 0 0 0px 2px #996416, inset 0 0 0 1px #aa892c, inset 0 0 0 3px #7b561f;
+}
+.sumbit-btn{
+    background: url(images/banner-bg.webp)no-repeat center/contain;
+    width: 200px;
+    height: 80px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+}

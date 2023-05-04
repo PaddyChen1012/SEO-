@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-weight: bolder;
+        }
+        h1{
+            width: 100%;
+            text-align: center;
+        }
+        .input-box input{
+            font-size: 1.25rem;
+            padding: .5rem;
+        }
+        .parameter{
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .parameter div~div{
+            margin-left: 1rem;
+        }
+        .parameter .input-box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-box{
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .sumbit{
+            width: 180px;
+            height: 60px;
+            font-size: 1.25rem;
+        }
+        .conclusion{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .conclusion .input-box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .conclusion div~div{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>活動公式計算機</h1>
+    <section>
+        <div class="parameter">
+            <div class="input-box">
+                <label for="num1">Deposit:</label>
+                <input type="text" id="num1">
+            </div>
+            <div class="input-box">
+                <label for="num2">Bonus:</label>
+                <input type="text" id="num2">
+            </div>
+            <div class="input-box">
+                <label for="num3">turn:</label>
+                <input type="text" id="num3">
+            </div>
+        </div>
+        <div class="btn-box">
+            <button class="sumbit" onclick="addNumbers()">相加</button>
+        </div>
+        <div class="conclusion">
+            <div class="input-box">
+                <label for="result">過關率:</label>
+                <input type="text" id="result" readonly>
+            </div>
+            <div class="input-box">
+                <label for="total">平均過關收益:</label>
+                <input type="text" id="total" readonly>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    function addNumbers() {
+        // 取得輸入框中的值
+        var num1 = document.getElementById("num1").value;
+        var num2 = document.getElementById("num2").value;
+        var num3 = document.getElementById("num3").value;
+
+        // 計算兩數相加
+        var sum = (parseInt(num1) + parseInt(num2)) * 0.97;
+        document.getElementById("total").value = sum;
+
+        var x = Math.floor(parseInt(num3) / 7);
+        if((num3 % 7) !== 0){
+            var y = (num3 % 7) / 7;
+            console.log('x:' + x);
+            console.log('y:' + y);
+            console.log((0.5 ** x));
+            console.log((0.5 ** 2) - (0.5 ** (x+1)));
+            console.log((0.5 ** x) - ((0.5 ** x) - (0.5 ** (x+1))) * y);
+            document.getElementById("result").value = Math.floor(((0.5 ** x) - ((0.5 ** x) - (0.5 ** (x+1))) * y) * 100) + '%';
+        }else{
+            console.log('x:' + x);
+            console.log('y:' + y);
+            document.getElementById("result").value = (0.5 ** x) * 100 + '%';
+        }
+    }
+</script>
+</html>

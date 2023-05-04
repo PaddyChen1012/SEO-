@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BET VISA</title>
+    <link rel="icon" href="images/cropped-favicon-192x192.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/cropped-favicon-192x192.png" type="image/x-icon">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .page{
+            width: 100%;
+            max-width: 768px;
+        }
+        .wrap{
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 177.78%;
+        }
+        .page-1 .wrap{
+            background: url(images/BetVisaVN-1080x1920-p1.jpg)no-repeat center/cover;
+        }
+        .page-2 .wrap{
+            background: url(images/BetVisaVN-1080x1920-p2.jpg)no-repeat center/cover;
+        }
+        .page-3 .wrap{
+            background: url(images/BetVisaVN-1080x1920-p3.jpg)no-repeat center/cover;
+        }
+        .page-4 .wrap{
+            background: url(images/BetVisaVN-1080x1920-p4.jpg)no-repeat center/cover;
+        }
+        .page-5 .wrap{
+            background: url(images/BetVisaVN-1080x1920-p5.jpg)no-repeat center/cover;
+        }
+        .page-6 .wrap{
+            background: url(images/BetVisaVN-1080x1920-p6.jpg)no-repeat center/cover;
+        }
+        .btn{
+            position: absolute;
+            display: block;
+            width: 90%;
+        }
+        .claimbonus-btn{
+            left: 5%;
+            bottom: 2.5%;
+        }
+        .download-btn{
+            left: 0%;
+            top: 0%;
+            width: 45%;
+        }
+        .startyourgame-btn{
+            left: 5%;
+            bottom: 12.5%;
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="page page-1">
+            <div class="wrap">
+                <a class="btn claimbonus-btn" href="bvthethao_20230428a.apk"><img src="images/VNclaimbonusBTN.png" alt=""></a>
+            </div>
+        </div>
+        <div class="page page-2">
+            <div class="wrap"></div>
+        </div>
+        <div class="page page-3">
+            <div class="wrap"></div>
+        </div>
+        <div class="page page-4">
+            <div class="wrap"></div>
+        </div>
+        <div class="page page-5">
+            <div class="wrap"></div>
+        </div>
+        <div class="page page-6">
+            <div class="wrap">
+                <div class="wrap">
+                    <a class="btn download-btn" href="bvthethao_20230428a.apk"><img src="images/VNdownloadBTN.png" alt=""></a>
+                    <a class="btn startyourgame-btn" href="bvthethao_20230428a.apk"><img src="images/VNstartyourgameBTN.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script>
+    fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.ip);
+            console.log(data.country_name);
+            console.log(data.region);
+            console.log(data.city);
+            console.log(data.latitude);
+            console.log(data.longitude);
+    });
+</script>
+</html>

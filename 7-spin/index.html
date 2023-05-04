@@ -4,69 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        body{
-            background-color: #000;
-        }
-        section{
-            position: relative;
-        }
-        .bg{
-            width: 100%;
-        }
-        main{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .header-img{
-            position: relative;
-        }
-        .header-img>img{
-            width: 100%;
-        }
-        .header-img>a{
-            position: absolute;
-            bottom: 27%;
-            left: 20%;
-            width: 60%;
-        }
-        .header-img>a>img{
-            width: 100%;
-        }
-        .button-group{
-            width: 60%;
-            margin: -15% auto 0;
-        }
-        .button-group img{
-            width: 100%;
-            margin: .5rem 0;
-        }
-    </style>
+    <title>7spin</title>
+    <link rel="icon" href="images/icon_400x400.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/icon_400x400.png" type="image/x-icon">
 </head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .section{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        background: url(images/LANDING-PAGE20230306.jpg)no-repeat top/cover;
+        padding-bottom: 509.8%;
+    }
+    .bg{
+        width: 100%;
+        max-width: 988px;
+    }
+    .btn-link{
+        position: absolute;
+        left: 50%;
+        width: 38%;
+        /* max-width: 600px; */
+        transform: translateX(-50%);
+    }
+    .btn-link.top{
+        top: 23.1%;
+    }
+    .btn-link.bottom{
+        bottom: 0.5%;
+    }
+    .btn{
+        width: 100%;
+        padding-bottom: 82.55%;
+        animation: btn-animation infinite 1.6s linear;
+    }
+    @media screen and (max-width:500px) {
+        .section{
+            background-size: 160%;
+            padding-bottom: 815.6%;
+        }
+        .btn-link{
+            width: 60%;
+        }
+    }
+    @keyframes btn-animation {
+        0%,40%{background: url(images/btn1.png)no-repeat center/contain;}
+        60%,100%{background: url(images/btn2.png)no-repeat center/contain;}
+    }
+</style>
 <body>
-    <section>
-        <img class="bg" src="images/landing-pageB.jpg" alt="7spin">
-        <main>
-            <div class="header-img">
-                <img src="images/landing-page1.png" alt="7spin">
-                <a href=""><img src="images/login.png" alt=""></a>
-            </div>
-            <div class="button-group">
-                <a href=""><img src="images/ICON1-b.png" alt="7spin"></a>
-                <a href=""><img src="images/ICON2-b.png" alt="7spin"></a>
-                <a href=""><img src="images/ICON3-b.png" alt="7spin"></a>
-                <a href=""><img src="images/ICON4-b.png" alt="7spin"></a>
-            </div>
-        </main>
-    </section>
+    <div class="section">
+        <!-- <img class="bg" src="images/LANDING-PAGE.jpg" alt=""> -->
+        <a class="btn-link top" href="https://7-spin.com/7SPIN_20230210.apk"><div class="btn"></div></a>
+        <a class="btn-link bottom" href="https://7-spin.com/7SPIN_20230210.apk"><div class="btn"></div></a>
+    </div>
 </body>
 </html>
