@@ -481,9 +481,17 @@
             <div class="pass-box">
                 <!-- <label for="result">過關率:</label> -->
                 <svg class="circle-box" width="160" height="160">
+                    <defs>
+                        <linearGradient id="myGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+                            <stop offset="0%"   stop-color="#d9ad34" stop-opacity="1"/>
+                            <stop offset="30%" stop-color="#FFFFA4" stop-opacity="1"/>
+                            <stop offset="50%"   stop-color="#d9ad34" stop-opacity="1"/>
+                            <stop offset="90%" stop-color="#bf7427" stop-opacity="1"/>
+                            <stop offset="100%" stop-color="#FFFFA4" stop-opacity="1"/>
+                        </linearGradient>
+                    </defs>
                     <circle class="" fill="none" stroke="#ccc" stroke-width="8" cx="80" cy="80" r="76" stroke-linecap="round" />
-                    <circle class="circle" fill="none" stroke="#68E534" stroke-width="8" cx="80" cy="80" r="76" stroke-linecap="round" transform="rotate(-90 80 80)" />
-
+                    <circle class="circle" fill="none" stroke="url(#myGradient)" stroke-width="8" cx="80" cy="80" r="76" stroke-linecap="round" transform="rotate(-90 80 80)" />
                 </svg>
                 <span class="num">0%</span>
             </div>
