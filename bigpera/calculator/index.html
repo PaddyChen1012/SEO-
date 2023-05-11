@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-weight: bolder;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(0deg, black 0%, transparent 100%), url(images/5274d6609a0dd1e0020beaaad30448e6.jpg)repeat center/25%;
+            padding: 16px 0 0;
+            min-height: 100vh;
+        }
+        h1{
+            width: fit-content;
+            color: rgba(236, 204, 104, 1);
+            text-align: center;
+            margin: 0 auto;
+        }
+        .bulb-board {
+            position: relative;
+            display: inline-block;
+            padding: 24px 56px;
+            /* background-color: #2c127e; */
+            background-color: rgba(53, 53, 62, 1);
+            border-radius: 10px;
+            overflow: hidden;
+            transform-origin: top center;
+            box-shadow: 2px 2px 9px 0px #000;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .bulb {
+            position: absolute;
+        }
+
+        .top-bulb,
+        .bottom-bulb {
+            width: calc(100% - 30px);
+            height: 15px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        .top-bulb {
+            top: 0;
+        }
+
+        .right-bulb,
+        .left-bulb {
+            height: 100%;
+            width: 15px;
+            bottom: 0;
+        }
+
+        .right-bulb {
+            right: 0;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        .left-bulb {
+            left: 0;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .bulb>ul>li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(236, 204, 104, 0.1);
+            animation-name: flash-1;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            position: relative;
+        }
+
+        .bulb>ul>li:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .bulb>ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+        }
+
+        .top-bulb>ul,
+        .bottom-bulb>ul {
+            flex-direction: row;
+        }
+
+        .bottom-bulb {
+            bottom: 0;
+        }
+
+        .right-bulb>ul,
+        .left-bulb>ul {
+            flex-direction: column;
+        }
+
+        .delay01 {
+            animation-delay: 0.1s;
+        }
+
+        .delay02 {
+            animation-delay: 0.2s;
+        }
+
+        .delay03 {
+            animation-delay: 0.3s;
+        }
+
+        .delay04 {
+            animation-delay: 0.4s;
+        }
+
+        .delay05 {
+            animation-delay: 0.5s;
+        }
+
+        .delay06 {
+            animation-delay: 0.6s;
+        }
+
+        .delay07 {
+            animation-delay: 0.7s;
+        }
+
+        .delay08 {
+            animation-delay: 0.8s;
+        }
+
+        .delay09 {
+            animation-delay: 0.9s;
+        }
+
+        .delay1 {
+            animation-delay: 1s;
+        }
+
+        .delay12 {
+            animation-delay: 1.2s;
+        }
+
+        .delay13 {
+            animation-delay: 1.3s;
+        }
+
+        .delay14 {
+            animation-delay: 1.4s;
+        }
+
+        .delay15 {
+            animation-delay: 1.5s;
+        }
+
+        .delay16 {
+            animation-delay: 1.6s;
+        }
+
+        .delay17 {
+            animation-delay: 1.7s;
+        }
+
+        .delay18 {
+            animation-delay: 1.8s;
+        }
+
+        .delay19 {
+            animation-delay: 1.9s;
+        }
+
+        .delay20 {
+            animation-delay: 2s;
+        }
+
+        /*Animation */
+        @keyframes flash-1 {
+            0% {
+                background: #f0b600;
+                background: rgba(236, 204, 104, 1);
+            }
+
+            100% {
+                background: rgba(236, 204, 104, 0.1);
+            }
+        }
+
+        .input-box{
+            position: relative;
+        }
+
+        input{ 
+            border: 0;
+            border-radius: 10px;
+        }
+
+        .input-box input{
+            width: 280px;
+            font-size: 1.25rem;
+            padding: .5rem .5rem .5rem 3.5rem;
+            z-index: 1;
+        }
+        .input-box::before{
+            content: '';
+            position: absolute;
+            top: -3px;
+            bottom: -3px;
+            left: -3px;
+            right: -3px;
+            background: linear-gradient(180deg, #ffffa4 0%, #d9ad34 15%, #ffffe4 60%, #b17f35 100%);
+            border-radius: 14px;
+        }
+        /* .input-box::after{
+            content: '';
+            position: absolute;
+            top: -4px;
+            bottom: -4px;
+            left: -4px;
+            right: -4px;
+            border: 2px solid #fff;
+            border-radius: 14px;
+        } */
+        .animation.controls{
+            height: 100%;
+        }
+        .parameter{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .parameter div{
+            margin-top: 3rem;
+        }
+        label{
+            position: absolute;
+            top: -35px;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+        .parameter .input-box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-box{
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .sumbit{
+            width: 180px;
+            height: 60px;
+            background: #333;
+            border: 0;
+            box-shadow: 0 0 2px 2px #d9ad34 inset, 0 0 2px 4px #FFFFA4 inset, 0 0 2px 4px #d9ad34 inset, 0 0 4px 6px #bf7427 inset;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.25rem;
+        }
+        .conclusion{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* background: linear-gradient(0deg, black 50%, transparent 100%); */
+            padding: 2rem;
+        }
+        .conclusion .input-box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .conclusion input{
+            height: 120px;
+            background: #000;
+            color: #fff;
+            padding: 0;
+            text-align: center;
+            font-size: 3rem;
+        }
+        .conclusion .input-box::before {
+            top: -8px;
+            bottom: -8px;
+            left: -8px;
+            right: -8px;
+        }
+        .svg-box{
+            position: absolute;
+            top: 50%;
+            left: 0.25rem;
+            width: 40px;
+            height: 40px;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .pass-box{
+            position: relative;
+        }
+        .circle-box{
+            z-index: 1;
+        }
+        .circle{
+            stroke-dasharray: 477.6;
+            stroke-dashoffset: 1432.8;
+        }
+        .num{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            font-size: 3rem;
+        }
+        .money-img{
+            position: absolute;
+            width: 25%;
+            opacity: 0;
+            z-index: 1;
+        }
+        .no1{
+            bottom: 10%;
+            left: -15%;
+            transform: translateX(-16px);
+        }
+        .no3{
+            bottom: 0%;
+            left: 0%;
+            transform: translateX(-16px);
+        }
+        .no5{
+            bottom: -10%;
+            left: -10%;
+            transform: translateX(-16px);
+        }
+        .no7{
+            bottom: -20%;
+            left: 0%;
+            transform: translateX(-16px);
+        }
+        .no9{
+            bottom: -20%;
+            left: -20%;
+            transform: translateX(-16px);
+        }
+        .no2{
+            bottom: 10%;
+            right: -15%;
+            transform: translateX(16px);
+        }
+        .no4{
+            bottom: 0%;
+            right: 0%;
+            transform: translateX(16px);
+        }
+        .no6{
+            bottom: -10%;
+            right: -10%;
+            transform: translateX(16px);
+        }
+        .no8{
+            bottom: -20%;
+            right: -0%;
+            transform: translateX(16px);
+        }
+        .no10{
+            bottom: -20%;
+            right: -20%;
+            transform: translateX(16px);
+        }
+        .money-img.show{
+            transition: all .8s ease;
+            transform: translateX(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <div class='bulb-board'>
+            <div class="btn-animation btn"><span>活動公式計算機</span></div>
+            <div class='top-bulb bulb'>
+                <ul>
+                    <li class="delay01"></li>
+                    <li class="delay02"></li>
+                    <li class="delay03"></li>
+                    <li class="delay04"></li>
+                    <li class="delay05"></li>
+                    <li class="delay06"></li>
+                </ul>
+            </div>
+            <div class='right-bulb bulb'>
+                <ul>
+                    <li class="delay07"></li>
+                    <li class="delay08"></li>
+                    <li class="delay09"></li>
+                </ul>
+            </div>
+            <div class='bottom-bulb bulb'>
+                <ul>
+                    <li class="delay16"></li>
+                    <li class="delay15"></li>
+                    <li class="delay14"></li>
+                    <li class="delay13"></li>
+                    <li class="delay12"></li>
+                    <li class="delay1"></li>
+                </ul>
+            </div>
+            <div class='left-bulb bulb'>
+                <ul>
+                    <li class="delay19"></li>
+                    <li class="delay18"></li>
+                    <li class="delay17"></li>
+                </ul>
+            </div>
+        </div>
+    </h1>
+    <section>
+        <div class="parameter">
+            <div class="input-box">
+                <label for="num1">Deposit:</label>
+                <input type="text" id="num1">
+                <lottie-player class="svg-box" src="https://assets4.lottiefiles.com/packages/lf20_EtVMC4WXos.json" background="transparent" speed="1" loop autoplay></lottie-player>
+            </div>
+
+            <div class="input-box">
+                <label for="num2">Bonus:</label>
+                <input type="text" id="num2">
+                <lottie-player class="svg-box" src="https://assets2.lottiefiles.com/packages/lf20_zywherkr.json" background="transparent" speed="1" loop autoplay></lottie-player>
+            </div>
+            
+            <div class="input-box">
+                <label for="num3">turn:</label>
+                <input type="text" id="num3">
+                <lottie-player class="svg-box" src="https://assets10.lottiefiles.com/packages/lf20_Jpn5Hs3tsy.json" background="transparent" speed="1" loop autoplay></lottie-player>
+            </div>
+        </div>
+        <div class="btn-box">
+            <button class="sumbit" onclick="addNumbers()">Sumbit</button>
+        </div>
+        <div class="conclusion">
+            <div class="pass-box">
+                <!-- <label for="result">過關率:</label> -->
+                <svg class="circle-box" width="160" height="160">
+                    <circle class="" fill="none" stroke="#ccc" stroke-width="8" cx="80" cy="80" r="76" stroke-linecap="round" />
+                    <circle class="circle" fill="none" stroke="#68E534" stroke-width="8" cx="80" cy="80" r="76" stroke-linecap="round" transform="rotate(-90 80 80)" />
+
+                </svg>
+                <span class="num">0%</span>
+            </div>
+            <div id="money-total" class="input-box">
+                <!-- <label for="total">平均過關收益:</label> -->
+                <input type="text" id="total" value="0" readonly>
+                <img class="money-img no1" src="images/money-l.png" alt="">
+                <img class="money-img no2" src="images/money-r.png" alt="">
+                <img class="money-img no3" src="images/money-l.png" alt="">
+                <img class="money-img no4" src="images/money-r.png" alt="">
+                <img class="money-img no5" src="images/money-l.png" alt="">
+                <img class="money-img no6" src="images/money-r.png" alt="">
+                <img class="money-img no7" src="images/money-l.png" alt="">
+                <img class="money-img no8" src="images/money-r.png" alt="">
+                <img class="money-img no9" src="images/money-l.png" alt="">
+                <img class="money-img no10" src="images/money-r.png" alt="">
+            </div>
+        </div>
+    </section>
+</body>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<script>
+    function addNumbers() {
+        // 取得輸入框中的值
+        var num1 = document.getElementById("num1").value;
+        var num2 = document.getElementById("num2").value;
+        var num3 = document.getElementById("num3").value;
+        var num = 0;
+
+        document.getElementById("total").value = 0;
+
+        var x = Math.floor(parseInt(num3) / 7);
+        if((num3 % 7) !== 0){
+            var y = (num3 % 7) / 7;
+            passNum = Math.floor(((0.5 ** x) - ((0.5 ** x) - (0.5 ** (x+1))) * y) * 100);
+        }else{
+            passNum = (0.5 ** x) * 100;
+        }
+
+        var interval = setInterval(function() {
+            document.querySelector(".num").textContent = num + '%';
+            circleNum = 477.6 - (477.6/100)*num
+            document.querySelector(".circle").style = "stroke-dashoffset:" + circleNum + ";";
+            num++;
+            moneyImg = document.querySelector('.money-img');
+            if (num > passNum) {
+                clearInterval(interval);
+                // 計算兩數相加
+                var sum = (parseInt(num1) + parseInt(num2)) * (0.97 ** x);
+                document.getElementById("total").value = Math.floor(sum);
+                moneyNum = Math.round(sum/100);
+                for(let i=0; i<moneyNum; i++){
+                    imgNum = i+1;
+                    img = document.querySelector('.no' + imgNum);
+                    img.classList.add("show");
+                }
+            }
+        }, 50);
+
+        
+    }
+</script>
+</html>

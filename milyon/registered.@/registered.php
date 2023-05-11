@@ -234,7 +234,7 @@ switch ($data_info) {
         }
         break;
     case 'common.success':
-            echo '<script>location.href="/suceful.html?user='. $data['username'].'";ysTrackEvent("ax3t11");</script>';
+            echo '<script>location.href="/suceful.html?user='. $data['username'].'";ysTrackEvent("zfw3p7s");</script>';
             $duplicated = 'successful';
         break;
     case 'common.captcha.wrong':
