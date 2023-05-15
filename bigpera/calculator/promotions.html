@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promtions</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/bulb.css">
+    <link rel="stylesheet" href="css/promotions.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        section{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        section > *{
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: 375px;
+            padding: 0 1rem 1rem;
+            text-decoration: none;
+        }
+        .card{
+            display: flex;
+            flex-wrap: wrap;
+            background: #333;
+            border: 0;
+            box-shadow: 0 0 2px 2px #d9ad34 inset, 0 0 2px 4px #FFFFA4 inset, 0 0 2px 4px #d9ad34 inset, 0 0 4px 6px #bf7427 inset;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1.05rem;
+            padding: 6px;
+        }
+        img{width: 100%;}
+        .card-header{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            /* height: 120px; */
+            font-size: 1.25rem;
+        }
+        .card-body{
+            display: flex;
+            width: 100%;
+            /* height: 120px; */
+        }
+        .card-body > div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* width: 50%; */
+            padding: 8px;
+        }
+        .card-body img{
+            width: auto;
+            height: 120px;
+        }
+        .card-body .c-name{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: calc(100% - 136px);
+        }
+        .c-name div{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 4px;
+        }
+        .bi::before{
+            font-size: 14px;
+        }
+        .btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 32px;
+            background: #333;
+            border: 0;
+            box-shadow: 0 0 2px 2px #d9ad34 inset, 0 0 2px 4px #FFFFA4 inset, 0 0 2px 4px #d9ad34 inset, 0 0 4px 6px #bf7427 inset;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.05rem;
+            text-decoration: none;
+        }
+        .card-body .c-icon{
+            width: 136px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">
+            <svg fill="#fff" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M222.927 580.115l301.354 328.512c24.354 28.708 20.825 71.724-7.883 96.078s-71.724 20.825-96.078-7.883L19.576 559.963a67.846 67.846 0 01-13.784-20.022 68.03 68.03 0 01-5.977-29.488l.001-.063a68.343 68.343 0 017.265-29.134 68.28 68.28 0 011.384-2.6 67.59 67.59 0 0110.102-13.687L429.966 21.113c25.592-27.611 68.721-29.247 96.331-3.656s29.247 68.721 3.656 96.331L224.088 443.784h730.46c37.647 0 68.166 30.519 68.166 68.166s-30.519 68.166-68.166 68.166H222.927z"></path></g></svg>
+        </a>
+        <h1>
+            <div class='bulb-board'>
+                <div class=""><span>優惠活動</span></div>
+                <div class='top-bulb bulb'>
+                    <ul>
+                        <li class="delay01"></li>
+                        <li class="delay02"></li>
+                        <li class="delay03"></li>
+                        <li class="delay04"></li>
+                        <li class="delay05"></li>
+                        <li class="delay06"></li>
+                    </ul>
+                </div>
+                <div class='right-bulb bulb'>
+                    <ul>
+                        <li class="delay07"></li>
+                        <li class="delay08"></li>
+                        <li class="delay09"></li>
+                    </ul>
+                </div>
+                <div class='bottom-bulb bulb'>
+                    <ul>
+                        <li class="delay16"></li>
+                        <li class="delay15"></li>
+                        <li class="delay14"></li>
+                        <li class="delay13"></li>
+                        <li class="delay12"></li>
+                        <li class="delay1"></li>
+                    </ul>
+                </div>
+                <div class='left-bulb bulb'>
+                    <ul>
+                        <li class="delay19"></li>
+                        <li class="delay18"></li>
+                        <li class="delay17"></li>
+                    </ul>
+                </div>
+            </div>
+        </h1>
+    </nav>
+    <section>
+        <div>
+            <div class="card">
+                <img src="images/PromotionInfoLanguage.png" alt="" srcset="">
+                <div class="card-header">
+                    <div>名稱：<span>pay69</span></div>
+                </div>
+                <div class="card-body">
+                    <div class="c-name">
+                        <div>
+                            過關率：
+                            <span>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </span>
+                        </div>
+                        <div>立即試玩：<a href="" class="btn">連結</a></div>
+                        <div>立即下載：<a href="" class="btn">下載</a></div>
+                    </div>
+                    <div class="c-icon"><img src="images/P69_500x500.png" alt="" srcset=""></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card">
+                <img src="images/PromotionInfoLanguage.png" alt="" srcset="">
+                <div class="card-header">
+                    <div>名稱：<span>pay69</span></div>
+                </div>
+                <div class="card-body">
+                    <div class="c-name">
+                        <div>
+                            過關率：
+                            <span>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </span>
+                        </div>
+                        <div>立即試玩：<a href="" class="btn">連結</a></div>
+                        <div>立即下載：<a href="" class="btn">下載</a></div>
+                    </div>
+                    <div class="c-icon"><img src="images/P69_500x500.png" alt="" srcset=""></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card">
+                <img src="images/PromotionInfoLanguage.png" alt="" srcset="">
+                <div class="card-header">
+                    <div>名稱：<span>pay69</span></div>
+                </div>
+                <div class="card-body">
+                    <div class="c-name">
+                        <div>
+                            過關率：
+                            <span>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </span>
+                        </div>
+                        <div>立即試玩：<a href="" class="btn">連結</a></div>
+                        <div>立即下載：<a href="" class="btn">下載</a></div>
+                    </div>
+                    <div class="c-icon"><img src="images/P69_500x500.png" alt="" srcset=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

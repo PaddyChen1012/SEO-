@@ -1,0 +1,145 @@
+nav{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    padding: 8px;
+}
+nav a{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    transform: translateY(-50%);
+}
+nav svg{
+    width: 100%;
+}
+h1{
+    color: rgba(236, 204, 104, 1);
+    text-align: center;
+    margin: 0 auto;
+}
+.bulb-board {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 72px;
+    background-color: rgba(53, 53, 62, 1);
+    overflow: hidden;
+    transform-origin: top center;
+    box-shadow: 2px 2px 9px 0px #000;
+    border-radius: 10px;
+}
+.bulb {
+    position: absolute;
+}
+.top-bulb,
+.bottom-bulb {
+    width: calc(100% - 30px);
+    height: 15px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.top-bulb {
+    top: 0;
+}
+.right-bulb,
+.left-bulb {
+    height: 100%;
+    width: 15px;
+    bottom: 0;
+}
+.right-bulb {
+    right: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.left-bulb {
+    left: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.bulb>ul>li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(236, 204, 104, 0.1);
+    animation-name: flash-1;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    position: relative;
+}
+.bulb>ul>li:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.3;
+}
+.bulb>ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+.top-bulb>ul,
+.bottom-bulb>ul {
+    flex-direction: row;
+}
+.bottom-bulb {
+    bottom: 0;
+}
+.right-bulb>ul,
+.left-bulb>ul {
+    flex-direction: column;
+}
+
+.delay01 {animation-delay: 0.1s;}
+.delay02 {animation-delay: 0.2s;}
+.delay03 {animation-delay: 0.3s;}
+.delay04 {animation-delay: 0.4s;}
+.delay05 {animation-delay: 0.5s;}
+.delay06 {animation-delay: 0.6s;}
+.delay07 {animation-delay: 0.7s;}
+.delay08 {animation-delay: 0.8s;}
+.delay09 {animation-delay: 0.9s;}
+.delay1 {animation-delay: 1s;}
+.delay12 {animation-delay: 1.2s;}
+.delay13 {animation-delay: 1.3s;}
+.delay14 {animation-delay: 1.4s;}
+.delay15 {animation-delay: 1.5s;}
+.delay16 {animation-delay: 1.6s;}
+.delay17 {animation-delay: 1.7s;}
+.delay18 {animation-delay: 1.8s;}
+.delay19 {animation-delay: 1.9s;}
+.delay20 {animation-delay: 2s;}
+
+/*Animation */
+@keyframes flash-1 {
+    0% {
+        background: #f0b600;
+        background: rgba(236, 204, 104, 1);
+    }
+
+    100% {
+        background: rgba(236, 204, 104, 0.1);
+    }
+}

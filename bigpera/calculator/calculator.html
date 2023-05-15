@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/bulb.css">
+    <link rel="stylesheet" href="css/calculator.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">
+            <svg fill="#fff" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M222.927 580.115l301.354 328.512c24.354 28.708 20.825 71.724-7.883 96.078s-71.724 20.825-96.078-7.883L19.576 559.963a67.846 67.846 0 01-13.784-20.022 68.03 68.03 0 01-5.977-29.488l.001-.063a68.343 68.343 0 017.265-29.134 68.28 68.28 0 011.384-2.6 67.59 67.59 0 0110.102-13.687L429.966 21.113c25.592-27.611 68.721-29.247 96.331-3.656s29.247 68.721 3.656 96.331L224.088 443.784h730.46c37.647 0 68.166 30.519 68.166 68.166s-30.519 68.166-68.166 68.166H222.927z"></path></g></svg>
+        </a>
+        <h1>
+            <div class='bulb-board'>
+                <div class=""><span>活動公式計算機</span></div>
+                <div class='top-bulb bulb'>
+                    <ul>
+                        <li class="delay01"></li>
+                        <li class="delay02"></li>
+                        <li class="delay03"></li>
+                        <li class="delay04"></li>
+                        <li class="delay05"></li>
+                        <li class="delay06"></li>
+                    </ul>
+                </div>
+                <div class='right-bulb bulb'>
+                    <ul>
+                        <li class="delay07"></li>
+                        <li class="delay08"></li>
+                        <li class="delay09"></li>
+                    </ul>
+                </div>
+                <div class='bottom-bulb bulb'>
+                    <ul>
+                        <li class="delay16"></li>
+                        <li class="delay15"></li>
+                        <li class="delay14"></li>
+                        <li class="delay13"></li>
+                        <li class="delay12"></li>
+                        <li class="delay1"></li>
+                    </ul>
+                </div>
+                <div class='left-bulb bulb'>
+                    <ul>
+                        <li class="delay19"></li>
+                        <li class="delay18"></li>
+                        <li class="delay17"></li>
+                    </ul>
+                </div>
+            </div>
+        </h1>
+    </nav>
+    <section>
+        <form id="operationform" method="post" action="operation.php">
+            <div class="parameter">
+                <div class="input-box">
+                    <label for="num1">Deposit:</label>
+                    <input type="text" id="num1">
+                    <lottie-player class="svg-box" src="https://assets4.lottiefiles.com/packages/lf20_EtVMC4WXos.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                </div>
+
+                <div class="input-box">
+                    <label for="num2">Bonus:</label>
+                    <input type="text" id="num2">
+                    <lottie-player class="svg-box" src="https://assets2.lottiefiles.com/packages/lf20_zywherkr.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                </div>
+                
+                <div class="input-box">
+                    <label for="num3">turn:</label>
+                    <input type="text" id="num3">
+                    <lottie-player class="svg-box" src="https://assets10.lottiefiles.com/packages/lf20_Jpn5Hs3tsy.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                </div>
+            </div>
+            <div class="btn-box">
+                <button class="sumbit" type="submit">提交</button>
+                <!-- <input class="sumbit" type="button" name="submit" value="提交" /> -->
+            </div>
+        </form>
+        
+        <div class="conclusion">
+            <div class="pass-box">
+                <!-- <label for="result">過關率:</label> -->
+                <svg class="circle-box" width="160" height="160">
+                    <defs>
+                        <linearGradient id="myGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+                            <stop offset="0%"   stop-color="#d9ad34" stop-opacity="1"/>
+                            <stop offset="30%" stop-color="#FFFFA4" stop-opacity="1"/>
+                            <stop offset="50%"   stop-color="#d9ad34" stop-opacity="1"/>
+                            <stop offset="90%" stop-color="#bf7427" stop-opacity="1"/>
+                            <stop offset="100%" stop-color="#FFFFA4" stop-opacity="1"/>
+                        </linearGradient>
+                    </defs>
+                    <circle class="" fill="none" stroke="#ccc" stroke-width="8" cx="80" cy="80" r="76" stroke-linecap="round" />
+                    <circle class="circle" fill="none" stroke="url(#myGradient)" stroke-width="8" cx="80" cy="80" r="76" stroke-linecap="round" transform="rotate(-90 80 80)" />
+                </svg>
+                <span class="text">過關</span>
+                <span class="num">0%</span>
+            </div>
+            <div id="money-total" class="input-box">
+                <!-- <label for="total">平均過關收益:</label> -->
+                <input type="text" id="total" value="0" readonly>
+                <img class="money-img no1" src="images/money-l.png" alt="">
+                <img class="money-img no2" src="images/money-r.png" alt="">
+                <img class="money-img no3" src="images/money-l.png" alt="">
+                <img class="money-img no4" src="images/money-r.png" alt="">
+                <img class="money-img no5" src="images/money-l.png" alt="">
+                <img class="money-img no6" src="images/money-r.png" alt="">
+                <img class="money-img no7" src="images/money-l.png" alt="">
+                <img class="money-img no8" src="images/money-r.png" alt="">
+                <img class="money-img no9" src="images/money-l.png" alt="">
+                <img class="money-img no10" src="images/money-r.png" alt="">
+            </div>
+        </div>
+    </section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script>
+    
+    $(document).ready(function() {
+        $('#operationform').submit(function(e) {
+            e.preventDefault(); // 阻止表單提交
+            var num1 = $('#num1').val();
+            var num2 = $('#num2').val();
+            var num3 = $('#num3').val();
+
+            $.ajax({
+            url: 'operation.php',
+            type: 'POST',
+            data: {num1: num1, num2: num2, num3: num3},
+            success: function(data) {
+                document.getElementById("total").value = '0';
+                var data = JSON.parse(data);
+                var num = 0;
+                var passNum = data['passNum'];
+                var sum = data['sum'];
+                console.log('passNum:' + passNum + 'sum' + sum)
+                var interval = setInterval(function() {
+                    document.querySelector(".num").textContent = num.toFixed(1) + '%';
+                    circleNum = 477.6 - (477.6/100)*num
+                    document.querySelector(".circle").style = "stroke-dashoffset:" + circleNum + ";";
+                    num = num + 0.1;
+                    moneyImg = document.querySelector('.money-img');
+                    if (num > passNum) {
+                        clearInterval(interval);
+                        // 計算兩數相加
+                        document.getElementById("total").value = Math.floor(sum);
+                        moneyNum = Math.round(sum/100);
+                        for(let i=0; i<moneyNum; i++){
+                            imgNum = i+1;
+                            img = document.querySelector('.no' + imgNum);
+                            img.classList.add("show");
+                        }
+                    }
+                }, 5);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }
+            });
+        });
+    });
+
+    // // 獲取表單元素
+    // var form = document.querySelector('form');
+
+    // // 監聽表單的提交事件
+    // form.addEventListener('submit', function(event) {
+    //     // 防止表單提交的默認行為
+    //     event.preventDefault();
+
+    //     console.log('submit')
+
+    //     // 發送 AJAX 請求
+    //     var xhr = new XMLHttpRequest();
+    //     xhr.open('POST', 'operation.php');
+    //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    //     xhr.onload = function() {
+    //         if (xhr.status === 200) {
+    //             // 獲取 PHP 返回的數據
+    //             var data = JSON.parse(xhr.responseText);
+    //             console.log(data);
+
+    //         // 根據數據更新頁面上的元素
+    //         var num = 0;
+    //         var passNum = data.passNum;
+    //         var x = data.x;
+    //         var interval = setInterval(function() {
+    //             document.querySelector(".num").textContent = num.toFixed(1) + '%';
+    //             circleNum = 477.6 - (477.6/100)*num
+    //             document.querySelector(".circle").style = "stroke-dashoffset:" + circleNum + ";";
+    //             num = num + 0.1;
+    //             moneyImg = document.querySelector('.money-img');
+    //             if (num > passNum) {
+    //                 clearInterval(interval);
+    //                 // 計算兩數相加
+    //                 var sum = (parseInt(data.num1) + parseInt(data.num2)) * (0.97 ** x);
+    //                 document.getElementById("total").value = Math.floor(sum);
+    //                 moneyNum = Math.round(sum/100);
+    //                 for(let i=0; i<moneyNum; i++){
+    //                     imgNum = i+1;
+    //                     img = document.querySelector('.no' + imgNum);
+    //                     img.classList.add("show");
+    //                 }
+    //             }
+    //         }, 5);
+    //         } else {
+    //         console.error(xhr.statusText);
+    //         }
+    //     };
+    //     xhr.onerror = function() {
+    //         console.error(xhr.statusText);
+    //     }
+    // });
+    
+
+    
+    // function addNumbers() {
+    //     // 取得輸入框中的值
+    //     var num1 = document.getElementById("num1").value;
+    //     var num2 = document.getElementById("num2").value;
+    //     var num3 = document.getElementById("num3").value;
+    //     var num = 0;
+
+    //     document.getElementById("total").value = 0;
+
+    //     var x = Math.floor(parseInt(num3) / 7);
+    //     if((num3 % 7) !== 0){
+    //         var y = (num3 % 7) / 7;
+    //         roundedNum = ((0.5 ** x) - ((0.5 ** x) - (0.5 ** (x+1))) * y) * 100;
+    //         passNum = Math.ceil(roundedNum * 10) / 10;
+    //     }else{
+    //         passNum = (0.5 ** x) * 100;
+    //     }
+
+    //     var interval = setInterval(function() {
+    //         document.querySelector(".num").textContent = num.toFixed(1) + '%';
+    //         circleNum = 477.6 - (477.6/100)*num
+    //         document.querySelector(".circle").style = "stroke-dashoffset:" + circleNum + ";";
+    //         num = num + 0.1;
+    //         moneyImg = document.querySelector('.money-img');
+    //         if (num > passNum) {
+    //             clearInterval(interval);
+    //             // 計算兩數相加
+    //             var sum = (parseInt(num1) + parseInt(num2)) * (0.97 ** x);
+    //             document.getElementById("total").value = Math.floor(sum);
+    //             moneyNum = Math.round(sum/100);
+    //             for(let i=0; i<moneyNum; i++){
+    //                 imgNum = i+1;
+    //                 img = document.querySelector('.no' + imgNum);
+    //                 img.classList.add("show");
+    //             }
+    //         }
+    //     }, 5);
+        
+    // }
+</script>
+</html>
