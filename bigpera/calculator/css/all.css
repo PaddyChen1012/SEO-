@@ -8,7 +8,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background: linear-gradient(0deg, black 0%, transparent 100%), url(../images/5274d6609a0dd1e0020beaaad30448e6.jpg)repeat center/25%;
-    padding: 16px 0 0;
+    background: linear-gradient(0deg, black 0%, rgba(0,0,0,.25) 100%), url(../images/bg-img.jpg)repeat center/25%;
+    /* padding: 16px 0 0; */
     min-height: 100vh;
 }
