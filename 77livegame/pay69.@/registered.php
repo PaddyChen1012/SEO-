@@ -207,6 +207,10 @@ if ($dataCheck) {
                 </div>
             </form>
         </div>
+        <a class="w-100 z-1" href="#member-form"><img class="w-100" src="images/1.jpg" alt=""></a>
+        <a class="w-100 z-1" href="#member-form"><img class="w-100" src="images/2.jpg" alt=""></a>
+        <a class="w-100 z-1" href="#member-form"><img class="w-100" src="images/3.jpg" alt=""></a>
+        <a class="w-100 z-1" href="#member-form"><img class="w-100" src="images/4.jpg" alt=""></a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

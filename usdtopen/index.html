@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        section{
+            height: 100vh;
+            width: 100%;
+            overflow-y: scroll;
+        }
+        .wrap{
+            position: relative;
+            display: flex;
+        }
+        .wrap img{
+            width: 100%;
+        }
+        .btn{
+            position: absolute;
+            left: 10%;
+            width: 80%;
+            transform: translateY(50%);
+            overflow: hidden;
+            border-radius: 6vw;
+        }
+        .btn::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 100px;
+            background: linear-gradient(90deg,transparent 0%,rgba(143,202,203,1) 45%,rgb(251, 255, 255) ,rgba(143,202,203,1) 55%,transparent 100%);
+            mix-blend-mode: color-dodge;
+            animation-name: flash-1;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+        }
+        a img{
+            width: 100%;
+        }
+        .btn-0{bottom: calc(50% - 60vw);}
+        .btn-1{bottom: calc(50% - 65vw);}
+        .btn-2{bottom: calc(50% - 40vw);}
+
+        /*Animation */
+        @keyframes flash-1 {
+            0% {
+                left: -5%;
+            }
+            45%,100% {
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="section">
+        <div class="wrap wrap-0">
+            <img src="images/1080x1920-OSLP-p1.jpg" alt="">
+            <a class="btn btn-0" href="osbet_20230608.apk"><img src="images/button-1.png" alt=""></a>
+        </div>
+        <div class="wrap wrap-1">
+            <img src="images/1080x1920-OSLP-p2.jpg" alt="">
+        </div>
+        <div class="wrap wrap-2">
+            <img src="images/1080x1920-OSLP-p3.jpg" alt="">
+        </div>
+        <div class="wrap wrap-3">
+            <img src="images/1080x1920-OSLP-p4.jpg" alt="">
+            <a class="btn btn-1" href="osbet_20230608.apk"><img src="images/button-2.png" alt=""></a>
+        </div>
+        <div class="wrap wrap-4">
+            <img src="images/1080x1920-OSLP-p5.jpg" alt="">
+        </div>
+        <div class="wrap wrap-5">
+            <img src="images/1080x1920-OSLP-p6.jpg" alt="">
+            <a class="btn btn-2" href="osbet_20230608.apk"><img src="images/button-3.png" alt=""></a>
+        </div>
+    </section>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+    <script type="text/javascript">
+        var autogo = false;
+        var indexvideo = 0;
+        var lastscrolltop = 0;
+        var startY = 0;
+        var endY = 0;
+    
+        $(document).ready(function(){
+            $("#section").on("touchstart", function(event){
+                startY = event.originalEvent.touches[0].clientY;
+            });
+    
+            $("#section").on("touchmove", function(event){
+                endY = event.originalEvent.touches[0].clientY;
+            });
+    
+            $("#section").on("touchend", function(event){
+                var diffY = startY - endY;
+                move(diffY);
+            });
+        });
+    
+        function move(diffY){
+            console.log('done')
+
+            if (autogo){
+                return;
+            }
+    
+            var scrolltop = $("#section").scrollTop();
+            var winheight = $(window).height();
+            var indexvideo = Math.ceil(scrolltop/winheight);
+            if (diffY < 0 && indexvideo != 0){
+                indexvideo--;
+            }
+    
+            // $("#cont video").removeClass('prev');
+            // $("#cont video").removeClass('next');
+            // if (indexvideo != 0){
+            //     $("#cont video").eq(indexvideo).prev().addClass('prev');
+            // }
+            // if (indexvideo < $("#cont video").length){
+            //     $("#cont video").eq(indexvideo).next().addClass('next');
+            // }
+            autogo = true;
+    
+            $("#section").animate({
+                scrollTop: indexvideo * winheight
+            }, 300, function(){
+                lastscrolltop = indexvideo;
+                autogo = false;
+            });
+            
+            // if(indexvideo != lastscrolltop){
+            //     $("#cont video").eq(indexvideo).attr("src", "IMG_1883.mp4");
+            //     $("#cont video").eq(indexvideo)[0].load();
+            // }
+            // $("#cont video").eq(indexvideo)[0].play();
+            // $("#cont video").eq(indexvideo).siblings().not(".next").attr("src", "");
+            // $("#cont video").eq(indexvideo).siblings().not(".prev").attr("src", "");
+        }
+    </script>
+
+</body>
+</html>

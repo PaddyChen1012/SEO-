@@ -1,0 +1,100 @@
+body{
+    overflow: hidden;
+}
+section{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.img-box{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex: 0 40%;
+    text-decoration: none;
+    mix-blend-mode: lighten;
+    height: calc(100vh - 120px);
+}
+.img-box img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.main{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 0 60%;
+    padding: 0 1rem 1rem;
+    text-decoration: none;
+    height: calc(100vh - 120px);
+}
+.main-box{
+    width: 100%;
+    height: calc(100% - 120px);
+    background: rgba(255, 255, 255, .5);
+    border-radius: 10px;
+    padding: 1rem 0rem 1rem 2rem;
+}
+.main-word{
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem 0 0;
+    overflow-y: scroll;
+}
+.main-word::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width : 10px;  /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+.main-word::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    box-shadow: inset 0 0 3px 2px #036263;
+    background: #ccfbfb;
+}
+.main-word::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background   : transparent;
+}
+p{
+    margin-bottom: 1rem;
+}
+.btn-calculator{
+    margin: auto;
+}
+
+@media (max-width: 575px) and (pointer: coarse) {
+    .img-box,
+    .main{
+        flex: 0 100%;
+    }
+    .img-box{
+        position: fixed;
+        top: calc(100vh - 300px);
+        left: 0;
+        width: 100%;
+        height: 300px;
+        order: 1;
+    }
+    .img-box img {
+        width: auto;
+        height: 100%;
+    }
+    .main{
+        height: calc(100vh - 182px);
+    }
+    .main-box{
+        flex: 0 100%;
+        z-index: 1;
+    }
+    .btn-calculator {
+        margin: auto 0 0 auto;
+        width: 200px;
+    }
+}

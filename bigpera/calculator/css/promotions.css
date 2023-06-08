@@ -1,0 +1,160 @@
+body{
+    overflow: hidden;
+}
+section{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.img-box{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex: 0 30%;
+    text-decoration: none;
+    mix-blend-mode: lighten;
+    height: calc(100vh - 120px);
+}
+.img-box img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.main{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 0 70%;
+    padding: 0 1rem 1rem;
+    text-decoration: none;
+    overflow-y: scroll;
+    height: calc(100vh - 120px);
+}
+.main::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width : 10px;  /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+.main::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    box-shadow: inset 0 0 3px 2px #036263;
+    background: #ccfbfb;
+}
+.main::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background   : transparent;
+}
+.main > *{
+    flex: 0 49%;
+    padding: 0 1rem 1rem;
+    text-decoration: none;
+}
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: #333;
+    border: 0;
+    box-shadow: 0 0 2px 2px #036263 inset, 0 0 2px 4px #ccfbfb inset, 0 0 2px 4px #036263 inset, 0 0 4px 6px #0b4147 inset;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.05rem;
+    padding: 6px;
+    margin-bottom: 1rem;
+    padding: 6px;
+}
+img{width: 100%;}
+.card-header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* height: 120px; */
+    font-size: 1.25rem;
+}
+.card-body{
+    display: flex;
+    width: 100%;
+    /* height: 120px; */
+}
+.card-body > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 50%; */
+    padding: 8px;
+}
+.card-body img{
+    width: auto;
+    height: 120px;
+}
+.card-body .c-name{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: calc(100% - 136px);
+}
+.c-name div{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 4px;
+}
+.bi::before{
+    font-size: 14px;
+}
+.btn-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 32px;
+    background: #333;
+    border: 0;
+    box-shadow: 0 0 2px 2px #036263 inset, 0 0 2px 4px #ccfbfb inset, 0 0 2px 4px #036263 inset, 0 0 4px 6px #0b4147 inset;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.05rem;
+    text-decoration: none;
+}
+.card-body .c-icon{
+    width: 136px;
+}
+.stars-box{
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 575px) and (pointer: coarse) {
+    body{
+        overflow: auto;
+    }
+    .img-box,
+    .main{
+        flex: 0 100%;
+    }
+    .img-box{
+        position: fixed;
+        display: none;
+        bottom: 0;
+        left: 0;
+        height: 300px;
+        order: 1;
+    }
+    .img-box img {
+        width: auto;
+        height: 100%;
+    }
+    .main{
+        /* height: auto; */
+        /* overflow-y: auto; */
+    }
+    .main > *{
+        flex: 0 100%;
+    }
+}

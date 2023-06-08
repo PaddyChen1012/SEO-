@@ -7,13 +7,12 @@ section{
 .home-img{
     width: 100%;
     max-width: 768px;
-    padding: 10%;
 }
 div{
     max-width: 768px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     width: 100%;
 }
 .text{
@@ -21,22 +20,4 @@ div{
     font-size: 1.125rem;
     margin-bottom: 2rem;
     padding: 0 2rem;
-}
-.btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 240px;
-    height: 80px;
-    background: #333;
-    border: 0;
-    box-shadow: 0 0 2px 2px #e52ab8 inset, 0 0 2px 4px #fef9ff inset, 0 0 2px 4px #1a6de5 inset, 0 0 4px 6px #5a3f9b inset;
-    border-radius: 10px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 1.5rem;
-    text-decoration: none;
-}
-.btn{
-    margin-bottom: 24px;
 }

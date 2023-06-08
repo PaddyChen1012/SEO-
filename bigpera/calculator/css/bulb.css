@@ -3,23 +3,24 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 16px;
     padding: 16px;
+    z-index: 1;
 }
 nav a{
     position: absolute;
     top: 50%;
     left: 16px;
     display: block;
-    width: 32px;
-    height: 32px;
+    width: 50px;
+    height: 50px;
     transform: translateY(-50%);
+    padding: 10px;
 }
 nav svg{
     width: 100%;
 }
 h1{
-    color: rgba(236, 204, 104, 1);
+    color: rgba(143,202,203,1);
     text-align: center;
     margin: 0 auto;
 }
@@ -30,13 +31,30 @@ h1{
     justify-content: center;
     width: 240px;
     height: 72px;
-    background-color: rgba(53, 53, 62, 1);
+    background: url(../images/2d96585dcead264f08690c13fcc9fc59.jpg)no-repeat bottom right/cover;
     overflow: hidden;
     transform-origin: top center;
     box-shadow: 2px 2px 9px 0px #000;
     border-radius: 10px;
 }
-.bulb {
+.bulb-board::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 100px;
+    background: linear-gradient(90deg,transparent 0%,rgba(143,202,203,1) 45%,rgb(251, 255, 255) ,rgba(143,202,203,1) 55%,transparent 100%);
+    mix-blend-mode: color-dodge;
+    animation-name: flash-1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+.bulb-board span {
+    text-shadow: 0 0 20px #7a00ff;
+}
+/* .bulb {
     position: absolute;
 }
 .top-bulb,
@@ -130,16 +148,14 @@ h1{
 .delay17 {animation-delay: 1.7s;}
 .delay18 {animation-delay: 1.8s;}
 .delay19 {animation-delay: 1.9s;}
-.delay20 {animation-delay: 2s;}
+.delay20 {animation-delay: 2s;} */
 
 /*Animation */
 @keyframes flash-1 {
     0% {
-        background: #f0b600;
-        background: rgba(236, 204, 104, 1);
+        left: -5%;
     }
-
-    100% {
-        background: rgba(236, 204, 104, 0.1);
+    45%,100% {
+        left: 100%;
     }
 }
