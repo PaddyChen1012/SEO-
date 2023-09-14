@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/Custom.css">
+    <link rel="icon" href="images/Picture.webp" type="image/x-icon">
+    <link rel="shortcut icon" href="images/Picture.png" type="image/x-icon">
+    <title>Suceful!</title>
+</head>
+
+<body>
+    <div class="position-relative container-fluid main-place p-0">
+        <img class="position-absolute pic-1" src="images/basketballer.png" alt="">
+        <img class="position-absolute pic-2" src="images/0c20edb9df17d61c4497baeaee352db8-removebg-preview.png" alt="">
+        <img class="position-absolute pic-3" src="images/footballer.png" alt="">
+        <div
+            class="row position-relative w-100 mx-auto align-items-end justify-content-center align-items-md-center py-5 suceful-page">
+            <div class="bg-box position-absolute w-100 h-100"></div>
+            <div class="col-11 col-md-6 row position-relative w-100 mx-auto data-box py-3 bg-white-50">
+                <div class="col-12 text-center h1 my-5">
+                    Successful application! Go to the website and play the game now!
+                </div>
+                <div class="col-12 text-center h3 mb-5 username">
+                    name
+                </div>
+                <div class="col-12 text-center h3 mb-5">
+                    The system will take <span class="rtime">3</span> seconds to enter the Betra777 website automatically or can click the link below to enter the website.
+                </div>
+                <a class="col-12 text-center text-light h5 mb-5 break-all"
+                    href="https://www.betra777.com/?pid=CHB01">
+                    https://www.betra777.com/?pid=CHB01
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        var geturl = location.href
+        var url = new URL(geturl);
+        var name = url.searchParams.get('user')
+        $('.username').html('<div class="col-12 text-center h3 username">Hi ' + name + '</div >');
+
+        var s = 3;
+        function reciprocal() {
+            $('.rtime').html('<span class="rtime">' + s + '</span>');
+            setTimeout(reciprocal, 1000);
+            s -= 1;
+            if (s == 0) {
+                location.href = "https://www.betra777.com/?pid=CHB01"
+                return;
+            }
+            console.log(s);
+        }
+        reciprocal();
+
+    </script>
+    <!-- START ExoClick Goal Tag | 2021BC Signed -->
+    <script type="application/javascript" src="https://a.exoclick.com/tag_gen.js"
+        data-goal="f8b7e58815e8bc8ce735ef31771793b8"></script>
+    <!-- END ExoClick Goal Tag | 2021BC Signed -->
+
+</body>
+
+</html>

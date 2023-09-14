@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: bolder;
+    font-family: 'Rubik', sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: linear-gradient(0deg, black 0%, rgba(0,0,0,.25) 100%), url(../images/v617batch2-kul-01-technology.webp)repeat top/cover fixed;
+    min-height: 100vh;
+}
+h1{
+    font-size: 1.75rem;
+}
+
+.btn{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 80px;
+    background: #666;
+    border: 0;
+    box-shadow: 0 0 2px 2px #036263 inset, 0 0 2px 4px #ccfbfb inset, 0 0 2px 4px #036263 inset, 0 0 4px 6px #0b4147 inset;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 5px;
+    margin-bottom: 24px;
+}
+.btn div{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.btn span{
+    position: relative;
+    font-size: 2rem;
+    text-shadow: 0 0 10px #036263;
+    z-index: 1;
+}
+.btn svg{
+    position: absolute;
+    bottom: -25px;
+    right: -20px;
+    width: 90px;
+    height: 90px;
+    opacity: .25;
+}
+
+footer{
+    background: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    z-index: 1;
+}
+/* 
+.btn-calculator{
+    position: fixed;
+    right: 8px;
+    bottom: 8px;
+    width: 120px;
+    height: 140px;
+    padding: 16px;
+    margin: 0;
+}
+.btn-calculator svg{
+    position: relative;
+    bottom: unset;
+    right: unset;
+    opacity: .75;
+}
+.btn-calculator span{
+    font-size: 1rem;
+} */

@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="images/photo_2023-06-08_13-19-21.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="images/photo_2023-06-08_13-19-21.jpg" type="image/x-icon">
+    <title>OSbet</title>
     <style>
         *{
             padding: 0;
@@ -66,25 +68,25 @@
 <body>
     <section id="section">
         <div class="wrap wrap-0">
-            <img src="images/1080x1920-OSLP-p1.jpg" alt="">
-            <a class="btn btn-0" href="osbet_20230608.apk"><img src="images/button-1.png" alt=""></a>
+            <img src="images/1080x1920-OSLP-p1.jpg" alt="OSbet">
+            <a class="btn btn-0" href="osbet02_20230613.apk"><img src="images/button-1.png" alt=""></a>
         </div>
         <div class="wrap wrap-1">
-            <img src="images/1080x1920-OSLP-p2.jpg" alt="">
+            <img src="images/1080x1920-OSLP-p2.jpg" alt="OSbet">
         </div>
         <div class="wrap wrap-2">
-            <img src="images/1080x1920-OSLP-p3.jpg" alt="">
+            <img src="images/1080x1920-OSLP-p3.jpg" alt="OSbet">
         </div>
         <div class="wrap wrap-3">
-            <img src="images/1080x1920-OSLP-p4.jpg" alt="">
-            <a class="btn btn-1" href="osbet_20230608.apk"><img src="images/button-2.png" alt=""></a>
+            <img src="images/1080x1920-OSLP-p4.jpg" alt="OSbet">
+            <a class="btn btn-1" href="osbet02_20230613.apk"><img src="images/button-2.png" alt=""></a>
         </div>
         <div class="wrap wrap-4">
-            <img src="images/1080x1920-OSLP-p5.jpg" alt="">
+            <img src="images/1080x1920-OSLP-p5.jpg" alt="OSbet">
         </div>
         <div class="wrap wrap-5">
-            <img src="images/1080x1920-OSLP-p6.jpg" alt="">
-            <a class="btn btn-2" href="osbet_20230608.apk"><img src="images/button-3.png" alt=""></a>
+            <img src="images/1080x1920-OSLP-p6.jpg" alt="OSbet">
+            <a class="btn btn-2" href="osbet02_20230613.apk"><img src="images/button-3.png" alt=""></a>
         </div>
     </section>
     
@@ -112,8 +114,6 @@
         });
     
         function move(diffY){
-            console.log('done')
-
             if (autogo){
                 return;
             }
@@ -124,31 +124,15 @@
             if (diffY < 0 && indexvideo != 0){
                 indexvideo--;
             }
-    
-            // $("#cont video").removeClass('prev');
-            // $("#cont video").removeClass('next');
-            // if (indexvideo != 0){
-            //     $("#cont video").eq(indexvideo).prev().addClass('prev');
-            // }
-            // if (indexvideo < $("#cont video").length){
-            //     $("#cont video").eq(indexvideo).next().addClass('next');
-            // }
+
             autogo = true;
-    
+
             $("#section").animate({
                 scrollTop: indexvideo * winheight
             }, 300, function(){
                 lastscrolltop = indexvideo;
                 autogo = false;
             });
-            
-            // if(indexvideo != lastscrolltop){
-            //     $("#cont video").eq(indexvideo).attr("src", "IMG_1883.mp4");
-            //     $("#cont video").eq(indexvideo)[0].load();
-            // }
-            // $("#cont video").eq(indexvideo)[0].play();
-            // $("#cont video").eq(indexvideo).siblings().not(".next").attr("src", "");
-            // $("#cont video").eq(indexvideo).siblings().not(".prev").attr("src", "");
         }
     </script>
 

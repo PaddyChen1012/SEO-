@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promtions</title>
+    <link rel="icon" href="images/chatGPT_analyze.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="images/chatGPT_analyze.jpg" type="image/x-icon">
+    <title>Promotions</title>
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/bulb.css">
     <link rel="stylesheet" href="css/promotions.css">
@@ -54,8 +56,8 @@
                                 <lottie-player src="https://assets4.lottiefiles.com/private_files/lf30_4yipi6nc.json"  background="transparent"  speed="1"  style="width: 24px; height: 24px;" loop autoplay></lottie-player>
                             </span>
                         </div>
-                        <div>Analyze：<a href="analyze.html?deposit=<?= $item['deposit'] ?>&bonus=<?= $item['bonus'] ?>&turn=<?= $item['turn'] ?>" class="btn-link">Go</a></div>
-                        <div>Play：<a href="<?= $item['url'] ?>" class="btn-link">Link</a></div>
+                        <!-- <div>Analyze：<a href="analyze.html?deposit=<?= $item['deposit'] ?>&bonus=<?= $item['bonus'] ?>&turn=<?= $item['turn'] ?>" class="btn-link">Go</a></div> -->
+                        <div>Reg. <a href="<?= $item['url'] ?>" class="btn-link">Link</a></div>
                     </div>
                     <div class="c-icon"><img src="<?= $item['iconUrl'] ?>" alt="" srcset=""></div>
                 </div>
@@ -67,6 +69,8 @@
         </div>
         
     </section>
+
+    <footer>Copyright © 2023 XXX XXX XXXXX. All rights reserved.</footer>
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 

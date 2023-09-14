@@ -1,62 +1,22 @@
 [
     {
-        "promotionsImg": "images/PromotionInfoLanguage.png",
-        "name": "Pay69",
-        "stars": 4.7,
-        "url": "https://www.pay69.vip/",
-        "iconUrl": "images/P69_500x500.png",
-        "deposit":100,
-        "bonus":100,
-        "turn":10
-    },
-    {
-        "promotionsImg": "images/PromotionInfoLanguage.png",
-        "name": "Pay69",
-        "stars": 4.5,
-        "url": "https://www.pay69.vip/",
-        "iconUrl": "images/P69_500x500.png",
+        "promotionsImg": "images/PromotionInfoLanguage-milyon88.jpg",
+        "name": "MILYON88",
+        "stars": 4.8,
+        "url": "https://www.milyon88.net/",
+        "iconUrl": "images/MILYON88_500x500.png",
         "deposit":100,
         "bonus":200,
         "turn":16
     },
     {
-        "promotionsImg": "images/PromotionInfoLanguage.png",
-        "name": "Pay69",
-        "stars": 4.3,
-        "url": "https://www.pay69.vip/",
-        "iconUrl": "images/P69_500x500.png",
-        "deposit":200,
-        "bonus":100,
-        "turn":5
-    },
-    {
-        "promotionsImg": "images/PromotionInfoLanguage.png",
-        "name": "Pay69",
-        "stars": 4.2,
-        "url": "https://www.pay69.vip/",
-        "iconUrl": "images/P69_500x500.png",
-        "deposit":300,
-        "bonus":100,
-        "turn":3
-    },
-    {
-        "promotionsImg": "images/PromotionInfoLanguage.png",
-        "name": "Pay69",
-        "stars": 4,
-        "url": "https://www.pay69.vip/",
-        "iconUrl": "images/P69_500x500.png",
+        "promotionsImg": "images/PromotionInfoLanguage-betso88.jpg",
+        "name": "BetSo88",
+        "stars": 4.7,
+        "url": "https://www.betso88.com/",
+        "iconUrl": "images/BETSO88_500x500.png",
         "deposit":100,
-        "bonus":300,
-        "turn":20
-    },
-    {
-        "promotionsImg": "images/PromotionInfoLanguage.png",
-        "name": "Pay69",
-        "stars": 4,
-        "url": "https://www.pay69.vip/",
-        "iconUrl": "images/P69_500x500.png",
-        "deposit":100,
-        "bonus":500,
-        "turn":30
+        "bonus":100,
+        "turn":10
     }
 ]

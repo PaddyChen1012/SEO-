@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMR77 - Successful!</title>
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/successful.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <section id="">
+
+    </section>
+    <div class="position-relative container-fluid main-place p-0">
+        <div class="col-11 col-md-6 row position-relative w-100 mx-auto data-box py-3 bg-white-50">
+            <div class="col-12 text-center h1 my-5">
+                Successful application! Go to the website and play the game now!
+            </div>
+            <div class="col-12 text-center h3 mb-5 username">
+                name
+            </div>
+            <div class="col-12 text-center h3 mb-5">
+                The system will take <span class="rtime">3</span> seconds to enter the Kmr77 website automatically or can click the link below to enter the website.
+            </div>
+            <a class="col-12 text-center text-light h5 mb-5 break-all"
+                href="https://www.kmr77.com/?pid=CHB01">
+                https://www.kmr77.com/?pid=CHB01
+            </a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        var geturl = location.href
+        var url = new URL(geturl);
+        var name = url.searchParams.get('user')
+        $('.username').html('<div class="col-12 text-center h3 username">Hi ' + name + '</div >');
+
+        var s = 10000;
+        function reciprocal() {
+            $('.rtime').html('<span class="rtime">' + s + '</span>');
+            setTimeout(reciprocal, 1000);
+            s -= 1;
+            if (s == 0) {
+                location.href = "https://www.kmr77.com/?pid=CHB01"
+                return;
+            }
+        }
+        reciprocal();
+
+    </script>
+    <!-- START ExoClick Goal Tag | 2021BC Signed -->
+    <script type="application/javascript" src="https://a.exoclick.com/tag_gen.js"
+        data-goal="f8b7e58815e8bc8ce735ef31771793b8"></script>
+    <!-- END ExoClick Goal Tag | 2021BC Signed -->
+
+</body>
+</html>

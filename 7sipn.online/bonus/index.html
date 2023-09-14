@@ -1,87 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7spin</title>
-    <link rel="icon" href="images/icon_400x400.png" type="image/x-icon">
-    <link rel="shortcut icon" href="images/icon_400x400.png" type="image/x-icon">
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MJCSQ5H');
-    </script>
-    <!-- End Google Tag Manager -->
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>7spin ranking-navi.quest</title>
+   <meta name="description" content="">
+   <link rel="icon" href="images/icon_400x400.png" type="image/x-icon">
+   <link rel="shortcut icon" href="images/icon_400x400.png" type="image/x-icon">
+   <!-- Google Tag Manager -->
+   <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MJCSQ5H');
+   </script>
+   <!-- End Google Tag Manager -->
+   <link rel="stylesheet" href="./css/style.css">
 </head>
-<style>
-    *{
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-    .section{
-        position: relative;
-        display: flex;
-        justify-content: center;
-        background: url(images/LANDING-PAGE20230306.jpg)no-repeat top/cover;
-        padding-bottom: 509.8%;
-    }
-    .bg{
-        width: 100%;
-        max-width: 988px;
-    }
-    .btn-link{
-        position: absolute;
-        left: 50%;
-        width: 38%;
-        /* max-width: 600px; */
-        transform: translateX(-50%);
-    }
-    .btn-link.top{
-        top: 23.1%;
-    }
-    .btn-link.bottom{
-        bottom: 0.5%;
-    }
-    .btn{
-        width: 100%;
-        padding-bottom: 82.55%;
-        animation: btn-animation infinite 1.6s linear;
-    }
-    @media screen and (max-width:500px) {
-        .section{
-            background-size: 160%;
-            padding-bottom: 815.6%;
-        }
-        .btn-link{
-            width: 60%;
-        }
-    }
-    @keyframes btn-animation {
-        0%,40%{background: url(images/btn1.png)no-repeat center/contain;}
-        60%,100%{background: url(images/btn2.png)no-repeat center/contain;}
-    }
-</style>
 <body>
-    <div class="section">
-        <!-- <img class="bg" src="images/LANDING-PAGE.jpg" alt=""> -->
-        <a class="btn-link top" href="https://www.7spin.com/"><div class="btn"></div></a>
-        <a class="btn-link bottom" href="https://www.7spin.com/"><div class="btn"></div></a>
-    </div>
+   <main>
+      <div class="container">
+         <p class="text-title">年齢確認</p>
+         <p class="text-describe">続行するには年齢を<br class="word-wrap">確認する必要があります。</p>
+         <div class="verify-btnarea">
+            <a href="./main.html?btag=39996452_235740&openSignUpModal=true" class="verify-btn confirm">続行</a>
+            <a href="./about.html" id="backButton" class="verify-btn end">終了</a>
+         </div>
+         <img src="./images/RAKKI019.png" class="age-img" alt="7spin">
+      </div>
+   </main>
 </body>
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJCSQ5H"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
+
 <script>
-    window.onload = (event) => {
-        btnLink = document.querySelectorAll(".btn-link")
-        for(let i=0;i<btnLink.length;i++){
-            webPid = "https://www.7spin.com/" + window.location.search;
-            btnLink[i].href = webPid;
-        }
-    };
+   window.onload = (event) => {
+      btnLink = document.querySelectorAll(".verify-btn")
+      for(let i=0;i<btnLink.length;i++){
+         webPid = "./main.html" + window.location.search;
+         btnLink[i].href = webPid;
+      }
+   };
 </script>
 </html>

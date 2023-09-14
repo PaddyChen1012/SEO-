@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+.home {
+  font-size: 0;
+}
+
+.location {
+  position: relative;
+  margin: 0;
+}
+.location .btn-1,
+.location .btn-2 {
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.location .btn-1 {
+  top: 83%;
+}
+.location .btn-2 {
+  top: 69.5%;
+}
+
+.gradient-bg {
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  padding-bottom: 5vw;
+  top: 98.5%;
+}
+
+.color-1 {
+  background: linear-gradient(to bottom, transparent, #0F175F, transparent);
+}
+
+.color-2 {
+  background: linear-gradient(to bottom, transparent, #010B52, transparent);
+}
+
+.color-3 {
+  background: linear-gradient(to bottom, transparent, #00084F, transparent);
+}
+
+.color-4 {
+  background: linear-gradient(to bottom, transparent, #020B56, transparent);
+}
+
+.color-5 {
+  background: linear-gradient(to bottom, transparent, #000A51, transparent);
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}/*# sourceMappingURL=style.css.map */

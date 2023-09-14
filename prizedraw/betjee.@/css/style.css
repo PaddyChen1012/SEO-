@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000000;
+}
+
+main {
+  position: relative;
+}
+
+.betjee-bg {
+  content: url("../images/LP0622-BG_1920x1080.jpg");
+  width: 100%;
+}
+
+.betjee-btn {
+  content: url("../images/LP0622_700x150.png");
+  width: 35%;
+  max-width: 700px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -90%);
+}
+
+@media (max-width: 1080px) {
+  .betjee-bg {
+    content: url("../images/LP0622-BG_1080x1920.jpg");
+  }
+  .betjee-btn {
+    width: 65%;
+    top: 89%;
+    left: 60%;
+    transform: translate(-60%, -89%);
+  }
+}/*# sourceMappingURL=style.css.map */
