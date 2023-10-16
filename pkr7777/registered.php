@@ -25,7 +25,7 @@ $data_captcha = send_data(
 $captcha_data = $data_captcha['data']['captcha']['data'];
 $captcha_json = json_encode($captcha_data);
 $captcha = $data_captcha['data']['captchaUid'];
-
+$domain = 'www.pkr777.com/';
 
 $agentId = @$_GET['pid'];
 
@@ -87,13 +87,13 @@ else{
 if (isset($_POST['captchaUid']) && strlen($_POST['captchaUid']) > 0){
 	$data['captchaUid'] = $_POST['captchaUid'];
     $data['agentShortName'] = $_POST['agentShortName'];
+    $data['affiliate'] = $_POST['affiliate'];
 }
 else{
 	$dataCheck = false;
-	// echo "請輸入 captchaUid <br />";
 }
 
-
+$data['domain'] = $_POST['domain'];
 
 #確認所有欄位都經過驗證，再送資料給ocms-api
 if ($dataCheck) {
@@ -104,42 +104,39 @@ if ($dataCheck) {
 // print_r($data_captcha);
 // echo '</pre>';
 // // // //
-// // echo '<pre>';
-// // print_r($data_list);
-// // echo '</pre>';
+// echo '<pre>';
+// print_r($data_list);
+// echo '</pre>';
 // exit;
 ?>
 
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="facebook-domain-verification" content="kl2opr8fnxz1xluvifn0jrks8s7gqo" />
+    <meta name="facebook-domain-verification" content="69l55qgr84rt8fooy2q0feq888oju6" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="icon" href="images/" type="image/x-icon">
     <link rel="shortcut icon" href="images/" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="css/Custom.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Kanit:ital,wght@0,900;1,900&family=Maitree:wght@500&display=swap" rel="stylesheet">
     <title>Registration page</title>
     <!-- START ExoClick Goal Tag | 2021BC_Register -->
     <script type="application/javascript" src="https://a.exoclick.com/tag_gen.js" data-goal="77c7abe99494401c6747160510290996"></script>
     <!-- END ExoClick Goal Tag | 2021BC_Register -->
     <!-- Meta Pixel Code -->
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '311165271277899');
-        fbq('track', 'PageView');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2558235597663848');
+    fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=311165271277899&ev=PageView&noscript=1"/></noscript>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2558235597663848&ev=PageView&noscript=1"/></noscript>
     <!-- End Meta Pixel Code -->
 </head>
 <body>
@@ -183,10 +180,14 @@ if ($dataCheck) {
                     <!-- 驗證碼錯誤或者沒輸入 -->
                     <div class="waring mt-1"><?php echo @$erro_Vf; ?></div>
                 </div>
-                <input type="hidden" name="captchaUid" value="<?= $captcha ?>">
-                <input type="hidden" name="agentShortName" value="<?= $agentShortName ?>">
+
+                <input id="domain" type="hidden" value="<?=$domain?>" name="domain" >
+                <input id="captchaUid" type="hidden" name="captchaUid" value="<?= $captcha ?>">
+                <input id="agentShortName" type="hidden" name="agentShortName" value="<?= $agentId ?>">
+                <input id="affiliate" type="hidden" name="affiliate" value="<?= $agentId ?>">
+                
                 <div class="col-12 text-center mt-2">
-                    <input id="register-btn" type="submit"  name="send" class="sumbit-btn py-3 px-5 flashing" value="Register">
+                    <input id="register-btn" type="submit" name="send" class="sumbit-btn py-3 px-5 flashing" value="Register">
                 </div>
             </form>
         </div>
@@ -202,6 +203,7 @@ if ($dataCheck) {
 <?php
 @$data_info = $data_list['code'];
 switch ($data_info) {
+    // echo '<script>alert('. $data_info .')</script>';
     case 'common.parameter.duplicated':
         switch ($data_list['data']['field']) {
             case 'username':
@@ -220,8 +222,8 @@ switch ($data_info) {
     case 'common.parameter.illegal':
         switch ($data_list['data']['field']) {
             case 'phoneNumber':
-                echo '<script>alert("This phone number is already in use.")</script>';
-                $duplicated = 'This phone number is already in use.';
+                echo '<script>alert("Phone number must contain 11 digits.")</script>';
+                $duplicated = 'Phone number must contain 11 digits.';
                 break;
             default:
                 # code...
@@ -243,6 +245,20 @@ switch ($data_info) {
 ?>
 <!-- 送出資料後 回傳錯誤-->
 
+    <!-- <script>
+        // 選擇表單元素
+        const form = document.querySelector('form');
+
+        // 監聽表單的提交事件
+        form.addEventListener('submit', function(event) {
+            // 阻止表單的預設行為，即阻止提交
+            event.preventDefault();
+
+            // 在這裡可以添加額外的邏輯，例如驗證輸入，然後決定是否要提交表單
+            // 如果你要提交表單，可以使用 form.submit() 方法
+        });
+    </script> -->
+
 <script>
 
     const data = toBase64(getCaptchaData())
@@ -263,7 +279,6 @@ switch ($data_info) {
     // console.log(data);
 </script>
 <script>
-    let clickid = $('#register-btn')[0].id;
     let input = document.querySelectorAll('[name=input-box] input')
     // console.log(input);
     for(let i=0; i<input.length; i++){
@@ -275,14 +290,6 @@ switch ($data_info) {
         input[i].addEventListener('focus',function(){
             input[i].previousElementSibling.classList.add('active')
         })
-    }
-
-    function guid() {
-        return 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = Math.random()*16|0,
-        v = c == 'x' ? r : (r&0x3|0x8);
-        return v.toString(16);
-        });
     }
 
 </script>

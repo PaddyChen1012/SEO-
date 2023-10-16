@@ -32,7 +32,7 @@
    <script>
       let device = "PC";
       window.addEventListener('resize', function() {
-         resizeTimer = setTimeout(deviceListener, 300); // 设置一个适当的延迟时间，例如500毫秒
+         resizeTimer = setTimeout(deviceListener, 300); // 设置一个适当的延迟时间，例如300毫秒
       });
 
       function deviceListener(){
@@ -57,6 +57,12 @@
          }
       }
       setInterval(changeImage, animationInterval);
+
+      window.onload = (event) => {
+         btnLink = document.querySelector("a")
+         webPid = "https://tracker.7spin.com/link" + window.location.search + "&openSignUpModal=true";
+         btnLink.href = webPid;
+      };
    </script>
 </body>
 </html>

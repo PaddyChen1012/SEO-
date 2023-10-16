@@ -120,7 +120,7 @@ if ($dataCheck) {
     <link rel="stylesheet" type="text/css" href="css/Custom.css">
 </head>
 <body>
-    <div class="position-relative container-fluid main-place h-100 p-0">
+    <div class="position-relative container-fluid main-place p-0">
         <img class="position-absolute pic-1" src="images/basketballer.webp" alt="">
         <img class="position-absolute pic-2" src="images/0c20edb9df17d61c4497baeaee352db8-removebg-preview.webp" alt="">
         <img class="position-absolute pic-3" src="images/footballer.webp" alt="">

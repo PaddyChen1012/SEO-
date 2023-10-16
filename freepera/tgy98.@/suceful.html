@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TGY98</title>
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/suceful.css">
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1097867331373176');
+        fbq('track', 'CompleteRegistration');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=811551157307692&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+<body>
+    <section id="success-box">
+        <h1>စာရင်းသွင်းအောင်မြင်ပါသည်</h1>
+        <div class="info">
+            ဝဘ်ဆိုက်ကိုသွားပြီးဂိမ်းကိုအခုပဲကစားလိုက်ပါ
+        </div>
+        <div class="info username">
+            
+        </div>
+        <div class="info">
+            စနစ်သည် TGY98 ဝဘ်ဆိုက်သို့အလိုအလျောက်ဝင်ရောက်ရန် <span class="rtime">3</span> စက္ကန့်ခန့်ကြာမည် သို့မဟုတ်လဲဝဘ်ဆိုက်သို့ဝင်ရောက်ရန်အောက်ပါလင့်ခ်ကိုနှိပ်လိုက်ပါ 
+        </div>
+        <a href="https://www.tgy98.com/?pid=HKA01">
+            https://www.tgy98.com/
+        </a>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        var geturl = location.href
+        var url = new URL(geturl);
+        var name = url.searchParams.get('user')
+        $('.username').html('<div class="info-2 username">Hi ' + name + '</div >');
+
+        var s = 3;
+        function reciprocal() {
+            $('.rtime').html('<span class="rtime">' + s + '</span>');
+            setTimeout(reciprocal, 1000);
+            s -= 1;
+            if (s == 0) {
+                location.href = "https://www.tgy98.com/?pid=HKA01"
+                return;
+            }
+        }
+        reciprocal();
+
+    </script>
+    <!-- START ExoClick Goal Tag | 2021BC Signed -->
+    <script type="application/javascript" src="https://a.exoclick.com/tag_gen.js"
+        data-goal="f8b7e58815e8bc8ce735ef31771793b8"></script>
+    <!-- END ExoClick Goal Tag | 2021BC Signed -->
+
+</body>
+</html>

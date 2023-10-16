@@ -16,6 +16,9 @@
    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJCSQ5H" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
    <main>
       <div class="container">
          <p class="text-title">年齢確認</p>
@@ -31,11 +34,9 @@
 
 <script>
    window.onload = (event) => {
-      btnLink = document.querySelectorAll(".verify-btn")
-      for(let i=0;i<btnLink.length;i++){
-         webPid = "./main.html" + window.location.search;
-         btnLink[i].href = webPid;
-      }
+      btnLink = document.querySelector(".confirm")
+      webPid = "./main.html" + window.location.search + "&openSignUpModal=true";
+      btnLink.href = webPid;
    };
 </script>
 </html>

@@ -1,242 +1,34 @@
 <!DOCTYPE html>
-<html lang="th">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Bagong bagong site with 24/7 chat support" />
-    <meta property="og:image:type" content="image/jpg" />
-    <meta property="og:image" content="images/AD0711-2_1200x630.jpg" />
-    <title>การแบ่งปันข้อเสนอ</title>
-    <link rel="icon" href="images/517402_10680911_2008768_2cac98b1_image-removebg-preview(1).png" type="image/x-icon">
-    <link rel="shortcut icon" href="images/517402_10680911_2008768_2cac98b1_image-removebg-preview(1).png" type="image/x-icon">
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-        body{overflow-x:hidden;}
-        .pc{display:block;overflow-x:hidden;}
-        .ph{display:none;overflow-x:hidden;}
-        .wrap{
-            position:relative;
-            width:100%;
-            height:56.25vw;
-            overflow: hidden;
-        }
-
-        .wrap-0{background:linear-gradient(180deg,transparent 95%,rgba(0,0,0,1) 100%),url(images/LP_1920x1080.jpg)}
-        .wrap-1{background:linear-gradient(180deg,rgba(0,0,0,1) 0%,transparent 5%,transparent 95%,rgba(0,0,0,1) 100%),url(images/LP2_1920x1080.jpg)}
-        .wrap-2{background:linear-gradient(180deg,rgba(0,0,0,1) 0%,transparent 5%,transparent 95%,rgba(0,0,0,1) 100%),url(images/LP0705-BG_1920x1080.jpg)}
-        .wrap-3{background:linear-gradient(180deg,rgba(0,0,0,1) 0%,transparent 5%,transparent 95%,rgba(0,0,0,1) 100%),url(images/LP0527-BG_1920x1080.jpg)}
-        .wrap-4{background:linear-gradient(180deg,rgba(0,0,0,1) 0%,transparent 5%,transparent 95%,rgba(0,0,0,1) 100%),url(images/LP4BG_1920x1080.jpg)}
-        .wrap-5{background:linear-gradient(180deg,rgba(0,0,0,1) 0%,transparent 5%,transparent 95%,rgba(0,0,0,1) 100%),url(images/LP6-BG_1920x1080.jpg)}
-        .wrap-6{background:linear-gradient(180deg,rgba(0,0,0,1) 0%,transparent 5%,transparent 95%,rgba(0,0,0,1) 100%),url(images/LP7-BG_1920x1080.jpg)}
-
-
-        .wrap a{position:absolute;width:30%;}
-        .wrap-0 a{bottom:13%;right:3%;}
-        .wrap-1 a{bottom:7%;right:48%;}
-        .wrap-2 a{bottom:7%;right: 7%;}
-        .wrap-3 a{bottom: 4%;right: 64%;}
-        .wrap-5 a{bottom:5%;right: 64%;}
-        .wrap-6 a{bottom:3%;right: 4%;}
-        .wrap{background-repeat:no-repeat;background-position:center;background-size:cover;}
-
-        .wrap a.img-link{display: block;}
-        .wrap-2 a.img-link{
-            top: 27%;
-            left: 41.5%;
-            width: 54.5vw;
-            height: 25.5vw;
-        }
-        .wrap-3 a.img-link{
-            top: 24.5%;
-            left: 5%;
-            width: 54.5vw;
-            height: 23.5vw;
-        }
-        .wrap-5 a.img-link{
-            top: 18%;
-            left: 49%;
-            width: 32vw;
-            height: 31vw;
-        }
-        .wrap-6 a.img-link{
-            top: 21.5%;
-            left: 41.5%;
-            width: 51vw;
-            height: 29vw;
-        }
-        img{width:100%;}
-        .feedbackwrap-box{display:flex;align-items:center;justify-content:center;width:100%;height:100%;margin:0 auto;}
-        .slide {position:relative;width:450px;height:450px;padding:0;margin:auto;}
-        .slide ul{position:relative;width:100%;height:100%;padding:0;}
-        .slide li{position:absolute;left:50%;top:65%;border-radius:10px;/*border:3px solid #ff8190*/;transition:all .8s ease;transform:translate(-50%,-50%);overflow:hidden;}
-        .slide li a{position:relative;}
-        .slide li a,.slide li img{width:100%;}
-        
-        .animation{animation:animation infinite alternate linear .8s both ;}
-        @keyframes animation {
-            0%{transform:scale(1);-webkit-filter:drop-shadow(0px 0px 0px #ff0);}
-            100%{transform:scale(1.2);-webkit-filter:drop-shadow(0px 0px 10px #ff0);}
-        }
-        @media screen and (max-width:500px) {
-            .pc{display:none;}
-            .ph{display:block;}
-            .wrap{height:178vw;}
-            
-            .wrap-0{background:linear-gradient(180deg,transparent 95%,rgba(0,0,0,1) 100%),url(images/LP_1080x1920.jpg)}
-            .wrap-1{background:linear-gradient(180deg,rgba(0,0,0,1) 0%,transparent 5%,transparent 95%,rgba(0,0,0,1) 100%),url(images/LP2_1080x1920.jpg)}
-            .wrap-2{background:linear-gradient(180deg,rgba(0,0,0,1) 0%,transparent 5%,transparent 95%,rgba(0,0,0,1) 100%),url(images/LP0705-BG_1080x1920.jpg)}
-            .wrap-3{background:linear-gradient(180deg,rgba(0,0,0,1) 0%,transparent 5%,transparent 95%,rgba(0,0,0,1) 100%),url(images/LP0527-BG_1080x1920.jpg)}
-            .wrap-4{background:linear-gradient(180deg,rgba(0,0,0,1) 0%,transparent 5%,transparent 95%,rgba(0,0,0,1) 100%),url(images/LP4BG_1080x1920.jpg)}
-            .wrap-5{background:linear-gradient(180deg,rgba(0,0,0,1) 0%,transparent 5%,transparent 95%,rgba(0,0,0,1) 100%),url(images/LP6-BG_1080x1920.jpg)}
-            .wrap-6{background:linear-gradient(180deg,rgba(0,0,0,1) 0%,transparent 5%,transparent 95%,rgba(0,0,0,1) 100%),url(images/LP7-BG_1080x1920.jpg)}
-            .wrap{background-size:contain;}
-            
-            .wrap a{width:60%;}
-            .wrap-0 a{bottom:4%;right:20%;}
-            .wrap-1 a{bottom:1%;right:20%;}
-            .wrap-2 a,.wrap-3 a,.wrap-5 a{bottom: 50%;right:20%;}
-            .wrap-4 a{bottom:14%;right:5%;}
-            .wrap-6 a{bottom:45%;right:20%;}
-
-            .wrap-2 a.img-link{
-                top: 56%;
-                left: 4%;
-                width: 92vw;
-                height: 43vw;
-            }
-            .wrap-3 a.img-link{
-                top: 57%;
-                left: 4%;
-                width: 93.5vw;
-                height: 41vw;
-            }
-            .wrap-5 a.img-link{
-                top: 57%;
-                left: 23.5%;
-                width: 52.5vw;
-                height: 50.5vw;
-            }
-            .wrap-6 a.img-link{
-                top: 56.5%;
-                left: 5.5%;
-                width: 88vw;
-                height: 50vw;
-            }
-
-            .slide {position:relative;width:270px;height:270px;padding:0;margin:auto;}
-            .slide li{top:15%}
-        }
-        
-    </style>
-    <!-- Hotjar Tracking Code for https://gifther.fans/ -->
-    <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:2999987,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
+    <title>API TEST</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <div class="pc">
-        <div class="wrap wrap-0">
-            <a class="animation" href="https://lin.ee/GYc1WNs"><img src="images/LP0308(mobile)_660x240_new.png" alt="" srcset=""></a>
-        </div>
-        <div class="wrap wrap-1">
-            <!-- <a class="animation" href="https://lin.ee/GYc1WNs"><img src="images/LP1Button_700x200.png" alt="" srcset=""></a> -->
-        </div>
-        <div class="wrap wrap-6">
-            <a href="https://lin.ee/GYc1WNs" class="img-link"></a>
-            <a class="animation" href="https://lin.ee/GYc1WNs"><img src="images/LP7-Button_750x250.png" alt="" srcset=""></a>
-        </div>
-        <div class="wrap wrap-5">
-            <a href="https://lin.ee/GYc1WNs" class="img-link"></a>
-            <a class="animation" href="https://lin.ee/GYc1WNs"><img src="images/LP6-Button_700x200.png" alt="" srcset=""></a>
-        </div>
-        
-        <div class="wrap wrap-2">
-            <a href="https://lin.ee/GYc1WNs" class="img-link"></a>
-            <a class="animation" href="https://lin.ee/GYc1WNs"><img src="images/LP0705_750x200.png" alt="" srcset=""></a>
-        </div>
-        <div class="wrap wrap-3">
-            <a href="https://lin.ee/GYc1WNs" class="img-link"></a>
-            <a class="animation" href="https://lin.ee/GYc1WNs"><img src="images/LP0527(Button)_700x200.png" alt="" srcset=""></a>
-        </div>
-        <div class="wrap wrap-4">
-            <!-- feedbackwrap start -->
-            <div class="feedbackwrap-box">
-                <div class="feedbackwrap w-100">
-                    <div class="fbwrap" id="fbwrap">
-                        <div class="slide" id="slide">
-                            <ul class="mb-0">
-                                <li class="ph-img"><a href="https://lin.ee/GYc1WNs"><img src="images/AD0517(PG-Cocktail-Nights)_1040x1040.jpg" alt=""/></a></li>
-                                <li class="ph-img"><a href="https://lin.ee/GYc1WNs"><img src="images/LINEAD0503(FC-CHINESE-NEW-YEAR)_1040x1040.jpg" alt=""/></a></li>
-                                <li class="ph-img"><a href="https://lin.ee/GYc1WNs"><img src="images/AD0517(PG-Mahjong-Ways-2)_1040x1040.jpg" alt=""/></a></li>
-                                <li class="ph-img"><a href="https://lin.ee/GYc1WNs"><img src="images/LINEAD0503(FC-NIGHT-MARKET)_1040x1040.jpg" alt=""/></a></li>
-                                <li class="ph-img"><a href="https://lin.ee/GYc1WNs"><img src="images/AD0517(PP-Bonanza-Gold)_1040x1040.jpg" alt=""/></a></li>
-                                <li class="ph-img"><a href="https://lin.ee/GYc1WNs"><img src="images/LINEAD0503(Jurassic-Kingdom)_1040x1040.jpg" alt=""/></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- feedbackwrap end -->
-        </div>
-    </div>
-    
-    <div class="ph">
-        <div class="wrap wrap-0">
-            <a class="animation" href="https://lin.ee/GYc1WNs"><img src="images/LP0308(mobile)_660x240_new.png" alt="" srcset=""></a>
-        </div>
-        <div class="wrap wrap-1">
-            <!-- <a class="animation" href="https://pse.is/betg11"><img src="images/LP1Button_700x200.png" alt="" srcset=""></a> -->
-        </div>
-        <div class="wrap wrap-6">
-            <a href="https://www.pay69.vip/?pid=player_wiki" class="img-link"></a>
-            <a class="animation" href="https://www.pay69.vip/?pid=player_wiki"><img src="images/LP7-Button_750x250.png" alt="" srcset=""></a>
-        </div>
-        <div class="wrap wrap-5">
-            <a href="https://pse.is/betg11" class="img-link"></a>
-            <a class="animation" href="https://pse.is/betg11"><img src="images/LP6-Button_700x200.png" alt="" srcset=""></a>
-        </div>
-        <div class="wrap wrap-2">
-            <a href="https://bit.ly/3yJUo4J" class="img-link"></a>
-            <a class="animation" href="https://bit.ly/3yJUo4J"><img src="images/LP0705_750x200.png" alt="" srcset=""></a>
-        </div>
-        <div class="wrap wrap-3">
-            <a href="https://pse.is/thb999" class="img-link"></a>
-            <a class="animation" href="https://pse.is/thb999"><img src="images/LP0527(Button)_700x200.png" alt="" srcset=""></a>
-        </div>
-        <div class="wrap wrap-4">
-            <!-- feedbackwrap start -->
-            <div class="feedbackwrap-box">">
-                <div class="feedbackwrap w-100">
-                    <div class="fbwrap" id="fbwrap">
-                        <div class="slide" id="slide">
-                            <ul class="mb-0">
-                                <li class="ph-img"><a href="https://www.pay69.vip/?pid=player_wiki"><img src="images/AD0517(PG-Cocktail-Nights)_1040x1040.jpg" alt=""/></a></li>
-                                <li class="ph-img"><a href="https://www.pay69.vip/?pid=player_wiki"><img src="images/LINEAD0503(FC-CHINESE-NEW-YEAR)_1040x1040.jpg" alt=""/></a></li>
-                                <li class="ph-img"><a href="https://www.pay69.vip/?pid=player_wiki"><img src="images/AD0517(PG-Mahjong-Ways-2)_1040x1040.jpg" alt=""/></a></li>
-                                <li class="ph-img"><a href="https://www.pay69.vip/?pid=player_wiki"><img src="images/LINEAD0503(FC-NIGHT-MARKET)_1040x1040.jpg" alt=""/></a></li>
-                                <li class="ph-img"><a href="https://www.pay69.vip/?pid=player_wiki"><img src="images/AD0517(PP-Bonanza-Gold)_1040x1040.jpg" alt=""/></a></li>
-                                <li class="ph-img"><a href="https://www.pay69.vip/?pid=player_wiki"><img src="images/LINEAD0503(Jurassic-Kingdom)_1040x1040.jpg" alt=""/></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- feedbackwrap end -->
-            <a class="animation" href="https://www.pay69.vip/?pid=player_wiki"><img src="images/big-prize.png" alt="" srcset=""></a>
-        </div>
-    </div>
-    <script src="feedbackwrap.js"></script>
+    <div id="test-results"></div>
+    <script>
+        $(document).ready(function() {
+            var apiUrl = 'https://short777-ice.xav69.com/pay69api.php';
+            $.ajax({
+                url: apiUrl,
+                type: 'GET',
+                dataType: 'json',
+                data: { memberId: '007Nuk007' },
+                success: function(data) {
+                    if (data && Array.isArray(data)) {
+                        $('#test-results').text('API OK');
+                        console.log(data); 
+                    } else {
+                        $('#test-results').text('API BAD');
+                    }
+                },
+                error: function() {
+                    $('#test-results').text('API Error');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

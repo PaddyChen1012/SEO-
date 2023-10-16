@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/demo-01.png" type="image/x-icon">
-    <link rel="shortcut icon" href="images/demo-01.png" type="image/x-icon">
+    <link rel="icon" href="images/demo-01.webp" type="image/x-icon">
+    <link rel="shortcut icon" href="images/demo-01.webp" type="image/x-icon">
     <title>PAY 69</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,9 +20,7 @@
         }
 
         body {
-            background: -webkit-linear-gradient(315deg, #333333 0, #000000 100%);
-            background: -o-linear-gradient(315deg, #333333 0, #000000 100%);
-            background: linear-gradient(135deg, #333333 0, #000000 100%);
+            background: url(./images/halloween-bg.webp)no-repeat center/cover fixed;
         }
 
         .download-box {
@@ -83,6 +81,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            z-index: 1;
         }
 
         .warp-img {
@@ -97,6 +96,7 @@
             justify-items: center;
             align-items: center;
             margin: 32px 0;
+            z-index: 1;
         }
 
         .img-box img {
@@ -104,7 +104,9 @@
         }
 
         footer {
+            position: relative;
             text-align: center;
+            z-index: 1;
         }
 
         footer p {
@@ -124,6 +126,7 @@
             width: 30%;
             max-width: 400px;
             border-radius: 10px;
+            z-index: 1;
         }
 
         .bulb-board-wrapper:active {
@@ -418,12 +421,60 @@
         .delay20 {
             animation-delay: 2s;
         }
+        [class*='halloween']{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+        }
+        .ghost{
+            position: fixed;
+            top: 10%;
+            left: 0%;
+            animation: ghost .8s linear infinite alternate;
+            transform-origin: bottom;
+        }
+        @keyframes ghost {
+            0%{
+                opacity: 0;
+                transform: scale(.75) translateY(0);
+                z-index: 0;
+            }
+            100%{
+                opacity: 1;
+                transform: scale(1) translateY(-10px);
+                z-index: 1;
+            }
+        }
+        .halloween-bg1{
+            bottom: 50%;
+            right: 50%;
+            transform: translate(50%, 50%);
+            animation: halloween-bg1 3.2s linear infinite alternate;
+        }
+        @keyframes halloween-bg1 {
+            0%{-webkit-filter: drop-shadow( 0 0 0px #12f6d0);}
+            100%{-webkit-filter: drop-shadow( 0 0 10px #12f6d0);}
+        }
+        @media screen and (max-width:767px) {
+            .ghost {
+                top: 10%;
+                left: -65%;
+            }
+            .halloween-bg1 {
+                bottom: 50%;
+                right: 50%;
+                height: 100%;
+                width: auto;
+            }
+        }
+
     </style>
 </head>
 
 <body>
     <div class="download-box">
-        <img src="images/demo-01.png" alt="">
+        <img src="images/demo-01.webp" alt="">
         <div class="download-msg">
             <h1>PAY 69</h1>
             <h3>
@@ -434,7 +485,11 @@
         <a id="download-btn" class="download-btn animation" href="./PAY69_20230906.apk">ดาวน์โหลด</a>
     </div>
     <div class="warp">
-        <img class="warp-img" src="images/LP1207(pay69)_1040x1040.png" alt="">
+        <!-- <img class="halloween-b" src="images/halloween_bg_b.webp" alt="">
+        <img class="halloween-y" src="images/halloween_bg_y.webp" alt=""> -->
+        <img class="ghost" src="./images/ghost.webp" alt="">
+        <img class="halloween-bg1" src="./images/halloween-bg1.webp" alt="">
+        <img class="warp-img" src="images/LP1207(pay69)_1040x1040.webp" alt="">
         <!-- <a class="download-btn animation" href="./PAY69_20230906.apk">ดาวน์โหลด</a> -->
         <a href="./PAY69_20230906.apk" class='bulb-board-wrapper'>
             <div class='bulb-board'>
@@ -476,10 +531,10 @@
             </div>
         </a>
         <div class="img-box">
-            <img src="images/LP1012-baccarat_500x500.png" alt="">
-            <img src="images/LP1012-fishing_500x500.png" alt="">
-            <img src="images/LP1012-lottery_500x500.png" alt="">
-            <img src="images/LP1012-slot_500x500.png" alt="">
+            <img src="images/LP1012-baccarat_500x500.webp" alt="">
+            <img src="images/LP1012-fishing_500x500.webp" alt="">
+            <img src="images/LP1012-lottery_500x500.webp" alt="">
+            <img src="images/LP1012-slot_500x500.webp" alt="">
         </div>
     </div>
     <footer>
