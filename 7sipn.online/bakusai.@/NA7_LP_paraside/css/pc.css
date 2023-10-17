@@ -147,12 +147,16 @@ section{
     top: 39%;
     left: 37%;
     width: 4%;
-    animation: translate-arrow .8s linear alternate infinite;
 }
 .arrow-2{
     top: 39%;
     left: 59%;
     width: 4%;
+}
+.active .arrow-1{
+    animation: translate-arrow .8s linear alternate infinite;
+}
+.active .arrow-2{
     animation: translate-arrow .8s .8s linear alternate infinite;
 }
 .page-3{
@@ -187,18 +191,25 @@ section{
     height: 0;
     padding-bottom: calc((25% - 16px)* 1.64);
 }
-.diagram>div:nth-child(1) .phone-img{animation: scale 8.4s 0s linear;}
-.diagram>div:nth-child(2) .phone-img{animation: scale 8.4s 1.2s linear;}
-.diagram>div:nth-child(3) .phone-img{animation: scale 8.4s 2.4s linear;}
-.diagram>div:nth-child(4) .phone-img{animation: scale 8.4s 3.6s linear;}
-.diagram>div:nth-child(5) .phone-img{animation: scale 8.4s 4.8s linear;}
-.diagram>div:nth-child(6) .phone-img{animation: scale 8.4s 6.0s linear;}
-.diagram>div:nth-child(7) .phone-img{animation: scale 8.4s 7.2s linear;}
+.active .diagram>div:nth-child(1) .phone-img{animation: scale 8.4s 0s linear;}
+.active .diagram>div:nth-child(2) .phone-img{animation: scale 8.4s 1.2s linear;}
+.active .diagram>div:nth-child(3) .phone-img{animation: scale 8.4s 2.4s linear;}
+.active .diagram>div:nth-child(4) .phone-img{animation: scale 8.4s 3.6s linear;}
+.active .diagram>div:nth-child(5) .phone-img{animation: scale 8.4s 4.8s linear;}
+.active .diagram>div:nth-child(6) .phone-img{animation: scale 8.4s 6.0s linear;}
+.active .diagram>div:nth-child(7) .phone-img{animation: scale 8.4s 7.2s linear;}
 .diagram img{
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
+}
+.diagram .phone-img{
+    cursor: pointer;
+    transition: transform .2s;
+}
+.diagram .phone-img:hover{
+    transform: scale(1.1);
 }
 .arrow{
     position: relative;
@@ -216,11 +227,11 @@ section{
     height: 48px;
     z-index: 1;
 }
-.diagram>div:nth-child(1) .arrow-img{animation: scale-arrow 8.4s 0s linear;}
-.diagram>div:nth-child(2) .arrow-img{animation: scale-arrow 8.4s 1.2s linear;}
-.diagram>div:nth-child(3) .arrow-img{animation: scale-arrow 8.4s 2.4s linear;}
-.diagram>div:nth-child(5) .arrow-img{animation: scale-arrow 8.4s 4.8s linear;}
-.diagram>div:nth-child(6) .arrow-img{animation: scale-arrow 8.4s 6.0s linear;}
+.active .diagram>div:nth-child(1) .arrow-img{animation: scale-arrow 8.4s 0s linear;}
+.active .diagram>div:nth-child(2) .arrow-img{animation: scale-arrow 8.4s 1.2s linear;}
+.active .diagram>div:nth-child(3) .arrow-img{animation: scale-arrow 8.4s 2.4s linear;}
+.active .diagram>div:nth-child(5) .arrow-img{animation: scale-arrow 8.4s 4.8s linear;}
+.active .diagram>div:nth-child(6) .arrow-img{animation: scale-arrow 8.4s 6.0s linear;}
 .page-4{
     width: 100%;
     padding-bottom: 55vw;
@@ -360,25 +371,11 @@ section{
 #leaves i:nth-of-type(6n) { -webkit-animation-delay: 8.3s;}
 #leaves i:nth-of-type(7n) { -webkit-animation-delay: 9.8s;}
 
-#leaves i:nth-of-type(8n) { -webkit-animation-delay: 6.1s;}
-#leaves i:nth-of-type(9n) { -webkit-animation-delay: 9s;}
-#leaves i:nth-of-type(10n) { -webkit-animation-delay: 6.7s;}
-#leaves i:nth-of-type(11n) { -webkit-animation-delay: 15s;}
-#leaves i:nth-of-type(12n) { -webkit-animation-delay: 5.5s;}
-#leaves i:nth-of-type(13n) { -webkit-animation-delay: 10.5s;}
-#leaves i:nth-of-type(14n) { -webkit-animation-delay: 8.8s;}
-#leaves i:nth-of-type(15n) { -webkit-animation-delay: 13.5s;}
-#leaves i:nth-of-type(16n) { -webkit-animation-delay: 11.5s;}
-#leaves i:nth-of-type(17n) { -webkit-animation-delay: 7.3s;}
-#leaves i:nth-of-type(18n) { -webkit-animation-delay: 11.8s;}
-#leaves i:nth-of-type(19n) { -webkit-animation-delay: 3.5s;}
-#leaves i:nth-of-type(20n) { -webkit-animation-delay: 4.2s;}
-#leaves i:nth-of-type(21n) { -webkit-animation-delay: 13.3s;}
-#leaves i:nth-of-type(22n) { -webkit-animation-delay: 10.8s;}
-#leaves i:nth-of-type(23n) { -webkit-animation-delay: 4.3s;}
-#leaves i:nth-of-type(24n) { -webkit-animation-delay: 12.9s;}
-#leaves i:nth-of-type(25n) { -webkit-animation-delay: 13.9s;}
-
+#leaves i:nth-of-type(2n+1) { -webkit-animation-delay: 6.1s;}
+#leaves i:nth-of-type(4n+3) { -webkit-animation-delay: 9s;}
+#leaves i:nth-of-type(5n+1) { -webkit-animation-delay: 10.7s;}
+#leaves i:nth-of-type(7n+2) { -webkit-animation-delay: 15s;}
+#leaves i:nth-of-type(7n+4) { -webkit-animation-delay: 12.5s;}
 
 #leaves i:nth-of-type(n) { background: url(../assets/img_ribbons_01.webp)no-repeat center/contain; }
 #leaves i:nth-of-type(2n+2) { background: url(../assets/img_ribbons_02.webp)no-repeat center/contain; }
@@ -399,12 +396,12 @@ section{
 @-webkit-keyframes falling {
     0% {
         -webkit-transform:
-            translate3d(300px,100px,0)
+            translate3d(0,100px,0)
             rotate(0deg);
     }
     100% {
         -webkit-transform:
-            translate3d(-350px,220vw,0)
+            translate3d(-150px,220vw,0)
             rotate(90deg);
         opacity: 0;
     }
