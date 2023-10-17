@@ -388,7 +388,7 @@ section{
 #leaves i:nth-of-type(2n+1) { opacity: .6;}
 #leaves i:nth-of-type(3n+2) { opacity: .9;}
 
-#leaves i:nth-of-type(n) {transform: rotate(180deg) translate3d(300px,100px,0);}
+#leaves i:nth-of-type(n) {transform: rotate(180deg) translate3d(0,100px,0);}
 
 
 #leaves i:nth-of-type(n) { -webkit-animation-timing-function:ease-in-out;}
