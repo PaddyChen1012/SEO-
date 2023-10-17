@@ -1,3 +1,6 @@
+.btn-top img{
+    width: 56px;
+}
 section{
     background: url(../img_phone/NA7_LP_phone_paraside_noassets.jpg)no-repeat center/cover;
     padding-bottom: 455%;
@@ -25,7 +28,7 @@ section{
     padding-bottom: 90vw;
 }
 .img-title-step{
-    top: 0%;
+    top: -3%;
     left: 5%;
     width: 90%;
 }
@@ -171,4 +174,8 @@ section{
             rotate(0deg);
         opacity: 0;
     }
+}
+
+#leaves {
+    top: 0%;
 }
