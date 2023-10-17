@@ -10,6 +10,12 @@ section{
     position: absolute;
     width: 100%;
 }
+.btn-top{
+    position: fixed;
+    bottom: 10px;
+    right: 5%;
+    z-index: 10;
+}
 .page{
     position: relative;
     height: 0;
@@ -160,6 +166,7 @@ section{
     animation: translate-arrow .8s .8s linear alternate infinite;
 }
 .page-3{
+    position: relative;
     width: 100%;
     height: auto;
 }
@@ -181,6 +188,14 @@ section{
     justify-content: center;
     width: 60%;
     margin: auto;
+}
+.page-3 .scroll-point{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 1px;
+    padding: 0;
 }
 .diagram.ph{
     display: none;
@@ -383,13 +398,11 @@ section{
 #leaves i:nth-of-type(4n+1) { background: url(../assets/img_ribbons_04.webp)no-repeat center/contain; }
 #leaves i:nth-of-type(5n+2) { background: url(../assets/img_ribbons_05.webp)no-repeat center/contain; }
 
-
 #leaves i:nth-of-type(n) { opacity: .8;}
 #leaves i:nth-of-type(2n+1) { opacity: .6;}
 #leaves i:nth-of-type(3n+2) { opacity: .9;}
 
 #leaves i:nth-of-type(n) {transform: rotate(180deg) translate3d(0,100px,0);}
-
 
 #leaves i:nth-of-type(n) { -webkit-animation-timing-function:ease-in-out;}
 

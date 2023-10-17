@@ -17,7 +17,7 @@ function send_data($url, $data )
 }
 
 $data_captcha = send_data(
-	$url = 'https://www.kmr77.com/service/auth/captcha?t='. time(),
+   $url = 'https://www.kmr77.com/service/auth/captcha?t='. time(),
    $data = [
    ]
 );
@@ -25,7 +25,7 @@ $data_captcha = send_data(
 $captcha_data = $data_captcha['data']['captcha']['data'];
 $captcha_json = json_encode($captcha_data);
 $captcha = $data_captcha['data']['captchaUid'];
-
+$domain = 'www.kmr77.com/';
 
 $agentId = @$_GET['pid'];
 
@@ -34,6 +34,9 @@ if ($agentId== '') {
 }else{
    $agentShortName = $agentId;
 }
+
+
+
 
 $dataCheck = true;
 if (isset($_POST['username']) && strlen($_POST['username']) > 0){
@@ -85,24 +88,32 @@ else{
 if (isset($_POST['captchaUid']) && strlen($_POST['captchaUid']) > 0){
 	$data['captchaUid'] = $_POST['captchaUid'];
    $data['agentShortName'] = $_POST['agentShortName'];
+   $data['affiliate'] = $_POST['affiliate'];
 }
 else{
 	$dataCheck = false;
 }
 
-
+$data['domain'] = $_POST['domain'];
 
 #確認所有欄位都經過驗證，再送資料給ocms-api
 if ($dataCheck) {
    $data_list = send_data($url = 'https://www.kmr77.com/service/member', $data);
+   // print_r($data_list);
+   // die;
 }
+// echo '<pre>';
+// print_r($data);
+// print_r($data_list);
+// echo '</pre>';
+// exit;
 ?>
 
 <html lang="km">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="facebook-domain-verification" content="j7dl8r39di0vpr775117olydpuki1b" />
+   <meta name="facebook-domain-verification" content="l9gpb2l8x45vv61atvbyxui8ctzyb1" />
    <title>KMR77</title>
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
@@ -118,10 +129,10 @@ if ($dataCheck) {
    t.src=v;s=b.getElementsByTagName(e)[0];
    s.parentNode.insertBefore(t,s)}(window, document,'script',
    'https://connect.facebook.net/en_US/fbevents.js');
-   fbq('init', '832153645172946');
+   fbq('init', '194805566982883');
    fbq('track', 'PageView');
    </script>
-   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=832153645172946&ev=PageView&noscript=1"/></noscript>
+   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=194805566982883&ev=PageView&noscript=1"/></noscript>
    <!-- End Meta Pixel Code -->
 </head>
 <body>
@@ -129,22 +140,28 @@ if ($dataCheck) {
       <h2>ការចុះឈ្មោះ</h2>
       <form id="myform" method="post">
          <div class="user-box">
-            <input id="username" type="text" name="username" required="" maxlength="16" autocomplete="off" title="">
+            <input id="username" type="text" name="username" maxlength="16" autocomplete="off">
             <label for="username">ឈ្មោះអ្នកប្រើប្រាស់</label>
             <div class="<?php if ($name_Vf){ echo 'tip-info'; }else if ($erro_name){ echo 'error-info'; } ?>"><?php echo @$name_Vf; echo @$erro_name; ?></div>
          </div>
          <div class="user-box">
-            <input id="pws" type="password" name="pwd" required="" maxlength="16" autocomplete="off" title="">
+            <input id="pws" type="password" name="pwd" maxlength="16" autocomplete="off">
             <label for="pws">លេខសម្ងាត់</label>
             <div class="<?php if ($name_Vf){ echo 'tip-info'; }else if ($erro_name){ echo 'error-info'; } ?>"><?php echo @$pwd_Vf; echo @$erro_pwd; ?></div>
          </div>
          <div class="user-box">
-            <input id="tel" type="number" name="phoneNumber" required="" maxlength="16" autocomplete="off" title="">
+            <input id="tel" type="text" name="phoneNumber" maxlength="16" autocomplete="off">
             <label for="tel">លេខទូរស័ព្ទ</label>
             <div class="<?php if ($name_Vf){ echo 'tip-info'; }else if ($erro_name){ echo 'error-info'; } ?>"><?php echo @$phone_Vf; echo @$erro_phone; ?></div>
          </div>
+
+         <input id="domain" type="hidden" value="<?=$domain?>" name="domain" >
+         <input id="captchaUid" type="hidden" name="captchaUid" value="<?= $captcha ?>">
+         <input id="agentShortName" type="hidden" name="agentShortName" value="<?= $agentId ?>">
+         <input id="affiliate" type="hidden" name="affiliate" value="<?= $agentId ?>">
+
          <div class="user-box">
-            <input id="num" type="text" name="captcha" required="" maxlength="16" autocomplete="off" title="">
+            <input id="num" type="text" name="captcha" maxlength="16" autocomplete="off">
             <label for="num">លេខកូដបញ្ជាក់</label>
             <div class="input-addon checknum_img">
                <img src="" id="numImg" class="Captcha" alt="Captcha"/>
