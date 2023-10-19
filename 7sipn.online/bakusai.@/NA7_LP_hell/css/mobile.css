@@ -25,7 +25,7 @@ section{
 }
 
 .page-2{
-    padding-bottom: 110vw;
+    padding-bottom: 104vw;
 }
 .img-title-step{
     top: -3%;
@@ -51,7 +51,7 @@ section{
     width: 100%;
 }
 .diagram{
-    width: 45%;
+    width: 54%;
 }
 .diagram.pc{
     display: none;
@@ -78,6 +78,7 @@ section{
     width: 20%;
     height: auto !important;
     transform: rotateY(180deg);
+    z-index: 1;
 }
 .next-arrow{
     top: 42% !important;
@@ -85,6 +86,7 @@ section{
     right: 5%;
     width: 20%;
     height: auto !important;
+    z-index: 1;
 }
 
 .img-title-notice{
