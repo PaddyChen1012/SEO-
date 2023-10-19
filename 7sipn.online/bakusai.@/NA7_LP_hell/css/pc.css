@@ -240,6 +240,10 @@ section{
     width: 100%;
     padding-bottom: 55vw;
 }
+.page-4 .phone-text{ display: none;}
+.page-4 .notice-text{ display: none;}
+.page-4 .logo{ display: none;}
+
 @keyframes coin01 {
     0%{top: 50%;left: 50%; transform: translate( -50%, -50%) rotateZ(70deg) scale(0);opacity: 0;}
     100%{top: 18%; left: 2%; transform: translate( -50%, -50%) rotateZ(70deg) scale(1);opacity: 1;}

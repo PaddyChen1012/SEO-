@@ -25,7 +25,7 @@ section{
 }
 
 .page-2{
-    padding-bottom: 104vw;
+    padding-bottom: 100vw;
 }
 .img-title-step{
     top: -3%;
@@ -93,6 +93,28 @@ section{
     top: 0%;
     left: 5%;
     width: 90%;
+}
+
+.page-4{
+    padding-bottom: 160vw;
+}
+.page-4 .phone-text{
+    display: block;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+}
+.page-4 .notice-text{
+    display: block;
+    top: 13%;
+    left: 0%;
+    width: 100%;
+}
+.page-4 .logo{
+    display: block;
+    top: 80%;
+    left: calc(50% - 90px);
+    width: 180px;
 }
 
 @keyframes coin01 {
