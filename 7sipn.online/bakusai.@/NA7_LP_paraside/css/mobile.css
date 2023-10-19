@@ -74,7 +74,7 @@ section{
 }
 .pre-arrow{
     top: 64% !important;
-    left: 5% !important;
+    left: 2% !important;
     width: 20%;
     height: auto !important;
     transform: rotateY(180deg);
@@ -82,7 +82,7 @@ section{
 .next-arrow{
     top: 64% !important;
     left: unset !important;
-    right: 5%;
+    right: 2%;
     width: 20%;
     height: auto !important;
 }
