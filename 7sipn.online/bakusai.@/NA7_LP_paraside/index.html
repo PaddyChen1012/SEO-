@@ -131,26 +131,30 @@
                 const deltaX = touchEndX - touchStartX;
 
                 // 橫向滑動
-                if (deltaX > 0) {
+                if (deltaX > 10) {
                     page --
                     if (page < 1){
                         page = 7
                     }
                     changepage(page)
-                } else {
+                } else if (deltaX < -10) {
                     page ++
                     if (page > 7){
                         page = 1
                     }
                     changepage(page)
                 }
-                
                 // 重設觸控開始位置，以便下一次計算
                 touchStartX = touchEndX;
             });
 
             function changepage(page){
-                $(".ph .phone-img-num").attr('src', './assets/img_number_' + page + '.webp');
+                if(page == 7){
+                    $(".ph .phone-img-num").css("display", "none");
+                }else{
+                    $(".ph .phone-img-num").css("display", "block");
+                    $(".ph .phone-img-num").attr('src', './assets/img_number_' + page + '.webp');
+                }
                 $(".ph .phone-img").attr('src', './assets/img_phone0' + page + '.webp');
             }
 
