@@ -129,3 +129,7 @@ section{
     0%{top: 50%;left: 50%; transform: translate( -50%, -50%) rotateZ(75deg) scale(0);opacity: 0;}
     100%{top: 36%;left: 100%;transform: translate( -50%, -50%) rotateZ(75deg) scale(1);opacity: 1;}
 }
+
+#leaves {
+    top: 16%;
+}
