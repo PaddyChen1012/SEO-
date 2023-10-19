@@ -3,7 +3,7 @@ section{
     width: 100%;
     height: 0;
     background: url(../img_pc/NA7_LP_PC_hell_noassets.webp)no-repeat center/cover;
-    padding-bottom: 240%;
+    padding-bottom: 244%;
     overflow: hidden;
 }
 .bg{
@@ -128,13 +128,13 @@ section{
     animation: rollercoaster .8s linear forwards;
 }
 .img-btn{
-    top: 52%;
+    top: 54%;
     left: 28.5%;
     width: 43%;
 }
 .page-2{
     width: 100%;
-    padding-bottom: 55vw;
+    padding-bottom: 60vw;
 }
 .arrow-1{
     top: 29%;
@@ -256,7 +256,7 @@ section{
 }
 @keyframes coin05 {
     0%{top: 50%;left: 50%; transform: translate( -50%, -50%) rotateZ(0deg) scale(0);opacity: 0;}
-    100%{top: 12%; left: 69%; transform: translate( -50%, -50%) rotateZ(0deg) scale(1);opacity: 1;}
+    100%{top: -1%;left: 69%;transform: translate( -50%, -50%) rotateZ(0deg) scale(1);opacity: 1;}
 }
 @keyframes coin06 {
     0%{top: 50%;left: 50%; transform: translate( -50%, -50%) rotateZ(75deg) scale(0);opacity: 0;}
