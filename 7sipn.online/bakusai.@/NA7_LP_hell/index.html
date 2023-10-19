@@ -102,18 +102,49 @@
             $(".pre-arrow").click(function(){
                 page --
                 if (page < 1){
-                    page = 1
+                    page = 7
                 }
                 changepage(page)
             });
             $(".next-arrow").click(function(){
                 page ++
                 if (page > 7){
-                    page = 7
+                    page = 1
                 }
                 changepage(page)
             });
-            
+
+            const myDiv = document.querySelector('.ph');
+            let touchStartX = 0;
+
+            myDiv.addEventListener('touchstart', (e) => {
+                // 儲存觸控開始位置
+                touchStartX = e.touches[0].clientX;
+            });
+
+            myDiv.addEventListener('touchend', (e) => {
+                // 計算觸控滑動的距離
+                const touchEndX = e.changedTouches[0].clientX;
+                const deltaX = touchEndX - touchStartX;
+
+                // 橫向滑動
+                if (deltaX > 0) {
+                    page --
+                    if (page < 1){
+                        page = 7
+                    }
+                    changepage(page)
+                } else {
+                    page ++
+                    if (page > 7){
+                        page = 1
+                    }
+                    changepage(page)
+                }
+                
+                // 重設觸控開始位置，以便下一次計算
+                touchStartX = touchEndX;
+            });
 
             function changepage(page){
                 $(".ph .phone-img-num").attr('src', './assets/img_number_' + page + '.webp');

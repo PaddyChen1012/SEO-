@@ -210,8 +210,10 @@ section{
     cursor: pointer;
     transition: transform .2s;
 }
-.diagram .phone-img:hover{
-    transform: scale(1.1);
+@media (any-hover: hover) {
+    .diagram .phone-img:hover{
+        transform: scale(1.1);
+    }
 }
 .arrow{
     position: relative;
