@@ -368,6 +368,7 @@ section{
     background: url(../assets/img_ribbons_01.webp)no-repeat center/contain;
     transform: skew(20deg);
     -webkit-animation: falling 12s 0s infinite;
+    opacity: 0;
     z-index: 1;
 }
 
@@ -398,10 +399,6 @@ section{
 #leaves i:nth-of-type(4n+1) { background: url(../assets/img_ribbons_04.webp)no-repeat center/contain; }
 #leaves i:nth-of-type(5n+2) { background: url(../assets/img_ribbons_05.webp)no-repeat center/contain; }
 
-#leaves i:nth-of-type(n) { opacity: .8;}
-#leaves i:nth-of-type(2n+1) { opacity: .6;}
-#leaves i:nth-of-type(3n+2) { opacity: .9;}
-
 #leaves i:nth-of-type(n) {transform: rotate(180deg) translate3d(0,100px,0);}
 
 #leaves i:nth-of-type(n) { -webkit-animation-timing-function:ease-in-out;}
@@ -411,6 +408,7 @@ section{
         -webkit-transform:
             translate3d(0,100px,0)
             rotate(0deg);
+        opacity: .8;
     }
     100% {
         -webkit-transform:
@@ -425,6 +423,7 @@ section{
         -webkit-transform:
             translate3d(0,100px,0)
             rotate(-20deg);
+        opacity: .6;
     }
     100% {
         -webkit-transform:
@@ -439,6 +438,7 @@ section{
         -webkit-transform:
             translate3d(0,100px,0)
             rotate(90deg);
+        opacity: .9;
     }
     100% {
         -webkit-transform:
