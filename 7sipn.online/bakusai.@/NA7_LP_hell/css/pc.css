@@ -213,7 +213,7 @@ section{
     cursor: pointer;
     transition: transform .2s;
 }
-@media (any-hover: hover) {
+@media (min-width: 576px) and (any-hover: hover) {
     .diagram .phone-img:hover{
         transform: scale(1.1);
     }
