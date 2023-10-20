@@ -197,6 +197,39 @@
                 btnLink[i].href = webPid;
             }
         };
+        
+        // 定义一个变量来标记是否可以执行滚动处理
+        let canScroll = true;
+
+        // 定义节流时间间隔（毫秒）
+        const throttleInterval = 500; // 例如，500毫秒
+
+        // 监听滚动事件
+        window.addEventListener("scroll", function() {
+            // 检查是否可以执行滚动处理
+            if (!canScroll) {
+                return; // 如果不能执行，则退出
+            }
+
+            // 设置 canScroll 为 false，防止在时间间隔内重复触发
+            canScroll = false;
+
+            // 在节流时间间隔后重置 canScroll 为 true，以便下次触发滚动事件
+            setTimeout(function() {
+                canScroll = true;
+            }, throttleInterval);
+
+            // 在滚动到特定位置时执行某个函数
+            if (window.scrollY >= 500) {
+                $('.btn-top').css("display", "block");
+            }else {
+                $('.btn-top').css("display", "none");
+            }
+        });
+
+        function yourFunction() {
+            $('.btn-top').css("display", "block");
+        }
     </script>
 </body>
 </html>
