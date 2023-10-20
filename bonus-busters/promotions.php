@@ -81,7 +81,7 @@
         
     </section>
 
-    <footer><a href="https://www.uno1bet.com/" target="_blank">Uno1bet</a> © 2023 All rights reserved.</footer>
+    <footer><a rel=nofollow  href="https://www.uno1bet.com/" target="_blank">Uno1bet</a> © 2023 All rights reserved.</footer>
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
