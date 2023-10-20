@@ -206,13 +206,15 @@ section{
     height: 0;
     padding-bottom: calc((25% - 16px)* 1.64);
 }
-.active .diagram>div:nth-child(1) .phone-img{animation: scale 8.4s 0s linear;}
-.active .diagram>div:nth-child(2) .phone-img{animation: scale 8.4s 1.2s linear;}
-.active .diagram>div:nth-child(3) .phone-img{animation: scale 8.4s 2.4s linear;}
-.active .diagram>div:nth-child(4) .phone-img{animation: scale 8.4s 3.6s linear;}
-.active .diagram>div:nth-child(5) .phone-img{animation: scale 8.4s 4.8s linear;}
-.active .diagram>div:nth-child(6) .phone-img{animation: scale 8.4s 6.0s linear;}
-.active .diagram>div:nth-child(7) .phone-img{animation: scale 8.4s 7.2s linear;}
+@media screen and (min-width:768px) {
+    .active .diagram>div:nth-child(1) .phone-img{animation: scale 8.4s 0s linear;}
+    .active .diagram>div:nth-child(2) .phone-img{animation: scale 8.4s 1.2s linear;}
+    .active .diagram>div:nth-child(3) .phone-img{animation: scale 8.4s 2.4s linear;}
+    .active .diagram>div:nth-child(4) .phone-img{animation: scale 8.4s 3.6s linear;}
+    .active .diagram>div:nth-child(5) .phone-img{animation: scale 8.4s 4.8s linear;}
+    .active .diagram>div:nth-child(6) .phone-img{animation: scale 8.4s 6.0s linear;}
+    .active .diagram>div:nth-child(7) .phone-img{animation: scale 8.4s 7.2s linear;}
+}
 .diagram img{
     position: absolute;
     top: 0;
@@ -244,11 +246,13 @@ section{
     height: 48px;
     z-index: 1;
 }
-.active .diagram>div:nth-child(1) .arrow-img{animation: scale-arrow 8.4s 0s linear;}
-.active .diagram>div:nth-child(2) .arrow-img{animation: scale-arrow 8.4s 1.2s linear;}
-.active .diagram>div:nth-child(3) .arrow-img{animation: scale-arrow 8.4s 2.4s linear;}
-.active .diagram>div:nth-child(5) .arrow-img{animation: scale-arrow 8.4s 4.8s linear;}
-.active .diagram>div:nth-child(6) .arrow-img{animation: scale-arrow 8.4s 6.0s linear;}
+@media screen and (min-width:768px) {
+    .active .diagram>div:nth-child(1) .arrow-img{animation: scale-arrow 8.4s 0s linear;}
+    .active .diagram>div:nth-child(2) .arrow-img{animation: scale-arrow 8.4s 1.2s linear;}
+    .active .diagram>div:nth-child(3) .arrow-img{animation: scale-arrow 8.4s 2.4s linear;}
+    .active .diagram>div:nth-child(5) .arrow-img{animation: scale-arrow 8.4s 4.8s linear;}
+    .active .diagram>div:nth-child(6) .arrow-img{animation: scale-arrow 8.4s 6.0s linear;}
+}
 .page-4{
     width: 100%;
     padding-bottom: 55vw;
