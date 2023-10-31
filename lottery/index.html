@@ -5,11 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Sriracha&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
+    <nav>
+        <button class="menu-btn">
+            <i class="bi bi-list"></i>
+        </button>
+        <img src="./images/img_logo_normal.png" alt="">
+        <ul class="menu">
+            <li class="active"><a href="/">ตรวจจำนวนฉลาก</a></li>
+            <li class=""><a href="/">เงื่อนไขกิจกรรม</a></li>
+            <li class=""><a href="/">โปรโมชั่น</a></li>
+            <li class=""><a href="/">บริการลูกค้า</a></li>
+            <li class=""><a href="/">สมัครสมาชิก</a></li>
+        </ul>
+    </nav>
     <section>
         <img class="title" src="./images/img_title_normal.png" alt="">
         <div class="input-box">
@@ -17,19 +34,19 @@
                 <img class="input-title" src="./images/img_search_title_normal.png" alt="">
                 <div class="input-group">
                     <span>บัญชีผู้ใช้</span>
-                    <input type="text" value="ใช่ชื่อบัญชีผู้ใช้เพื่อตรวจสอบจำนวนฉลากจับรางวัลที่ได้รับ">
-                    <button><img src="./images/btn_search_normal.png" alt=""></button>
+                    <input id="myInput" type="text" placeholder="ใช่ชื่อบัญชีผู้ใช้เพื่อตรวจสอบจำนวนฉลากจับรางวัลที่ได้รับ">
+                    <button id="getValueButton"><img src="./images/btn_search_normal.png" alt=""></button>
                 </div>
                 <p>【 จำนวนฉลากรางวัลจะอัปเดตทุกวันเวลา 00:00 】</p>
             </div>
         </div>
-        <div class="output-box active">
-            <p class="word-1">จำนวนฉลากสะสมของคุณตั้งแต่เริ่มต้นจนถึงเมื่อวาน</p>
+        <div class="output-box">
+            <p class="word-1">จำนวนฉลากสะส<span class="break-here">มของคุณตั้งแต่เริ่มต้นจนถึงเมื่อวาน</span></p>
             <div class="output-img">
                 <div class="output-main">
-                    <img src="./images/img_ticket_number0_normal.png" alt="">
-                    <img src="./images/img_ticket_number0_normal.png" alt="">
-                    <img src="./images/img_ticket_number0_normal.png" alt="">
+                    <img class="digits-2" src="./images/img_ticket_number0_normal.png" alt="">
+                    <img class="digits-1" src="./images/img_ticket_number0_normal.png" alt="">
+                    <img class="digits-0" src="./images/img_ticket_number0_normal.png" alt="">
                     <img src="./images/img_ticket_text_normal.png" alt="">
                 </div>
             </div>
@@ -41,6 +58,10 @@
                 <img src="./images/img_gifts1_normal.png" alt="">
                 <img src="./images/img_gifts1_normal.png" alt="">
             </div>
+            <div class="gifts-middle">
+                <img src="./images/img_gifts1_normal.png" alt="">
+                <img src="./images/img_gifts1_normal.png" alt="">
+            </div>
             <div class="gifts-bottom">
                 <img src="./images/img_gifts1_normal.png" alt="">
                 <img src="./images/img_gifts1_normal.png" alt="">
@@ -48,5 +69,58 @@
             </div>
         </div>
     </section>
+    <div class="modal-warp">
+        <div class="modal-window">
+            <button class="btn-close"><img src="./images/btn_close_normal.png" alt=""></button>
+            <span>อุ้ย!</span>
+            <span>ไม่พบประวัติการฝากเงินของบัญชีน</span>
+            <button class="btn-submit"><img src="./images/btn_popup_normal.png" alt=""></button>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+
+            var apiUrl = 'https://short777-ice.xav69.com/pay69api.php';
+
+            // 007Nuk007
+            $("#getValueButton").click(function () {
+                // 使用 jQuery 获取输入框的值
+                var textValue = $("#myInput").val();
+
+                $.ajax({
+                    url: apiUrl,
+                    type: 'GET',
+                    dataType: 'json',
+                    data: { memberId: textValue },
+                    success: function(data) {
+                        if (data && Array.isArray(data)) {
+                            if(data[0].MemberId == null){
+                                $(".modal-warp").addClass("show");
+                            }else{
+                                let result = Math.floor(data[0].TotalPoints / 100);
+                                let digits = result.toString().split('').map(Number).reverse();
+                                console.log(digits)
+                                for(let i=0; i<digits.length; i++){
+                                    $('.digits-' + i).attr('src', './images/img_ticket_number'+digits[i]+'_normal.png')
+                                }
+                                $('.output-box').addClass('active')
+                            }
+                        } else {
+                            console.log('API BAD');
+                        }
+                    },
+                    error: function() {
+                        console.log('API Error');
+                    }
+                });
+            });
+
+            $('.btn-close').click(function () {
+                $('.modal-warp').removeClass('show')
+            })
+
+        });
+    </script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
