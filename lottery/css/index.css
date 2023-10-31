@@ -85,7 +85,7 @@
     font-size: 20px;
 }
 .word-2 span{
-    margin-left: 4px;
+    margin-left: 8px;
     font-size: 40px;
 }
 .output-img{
@@ -248,6 +248,7 @@
         font-size: 14px;
     }
     .word-2 span{
+        margin-left: 4px;
         font-size: 22px;
     }
     .gifts-top img:last-child,
@@ -263,5 +264,14 @@
     }
     .gifts-box img{
         width: calc(100% / 2);
+    }
+    .modal-window {
+        left: 0%;
+        width: 100%;
+        font-size: 22px;
+        padding: 16px;
+    }
+    .modal-window img {
+        width: 75%;
     }
 }

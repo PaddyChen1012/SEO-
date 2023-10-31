@@ -50,7 +50,7 @@
                     <img src="./images/img_ticket_text_normal.png" alt="">
                 </div>
             </div>
-            <p class="word-2">จำนวนเงินฝากสะสมในช่วงเวลากิจกรรมของคุณ<span>30,090</span></p>
+            <p class="word-2">จำนวนเงินฝากสะสมในช่วงเวลากิจกรรมของคุณ<span class="bet-total">30,090</span></p>
         </div>
         <div class="gifts-box">
             <div class="gifts-top">
@@ -97,9 +97,10 @@
                             if(data[0].MemberId == null){
                                 $(".modal-warp").addClass("show");
                             }else{
+                                total = parseFloat(Math.floor(data[0].TotalPoints));
+                                $('.bet-total').text(total.toLocaleString());
                                 let result = Math.floor(data[0].TotalPoints / 100);
                                 let digits = result.toString().split('').map(Number).reverse();
-                                console.log(digits)
                                 for(let i=0; i<digits.length; i++){
                                     $('.digits-' + i).attr('src', './images/img_ticket_number'+digits[i]+'_normal.png')
                                 }
