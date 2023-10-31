@@ -18,7 +18,7 @@
         <button class="menu-btn">
             <i class="bi bi-list"></i>
         </button>
-        <img src="./images/img_logo_normal.png" alt="">
+        <img src="./images/img_logo_normal.webp" alt="">
         <ul class="menu">
             <li class="active"><a href="/">ตรวจจำนวนฉลาก</a></li>
             <li class=""><a href="./rule.html">เงื่อนไขกิจกรรม</a></li>
@@ -28,14 +28,14 @@
         </ul>
     </nav>
     <section>
-        <img class="title" src="./images/img_title_normal.png" alt="">
+        <img class="title" src="./images/img_title_normal.webp" alt="">
         <div class="input-box">
             <div class="input-main">
-                <img class="input-title" src="./images/img_search_title_normal.png" alt="">
+                <img class="input-title" src="./images/img_search_title_normal.webp" alt="">
                 <div class="input-group">
                     <span>บัญชีผู้ใช้</span>
                     <input id="myInput" type="text" placeholder="ใช่ชื่อบัญชีผู้ใช้เพื่อตรวจสอบจำนวนฉลากจับรางวัลที่ได้รับ">
-                    <button id="getValueButton"><img src="./images/btn_search_normal.png" alt=""></button>
+                    <button id="getValueButton"><img src="./images/btn_search_normal.webp" alt=""></button>
                 </div>
                 <p>【 จำนวนฉลากรางวัลจะอัปเดตทุกวันเวลา 00:00 】</p>
             </div>
@@ -44,37 +44,37 @@
             <p class="word-1">จำนวนฉลากสะส<span class="break-here">มของคุณตั้งแต่เริ่มต้นจนถึงเมื่อวาน</span></p>
             <div class="output-img">
                 <div class="output-main">
-                    <img class="digits-2" src="./images/img_ticket_number0_normal.png" alt="">
-                    <img class="digits-1" src="./images/img_ticket_number0_normal.png" alt="">
-                    <img class="digits-0" src="./images/img_ticket_number0_normal.png" alt="">
-                    <img src="./images/img_ticket_text_normal.png" alt="">
+                    <img class="digits-2" src="./images/img_ticket_number0_normal.webp" alt="">
+                    <img class="digits-1" src="./images/img_ticket_number0_normal.webp" alt="">
+                    <img class="digits-0" src="./images/img_ticket_number0_normal.webp" alt="">
+                    <img src="./images/img_ticket_text_normal.webp" alt="">
                 </div>
             </div>
             <p class="word-2">จำนวนเงินฝากสะสมในช่วงเวลากิจกรรมของคุณ<span class="bet-total">30,090</span></p>
         </div>
         <div class="gifts-box">
             <div class="gifts-top">
-                <img src="./images/img_gifts1_normal.png" alt="">
-                <img src="./images/img_gifts1_normal.png" alt="">
-                <img src="./images/img_gifts1_normal.png" alt="">
+                <img src="./images/img_gifts1_normal.webp" alt="">
+                <img src="./images/img_gifts1_normal.webp" alt="">
+                <img src="./images/img_gifts1_normal.webp" alt="">
             </div>
             <div class="gifts-middle">
-                <img src="./images/img_gifts1_normal.png" alt="">
-                <img src="./images/img_gifts1_normal.png" alt="">
+                <img src="./images/img_gifts1_normal.webp" alt="">
+                <img src="./images/img_gifts1_normal.webp" alt="">
             </div>
             <div class="gifts-bottom">
-                <img src="./images/img_gifts1_normal.png" alt="">
-                <img src="./images/img_gifts1_normal.png" alt="">
-                <img src="./images/img_gifts1_normal.png" alt="">
+                <img src="./images/img_gifts1_normal.webp" alt="">
+                <img src="./images/img_gifts1_normal.webp" alt="">
+                <img src="./images/img_gifts1_normal.webp" alt="">
             </div>
         </div>
     </section>
     <div class="modal-warp">
         <div class="modal-window">
-            <button class="btn-close"><img src="./images/btn_close_normal.png" alt=""></button>
+            <button class="btn-close"><img src="./images/btn_close_normal.webp" alt=""></button>
             <span>อุ้ย!</span>
             <span>ไม่พบประวัติการฝากเงินของบัญชีน</span>
-            <button class="btn-submit"><img src="./images/btn_popup_normal.png" alt=""></button>
+            <button class="btn-submit"><img src="./images/btn_popup_normal.webp" alt=""></button>
         </div>
     </div>
     <script>
@@ -102,7 +102,7 @@
                                 let result = Math.floor(data[0].TotalPoints / 100);
                                 let digits = result.toString().split('').map(Number).reverse();
                                 for(let i=0; i<digits.length; i++){
-                                    $('.digits-' + i).attr('src', './images/img_ticket_number'+digits[i]+'_normal.png')
+                                    $('.digits-' + i).attr('src', './images/img_ticket_number'+digits[i]+'_normal.webp')
                                 }
                                 $('.output-box').addClass('active')
                             }

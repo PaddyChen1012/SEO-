@@ -1,10 +1,10 @@
 section{
-    background: url(../images/img_bn_snow_normal.png)no-repeat 0% -2%/100%,
-                url(../images/img_bg_led_left_normal.png)no-repeat left 2%/45%, 
-                url(../images/img_bg_led_right_normal.png)no-repeat right 2%/45%,
-                url(../images/img_bg_ball_left_normal.png)no-repeat left 2%/20%, 
-                url(../images/img_bg_ball_right_normal.png)no-repeat right 2%/20%,
-                url(../images/img_bg_normal.png)no-repeat top/cover;
+    background: url(../images/img_bn_snow_normal.webp)no-repeat 0% -2%/100%,
+                url(../images/img_bg_led_left_normal.webp)no-repeat left 2%/45%, 
+                url(../images/img_bg_led_right_normal.webp)no-repeat right 2%/45%,
+                url(../images/img_bg_ball_left_normal.webp)no-repeat left 2%/20%, 
+                url(../images/img_bg_ball_right_normal.webp)no-repeat right 2%/20%,
+                url(../images/img_bg_normal.webp)no-repeat top/cover;
     padding: 196px 20% 90px;
 }
 .promotion-main{
@@ -36,10 +36,10 @@ section{
 
 @media screen and (max-width:575px) {
     section{
-        background: url(../images/img_bn_snow_normal.png)no-repeat 0% -0.75%/100%,
-                    url(../images/img_bg_led_left_normal.png)no-repeat left 0%/45%, 
-                    url(../images/img_bg_led_right_normal.png)no-repeat right 0%/45%,
-                    url(../images/img_bg_normal.png)no-repeat top/cover;
+        background: url(../images/img_bn_snow_normal.webp)no-repeat 0% -0.75%/100%,
+                    url(../images/img_bg_led_left_normal.webp)no-repeat left 0%/45%, 
+                    url(../images/img_bg_led_right_normal.webp)no-repeat right 0%/45%,
+                    url(../images/img_bg_normal.webp)no-repeat top/cover;
         padding: 72px 5% 64px;
     }
     .promotion-main{
