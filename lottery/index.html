@@ -86,7 +86,6 @@
                 img.src = url;
             }
 
-            // 调用此函数，传入图像的URL，以预加载图像
             preloadImage('./images/btn_rules_hover.webp');
             preloadImage('./images/btn_search_hover.webp');
             preloadImage('./images/btn_popup_hover.webp');
@@ -96,7 +95,6 @@
 
             // 007Nuk007
             $("#getValueButton").click(function (){
-                // 使用 jQuery 获取输入框的值
                 var textValue = $("#myInput").val();
 
                 $.ajax({

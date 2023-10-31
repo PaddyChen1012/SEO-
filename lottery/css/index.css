@@ -220,6 +220,15 @@
         left: 10%;
         width: 80%;
     }
+    .input-main a {
+        top: unset;
+        bottom: -5%;
+        right: -1%;
+        width: 10%;
+    }
+    .input-rule img {
+        width: 100%;
+    }
     .input-group {
         flex-direction: column;
         height: auto;
