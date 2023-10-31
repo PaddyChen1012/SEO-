@@ -32,6 +32,7 @@
         <div class="input-box">
             <div class="input-main">
                 <img class="input-title" src="./images/img_search_title_normal.webp" alt="">
+                <a class="input-rule" href="./rule.html"><img src="./images/btn_rules_normal.webp" alt=""></a>
                 <div class="input-group">
                     <span>บัญชีผู้ใช้</span>
                     <input id="myInput" type="text" placeholder="ใช่ชื่อบัญชีผู้ใช้เพื่อตรวจสอบจำนวนฉลากจับรางวัลที่ได้รับ">
@@ -78,12 +79,23 @@
         </div>
     </div>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function (){
+
+            function preloadImage(url){
+                const img = new Image();
+                img.src = url;
+            }
+
+            // 调用此函数，传入图像的URL，以预加载图像
+            preloadImage('./images/btn_rules_hover.webp');
+            preloadImage('./images/btn_search_hover.webp');
+            preloadImage('./images/btn_popup_hover.webp');
+
 
             var apiUrl = 'https://short777-ice.xav69.com/pay69api.php';
 
             // 007Nuk007
-            $("#getValueButton").click(function () {
+            $("#getValueButton").click(function (){
                 // 使用 jQuery 获取输入框的值
                 var textValue = $("#myInput").val();
 
@@ -92,16 +104,16 @@
                     type: 'GET',
                     dataType: 'json',
                     data: { memberId: textValue },
-                    success: function(data) {
-                        if (data && Array.isArray(data)) {
-                            if(data[0].MemberId == null){
+                    success: function (data){
+                        if (data && Array.isArray(data)){
+                            if (data[0].MemberId == null){
                                 $(".modal-warp").addClass("show");
-                            }else{
+                            } else {
                                 total = parseFloat(Math.floor(data[0].TotalPoints));
                                 $('.bet-total').text(total.toLocaleString());
                                 let result = Math.floor(data[0].TotalPoints / 100);
                                 let digits = result.toString().split('').map(Number).reverse();
-                                for(let i=0; i<digits.length; i++){
+                                for (let i=0; i<digits.length; i++){
                                     $('.digits-' + i).attr('src', './images/img_ticket_number'+digits[i]+'_normal.webp')
                                 }
                                 $('.output-box').addClass('active')
@@ -110,15 +122,33 @@
                             console.log('API BAD');
                         }
                     },
-                    error: function() {
+                    error: function (){
                         console.log('API Error');
                     }
                 });
             });
 
-            $('.btn-close').click(function () {
+            $('.btn-close').click(function (){
                 $('.modal-warp').removeClass('show')
             })
+
+            $('.input-rule').hover(function (){
+                $(this).find("img").attr("src", "./images/btn_rules_hover.webp");
+            }, function() {
+                $(this).find("img").attr("src", "./images/btn_rules_normal.webp");
+            });
+
+            $('#getValueButton').hover(function (){
+                $(this).find("img").attr("src", "./images/btn_search_hover.webp");
+            }, function() {
+                $(this).find("img").attr("src", "./images/btn_search_normal.webp");
+            });
+
+            $(".btn-submit").hover(function (){
+                $(this).find("img").attr("src", "./images/btn_popup_hover.webp");
+            }, function() {
+                $(this).find("img").attr("src", "./images/btn_popup_normal.webp");
+            });
 
         });
     </script>

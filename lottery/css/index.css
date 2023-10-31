@@ -27,6 +27,12 @@
     left: 25%;
     width: 50%;
 }
+.input-main a{
+    position: absolute;
+    top: -15px;
+    right: -25px;
+    display: flex;
+}
 .input-group{
     display: flex;
     align-items: center;
