@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/index.css">
@@ -35,7 +35,7 @@
                 <a class="input-rule" href="./rule.html"><img src="./images/btn_rules_normal.webp" alt=""></a>
                 <div class="input-group">
                     <span>บัญชีผู้ใช้</span>
-                    <input id="myInput" type="text" placeholder="ใช่ชื่อบัญชีผู้ใช้เพื่อตรวจสอบจำนวนฉลากจับรางวัลที่ได้รับ">
+                    <input id="myInput" type="text" placeholder="ใช่ชื่อบัญชีผู้ใช้เพื่อตรวจสอบจำนวนฉลากจับรางวัลที่ได้รับ" autocorrect="off" autocapitalize="none">
                     <button id="getValueButton"><img src="./images/btn_search_normal.webp" alt=""></button>
                 </div>
                 <p>【 จำนวนฉลากรางวัลจะอัปเดตทุกวันเวลา 00:00 】</p>
@@ -131,21 +131,27 @@
             })
 
             $('.input-rule').hover(function (){
-                $(this).find("img").attr("src", "./images/btn_rules_hover.webp");
+                $(this).find('img').attr('src', './images/btn_rules_hover.webp');
             }, function() {
-                $(this).find("img").attr("src", "./images/btn_rules_normal.webp");
+                $(this).find('img').attr('src', './images/btn_rules_normal.webp');
             });
 
             $('#getValueButton').hover(function (){
-                $(this).find("img").attr("src", "./images/btn_search_hover.webp");
+                $(this).find('img').attr('src', './images/btn_search_hover.webp');
             }, function() {
-                $(this).find("img").attr("src", "./images/btn_search_normal.webp");
+                $(this).find('img').attr('src', './images/btn_search_normal.webp');
             });
 
-            $(".btn-submit").hover(function (){
-                $(this).find("img").attr("src", "./images/btn_popup_hover.webp");
+            $('.btn-close').hover(function (){
+                $(this).find('img').attr('src', './images/btn_close_hover.webp');
             }, function() {
-                $(this).find("img").attr("src", "./images/btn_popup_normal.webp");
+                $(this).find('img').attr('src', './images/btn_close_normal.webp');
+            });
+
+            $('.btn-submit').hover(function (){
+                $(this).find('img').attr('src', './images/btn_popup_hover.webp');
+            }, function() {
+                $(this).find('img').attr('src', './images/btn_popup_normal.webp');
             });
 
         });
