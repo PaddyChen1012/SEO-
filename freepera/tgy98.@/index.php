@@ -25,7 +25,7 @@ $data_captcha = send_data(
 $captcha_data = $data_captcha['data']['captcha']['data'];
 $captcha_json = json_encode($captcha_data);
 $captcha = $data_captcha['data']['captchaUid'];
-
+$domain = 'www.kmr77.com/';
 
 $agentId = @$_GET['pid'];
 
@@ -85,11 +85,13 @@ else{
 if (isset($_POST['captchaUid']) && strlen($_POST['captchaUid']) > 0){
 	$data['captchaUid'] = $_POST['captchaUid'];
    $data['agentShortName'] = $_POST['agentShortName'];
+   $data['affiliate'] = $_POST['affiliate'];
 }
 else{
 	$dataCheck = false;
 }
 
+$data['domain'] = $_POST['domain'];
 
 #確認所有欄位都經過驗證，再送資料給ocms-api
 if ($dataCheck) {
@@ -117,7 +119,7 @@ if ($dataCheck) {
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1097867331373176');
+      fbq('init', '874956467324831');
       fbq('track', 'PageView');
    </script>
    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=811551157307692&ev=PageView&noscript=1"/></noscript>
@@ -174,6 +176,12 @@ if ($dataCheck) {
                </div>
                <div class="error-info"><?php echo @$erro_Vf; ?></div>
             </div>
+
+            <input id="domain" type="hidden" value="<?=$domain?>" name="domain" >
+            <input id="captchaUid" type="hidden" name="captchaUid" value="<?= $captcha ?>">
+            <input id="agentShortName" type="hidden" name="agentShortName" value="<?= $agentId ?>">
+            <input id="affiliate" type="hidden" name="affiliate" value="<?= $agentId ?>">
+            
             <a class="btn-2" onclick="document.getElementById('myform').submit();">
                <img src="./img/button-p6.png" alt="">
             </a>
