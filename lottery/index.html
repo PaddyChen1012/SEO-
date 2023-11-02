@@ -132,6 +132,16 @@
 
 
 
+            $('#myInput').on("focus", function() {
+                if ($.trim($('#myInput').val()) !== "") {
+                    // $('#getValueButton').prop("disabled", false);
+                    $('#myInput').removeClass('error')
+                } else {
+                    // $('#getValueButton').prop("disabled", true);
+                    $('#myInput').addClass('error')
+                }
+            });
+
             $('#myInput').on("input", function() {
                 if ($.trim($('#myInput').val()) !== "") {
                     // $('#getValueButton').prop("disabled", false);
