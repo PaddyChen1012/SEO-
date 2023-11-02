@@ -22,9 +22,9 @@
         <ul class="menu">
             <li class="active"><a href="/">ตรวจจำนวนฉลาก</a></li>
             <li class=""><a href="./rule.html">เงื่อนไขกิจกรรม</a></li>
-            <li class=""><a href="/">โปรโมชั่น</a></li>
-            <li class=""><a href="/">บริการลูกค้า</a></li>
-            <li class=""><a href="/">สมัครสมาชิก</a></li>
+            <li class=""><a target="_blank" href="https://www.pay69.vip/promotion">โปรโมชั่น</a></li>
+            <li class=""><a target="_blank" href="https://static.zdassets.com/web_widget/latest/liveChat.html?v=10#key=pay69slot.zendesk.com&settings=JTdCJTIyd2ViV2lkZ2V0JTIyJTNBJTdCJTIyY2hhdCUyMiUzQSU3QiUyMnRpdGxlJTIyJTNBbnVsbCUyQyUyMm1lbnVPcHRpb25zJTIyJTNBJTdCJTIyZW1haWxUcmFuc2NyaXB0JTIyJTNBdHJ1ZSU3RCUyQyUyMmRlcGFydG1lbnRzJTIyJTNBJTdCJTdEJTJDJTIycHJlY2hhdEZvcm0lMjIlM0ElN0IlMjJkZXBhcnRtZW50TGFiZWwlMjIlM0FudWxsJTJDJTIyZ3JlZXRpbmclMjIlM0FudWxsJTdEJTJDJTIyb2ZmbGluZUZvcm0lMjIlM0ElN0IlMjJncmVldGluZyUyMiUzQW51bGwlN0QlMkMlMjJjb25jaWVyZ2UlMjIlM0ElN0IlMjJhdmF0YXJQYXRoJTIyJTNBbnVsbCUyQyUyMm5hbWUlMjIlM0FudWxsJTJDJTIydGl0bGUlMjIlM0FudWxsJTdEJTdEJTJDJTIyY29sb3IlMjIlM0ElN0IlMjJhcnRpY2xlTGlua3MlMjIlM0ElMjIlMjIlMkMlMjJidXR0b24lMjIlM0ElMjIlMjIlMkMlMjJoZWFkZXIlMjIlM0ElMjIlMjIlMkMlMjJsYXVuY2hlciUyMiUzQSUyMiUyMiUyQyUyMmxhdW5jaGVyVGV4dCUyMiUzQSUyMiUyMiUyQyUyMnJlc3VsdExpc3RzJTIyJTNBJTIyJTIyJTJDJTIydGhlbWUlMjIlM0FudWxsJTdEJTdEJTdE&&locale=zh-tw&title=Web%20Widget%20%E5%8D%B3%E6%99%82%E4%BA%A4%E8%AB%87">บริการลูกค้า</a></li>
+            <li class=""><a href="./registered.php">สมัครสมาชิก</a></li>
         </ul>
     </nav>
     <section>
@@ -75,7 +75,7 @@
             <button class="btn-close"><img src="./images/btn_close_normal.webp" alt=""></button>
             <span>อุ้ย!</span>
             <span>ไม่พบประวัติการฝากเงินของบัญชีน</span>
-            <button class="btn-submit"><img src="./images/btn_popup_normal.webp" alt=""></button>
+            <a href="https://www.pay69.vip/en/member/deposit/category" class="btn-submit"><img src="./images/btn_popup_normal.webp" alt=""></a>
         </div>
     </div>
     <script>
@@ -97,33 +97,49 @@
             $("#getValueButton").click(function (){
                 var textValue = $("#myInput").val();
 
-                $.ajax({
-                    url: apiUrl,
-                    type: 'GET',
-                    dataType: 'json',
-                    data: { memberId: textValue },
-                    success: function (data){
-                        if (data && Array.isArray(data)){
-                            if (data[0].MemberId == null){
-                                $(".modal-warp").addClass("show");
-                            } else {
-                                total = parseFloat(Math.floor(data[0].TotalPoints));
-                                $('.bet-total').text(total.toLocaleString());
-                                let result = Math.floor(data[0].TotalPoints / 100);
-                                let digits = result.toString().split('').map(Number).reverse();
-                                for (let i=0; i<digits.length; i++){
-                                    $('.digits-' + i).attr('src', './images/img_ticket_number'+digits[i]+'_normal.webp')
+                if ($.trim(textValue) !== "") {
+                    $.ajax({
+                        url: apiUrl,
+                        type: 'GET',
+                        dataType: 'json',
+                        data: { memberId: textValue },
+                        success: function (data){
+                            if (data && Array.isArray(data)){
+                                if (data[0].MemberId == null){
+                                    $(".modal-warp").addClass("show");
+                                } else {
+                                    total = parseFloat(Math.floor(data[0].TotalPoints));
+                                    $('.bet-total').text(total.toLocaleString());
+                                    let result = Math.floor(data[0].TotalPoints / 100);
+                                    let digits = result.toString().split('').map(Number).reverse();
+                                    for (let i=0; i<digits.length; i++){
+                                        $('.digits-' + i).attr('src', './images/img_ticket_number'+digits[i]+'_normal.webp')
+                                    }
+                                    $('.output-box').addClass('active')
                                 }
-                                $('.output-box').addClass('active')
+                            } else {
+                                console.log('API BAD');
                             }
-                        } else {
-                            console.log('API BAD');
+                        },
+                        error: function (){
+                            console.log('API Error');
                         }
-                    },
-                    error: function (){
-                        console.log('API Error');
-                    }
-                });
+                    });
+                } else {
+                    $("#myInput").addClass('error')
+                }
+            });
+
+
+
+            $('#myInput').on("input", function() {
+                if ($.trim($('#myInput').val()) !== "") {
+                    // $('#getValueButton').prop("disabled", false);
+                    $('#myInput').removeClass('error')
+                } else {
+                    // $('#getValueButton').prop("disabled", true);
+                    $('#myInput').addClass('error')
+                }
             });
 
             $('.btn-close').click(function (){
