@@ -110,7 +110,9 @@ if ($dataCheck) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pay69</title>
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/registered.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -162,7 +164,7 @@ if ($dataCheck) {
                 <div class="registered-phonenum">
                     <div name="input-box" class="">
                         <label for="tel" class="form-label m-0 px-2">เบอร์โทรศัพท์มือถือ : </label>
-                        <input id="tel" type="text" name="phoneNumber" maxlength="16" autocomplete="off" class="">
+                        <input id="tel" type="tel" name="phoneNumber" maxlength="16" autocomplete="off" class="">
                     </div>
                     <!-- 手機格式錯誤或沒輸入 -->
                     <div class="waring mt-1 <?php if(@$phone_Vf){ echo "error";}; ?>"><?php echo @$phone_Vf; echo @$erro_phone; ?></div>
@@ -170,8 +172,10 @@ if ($dataCheck) {
                 <div class="registered-checknum">
                     <div name="input-box" class="">
                         <label for="num" class="form-label m-0 px-2">รหัสยืนยัน : </label>
-                        <input id="num" type="text" name="captcha" maxlength="16" autocomplete="off" class="">
-                        <div class="input-addon checknum_img"><img src="" id="numImg" class="Captcha" alt="Captcha"/></div>
+                        <div class="input-relative">
+                            <input id="num" type="text" name="captcha" maxlength="16" autocomplete="off" class="">
+                            <div class="input-addon checknum_img"><img src="" id="numImg" class="Captcha" alt="Captcha"/></div>
+                        </div>
                     </div>
                     <!-- 驗證碼錯誤或者沒輸入 -->
                     <div class="waring mt-1"><?php echo @$erro_Vf; ?></div>
@@ -187,6 +191,7 @@ if ($dataCheck) {
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
 
 </body>
 </html>
@@ -222,7 +227,7 @@ switch ($data_info) {
         }
         break;
     case 'common.success':
-            echo '<script>location.href="/suceful.html?user='. $data['username'].'";ysTrackEvent("1glpe8")</script>';
+            echo '<script>location.href="./suceful.html?user='. $data['username'].'";</script>';
             $duplicated = 'สมัครสำเร็จ';
         break;
     case 'common.captcha.wrong':

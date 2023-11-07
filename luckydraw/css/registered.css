@@ -54,7 +54,8 @@
     margin-bottom: 16px;
 }
 div.registered-checknum{
-    margin-bottom: 48px;
+    margin:  0 auto 48px;
+    width: fit-content;
 }
 label{
     display: block;
@@ -66,7 +67,8 @@ input{
     border-radius: 10px;
     color: #ffffff9a;
     font-size: 20px;
-    text-align: center;
+    text-align: start;
+    padding: 0 16px;
 }
 .registered-title{
     color: #FFD8AB;
@@ -88,6 +90,9 @@ input{
     position: relative;
     margin-bottom: 4px;
 }
+.input-relative{
+    position: relative;
+}
 .waring{
     font-size: 12px;
 }
@@ -98,4 +103,10 @@ input{
 .sumbit-btn{
     background: transparent;
     border: none;
+}
+
+@media screen and (max-width: 575px){
+    section {
+        padding: 32px 2% 90px;
+    }
 }

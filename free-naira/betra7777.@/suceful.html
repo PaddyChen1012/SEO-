@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Betra777</title>
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/suceful.css">
+</head>
+<body>
+    <section id="success-box">
+        <h1>Successfully applied!</h1>
+        <div class="info">
+            Go to the website and play the game now!
+        </div>
+        <div class="info username">
+            
+        </div>
+        <div class="info">
+            The system will take <span class="rtime">3</span> seconds to enter the Betra777 website automatically or can click the link below to enter the website.
+        </div>
+        <a href="https://www.betra777.com/?pid=APPAD">
+            https://www.betra777.com/
+        </a>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        var geturl = location.href
+        var url = new URL(geturl);
+        var name = url.searchParams.get('user')
+        $('.username').html('<div class="info-2 username">Hi ' + name + '</div >');
+
+        var s = 3;
+        function reciprocal() {
+            $('.rtime').html('<span class="rtime">' + s + '</span>');
+            setTimeout(reciprocal, 1000);
+            s -= 1;
+            if (s == 0) {
+                location.href = "https://www.betra777.com/?pid=APPAD"
+                return;
+            }
+        }
+        reciprocal();
+
+    </script>
+    <!-- START ExoClick Goal Tag | 2021BC Signed -->
+    <script type="application/javascript" src="https://a.exoclick.com/tag_gen.js"
+        data-goal="f8b7e58815e8bc8ce735ef31771793b8"></script>
+    <!-- END ExoClick Goal Tag | 2021BC Signed -->
+
+</body>
+</html>

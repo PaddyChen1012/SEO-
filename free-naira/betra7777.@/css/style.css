@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "Square Slabserif 711 Bold";
+  src: url("../font/square_slabserif_711_bold_bt.ttf") format("truetype");
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Square Slabserif 711 Bold";
+}
+
+main {
+  background-color: #002465;
+  padding-bottom: 5px;
+  color: #002264;
+}
+
+img {
+  width: 100%;
+}
+
+.banner-area {
+  position: relative;
+}
+.banner-area .buttons {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+.banner-area .buttons a {
+  width: 16%;
+}
+.banner-area .buttons a:nth-child(1) {
+  margin-right: 3%;
+}
+.banner-area .buttons a:nth-child(2) {
+  margin-left: 3%;
+}
+
+.register {
+  background-color: #F0F0F0;
+  border-radius: 40px;
+  margin: 6% 15px;
+  padding: 10% 15px 20px;
+}
+.register .divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register .divider p {
+  font-size: 36px;
+  font-weight: bold;
+  padding: 0 5%;
+}
+.register .divider .line {
+  width: 100%;
+  height: 4px;
+  margin-top: 3%;
+}
+.register .divider .line-1 {
+  background: linear-gradient(90deg, transparent, #002465);
+}
+.register .divider .line-2 {
+  background: linear-gradient(270deg, transparent, #002465);
+}
+.register .user-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 15px 0;
+}
+.register .user-box .tip-info {
+  font-size: 12px;
+  color: #3865c0;
+}
+.register .user-box .error-info {
+  font-size: 12px;
+  color: #FF0000;
+}
+.register .user-box label {
+  font-size: 32px;
+  padding: 0 12px;
+}
+.register .user-box label span {
+  color: #FF0000;
+}
+.register .user-box input {
+  width: 100%;
+  height: 36px;
+  border: 2px solid #BEBEBE;
+  border-radius: 12px;
+  padding: 24px 16px;
+  font-size: 26px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.register .user-box input::placeholder {
+  color: #A0A0A0;
+  font-family: "Square Slabserif 711 Bold";
+  font-size: 20px;
+  font-weight: 100;
+}
+.register .user-box input:focus::placeholder {
+  opacity: 0;
+}
+.register .user-box input[type=number]::-webkit-outer-spin-button,
+.register .user-box input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.register .user-box .checknum_img {
+  width: 100%;
+  position: relative;
+}
+.register .user-box .checknum_img input {
+  width: 100%;
+}
+.register .user-box .checknum_img .Captcha {
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  left: 61.5%;
+  border-left: 2px solid #BEBEBE;
+}
+.register .terms {
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.register .terms input {
+  width: 36px;
+  height: 36px;
+}
+.register .terms input[type=checkbox] {
+  outline: 2px solid #BEBEBE;
+}
+.register .terms p {
+  font-size: 17px;
+  margin: 0;
+}
+.register .terms p a {
+  text-decoration: none;
+  color: #FF0016;
+}
+.register .register-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.register .register-btn img {
+  width: 60%;
+}/*# sourceMappingURL=style.css.map */

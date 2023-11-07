@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Document</title>
+    <title>Pay69</title>
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,14 +98,21 @@
             // 007Nuk007
             $("#getValueButton").click(function (){
                 var textValue = $("#myInput").val();
+                var startDate = '2023-10-29'; 
+                var endDate = '2023-10-29';   
 
                 if ($.trim(textValue) !== "") {
                     $.ajax({
                         url: apiUrl,
                         type: 'GET',
                         dataType: 'json',
-                        data: { memberId: textValue },
+                        data: { 
+                            memberId: textValue ,
+                            startDate: startDate,
+                            endDate: endDate
+                        },
                         success: function (data){
+                            console.log(data)
                             if (data && Array.isArray(data)){
                                 if (data[0].MemberId == null){
                                     $(".modal-warp").addClass("show");
@@ -129,7 +138,6 @@
                     $("#myInput").addClass('error')
                 }
             });
-
 
 
             $('#myInput').on("focus", function() {
