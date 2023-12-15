@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bjoy7</title>
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/suceful.css">
+</head>
+<body>
+    <section id="success-box">
+        <h1>সফলভাবে এপ্লাই হয়েছে!</h1>
+        <div class="info">
+            ওয়েবসাইটে যান এবং এখন গেম খেলুন!
+        </div>
+        <div class="info username">
+            
+        </div>
+        <div class="info">
+            সিস্টেম <span class="rtime">3</span> সেকেন্ডের মধ্যে Bjoy7 ওয়েবসাইটে প্রবেশ করে বা অ্যাক্সেস করতে নিচে ক্লিক করুন।
+        </div>
+        <a href="https://www.bjoy7.com/?pid=ATad01">
+            https://www.bjoy7.com/
+        </a>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        var geturl = location.href
+        var url = new URL(geturl);
+        var name = url.searchParams.get('user')
+        $('.username').html('<div class="info-2 username">Hi ' + name + '</div >');
+
+        var s = 3;
+        function reciprocal() {
+            $('.rtime').html('<span class="rtime">' + s + '</span>');
+            setTimeout(reciprocal, 1000);
+            s -= 1;
+            if (s == 0) {
+                location.href = "https://www.bjoy7.com/?pid=ATad01"
+                return;
+            }
+        }
+        reciprocal();
+
+    </script>
+    <!-- START ExoClick Goal Tag | 2021BC Signed -->
+    <script type="application/javascript" src="https://a.exoclick.com/tag_gen.js"
+        data-goal="f8b7e58815e8bc8ce735ef31771793b8"></script>
+    <!-- END ExoClick Goal Tag | 2021BC Signed -->
+
+</body>
+</html>

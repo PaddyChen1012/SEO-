@@ -17,7 +17,7 @@ function send_data($url, $data )
 }
 
 $data_captcha = send_data(
-	$url = 'https://www.tgy98.com/service/auth/captcha?t='. time(),
+	$url = 'https://www.tgy98.cc/service/auth/captcha?t='. time(),
    $data = [
    ]
 );
@@ -95,7 +95,7 @@ $data['domain'] = $_POST['domain'];
 
 #確認所有欄位都經過驗證，再送資料給ocms-api
 if ($dataCheck) {
-   $data_list = send_data($url = 'https://www.tgy98.com/service/member', $data);
+   $data_list = send_data($url = 'https://www.tgy98.cc/service/member', $data);
 }
 ?>
 
@@ -119,10 +119,10 @@ if ($dataCheck) {
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '874956467324831');
+      fbq('init', '356943066851399');
       fbq('track', 'PageView');
    </script>
-   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=811551157307692&ev=PageView&noscript=1"/></noscript>
+   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=356943066851399&ev=PageView&noscript=1"/></noscript>
    <!-- End Meta Pixel Code -->
 </head>
 <body>
