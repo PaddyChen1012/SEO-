@@ -26,7 +26,6 @@ $captcha_data = $data_captcha['data']['captcha']['data'];
 $captcha_json = json_encode($captcha_data);
 $captcha = $data_captcha['data']['captchaUid'];
 
-
 $agentId = @$_GET['pid'];
 
 if ($agentId== '') {
@@ -38,11 +37,11 @@ if ($agentId== '') {
 
 $dataCheck = true;
 if (isset($_POST['username']) && strlen($_POST['username']) > 0){
+    $data['username'] = $_POST['username'];
     $plen=strlen($_POST['username']);
     if(!preg_match("/^[0-9a-zA-Z]+$/",$_POST['username'])||$plen<3||$plen>15){
         $name_Vf = 'Operation Failed – The account name should contain English letters and numbers with a length of 3-15 characters.';
     }    
-	$data['username'] = $_POST['username'];
 }
 else{
 	$dataCheck = false;
@@ -149,6 +148,7 @@ if ($dataCheck) {
                     <div name="input-box" class="position-relative d-flex align-items-center w-100">
                         <label for="tel" class="form-label m-0 px-2">Mobile phone number</label>
                         <input id="tel" type="text" name="phoneNumber" maxlength="16" autocomplete="off" class="form-input w-100">
+                        <button id="startVerification">Verification</button>
                     </div>
                         
                     <!-- 手機格式錯誤或沒輸入 -->
@@ -166,7 +166,7 @@ if ($dataCheck) {
                 <input type="hidden" name="captchaUid" value="<?= $captcha ?>">
                 <input type="hidden" name="agentShortName" value="<?= $agentShortName ?>">
                 <div class="col-12 text-center mt-2">
-                    <input id="register-btn" type="submit"  name="send" class="sumbit-btn py-3 px-5 flashing" value="Register">
+                    <input id="register-btn" type="submit" name="send" class="sumbit-btn py-3 px-5 flashing" value="Register">
                 </div>
             </form>
         </div>
@@ -185,14 +185,17 @@ switch ($data_info) {
     case 'common.parameter.duplicated':
         switch ($data_list['data']['field']) {
             case 'username':
+                echo 'console.log("1")';
                 echo '<script>alert("This account name is already taken.")</script>';
                 $duplicated ='This account name is already taken.';
                 break;
             case 'phoneNumber':
+                echo 'console.log("2")';
                 echo '<script>alert("This phone number is already in use.")</script>';
                 $duplicated = 'This phone number is already in use.';
                 break;
             default:
+                echo 'console.log("3")';
                 # code...
                 break;
         }
@@ -200,21 +203,25 @@ switch ($data_info) {
     case 'common.parameter.illegal':
         switch ($data_list['data']['field']) {
             case 'phoneNumber':
+                echo 'console.log("4")';
                 echo '<script>alert("This phone number is already in use.")</script>';
                 $duplicated = 'This phone number is already in use.';
                 break;
             default:
+                echo 'console.log("5")';
                 # code...
                 break;
         }
         break;
     case 'common.success':
+            echo 'console.log("6")';
             echo '<script>location.href="/suceful.html?user='. $data['username'].'";</script>';
             $duplicated = 'Successfully applied';
         break;
     case 'common.captcha.wrong':
-        echo '<script>alert("Please enter valid information.")</script>';
-        $duplicated = 'Please enter valid information.';
+            echo 'console.log("7")';
+            echo '<script>alert("Please enter valid information.")</script>';
+            $duplicated = 'Please enter valid information.';
         break;
     default:
         # code...
@@ -258,6 +265,101 @@ switch ($data_info) {
     }
 
 </script>
+
+<script>
+    document.getElementById('startVerification').addEventListener('click', startVerification);
+
+    function startVerification(event) {
+        event.preventDefault();
+
+        const phoneNumber = document.getElementById('tel').value;
+
+        // Check if the phone number is valid (you may need to add more validation)
+        if (!phoneNumber || !isValidPhoneNumber(phoneNumber)) {
+            alert('Please enter a valid phone number.');
+            return;
+        }
+
+        // Step 1: Confirm if mobile verification is enabled
+        fetch('https://www.betra777.com/service/msgConfig/getOne', {
+            method: 'POST', // 將方法改成 POST
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            // 可能需要提供其他相關的資料，具體根據 API 要求填寫
+            body: JSON.stringify({
+                // 可能需要提供其他相關的資料，具體根據 API 要求填寫
+                "noticeName":"MOBILE_VERIFICATION"
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.mobileVerificationEnabled) {
+            // Mobile verification is enabled
+            console.log('Mobile verification is enabled');
+
+            // Step 2: Get SMS verification code
+            getSMSVerificationCode(phoneNumber);
+
+            } else {
+            // Mobile verification is not enabled
+            console.log('Mobile verification is not enabled, not needed');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // // Step 3: Get SMS verification code
+    // function getSMSVerificationCode(phoneNumber) {
+    //     fetch('https://www.betra777.com/service/mobile/check', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify({
+    //             phoneNumber: phoneNumber,
+    //             // You may need to provide additional data based on API requirements
+    //         }),
+    //     })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         // SMS verification code obtained successfully
+    //         console.log('SMS verification code obtained successfully:', data);
+
+    //         // Step 4: Verify phone number
+    //         verifyPhoneNumber(phoneNumber, data.verificationCode);
+    //     })
+    //     .catch(error => console.error('Error:', error));
+    // }
+
+    // // Step 4: Verify phone number
+    // function verifyPhoneNumber(phoneNumber, verificationCode) {
+    //     fetch('https://www.betra777.com/service/mobile/verify', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify({
+    //             phoneNumber: phoneNumber,
+    //             verificationCode: verificationCode,
+    //             // You may need to provide additional data based on API requirements
+    //         }),
+    //     })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //       // Phone number verification successful
+    //         console.log('Phone number verification successful:', data);
+    //     })
+    //     .catch(error => console.error('Error:', error));
+    // }
+
+        // Helper function to validate phone number (you may need to enhance this based on requirements)
+        function isValidPhoneNumber(phoneNumber) {
+            const phoneRegex = /^[0-9]{11}$/; // Assuming a simple 10-digit phone number
+            return phoneRegex.test(phoneNumber);
+        }
+
+</script>>
 
 <!-- START ExoClick Goal Tag | 2021BC_Register -->
 <script type="application/javascript" src="https://a.exoclick.com/tag_gen.js" data-goal="77c7abe99494401c6747160510290996"></script>

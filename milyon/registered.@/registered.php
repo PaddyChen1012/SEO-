@@ -17,7 +17,7 @@ function send_data($url, $data )
 }
 	
 $data_captcha = send_data(
-	$url = 'https:/www.milyon88.net/service/auth/captcha?t=' . time(),
+	$url = 'https://www.milyon88.live/service/auth/captcha?t=' . time(),
     $data = [
     ]
 );
@@ -64,14 +64,14 @@ else{
 if (isset($_POST['phoneNumber']) && strlen($_POST['phoneNumber']) > 0){
 	$data['phoneNumber'] = $_POST['phoneNumber'];
     $plen=strlen($_POST['phoneNumber']);
-    if (!preg_match("/^()[0-9]*$/i", $_POST['phoneNumber'])||$plen<10||$plen>10) {
-        $phone_Vf = 'Operation failed – phone number should be 10 digits';
+    if (!preg_match("/^()[0-9]*$/i", $_POST['phoneNumber'])||$plen<11||$plen>11) {
+        $phone_Vf = 'Operation failed – phone number should be 11 digits';
     }
 
 }
 else{
 	$dataCheck = false;
-	$erro_phone = 'The phone number must contain 10 numbers.';
+	$erro_phone = 'The phone number must contain 11 numbers.';
 }
 
 if (isset($_POST['captcha']) && strlen($_POST['captcha']) > 0){
@@ -95,7 +95,7 @@ else{
 
 #確認所有欄位都經過驗證，再送資料給ocms-api
 if ($dataCheck) {
-    $data_list = send_data($url = 'https:/www.milyon88.net/service/member', $data);
+    $data_list = send_data($url = 'https://www.milyon88.live/service/member', $data);
     // ysTrackEvent('8mklhs');
 }
 // echo '<pre>';
@@ -112,6 +112,7 @@ if ($dataCheck) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="facebook-domain-verification" content="j7dl8r39di0vpr775117olydpuki1b" />
     <link preloadsss href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="icon" href="images/milyon-logo.png" type="image/x-icon">
     <link rel="shortcut icon" href="images/milyon-logo.png" type="image/x-icon">
@@ -124,6 +125,21 @@ if ($dataCheck) {
     <!-- START ExoClick Goal Tag | 2021BC_Register -->
     <script type="application/javascript" src="https://a.exoclick.com/tag_gen.js" data-goal="77c7abe99494401c6747160510290996"></script>
     <!-- END ExoClick Goal Tag | 2021BC_Register -->
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2608606542649587');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2608606542649587&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
     <style>
         body{
             overflow: hidden;
@@ -215,7 +231,7 @@ switch ($data_info) {
                 break;
             case 'phoneNumber':
                 echo '<script>alert("This phone number is already in use.")</script>';
-                $duplicated = 'This phone number is already in use.';
+                $duplicated = 'Duplicated! This phone number is already in use.';
                 break;
             default:
                 # code...
@@ -226,7 +242,7 @@ switch ($data_info) {
         switch ($data_list['data']['field']) {
             case 'phoneNumber':
                 echo '<script>alert("This phone number is already in use.")</script>';
-                $duplicated = 'This phone number is already in use.';
+                $duplicated = 'Illegal! This phone number is already in use.';
                 break;
             default:
                 # code...

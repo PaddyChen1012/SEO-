@@ -115,13 +115,17 @@ input.error{
     justify-content: center;
     padding: 14% 22% 12% 24%;
 }
-.output-main img {
-    width: 20%;
-    margin-right: 8px;
+.output-main>div {
+    flex: 1 0 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.output-main img:last-child{
-    width: 15%;
-    margin-right: 0;
+.output-main>div:last-child {
+    flex: .75 0 0%;
+}
+.output-main img{
+    width: 90%;
 }
 .gifts-box{
     display: flex;

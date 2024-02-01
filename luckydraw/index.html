@@ -55,10 +55,10 @@
             <p class="word-1">จำนวนฉลากสะส<span class="break-here">มของคุณตั้งแต่เริ่มต้นจนถึงเมื่อวาน</span></p>
             <div class="output-img">
                 <div class="output-main">
-                    <img class="digits-2" src="./images/img_ticket_number0_normal.webp" alt="">
+                    <!-- <img class="digits-2" src="./images/img_ticket_number0_normal.webp" alt="">
                     <img class="digits-1" src="./images/img_ticket_number0_normal.webp" alt="">
                     <img class="digits-0" src="./images/img_ticket_number0_normal.webp" alt="">
-                    <img src="./images/img_ticket_text_normal.webp" alt="">
+                    <img src="./images/img_ticket_text_normal.webp" alt=""> -->
                 </div>
             </div>
             <p class="word-2">จำนวนเงินฝากสะสมในช่วงเวลากิจกรรมของคุณ<span class="bet-total">30,090</span></p>
@@ -131,18 +131,46 @@
                             endDate: endDate
                         },
                         success: function (data){
-                            console.log(data)
                             if (data && Array.isArray(data)){
                                 if (data[0].MemberId == null){
                                     $(".modal-warp").addClass("show");
                                 } else {
+                                    $('.output-main').empty();
                                     total = parseFloat(Math.floor(data[0].TotalPoints));
                                     $('.bet-total').text(total.toLocaleString());
                                     let result = Math.floor(data[0].TotalPoints / 100);
-                                    let digits = result.toString().split('').map(Number).reverse();
+                                    let digits = result.toString().split('').map(Number);
                                     for (let i=0; i<digits.length; i++){
-                                        $('.digits-' + i).attr('src', './images/img_ticket_number'+digits[i]+'_normal.webp')
+                                        // $('.digits-' + i).attr('src', './images/img_ticket_number'+digits[i]+'_normal.webp')
+
+                                        // 创建一个新的 <div> 元素
+                                        var newImgDiv = document.createElement('div');
+                                        var newImg = document.createElement('img');
+
+                                        // 设置新 <div> 的一些属性或内容
+                                        newImg.setAttribute('class', 'digits-' + (digits.length - i)); // 將 'path/to/your/image.jpg' 替換成你的圖片路徑
+                                        newImg.setAttribute('src', './images/img_ticket_number'+digits[i]+'_normal.webp'); // 將 'path/to/your/image.jpg' 替換成你的圖片路徑
+
+                                        // 获取具有类名为 "output-main" 的现有元素
+                                        var outputMain = document.querySelector('.output-main');
+
+                                        // 将新 <div> 添加到现有元素中
+                                        newImgDiv.appendChild(newImg);
+                                        outputMain.appendChild(newImgDiv);
+
                                     }
+                                    // 创建一个新的 <div> 元素
+                                    var newWordDiv = document.createElement('div');
+                                    var newWordImg = document.createElement('img');
+
+                                    // 设置新 <div> 的一些属性或内容
+                                    newWordImg.setAttribute('class', 'digits-0'); // 將 'path/to/your/image.jpg' 替換成你的圖片路徑
+                                    newWordImg.setAttribute('src', './images/img_ticket_text_normal.webp'); // 將 'path/to/your/image.jpg' 替換成你的圖片路徑
+
+                                    // 将新 <div> 添加到现有元素中
+                                    newWordDiv.appendChild(newWordImg);
+                                    outputMain.appendChild(newWordDiv);
+
                                     $('.output-box').addClass('active')
                                 }
                             } else {

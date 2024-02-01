@@ -7,8 +7,22 @@
    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
    <link rel="stylesheet" href="./css/style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&display=swap" rel="stylesheet">
 </head>
 <body>
+   <div class="download-box">
+      <img src="img/demo-01.png" alt="">
+      <div class="download-msg">
+            <h1>KMR 77</h1>
+            <h3>
+               <p>សូមរីករាយក្នុងការទាញយក និងដំឡើង</p>
+               <p>យើងការពារឯកជនភាព និងសុវត្ថិភាពរបស់អ្នក</p>
+            </h3>
+      </div>
+      <a id="download-btn" class="download-btn animation" href="./registered.php?pid=ASad01">ចុះឈ្មោះ</a>
+   </div>
    <section class="home">
       <div class="location">
          <img src="./img/kmrLP-p1.jpg" alt="">
@@ -37,4 +51,24 @@
       </div>
    </section>
 </body>
+<script>
+   let downloadMsg = document.querySelector('.download-msg')
+   let downloadBtn = document.querySelector('#download-btn')
+   window.onload = function () {
+      h1Size = window.innerWidth / 500 - 0.375
+      h2Size = window.innerWidth / 750 - 0.375
+      h3Size = window.innerWidth / 1000 - 0.375
+      downloadMsg.children[0].style.fontSize = h1Size + 'rem';
+      downloadMsg.children[1].style.fontSize = h3Size + 'rem';
+      downloadBtn.style.fontSize = h2Size + 'rem';
+   }
+   window.onresize = function () {
+      h1Size = window.innerWidth / 500 - 0.375
+      h2Size = window.innerWidth / 750 - 0.375
+      h3Size = window.innerWidth / 1000 - 0.375
+      downloadMsg.children[0].style.fontSize = h1Size + 'rem';
+      downloadMsg.children[1].style.fontSize = h3Size + 'rem';
+      downloadBtn.style.fontSize = h2Size + 'rem';
+   }
+</script>
 </html>

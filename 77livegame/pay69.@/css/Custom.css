@@ -73,6 +73,13 @@ body{width:100%;height:100vh;overflow-x:hidden;background: #2a3445;}
 .pc-none{display:none !important;}
 .ph-none{display:flex !important;}
 
+.section{
+    margin-top: 60px;
+}
+.section img{
+    width: 100%;
+}
+
 /* 試玩頁面 */
 .card-body{
     display:flex;
@@ -274,7 +281,7 @@ body{width:100%;height:100vh;overflow-x:hidden;background: #2a3445;}
 .s-img:nth-child(11){bottom: -5%;left:15%;width: 10%;}
 .s-img:nth-child(12){bottom: 0%;left: 23%;width: 12%;}
 .footer{
-    padding: 10% 3rem;
+    bottom: 0;
 }
 .footer>div:nth-child(3)::before{
     content:'';
@@ -355,7 +362,6 @@ body{width:100%;height:100vh;overflow-x:hidden;background: #2a3445;}
 }
 @media screen and (max-width:500px) {
     .position-ph-relative{position:relative !important;}
-    .title{height:80px;}
     .title-word{display:none !important;}
     .pc-none{display:block !important;}
     .ph-none{display:none !important;}

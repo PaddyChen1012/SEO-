@@ -5,11 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PKR777</title>
+    <link rel="icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&display=swap" rel="stylesheet">
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
+            font-family: 'Oswald', sans-serif;
         }
         section{
             position: relative;
@@ -36,11 +43,116 @@
                 width: 90%;
             }
         }
+        .download-box {
+            position: fixed;
+            display: grid;
+            grid-template-columns: 20% 55% 25%;
+            justify-items: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 50%;
+            background-color: rgba(255, 255, 255, .5);
+            padding: 16px;
+            z-index: 3;
+        }
+
+        .download-box img {
+            width: 100%;
+        }
+
+        .download-msg {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #fefefe;
+            -webkit-text-shadow: 0 0 2px #32b740;
+            text-shadow: 0 0 10px #32b740;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30%;
+            height: 100%;
+            max-width: 400px;
+            background: -webkit-linear-gradient(top, #33b841 68%, #002d16);
+            background: -o-linear-gradient(top, #33b841 68%, #002d16);
+            background: linear-gradient(180deg, #33b841 68%, #002d16);
+            border-radius: 15px;
+            -webkit-box-shadow: inset 0 0 2px 2px #fefefe, inset 0 0 1px 2px #fff, inset 0 0 2px 4px #ffffff;
+            box-shadow: inset 0 0 2px 2px #fefefe, inset 0 0 1px 2px #fff, inset 0 0 2px 4px #ffffff;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 16px 0 32px;
+        }
+
+        .download-box .download-btn {
+            width: 90%;
+            margin: 0;
+        }
+
+        @media screen and (max-width:500px) {
+            .download-box {
+                grid-template-columns: 20% 40% 40%;
+                width: 100%;
+                padding: 8px;
+            }
+
+            .download-msg h1 {
+                line-height: 1.75rem;
+                font-size: 1.5rem !important;
+            }
+
+            .download-msg h3 {
+                font-weight: 100;
+                font-size: .7rem !important;
+            }
+
+            .download-box .download-btn {
+                height: 90%;
+                font-size: 1.5rem !important;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="download-box">
+        <img src="images/demo-01.png" alt="">
+        <div class="download-msg">
+            <h1>PKR777</h1>
+            <h3>
+                <p>Please feel to download and install</p>
+                <p>We protect your privac and security</p>
+            </h3>
+        </div>
+        <a id="download-btn" class="download-btn animation" href="./ssbet0_20231115.apk">Sign in</a>
+    </div>
     <section>
         <a class="btn home-btn" href="registered.php?pid=CH01H5"><img src="images/LP0608_700x150.png" alt=""></a>
     </section>
 </body>
+<script>
+    let downloadMsg = document.querySelector('.download-msg')
+    let downloadBtn = document.querySelector('#download-btn')
+    window.onload = function () {
+        h1Size = window.innerWidth / 500
+        h2Size = window.innerWidth / 750
+        h3Size = window.innerWidth / 1000
+        downloadMsg.children[0].style.fontSize = h1Size + 'rem';
+        downloadMsg.children[1].style.fontSize = h3Size + 'rem';
+        downloadBtn.style.fontSize = h2Size + 'rem';
+    }
+    window.onresize = function () {
+        h1Size = window.innerWidth / 500
+        h2Size = window.innerWidth / 750
+        h3Size = window.innerWidth / 1000
+        downloadMsg.children[0].style.fontSize = h1Size + 'rem';
+        downloadMsg.children[1].style.fontSize = h3Size + 'rem';
+        downloadBtn.style.fontSize = h2Size + 'rem';
+    }
+</script>
 </html>

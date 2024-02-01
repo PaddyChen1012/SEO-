@@ -1,517 +1,459 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/demo-01.png" type="image/x-icon">
-    <link rel="shortcut icon" href="images/demo-01.png" type="image/x-icon">
-    <title>BETJEE</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            font-family: 'Oswald', sans-serif;
-        }
-
-        body {
-            background: -webkit-linear-gradient(315deg, #333333 0, #000000 100%);
-            background: -o-linear-gradient(315deg, #333333 0, #000000 100%);
-            background: linear-gradient(135deg, #333333 0, #000000 100%);
-        }
-
-        .download-box {
-            position: fixed;
-            display: grid;
-            grid-template-columns: 20% 55% 25%;
-            justify-items: center;
-            align-items: center;
-            top: 0;
-            left: 0;
-            width: 50%;
-            background-color: rgba(255, 255, 255, .5);
-            padding: 16px;
-            z-index: 3;
-        }
-
-        .download-box img {
-            width: 100%;
-        }
-
-        .download-msg {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: #fff;
-            -webkit-text-shadow: 0 0 2px #c49a5a;
-            text-shadow: 0 0 10px #c49a5a;
-        }
-
-        .download-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 30%;
-            height: 100%;
-            max-width: 400px;
-            background: -webkit-linear-gradient(top, #3a1f10 68%, #925f33);
-            background: -o-linear-gradient(top, #3a1f10 68%, #925f33);
-            background: linear-gradient(180deg, #3a1f10 68%, #925f33);
-            border-radius: 15px;
-            -webkit-box-shadow: inset 0 0 2px 2px #c49a5a, inset 0 0 1px 2px #fff, inset 0 0 2px 4px #c49a5a;
-            box-shadow: inset 0 0 2px 2px #c49a5a, inset 0 0 1px 2px #fff, inset 0 0 2px 4px #c49a5a;
-            color: #fff;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            margin: 16px 0 32px;
-        }
-
-        .download-box .download-btn {
-            width: 100%;
-            margin: 0;
-        }
-
-        .warp {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .warp-img {
-            width: 50%;
-            z-index: 1;
-        }
-
-        .img-box {
-            display: grid;
-            width: 50%;
-            grid-template-columns: repeat(2, 50%);
-            justify-items: center;
-            align-items: center;
-            margin: 32px 0;
-        }
-
-        .img-box img {
-            width: 75%;
-        }
-
-        footer {
-            text-align: center;
-        }
-
-        footer p {
-            color: #fff;
-        }
-
-        footer a {
-            color: #c49a5a;
-        }
-
-        .animation {
-            animation: animation infinite alternate linear .8s both;
-        }
-
-        .bulb-board-wrapper {
-            display: inline-flex;
-            width: 30%;
-            max-width: 400px;
-            border-radius: 10px;
-        }
-
-        .bulb-board-wrapper:active {
-            transform: scale(0.7);
-        }
-
-        .btn {
-            font-size: 1.3em;
-            text-align: center;
-            text-decoration: none;
-            color: rgba(254, 234, 145, 1);
-            background: rgba(77, 76, 84, 1);
-            outline: none;
-            position: relative;
-            display: inline-block;
-            padding: 22px;
-            cursor: pointer;
-            width: 100%;
-            box-shadow: inset 1px -1px 7px -1px #000;
-            font-weight: bold;
-        }
-
-        .btn:active {
-            box-shadow: inset -1px -1px 7px -1px #000;
-        }
-
-        .bulb-board {
-            position: relative;
-            display: inline-block;
-            padding: 15px;
-            /* background-color: #2c127e; */
-            background-color: rgba(53, 53, 62, 1);
-            border-radius: 10px;
-            overflow: hidden;
-            transform-origin: top center;
-            box-shadow: 2px 2px 9px 0px #000;
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .bulb {
-            position: absolute;
-        }
-
-        .top-bulb,
-        .bottom-bulb {
-            width: calc(100% - 30px);
-            height: 15px;
-            left: 50%;
-            transform: translate(-50%);
-        }
-
-        .top-bulb {
-            top: 0;
-        }
-
-        .right-bulb,
-        .left-bulb {
-            height: 100%;
-            width: 15px;
-            bottom: 0;
-        }
-
-        .right-bulb {
-            right: 0;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
-        }
-
-        .left-bulb {
-            left: 0;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-        }
-
-        .bulb>ul>li {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: block;
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: rgba(236, 204, 104, 0.1);
-            animation-name: flash-1;
-            animation-duration: 2s;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in-out;
-            position: relative;
-        }
-
-        .bulb>ul>li:after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            top: 0;
-            left: 0;
-            border-radius: 50%;
-            z-index: -1;
-            opacity: 0.3;
-        }
-
-        .bulb>ul {
-            display: flex;
-            padding: 0;
-            margin: 0;
-            justify-content: space-around;
-            align-items: center;
-            height: 100%;
-        }
-
-        .top-bulb>ul,
-        .bottom-bulb>ul {
-            flex-direction: row;
-        }
-
-        .right-bulb>ul,
-        .left-bulb>ul {
-            flex-direction: column;
-        }
-        /*Animation */
-        @keyframes flash-1 {
-            0% {
-                background: #f0b600;
-                background: rgba(236, 204, 104, 1);
-            }
-
-            100% {
-                background: rgba(236, 204, 104, 0.1);
-            }
-        }
-        @keyframes animation {
-            0% {
-                -webkit-filter: drop-shadow(0px 0px 0px #c49a5a);
-            }
-
-            100% {
-                -webkit-filter: drop-shadow(0px 0px 20px #c49a5a);
-            }
-        }
-        
-        @media screen and (max-width:500px) {
-            .download-box {
-                grid-template-columns: 20% 40% 40%;
-                width: 100%;
-                padding: 8px;
-            }
-
-            .download-msg h1 {
-                line-height: 1.75rem;
-                font-size: 1.5rem !important;
-            }
-
-            .download-msg h3 {
-                font-weight: 100;
-                font-size: .7rem !important;
-            }
-
-            .download-box .download-btn {
-                height: 90%;
-                font-size: 1.5rem !important;
-            }
-
-            .warp-img {
-                margin-top: 25%;
-            }
-
-            .warp-img,
-            .img-box {
-                width: 100%;
-            }
-
-            .bulb-board-wrapper {
-                width: 75%;
-                font-size: 2rem;
-            }
-
-            .img-box img {
-                width: 90%;
-            }
-        }
-        @media (max-width: 768px) {
-            .btn-primary {
-                font-size: 1em;
-                padding: 8px 15px;
-            }
-
-            .bulb-board {
-                padding: 16px;
-            }
-
-            .top-bulb,
-            .bottom-bulb {
-                height: 16px;
-            }
-
-            .right-bulb,
-            .left-bulb {
-                width: 16px;
-            }
-
-            .bulb>ul>li {
-                width: 8px;
-                height: 8px;
-            }
-
-            .right-bulb {
-                border-top-right-radius: 2px;
-                border-bottom-right-radius: 2px;
-            }
-
-            .left-bulb {
-                border-top-left-radius: 2px;
-                border-bottom-left-radius: 2px;
-            }
-        }
-
-        .delay01 {
-            animation-delay: 0.1s;
-        }
-
-        .delay02 {
-            animation-delay: 0.2s;
-        }
-
-        .delay03 {
-            animation-delay: 0.3s;
-        }
-
-        .delay04 {
-            animation-delay: 0.4s;
-        }
-
-        .delay05 {
-            animation-delay: 0.5s;
-        }
-
-        .delay06 {
-            animation-delay: 0.6s;
-        }
-
-        .delay07 {
-            animation-delay: 0.7s;
-        }
-
-        .delay08 {
-            animation-delay: 0.8s;
-        }
-
-        .delay09 {
-            animation-delay: 0.9s;
-        }
-
-        .delay1 {
-            animation-delay: 1s;
-        }
-
-        .delay12 {
-            animation-delay: 1.2s;
-        }
-
-        .delay13 {
-            animation-delay: 1.3s;
-        }
-
-        .delay14 {
-            animation-delay: 1.4s;
-        }
-
-        .delay15 {
-            animation-delay: 1.5s;
-        }
-
-        .delay16 {
-            animation-delay: 1.6s;
-        }
-
-        .delay17 {
-            animation-delay: 1.7s;
-        }
-
-        .delay18 {
-            animation-delay: 1.8s;
-        }
-
-        .delay19 {
-            animation-delay: 1.9s;
-        }
-
-        .delay20 {
-            animation-delay: 2s;
-        }
-    </style>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>বেটজি</title>
+    <link rel="shortcut icon" href="icon.png" />
+    <link rel="icon" type="image/x-icon" href="betjee/logo.webp" />
+    <link rel="apple-touch-icon" sizes="160x160" href="betjee/logo.webp" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta property="og:title" content="বেটজি - apps on Google Play" />
+    <meta name="description" property="og:description" content="বেটজি সবার দৃষ্টি আকর্ষণ করার জন্য একটি নতুন স্লট গেম।" />
+    <meta property="og:image" content="https://googleplaystore.lucky77.bio/betjee/logo.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Google play" />
+    <meta name="twitter:title" content="বেটজি - apps on Google Play" />
+    <meta name="twitter:description" content="বেটজি সবার দৃষ্টি আকর্ষণ করার জন্য একটি নতুন স্লট গেম।" />
+    <meta name="twitter:image" content="https://googleplaystore.lucky77.bio/betjee/logo.webp" />
+    <script async="" src="utils/afscript.js"></script><noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=6478952505539458&amp;ev=PageView&amp;noscript=1" /></noscript>
+    <meta name="next-head-count" content="20" />
+    <link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous" />
+    <link rel="preload" href="./_next/static/css/34a8ed660239b1de.css" as="style" crossorigin="" />
+    <link rel="stylesheet" href="./_next/static/css/34a8ed660239b1de.css" crossorigin="" data-n-g="" />
+    <link rel="preload" href="./_next/static/css/121c062ab6c14f2e.css" as="style" crossorigin="" />
+    <link rel="stylesheet" href="./_next/static/css/121c062ab6c14f2e.css" crossorigin="" data-n-p="" />
+    <noscript data-n-css=""></noscript>
+    <script defer="" crossorigin="" nomodule="" src="./_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
+    <script src="./_next/static/chunks/webpack-1c61c8e09852d641.js" defer="" crossorigin=""></script>
+    <script src="./_next/static/chunks/framework-66d32731bdd20e83.js" defer="" crossorigin=""></script>
+    <script src="./_next/static/chunks/main-436ff486eb898866.js" defer="" crossorigin=""></script>
+    <script src="./_next/static/chunks/pages/_app-ac96c798a716781c.js" defer="" crossorigin=""></script>
+    <script src="./_next/static/chunks/169-68b26f9267ed4d65.js" defer="" crossorigin=""></script>
+    <script src="./_next/static/chunks/pages/betjee-59cb926ca4b397cb.js" defer="" crossorigin=""></script>
+    <script src="./_next/static/8uV9RcOtmRdNWXjmOL8TT/_buildManifest.js" defer="" crossorigin=""></script>
+    <script src="./_next/static/8uV9RcOtmRdNWXjmOL8TT/_ssgManifest.js" defer="" crossorigin=""></script>
 </head>
 
 <body>
-    <div class="download-box">
-        <img src="images/demo-01.png" alt="">
-        <div class="download-msg">
-            <h1>BET JEE</h1>
-            <h3>
-                <p>Please feel to download and install</p>
-                <p>We protect your privac and security</p>
-            </h3>
+    <div id="__next">
+        <div class="laptop:hidden"><img style="z-index:99" class="fixed w-full top-0 left-0" src="topbar.webp" />
+            <div style="background-color:#202123;background-image:url(betjee/bg_ms.webp);background-repeat:no-repeat;background-size:100% auto;background-position:0 42px"
+                class="px-6 pb-1 pt-[226px]">
+                <div class="flex"><img class="w-[72px] h-[72px]" src="betjee/logo.webp" />
+                    <div class="ml-4">
+                        <div class="text-xl font-semibold text-[#E8EAED]">বেটজি</div>
+                        <div class="font-semibold text-sm text-[#16A173]">C.C.T Games</div>
+                        <div class=" text-xs text-[#979DA4]">এতে বিজ্ঞাপন রয়েছেঅ্যাপ-মধ্যস্থ কেনাকাটা</div>
+                    </div>
+                </div>
+                <div class="flex justify-around text-xs mt-8">
+                    <div>
+                        <div class="flex items-center justify-center text-center font-semibold text-[#FFFFFF]">৪.৫ <img
+                                class="ml-1 w-2 h-2" src="icon_star_pc.webp" /></div>
+                        <div class="text-center text-[#878D92]">300 হাজার রিভিউ</div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="h-6" style="border-left:1px solid #3D4044"></div>
+                    </div>
+                    <div>
+                        <div class="text-center font-semibold text-[#FFFFFF]">১ কো+</div>
+                        <div class="text-center text-[#878D92]">Transferências</div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="h-6" style="border-left:1px solid #3D4044"></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-center h-4"><img class="w-3 h-3" src="icon_teenager.webp" /></div>
+                        <div class="text-center flex items-center text-[#878D92]">12+ এর জন্য রেট দেওয়া হয়েছে<img
+                                class="ml-1 w-2 h-2" src="icon_info.webp" /></div>
+                    </div>
+                </div>
+                <div class="mt-6 w-full"><a href=""><img class="w-full" src="download_ms_bengali.webp" /></a></div>
+                <div class="flex justify-between mt-8">
+                    <div class="flex items-center"><img class="h-4 w-4" src="icon_share.webp" /><span
+                            style="color:#16A173" class=" ml-2 text-sm font-medium">ভাগাভাগি করতে</span></div>
+                    <div class="flex items-center ml-3"><img class="h-4 w-3" src="icon_wish.webp" /><span
+                            style="color:#16A173" class=" ml-2 text-sm font-medium">চাহিদাপত্রে যোগ করা</span></div>
+                </div>
+                <div class="flex items-start mt-9 mb-8"><img class="h-4 w-3" src="icon_device.webp" /><span
+                        style="color:#9AA0A6;margin-left:3px" class=" text-xs font-medium break-all">আপনার কোনও ডিভাইস
+                        নেই</span></div>
+            </div>
+            <div class="px-5 pt-8 pb-28">
+                <div class="slider_slider-wrap__INZm_"><img class="w-32 mr-3" src="betjee/slider/1.webp" /><img
+                        class="w-32 mr-3" src="betjee/slider/2.webp" /><img class="w-32 mr-3"
+                        src="betjee/slider/3.webp" /><img class="w-32 mr-3" src="betjee/slider/4.webp" /></div>
+                <div class=" mt-10">
+                    <div class="flex justify-between items-center mb-4"><span class="font-semibold">এই গেম
+                            সম্পর্কে</span><img class="w-3 h-3" src="icon_next.webp" /></div>
+                    <div class="break-all text-xs" style="color:#65696E">এখন 4,000,000+ কয়েনের একটি বিশাল স্বাগত বোনাস
+                        দাবি করুন! বিনামূল্যে লাস ভেগাস স্লট মেশিনের ঝড় শুরু হয়েছে! এটা কিভাবে স্থির থাকতে পারে! বিশাল
+                        কয়েন পুরষ্কার পেতে যেকোনো সময় স্পিন করুন!<br /><br />- জ্যাকপট ক্যাসিনো ফ্রি স্লট গেম জেতার
+                        সাথে সৌভাগ্য কামনা করছেন?</div>
+                    <div class="font-semibold text-sm mt-8 mb-1">আপডেট করা হয়েছে</div>
+                    <div class="break-all text-xs" style="color:#65696E">২৩ নভে, ২০২৩</div>
+                    <div class="flex flex-wrap mt-4">
+                        <div style="border:1px solid #DCDDE1;border-color:#DCDDE1"
+                            class="flex mr-3 mt-3 rounded-2xl justify-center px-3 py-1"><span
+                                class="font-semibold text-xs">ক্যাসিনো</span></div>
+                        <div style="border:1px solid #DCDDE1;border-color:#DCDDE1"
+                            class="flex mr-3 mt-3 rounded-2xl justify-center px-3 py-1"><span
+                                class="font-semibold text-xs">স্লট</span></div>
+                        <div style="border:1px solid #DCDDE1;border-color:#DCDDE1"
+                            class="flex mr-3 mt-3 rounded-2xl justify-center px-3 py-1"><span
+                                class="font-semibold text-xs">নৈমিত্তিক</span></div>
+                        <div style="border:1px solid #DCDDE1;border-color:#DCDDE1"
+                            class="flex mr-3 mt-3 rounded-2xl justify-center px-3 py-1"><span
+                                class="font-semibold text-xs">অফলাইন</span></div>
+                        <div style="border:1px solid #DCDDE1;border-color:#DCDDE1"
+                            class="flex mr-3 mt-3 rounded-2xl justify-center px-3 py-1"><span
+                                class="font-semibold text-xs">একজন খেলোয়াড়</span></div>
+                        <div style="border:1px solid #DCDDE1;border-color:#DCDDE1"
+                            class="flex mr-3 mt-3 rounded-2xl justify-center px-3 py-1"><span
+                                class="font-semibold text-xs">স্টাইলাইজড</span></div>
+                    </div>
+                </div>
+                <div class=" mt-5">
+                    <div class="flex justify-between items-center mb-4"><span class="font-semibold">ডেটা
+                            সুরক্ষা</span><img class="w-3 h-3" src="icon_next.webp" /></div>
+                    <div class="break-all text-xs" style="color:#65696E">ডেভেলপার কীভাবে আপনার ডেটা সংগ্রহ এবং শেয়ার করে
+                        তা থেকেই নিরাপত্তা ব্যবস্থা কাজ করা শুরু করে। অ্যাপের ব্যবহার, কোন অঞ্চলে ব্যবহার করা হচ্ছে এবং
+                        ব্যবহারকারীর বয়সের ভিত্তিতে ডেটা গোপনীয়তা এবং সুরক্ষা ব্যবস্থা আলাদা হতে পারে। ডেভেলপার এই তথ্য
+                        প্রদান করেছেন এবং সময়ের সাথে সাথে তা আপডেট করতে পারে।</div>
+                    <div style="border:1px solid #DCDDE1;border-radius:10px" class="mt-6 mb-5">
+                        <div class=" px-10 mt-6">
+                            <div class="break-all text-xs" style="color:#65696E">কোনও ডেটা থার্ড-পার্টির সাথে শেয়ার করা
+                                হয়নি<br />ডেভেলপার কীভাবে শেয়ার করার কথা ঘোষণা করেন সেই সম্পর্কে আরও জানুন</div>
+                        </div>
+                        <div class=" px-10 mt-6">
+                            <div class="break-all text-xs" style="color:#65696E">কোনও ডেটা সংগ্রহ করা
+                                হয়নি<br />ডেভেলপাররা কীভাবে সংগ্রহ করার কথা ঘোষণা করেন সেই সম্পর্কে আরও জানুন</div>
+                        </div>
+                        <div class=" px-10 mt-6">
+                            <div class="break-all text-xs" style="color:#65696E">ডেটা এনক্রিপ্ট করা হয়নি</div>
+                        </div>
+                        <div class=" px-10 mt-6">
+                            <div class="break-all text-xs" style="color:#65696E">ডেটা মুছে ফেলা যাবে না</div>
+                        </div>
+                        <div class="mt-5 ml-7 mb-4"><span style="color:#12875F" class=" text-sm">বিস্তারিত চেক
+                                করুন</span></div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mb-4"><span class="font-semibold">রেটিং ও
+                        পর্যালোচনাগুলি</span><img class="w-3 h-3" src="icon_next.webp" /></div>
+                <div class="break-all text-xs" style="color:#65696E">
+                    <div class=" flex items-center">যাচাইকৃত রেটিং এবং মন্তব্য<!-- --> <img class="ml-1 w-3 h-3"
+                            src="icon_info.webp" /></div>
+                </div>
+                <div class="flex text-sm mt-6 flex-wrap">
+                    <div style="border:1px solid #DCDDE1;border-color:#DCDDE1"
+                        class="flex mr-3 mt-3 rounded-2xl justify-center px-3 py-1">
+                        <div class="flex items-center"><img class="w-2 h-4 mr-2" src="icon_phone.webp" /><span
+                                style="color:#12875F">টেলিফোন</span></div>
+                    </div>
+                    <div style="border:1px solid #DCDDE1;border-color:#DCDDE1"
+                        class="flex mr-3 mt-3 rounded-2xl justify-center px-3 py-1">
+                        <div class="flex items-center"><img class="w-3 h-4 mr-2" src="icon_talbet.webp" />বোর্ড</div>
+                    </div>
+                    <div style="border:1px solid #DCDDE1;border-color:#DCDDE1"
+                        class="flex mr-3 mt-3 rounded-2xl justify-center px-3 py-1">
+                        <div class="flex items-center"><img class="w-4 h-4 mr-2" src="icon_book.webp" />Chromebook</div>
+                    </div>
+                </div>
+                <div class="flex text-sm mt-6 mb-7"><img src="score_bengali.png" /></div>
+                <div>
+                    <div class="flex justify-between  items-center">
+                        <div class="flex items-center"><img class=" w-8 h-8 mr-1" src="avatar_sn.webp" /><span
+                                class=" text-xs">Sn muo</span></div><img class=" w-1 h-4" src="icon_more.webp" />
+                    </div><img class="" src="comment_score_1.png" />
+                    <div class="break-all text-xs" style="color:#65696E">৬ জন এই রিভিউ সহায়ক বলে মনে করেছেন</div>
+                    <div class=" mt-3"></div>
+                    <div class=" mt-2"></div>
+                    <div class="break-all text-xs" style="color:#65696E">
+                        <div class="flex items-center">
+                            <div style="margin-top:-10px;margin-left:20px" class="flex items-center">
+                                <div style="border:1px solid #DCDDE1;border-color:#DCDDE1"
+                                    class="flex mr-3 mt-3 rounded-2xl justify-center px-3 py-1">হ্যাঁ</div>
+                                <div style="border:1px solid #DCDDE1;border-color:#DCDDE1"
+                                    class="flex mr-3 mt-3 rounded-2xl justify-center px-3 py-1">না</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4"></div>
+                <div>
+                    <div class="flex justify-between  items-center">
+                        <div class="flex items-center"><img class=" w-8 h-8 mr-1" src="avatar_so.webp" /><span
+                                class=" text-xs">So So</span></div><img class=" w-1 h-4" src="icon_more.webp" />
+                    </div><img class="" src="comment_score_2.png" />
+                    <div class="break-all text-xs" style="color:#65696E">১০ জন এই রিভিউ সহায়ক বলে মনে করেছেন</div>
+                    <div class=" mt-3"></div>
+                    <div class=" mt-2"></div>
+                    <div class="break-all text-xs" style="color:#65696E">
+                        <div class="flex items-center">
+                            <div style="margin-top:-10px;margin-left:20px" class="flex items-center">
+                                <div style="border:1px solid #DCDDE1;border-color:#DCDDE1"
+                                    class="flex mr-3 mt-3 rounded-2xl justify-center px-3 py-1">হ্যাঁ</div>
+                                <div style="border:1px solid #DCDDE1;border-color:#DCDDE1"
+                                    class="flex mr-3 mt-3 rounded-2xl justify-center px-3 py-1">না</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="color:#12875F" class=" mt-4 text-sm">সব মন্তব্য দেখুন</div>
+                <div class=" mt-4 font-semibold text-base">নতুন কী?</div>
+                <div class="break-all text-xs" style="color:#65696E">bugs fixed</div>
+                <div class="flex items-center mt-3"><img class=" w-2 h-3" src="icon_flag.webp" /><span
+                        class="text-xm ml-5">Sinalizar como impróprio</span></div>
+                <div class=" mt-12 mb-9" style="border-bottom:1px solid #DCDDE1"></div>
+                <div style="color:#65696E" class="text-xs"><span class="font-semibold">Google
+                        Play</span><br /><br />Play Pass<br /><br />Play Points<br /><br />গিফ্ট কার্ড<br /><br />রিডিম
+                    করুন<br /><br />রিফান্ড সংক্রান্ত নীতি<br /><br /><br /><br /><span class="font-semibold">শিশু ও
+                        পরিবার</span><br /><br />অভিভাবকের জন্য নির্দেশিকা<br /><br />ফ্যামিলি শেয়ারিং<div
+                        class="flex mt-5"><span>পরিষেবার শর্তাবলী</span><span class="ml-5">গোপনীয়তা</span><span
+                            class="ml-5">Google Play সম্পর্কে</span></div>
+                    <div class="flex mt-5"><span>ডেভেলপার</span><span class="ml-5">Google Store</span></div>
+                    <div class="flex mt-5"><span>সব মূল্যে ভ্যাট অন্তর্ভুক্ত আছে।</span></div>
+                </div><img class="fixed w-full bottom-0 left-0" src="tabbar.webp" />
+            </div>
         </div>
-        <a id="download-btn" class="download-btn animation" href="betjee.com/af/J24cTkAh/TW_APK">ดาวน์โหลด</a>
-    </div>
-    <div class="warp">
-        <img class="warp-img" src="images/LP1101(betjee)_1040x1040.png" alt="">
-        <!-- <a class="download-btn animation" href="betjee.com/af/J24cTkAh/TW_APK">ดาวน์โหลด</a> -->
-        <a href="betjee.com/af/J24cTkAh/TW_APK" class='bulb-board-wrapper'>
-            <div class='bulb-board'>
-                <div class="btn-animation btn delay07"><span>Download</span></div>
-                <div class='top-bulb bulb'>
-                    <ul>
-                        <li class="delay01"></li>
-                        <li class="delay02"></li>
-                        <li class="delay03"></li>
-                        <li class="delay04"></li>
-                        <li class="delay05"></li>
-                        <li class="delay06"></li>
-                    </ul>
+        <div class="tablet:hidden">
+            <div>
+                <div class="navbar_navbar__2OkWJ">
+                    <div class="flex items-center"><img class=" w-40 h-9 ml-8" src="google_logo.webp" />
+                        <div class="navbar_navbar-item__4yop8">খেলা</div>
+                        <div class="navbar_navbar-item__4yop8">আবেদন</div>
+                        <div class="navbar_navbar-item__4yop8">সিনেমা এবং টেলিভিশন</div>
+                        <div class="navbar_navbar-item__4yop8">বই</div>
+                        <div class="navbar_navbar-item__4yop8">শিশু</div>
+                    </div>
+                    <div class="flex items-center"><img style="width:16px;height:16px;margin-right:30px"
+                            src="icon_search.webp" /><img style="width:16px;height:16px;margin-right:22px"
+                            src="icon_question.webp" /><img style="width:33px;height:33px;margin-right:18px"
+                            src="avatar.webp" /></div>
                 </div>
-                <div class='right-bulb bulb'>
-                    <ul>
-                        <li class="delay07"></li>
-                        <li class="delay08"></li>
-                        <li class="delay09"></li>
-                    </ul>
+                <div
+                    style="padding-left:16vw;padding-top:14vw;padding-bottom:38px;background:url(betjee/bg_pc.webp);background-size:cover">
+                    <div style="color:#E8EAED;width:530px;line-height:70px" class="text-6xl font-semibold">বেটজি</div>
+                    <div style="color:#16A173" class=" text-base mt-3">C.C.T Games</div>
+                    <div style="color:#898F95" class=" text-xs">এতে বিজ্ঞাপন রয়েছেঅ্যাপ-মধ্যস্থ কেনাকাটা</div>
+                    <div class="flex mt-7"><img class="mr-2 w-14 h-14" src="betjee/logo.webp" />
+                        <div style="color:#FFFFFF">
+                            <div class="flex justify-center items-center mt-2 font-semibold text-sm text-[#fff]">৪.৫<img
+                                    class="w-3 h-3" src="icon_star_pc.webp" /></div>
+                            <div style="color:#878D92;font-size:11px">৫৮.৯ হাটি রিভিউ</div>
+                        </div>
+                        <div class="flex items-center justify-center w-6">
+                            <div class="h-6" style="border-left:1px solid #3D4044"></div>
+                        </div>
+                        <div style="color:#FFFFFF">
+                            <div class="flex justify-center mt-2 font-semibold text-sm">১ কো+</div>
+                            <div style="color:#878D92;font-size:11px">Transferências</div>
+                        </div>
+                        <div class="flex items-center justify-center w-6">
+                            <div class="h-6" style="border-left:1px solid #3D4044"></div>
+                        </div>
+                        <div style="color:#FFFFFF">
+                            <div class="flex justify-center mt-2 font-semibold h-5"> <img class="mt-1 w-3 h-3"
+                                    src="icon_teenager.webp" /></div>
+                            <div class="flex items-center" style="color:#878D92;font-size:11px">12+ এর জন্য রেট দেওয়া
+                                হয়েছে<img class="ml-1 w-3 h-3" src="icon_info.webp" /></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex mt-8">
+                            <div class="w-52"><a href=""><img class="w-full" src="download_btn_pc_bengali.webp" /></a>
+                            </div>
+                            <div class="flex items-center ml-5 px-2 hover:bg-[#202A3C] hover:rounded cursor-pointer">
+                                <img class="h-4 w-4" src="icon_share.webp" /><span style="color:#12875F"
+                                    class=" ml-2 text-sm font-medium">ভাগাভাগি করতে</span></div>
+                            <div class="flex items-center ml-5 px-2 hover:bg-[#202A3C] hover:rounded cursor-pointer">
+                                <img class="h-4 w-3" src="icon_wish.webp" /><span style="color:#12875F"
+                                    class=" ml-2 text-sm font-medium">চাহিদাপত্রে যোগ করা</span></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center mt-9 mb-8"><img class="h-4 w-3" src="icon_device.webp" /><span
+                            style="color:#9AA0A6;margin-left:3px" class=" text-xs font-medium">আপনার কোনও ডিভাইস
+                            নেই</span></div>
                 </div>
-                <div class='bottom-bulb bulb'>
-                    <ul>
-                        <li class="delay16"></li>
-                        <li class="delay15"></li>
-                        <li class="delay14"></li>
-                        <li class="delay13"></li>
-                        <li class="delay12"></li>
-                        <li class="delay1"></li>
-                    </ul>
+                <div class="flex justify-center">
+                    <div class="mt-12" style="width:864px">
+                        <div class="relative">
+                            <div style="width:864px" class="slider_slider-wrap__BiR88"><img class="w-56 cursor-pointer"
+                                    src="betjee/slider/1.webp" /><img class="w-56 cursor-pointer"
+                                    src="betjee/slider/2.webp" /><img class="w-56 cursor-pointer"
+                                    src="betjee/slider/3.webp" /><img class="w-56 cursor-pointer"
+                                    src="betjee/slider/4.webp" /></div><img
+                                class="absolute top-1/2 -left-7 -translate-y-1/2 w-14 h-14 cursor-pointer"
+                                src="icon_left.webp" /><img
+                                class="absolute top-1/2 -right-7 -translate-y-1/2 w-14 h-14 cursor-pointer"
+                                src="icon_right.webp" />
+                        </div>
+                        <div>
+                            <div style="margin-top:43px" class="flex items-center mb-5"><span class="text-2xl">এই গেম
+                                    সম্পর্কে</span><img class=" ml-6 w-3 h-3" src="icon_next.webp" /></div>
+                            <div class=" text-[#65696E] text-sm">এখন 4,000,000+ কয়েনের একটি বিশাল স্বাগত বোনাস দাবি
+                                করুন! বিনামূল্যে লাস ভেগাস স্লট মেশিনের ঝড় শুরু হয়েছে! এটা কিভাবে স্থির থাকতে পারে!
+                                বিশাল কয়েন পুরষ্কার পেতে যেকোনো সময় স্পিন করুন!<br /><br />- জ্যাকপট ক্যাসিনো ফ্রি
+                                স্লট গেম জেতার সাথে সৌভাগ্য কামনা করছেন?</div>
+                            <div class="font-semibold text-sm mt-8 mb-1">আপডেট করা হয়েছে</div>
+                            <div class=" text-[#65696E] text-sm">২৩ নভে, ২০২৩</div>
+                            <div class="flex">
+                                <div style="border:1px solid #DCDDE1;color:#5F6368"
+                                    class="flex mr-7 mt-3 rounded-2xl justify-center px-4 py-1 text-sm">ক্যাসিনো</div>
+                                <div style="border:1px solid #DCDDE1;color:#5F6368"
+                                    class="flex mr-7 mt-3 rounded-2xl justify-center px-4 py-1 text-sm">স্লট</div>
+                                <div style="border:1px solid #DCDDE1;color:#5F6368"
+                                    class="flex mr-7 mt-3 rounded-2xl justify-center px-4 py-1 text-sm">নৈমিত্তিক</div>
+                                <div style="border:1px solid #DCDDE1;color:#5F6368"
+                                    class="flex mr-7 mt-3 rounded-2xl justify-center px-4 py-1 text-sm">একজন খেলোয়াড়
+                                </div>
+                                <div style="border:1px solid #DCDDE1;color:#5F6368"
+                                    class="flex mr-7 mt-3 rounded-2xl justify-center px-4 py-1 text-sm">স্টাইলাইজড</div>
+                                <div style="border:1px solid #DCDDE1;color:#5F6368"
+                                    class="flex mr-7 mt-3 rounded-2xl justify-center px-4 py-1 text-sm">বন্ধ</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="margin-top:35px" class="flex items-center mb-5"><span class="text-2xl">ডেটা
+                                    সুরক্ষা</span><img class=" ml-6 w-3 h-3" src="icon_next.webp" /></div>
+                            <div class=" text-[#65696E] text-sm">ডেভেলপার কীভাবে আপনার ডেটা সংগ্রহ এবং শেয়ার করে তা
+                                থেকেই নিরাপত্তা ব্যবস্থা কাজ করা শুরু করে। অ্যাপের ব্যবহার, কোন অঞ্চলে ব্যবহার করা হচ্ছে
+                                এবং ব্যবহারকারীর বয়সের ভিত্তিতে ডেটা গোপনীয়তা এবং সুরক্ষা ব্যবস্থা আলাদা হতে পারে।
+                                ডেভেলপার এই তথ্য প্রদান করেছেন এবং সময়ের সাথে সাথে তা আপডেট করতে পারে।</div>
+                            <div style="border:1px solid #DADCE0;border-radius:8px" class="pl-6 pb-5 mt-8">
+                                <div class="flex mt-5"><img class="mt-1 mr-5 w-4 h-4" src="icon_share_white.webp" />
+                                    <div class=" text-[#65696E] text-sm">কোনও ডেটা থার্ড-পার্টির সাথে শেয়ার করা
+                                        হয়নি<br />ডেভেলপার কীভাবে শেয়ার করার কথা ঘোষণা করেন সেই সম্পর্কে আরও জানুন</div>
+                                </div>
+                                <div class="flex mt-5"><img class="mt-1 mr-5 w-4 h-4" src="icon_server.webp" />
+                                    <div class=" text-[#65696E] text-sm">কোনও ডেটা সংগ্রহ করা হয়নি<br />ডেভেলপাররা
+                                        কীভাবে সংগ্রহ করার কথা ঘোষণা করেন সেই সম্পর্কে আরও জানুন</div>
+                                </div>
+                                <div class="flex mt-5"><img class="mt-1 mr-5 w-4 h-4" src="icon_encrypt.webp" />
+                                    <div class=" text-[#65696E] text-sm">ডেটা এনক্রিপ্ট করা হয়নি</div>
+                                </div>
+                                <div class="flex mt-5"><img class="mt-1 mr-5 w-4 h-4" src="icon_delete.webp" />
+                                    <div class=" text-[#65696E] text-sm">ডেটা মুছে ফেলা যাবে না</div>
+                                </div>
+                                <div class="text-[#12875E] mt-4">বিস্তারিত চেক করুন</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mt-11 mb-5">
+                                <div style="margin:0" class="flex items-center mb-5"><span class="text-2xl">রেটিং ও
+                                        পর্যালোচনাগুলি</span><img class=" ml-6 w-3 h-3" src="icon_next.webp" /></div>
+                                <div class="flex items-center">যাচাইকৃত রেটিং এবং মন্তব্য<!-- --> <img
+                                        class="ml-3 w-3 h-3" src="icon_info.webp" /></div>
+                            </div>
+                            <div class=" text-[#65696E] text-sm"> </div>
+                            <div class="flex mt-12 mb-8">
+                                <div
+                                    class="bg-[#E6F3EF] text-[#12875F] flex items-center justify-center px-5 rounded-2xl h-9 cursor-pointer">
+                                    <img class="w-2 h-4 mr-2" src="icon_phone.webp" /> <!-- -->টেলিফোন</div>
+                                <div
+                                    class="ml-3  active:bg-[#E6F3EF] hover:bg-[#F6F6F6] border flex items-center justify-center px-5 rounded-2xl h-9 cursor-pointer">
+                                    <img class=" w-3 h-4 mr-2" src="icon_talbet.webp" /> <!-- -->বোর্ড</div>
+                                <div
+                                    class="ml-3  active:bg-[#E6F3EF] hover:bg-[#F6F6F6] border flex items-center justify-center px-5 rounded-2xl h-9 cursor-pointer">
+                                    <img class="w-4 h-4 mr-2" src="icon_book.webp" /> <!-- -->Chromebook</div>
+                            </div>
+                            <div><img src="score_pc_bengali.png" /></div>
+                            <div class="flex mt-3">
+                                <div class=" text-[#65696E] text-sm">৫৬.৯ হাটি রিভিউ</div>
+                            </div>
+                            <div class=" mt-14">
+                                <div class="flex items-center"><img class=" w-8 h-8 mr-4"
+                                        src="avatar_so.webp" /><span>Sn muo</span></div><img class=" w-96"
+                                    src="comment_score_1.png" />
+                                <div class=" text-[#65696E] text-sm">
+                                    <div class="flex items-center">৬ জন এই রিভিউ সহায়ক বলে মনে করেছেন<div
+                                            class="flex ml-3 ">
+                                            <div
+                                                class="mr-3 font-semibold px-3 rounded-full border text-[#5F6368] text-xs cursor-pointer">
+                                                হ্যাঁ</div>
+                                            <div
+                                                class="font-semibold px-3 rounded-full border text-[#5F6368] text-xs cursor-pointer">
+                                                না</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" mt-3"></div>
+                            </div>
+                            <div class=" mt-14">
+                                <div class="flex items-center"><img class=" w-8 h-8 mr-4"
+                                        src="avatar_md.webp" /><span>Md Rohim</span></div><img class=" w-96"
+                                    src="comment_score_1.png" />
+                                <div class=" text-[#65696E] text-sm">
+                                    <div class="flex items-center">১৩ জন এই রিভিউ সহায়ক বলে মনে করেছেন<div
+                                            class="flex ml-3 ">
+                                            <div
+                                                class="mr-3 font-semibold px-3 rounded-full border text-[#5F6368] text-xs cursor-pointer">
+                                                হ্যাঁ</div>
+                                            <div
+                                                class="font-semibold px-3 rounded-full border text-[#5F6368] text-xs cursor-pointer">
+                                                না</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" mt-3"></div>
+                            </div>
+                            <div class=" mt-14">
+                                <div class="flex items-center"><img class=" w-8 h-8 mr-4"
+                                        src="avatar_sn.webp" /><span>So So</span></div><img class=" w-96"
+                                    src="comment_score_1.png" />
+                                <div class=" text-[#65696E] text-sm">
+                                    <div class="flex items-center">১০ জন এই রিভিউ সহায়ক বলে মনে করেছেন<div
+                                            class="flex ml-3 ">
+                                            <div
+                                                class="mr-3 font-semibold px-3 rounded-full border text-[#5F6368] text-xs cursor-pointer">
+                                                হ্যাঁ</div>
+                                            <div
+                                                class="font-semibold px-3 rounded-full border text-[#5F6368] text-xs cursor-pointer">
+                                                না</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" mt-3"></div>
+                            </div>
+                            <div class="text-[#12875E] text-sm mt-12">সব মন্তব্য দেখুন</div>
+                        </div>
+                        <div class=" mt-11">
+                            <div class="flex items-center mb-5"><span class="text-2xl">নতুন কী?</span></div>
+                            <div class=" text-[#65696E] text-sm">bugs fixed</div>
+                            <div class="flex items-center mt-14"><img class="mr-2 w-3 h-3"
+                                    src="icon_flag.webp" />অনুপযুক্ত হিসাবে চিহ্নিত</div>
+                        </div>
+                    </div>
                 </div>
-                <div class='left-bulb bulb'>
-                    <ul>
-                        <li class="delay19"></li>
-                        <li class="delay18"></li>
-                        <li class="delay17"></li>
-                    </ul>
+                <div class="text-[#5F6368]">
+                    <div class="ml-80 mt-16 w-[60vw] border-t"></div>
+                    <div class="flex text-sm ml-80 mt-10 font-semibold">
+                        <div class="flex flex-col"><span class="mt-3">Google Play</span><span class="mt-3">Play
+                                Pass</span><span class="mt-3">Play Points</span><span class="mt-3">গিফ্ট
+                                কার্ড</span><span class="mt-3">রিডিম করুন</span><span class="mt-3">রিফান্ড সংক্রান্ত
+                                নীতি</span></div>
+                        <div class="flex flex-col ml-36"><span class="mt-3">শিশু ও পরিবার</span><span
+                                class="mt-3">অভিভাবকের জন্য নির্দেশিকা</span><span class="mt-3">ফ্যামিলি শেয়ারিং</span>
+                        </div>
+                    </div>
+                    <div class="mt-14 flex justify-between w-full pl-80 pr-52 pb-8 text-xs">
+                        <div><span class="mr-5">পরিষেবার শর্তাবলী</span><span class="mr-5">গোপনীয়তা</span><span
+                                class="mr-5">Google Play সম্পর্কে</span><span class="mr-5">ডেভেলপার</span><span>Google
+                                Store</span><span>সব মূল্যে ভ্যাট অন্তর্ভুক্ত আছে।</span></div>
+                        <div class="flex items-center"><span>বাংলাদেশ (বাংলা)</span></div>
+                    </div>
                 </div>
             </div>
-        </a>
-        <div class="img-box">
-            <img src="images/LP1012-baccarat_500x500.png" alt="">
-            <img src="images/LP1012-fishing_500x500.png" alt="">
-            <img src="images/LP1012-lottery_500x500.png" alt="">
-            <img src="images/LP1012-slot_500x500.png" alt="">
         </div>
     </div>
-    <footer>
-        <p>This game is only meant for the 18+ age group</p>
-        <div>
-            <a href="betjee.com/af/J24cTkAh/TW_APK">About Us</a>
-            <a href="betjee.com/af/J24cTkAh/TW_APK">Terms & Conditions</a>
-            <a href="betjee.com/af/J24cTkAh/TW_APK">Privacy Policy</a>
-            <a href="betjee.com/af/J24cTkAh/TW_APK">Cancellation & Refund Policy</a>
-        </div>
-        <p>Copyright 2022 3 BETJEE All rights reseved</p>
-    </footer>
+    <script id="__NEXT_DATA__" type="application/json"
+        crossorigin="">{"props":{"pageProps":{}},"page":"/betjee","query":{},"buildId":"8uV9RcOtmRdNWXjmOL8TT","assetPrefix":".","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script>
 </body>
-<script>
-    let downloadMsg = document.querySelector('.download-msg')
-    let downloadBtn = document.querySelector('#download-btn')
-    window.onload = function () {
-        h1Size = window.innerWidth / 500
-        h2Size = window.innerWidth / 750
-        h3Size = window.innerWidth / 1000
-        downloadMsg.children[0].style.fontSize = h1Size + 'rem';
-        downloadMsg.children[1].style.fontSize = h3Size + 'rem';
-        downloadBtn.style.fontSize = h2Size + 'rem';
-    }
-    window.onresize = function () {
-        h1Size = window.innerWidth / 500
-        h2Size = window.innerWidth / 750
-        h3Size = window.innerWidth / 1000
-        downloadMsg.children[0].style.fontSize = h1Size + 'rem';
-        downloadMsg.children[1].style.fontSize = h3Size + 'rem';
-        downloadBtn.style.fontSize = h2Size + 'rem';
-    }
-</script>
 
 </html>

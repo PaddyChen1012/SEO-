@@ -1,7 +1,8 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
 }
 
 img {
@@ -57,3 +58,78 @@ img {
 .color-5 {
   background: linear-gradient(to bottom, transparent, #000A51, transparent);
 }/*# sourceMappingURL=style.css.map */
+
+.download-box {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 20% 55% 25%;
+  justify-items: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 50%;
+  background-color: rgba(255, 255, 255, .5);
+  padding: 16px;
+  z-index: 3;
+}
+
+.download-box img {
+  width: 100%;
+}
+
+.download-msg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #f9f4c9;
+  -webkit-text-shadow: 0 0 2px #bf8b2a;
+  text-shadow: 0 0 10px #bf8b2a;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 100%;
+  max-width: 400px;
+  background: -webkit-linear-gradient(top, #131c9b 68%, #050663);
+  background: -o-linear-gradient(top, #131c9b 68%, #050663);
+  background: linear-gradient(180deg, #131c9b 68%, #050663);
+  border-radius: 15px;
+  -webkit-box-shadow: inset 0 0 2px 2px #f0e2a8, inset 0 0 1px 2px #fff, inset 0 0 2px 4px #ca9835;
+  box-shadow: inset 0 0 2px 2px #f0e2a8, inset 0 0 1px 2px #fff, inset 0 0 2px 4px #ca9835;
+  color: #f9f4c9;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 16px 0 32px;
+}
+
+.download-box .download-btn {
+  width: 90%;
+  margin: 0;
+}
+
+@media screen and (max-width:500px) {
+  .download-box {
+      grid-template-columns: 20% 40% 40%;
+      width: 100%;
+      padding: 8px;
+  }
+
+  .download-msg h1 {
+      line-height: 1.75rem;
+      font-size: 1.5rem !important;
+  }
+
+  .download-msg h3 {
+      font-weight: 100;
+      font-size: .7rem !important;
+  }
+
+  .download-box .download-btn {
+      height: 90%;
+      font-size: 1.5rem !important;
+  }
+}
