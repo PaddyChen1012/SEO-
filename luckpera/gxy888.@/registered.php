@@ -17,7 +17,7 @@ function send_data($url, $data )
 }
 
 $data_captcha = send_data(
-	$url = 'https://www.gxy888.com//service/auth/captcha?t='. time(),
+	$url = 'https://www.gxy888.fun/service/auth/captcha?t='. time(),
     $data = [
     ]
 );
@@ -96,7 +96,7 @@ else{
 
 #確認所有欄位都經過驗證，再送資料給ocms-api
 if ($dataCheck) {
-    $data_list = send_data($url = 'https://www.gxy888.com//service/member', $data);
+    $data_list = send_data($url = 'https://www.gxy888.fun/service/member', $data);
     // ysTrackEvent('8mklhs');
 }
 // echo '<pre>';

@@ -164,7 +164,7 @@ if ($dataCheck) {
                 <div class="col-12 p-4">
                     <div name="input-box" class="position-relative d-flex align-items-center w-100">
                         <label for="tel" class="form-label m-0 px-2">Mobile phone number</label>
-                        <input id="tel" type="text" name="phoneNumber" maxlength="16" autocomplete="off" class="form-input w-100">
+                        <input id="tel" type="text" name="phoneNumber" maxlength="11" autocomplete="off" class="form-input w-100">
                     </div>
                         
                     <!-- 手機格式錯誤或沒輸入 -->
@@ -173,7 +173,7 @@ if ($dataCheck) {
                 <div class="col-12 p-4">
                     <div name="input-box" class="position-relative d-flex align-items-center w-100">
                         <label for="num" class="form-label m-0 px-2">Confirmation code</label>
-                        <input id="num" type="text" name="captcha" maxlength="16" autocomplete="off" class="form-input w-100">
+                        <input id="num" type="text" name="captcha" maxlength="4" autocomplete="off" class="form-input w-100">
                         <div class="input-addon checknum_img"><img src="" id="numImg" class="Captcha" alt="Captcha"/></div>
                     </div>
                     <!-- 驗證碼錯誤或者沒輸入 -->
@@ -230,8 +230,11 @@ switch ($data_info) {
         }
         break;
     case 'common.success':
-            echo '<script>location.href="/suceful.html?user='. $data['username'].'";</script>';
-            $duplicated = 'Successfully applied';
+        echo '<script>
+            fbq("track", "CompleteRegistration");
+            location.href="/suceful.html?user='. $data['username'].'";
+        </script>';
+        $duplicated = 'Successfully applied';
         break;
     case 'common.captcha.wrong':
         echo '<script>alert("Please enter valid information.")</script>';

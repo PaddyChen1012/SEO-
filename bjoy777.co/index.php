@@ -16,7 +16,7 @@ function send_data($url, $data )
 }
 
 $data_captcha = send_data(
-	$url = 'https://www.bjoy7.live/service/auth/captcha?t='. time(),
+	$url = 'https://www.bjoy7.online/service/auth/captcha?t='. time(),
    $data = [
    ]
 );
@@ -95,7 +95,7 @@ else{
 
 #確認所有欄位都經過驗證，再送資料給ocms-api
 if ($dataCheck) {
-   $data_list = send_data($url = 'https://www.bjoy7.live/service/member', $data);
+   $data_list = send_data($url = 'https://www.bjoy7.online/service/member', $data);
 }
 ?>
 
@@ -110,7 +110,7 @@ if ($dataCheck) {
    <link rel="stylesheet" href="./css/style.css">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
    <!-- Meta Pixel Code -->
-   <!-- <script>
+   <script>
    !function(f,b,e,v,n,t,s)
    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -121,7 +121,7 @@ if ($dataCheck) {
    'https://connect.facebook.net/en_US/fbevents.js');
    fbq('init', '1069052511179002');
    fbq('track', 'PageView');
-   </script> -->
+   </script>
    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1069052511179002&ev=PageView&noscript=1"/></noscript>
    <!-- End Meta Pixel Code -->
 </head>

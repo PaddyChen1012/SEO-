@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/MDL97_APP_200x200.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/MDL97_APP_200x200.png" type="image/x-icon">
+    <title>MDL 97</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Maitree', serif;}
+        body{width:100%;background-color:#000;overflow-x:hidden;}
+        .pc{display:flex;}
+        .ph{display:none;}
+        .box{position:relative;top:0;left:0;width:100%;height:100%;}
+        .wrap{position:relative;width:100%;padding-bottom:56.25%;min-height:100vh;background:url(images/LP0609-BG_1920x1080.jpg)no-repeat top/cover;}
+        .wrap::before{content:'';position:absolute;width:100%;height:100%;}
+        .bubble{position:absolute;top: 46%;width: 10%;padding-bottom: 10.5%;}
+        .b-1{left: 28.5%;}
+        .b-2{left:39.5%;}
+        .b-3{left:50.5%;}
+        .b-4{left:61.5%;}
+        .btn-box{position:absolute;bottom: 1%;left:10%;display:flex;width:50%;justify-content:space-between;-webkit-filter: drop-shadow(0px 0px 10px #000);}
+        .btn-box a{display:block;margin:0 auto;}
+        img{margin:auto;}
+        @media screen and (max-width:992px) and (pointer:coarse) {
+            h1{font-size:1.5rem;}
+            .pc{display:none;}
+            .ph{display:flex;}
+            .wrap{min-height:100vh;background:url(images/LP0609-BG_1080x1920.jpg)no-repeat top/cover;}
+            .wrap::before{content:unset;}
+            .bubble{position:absolute;top: 26%;width: 22%;padding-bottom: 23%;}
+            .b-1{left: 26.5%;}
+            .b-2{left: 50.5%;}
+            .b-3{top: 45%;left: 26.5%;}
+            .b-4{top: 45%;left:50.5%;}
+            .btn-box{bottom: calc(0*(1vh - 1vw));left: 20%;display:block;width: 60%;}
+            .btn-box a{margin-bottom:0;}
+            .btn-box img{width: 100%;}
+        }
+        @media screen and (max-width:500px) and (pointer:coarse) {
+            .wrap{min-height:100vh;background:url(images/LP0609-BG_1080x1920.jpg)no-repeat top/cover;}
+            .bubble{position:absolute;top: 33%;width: 25%;padding-bottom: 27%;}
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-225506502-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-225506502-4');
+    </script>
+    <!-- Hotjar Tracking Code for https://mdl97.net/ -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2996226,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+</head>
+<body>
+    <a name="mm_link" href="https://mdl97.online/?pid=10">
+        <div class="box">
+            <div id="wrap" class="wrap"></div>
+            <div class="btn-box">
+                <img src="images/LP0517-Button_340x140.png">
+            </div>
+        </div>
+    </a>
+
+    <script>
+        let link = document.querySelectorAll('[name=mm_link]')
+        if(window.innerWidth<500){
+            for(j=0; j<link.length; j++){
+                link[j].setAttribute('href','https://mdl97.online/?pid=10')
+            }
+        }else{
+            for(j=0; j<link.length; j++){
+                link[j].setAttribute('href','https://mdl97.online/?pid=10')
+            }
+        }
+    </script>
+</body>
+</html>

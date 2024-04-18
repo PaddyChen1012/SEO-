@@ -1,0 +1,44 @@
+*{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html{
+   height: 100%;
+}
+
+body{
+   font-family: sans-serif;
+   font-weight: bold;
+   background-image: url("../img/background.webp");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   color: #fff;
+   text-align: center;
+}
+
+#success-box{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 40%;
+   min-width: 360px;
+   padding: 4% 3%;
+   border: 2px solid #ffd700;
+   border-radius: 12px;
+   background: rgba(0, 0, 0, 0.7);
+   box-shadow: 15px rgba(255, 219, 13, 0.6);
+   h1{
+      padding-bottom: 30px;
+      color: #ffd700;
+   }
+   .info{
+      margin-bottom: 25px;
+   }
+   a{
+      color: #ffa500;
+   } 
+}

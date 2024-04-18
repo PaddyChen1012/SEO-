@@ -1,4 +1,3 @@
-<!-- <script src="https://bundle.run/buffer"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/buffer@6.0.3/index.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@oslab/btoa@0.1.0/browser-btoa.min.js"></script>
 
@@ -33,7 +32,6 @@ if ($agentId== '') {
 }else{
     $agentShortName = $agentId;
 }
-// echo $agentId;
 
 $dataCheck = true;
 if (isset($_POST['username']) && strlen($_POST['username']) > 0){
@@ -88,27 +86,16 @@ if (isset($_POST['captchaUid']) && strlen($_POST['captchaUid']) > 0){
 }
 else{
 	$dataCheck = false;
-	// echo "請輸入 captchaUid <br />";
 }
-
 
 
 #確認所有欄位都經過驗證，再送資料給ocms-api
 if ($dataCheck) {
     $data_list = send_data($url = 'https://www.betra777.com/service/member', $data);
-    // ysTrackEvent('8mklhs');
 }
-// echo '<pre>';
-// print_r($data_captcha);
-// echo '</pre>';
-// // // //
-// // echo '<pre>';
-// // print_r($data_list);
-// // echo '</pre>';
-// exit;
 ?>
 
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -130,7 +117,7 @@ if ($dataCheck) {
                 <div class="col-12 p-4">
                     <div name="input-box" class="position-relative d-flex align-items-center w-100">
                         <label for="username" class="form-label m-0 px-2">User</label>
-                        <input type="text" id="username" name="username" maxlength="16" autocomplete="off" class="form-input w-100">
+                        <input type="text" id="username" name="username" maxlength="15" autocomplete="off" class="form-input w-100">
                     </div>
                     <!-- 帳號格式錯誤或沒輸入 -->
                     <div class="waring mt-1"><?php echo @$name_Vf; echo @$erro_name; ?></div>
@@ -138,7 +125,7 @@ if ($dataCheck) {
                 <div class="col-12 p-4">
                     <div name="input-box" class="position-relative d-flex align-items-center w-100">
                         <label for="pws" class="form-label m-0 px-2">Password</label>
-                        <input id="pws" type="password" name="pwd" maxlength="16" autocomplete="off" class="form-input w-100">
+                        <input id="pws" type="password" name="pwd" maxlength="15" autocomplete="off" class="form-input w-100">
                     </div>
                         
                     <!-- 密碼格式錯誤或沒輸入 -->
@@ -147,7 +134,7 @@ if ($dataCheck) {
                 <div class="col-12 p-4">
                     <div name="input-box" class="position-relative d-flex align-items-center w-100">
                         <label for="tel" class="form-label m-0 px-2">Mobile phone number</label>
-                        <input id="tel" type="text" name="phoneNumber" maxlength="16" autocomplete="off" class="form-input w-100">
+                        <input id="tel" type="text" name="phoneNumber" maxlength="12" autocomplete="off" class="form-input w-100">
                         <button id="startVerification">Verification</button>
                     </div>
                         
@@ -157,7 +144,7 @@ if ($dataCheck) {
                 <div class="col-12 p-4">
                     <div name="input-box" class="position-relative d-flex align-items-center w-100">
                         <label for="num" class="form-label m-0 px-2">Confirmation code</label>
-                        <input id="num" type="text" name="captcha" maxlength="16" autocomplete="off" class="form-input w-100">
+                        <input id="num" type="text" name="captcha" maxlength="4" autocomplete="off" class="form-input w-100">
                         <div class="input-addon checknum_img"><img src="" id="numImg" class="Captcha" alt="Captcha"/></div>
                     </div>
                     <!-- 驗證碼錯誤或者沒輸入 -->
@@ -236,8 +223,6 @@ switch ($data_info) {
     document.getElementById("numImg").src = `data:image/jpeg;base64,${data}`;
 
     function toBase64(arr) {
-        //arr = new Uint8Array(arr) if it's an ArrayBuffer
-        // console.log(arr)
         return btoa(
             arr.reduce((data, byte) => data + String.fromCharCode(byte), '')
         );
@@ -247,12 +232,10 @@ switch ($data_info) {
         // console.log(<?php echo $captcha_json ?>)
         return <?php echo $captcha_json ?>;
     }
-    // console.log(data);
 </script>
 <script>
     let clickid = $('#register-btn')[0].id;
     let input = document.querySelectorAll('[name=input-box] input')
-    // console.log(input);
     for(let i=0; i<input.length; i++){
         input[i].addEventListener('blur',function(){
             if(input[i].value == ""){
@@ -359,8 +342,4 @@ switch ($data_info) {
             return phoneRegex.test(phoneNumber);
         }
 
-</script>>
-
-<!-- START ExoClick Goal Tag | 2021BC_Register -->
-<script type="application/javascript" src="https://a.exoclick.com/tag_gen.js" data-goal="77c7abe99494401c6747160510290996"></script>
-<!-- END ExoClick Goal Tag | 2021BC_Register -->
+</script>
