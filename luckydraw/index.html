@@ -138,7 +138,7 @@
                                     $('.output-main').empty();
                                     total = parseFloat(Math.floor(data[0].TotalPoints));
                                     $('.bet-total').text(total.toLocaleString());
-                                    let result = Math.floor(data[0].TotalPoints / 100);
+                                    let result = Math.floor(data[0].TotalPoints / 1000);
                                     let digits = result.toString().split('').map(Number);
                                     for (let i=0; i<digits.length; i++){
                                         // $('.digits-' + i).attr('src', './images/img_ticket_number'+digits[i]+'_normal.webp')
