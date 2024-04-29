@@ -1,4 +1,5 @@
 section{
+    min-height: 100vh;
     padding: 196px 20% 90px;
 }
 .promotion-main{
@@ -12,7 +13,7 @@ section{
     color: #646E75;
     font-size: 18px;
     text-align: center;
-    padding: 7%;
+    padding: 7% 5%;
 }
 .promotion-title{
     position: absolute;
@@ -23,7 +24,7 @@ section{
     top: -3%;
 }
 .rule .promotion-title{
-    top: -8.5%;
+    top: -7.5%;
 }
 .main-title{
     color: #FFB400;
@@ -31,6 +32,15 @@ section{
 }
 .main-word{
     color: #646E75;
+}
+.main-word.bg{
+    background-color: #ffbe00;
+    border-radius: 5px;
+    text-shadow: 1px 1px #fff;
+    padding: 0 8px;
+}
+.main-word.red{
+    color: #FF0000;
 }
 .promotion-box{
     width: 100%;
@@ -47,11 +57,23 @@ section{
 .promotion-box-main{
     padding: 16px;
 }
+.link-btn{
+    background-color: #fff2cc;
+    border-radius: 50px;
+    border: 2px solid #ffe599;
+    color: #646E75;
+    text-decoration: none;
+    font-weight: bolder;
+    padding: 8px 16px;
+}
+.link-btn:hover{
+    background-color: #ffe599;
+    border: 2px solid #fdc418;
+}
 table {
     width: 100%;
     border-collapse: collapse;
 }
-
 th, td {
     border: 1px solid black;
     padding: 8px;
