@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay69</title>
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/suceful.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Sriracha&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <section>
+        <div class="suceful-main">
+            <div class="">
+                สมัครสำเร็จ! เข้าเว็บ เล่นเกมทันที!
+            </div>
+            <div class="">
+                name
+            </div>
+            <div class="">
+                ระบบจะใช้เวลา <span class="rtime">3</span> วินาทีเพื่อเข้าสู่เว็บ Pay69 Slot
+                โดยอัตโนมัติหรือสามารถคลิกลิงก์ด้านล่างนี้เพื่อเข้าเว็บ
+            </div>
+            <a class=""
+                href="https://www.pay69.vip/">
+                https://www.pay69.vip/
+            </a>
+        </div>
+    </section>
+
+    <script>
+        var geturl = location.href
+        var url = new URL(geturl);
+        var name = url.searchParams.get('user')
+        $('.username').html('<div class="col-12 text-center h3 username">Hi ' + name + '</div >');
+
+        var s = 3;
+        function reciprocal() {
+            $('.rtime').html(s);
+            setTimeout(reciprocal, 1000);
+            s -= 1;
+            if (s == 0) {
+                // location.href = "https://www.pay69.vip/"
+                return;
+            }
+            console.log(s);
+        }
+        reciprocal();
+
+    </script>
+</body>
+</html>

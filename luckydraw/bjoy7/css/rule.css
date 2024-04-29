@@ -1,0 +1,132 @@
+section{
+    padding: 196px 20% 90px;
+}
+.promotion-main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: 4px solid #FFD8AB;
+    border-radius: 40px;
+    color: #646E75;
+    font-size: 18px;
+    text-align: center;
+    padding: 7%;
+}
+.promotion-title{
+    position: absolute;
+    left: 27.5%;
+    width: 45%;
+}
+.other_rule .promotion-title{
+    top: -3%;
+}
+.rule .promotion-title{
+    top: -8.5%;
+}
+.main-title{
+    color: #FFB400;
+    font-size: 22px;
+}
+.main-word{
+    color: #646E75;
+}
+.promotion-box{
+    width: 100%;
+    background-color: #fff2cc;
+    border-radius: 10px;
+    line-height: 2.5rem;
+    overflow: hidden;
+}
+.promotion-box-header{
+    background-color: #ffe599;
+    font-size: 22px;
+    font-weight: bolder;
+}
+.promotion-box-main{
+    padding: 16px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+span{
+    display: block;
+    text-align: start;
+}
+.promotion-box.one{
+    background-color: #fff2cc;
+    border: 4px solid #ffbe00;
+}
+.promotion-box.two{
+    background-color: #cfe2f3;
+    border: 4px solid #2d92ed;
+}
+.one .promotion-box-header{
+    background-color: #ffe599;
+}
+.two .promotion-box-header{
+    background-color: #9fc5e8;
+}
+
+@media screen and (max-width:575px) {
+    section{
+        padding: 32px 5%;
+        margin-top: 88px;
+    }
+    .promotion-main{
+        border-radius: 20px;
+        font-size: 16px;
+        padding: 10% 5%;
+    }
+    .promotion-title{
+        left: 5%;
+        width: 90%;
+    }
+    .other_rule .promotion-title{
+        top: -1.25%;
+    }
+    .rule .promotion-title{
+        top: -4%;
+    }
+    .main-title{
+        font-size: 22px;
+    }
+    .main-word{
+        margin-bottom: 16px;
+    }
+    tbody{
+        display: flex;
+    }
+    tr{
+        display: flex;
+        flex-direction: column;
+    }
+    th{
+        border-right: 0;
+        border-bottom: 0;
+    }
+    td{
+        border-bottom: 0;
+    }
+    th:nth-child(5),
+    td:nth-child(5){
+        border-bottom: 1px solid black;
+    }
+    th:nth-child(2),
+    th:nth-child(3),
+    td:nth-child(2),
+    td:nth-child(3) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 98px;
+    }
+}

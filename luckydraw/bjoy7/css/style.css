@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Sriracha', cursive;
+}
+button{
+    cursor: pointer;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 88px;
+    background: linear-gradient(180deg, #FFFFFF, #CBCCDA);
+    padding: 0 66px;
+    z-index: 1;
+}
+nav button{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border: none;
+    color: #646E75;
+    padding: 5px;
+}
+.bi::before {
+    font-size: 2.25rem;
+}
+
+nav img{
+    height: 100%;
+    padding: 18px 0;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+}
+nav li{
+    position: relative;
+    height: 100%;
+    padding: 0 8px;
+}
+nav a{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+}
+nav a:hover{
+    color: #CE9659;
+}
+nav .active>a{
+    color: #CE9659;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/img_bg_normal.webp)no-repeat top/cover;
+    padding: 113px 20% 90px;
+}
+.img-box-flex{
+    display: flex;
+}
+
+
+@media screen and (max-width:575px) {
+    nav {
+        justify-content: center;
+        padding: 0;
+    }
+    nav button{
+        display: flex;
+    }
+    nav img{
+        width: 30%;
+        height: auto;
+        padding: 0;
+    }
+    nav ul{
+        position: absolute;
+        top: 88px;
+        flex-direction: column;
+        width: 100%;
+        height: calc(100vh - 88px);
+        background: linear-gradient(180deg, #FFFFFF, #CBCCDA);
+        transform: translateX(-100%);
+        transition: transform .4s ease;
+    }
+    nav ul.active{
+        transform: translateX(0);
+    }
+    nav li {
+        width: 100%;
+        height: auto;
+        padding: 16px 8px;
+    }
+    nav li.active{
+        background: linear-gradient(180deg,#CBCCDA, #646E75);
+    }
+    nav a{
+        color: #646E75;
+    }
+    nav .active>a{
+        color: #FFFFFF;
+    }
+    nav a {
+        justify-content: center;
+    }
+    section{
+        padding: 32px 0%;
+    }
+}

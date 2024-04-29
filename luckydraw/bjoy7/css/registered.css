@@ -1,0 +1,112 @@
+.btn-box{
+    display: flex;
+}
+.btn-box a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+.btn-facebook{
+    background: #3a559f;
+    color: #fff;
+    margin-right: 8px;
+}
+.btn-google{
+    background: #fff;
+    color: #ff0101;
+    margin-right: 8px;
+}
+.btn-line{
+    background: #22ba4f;
+    color: #fff;
+}
+.line-or{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+.line-or hr{
+    width: 100%;
+}
+.line-or span{
+    margin: 0 8px;
+}
+.registered-main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: rgba(0,0,0,.5);
+    border: 4px solid #FFD8AB;
+    border-radius: 40px;
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+    padding: 5%;
+}
+.registered-main>div{
+    position: relative;
+    margin-bottom: 16px;
+}
+div.registered-checknum{
+    margin:  0 auto 48px;
+    width: fit-content;
+}
+label{
+    display: block;
+    margin-bottom: 4px;
+}
+input{
+    background-color: transparent;
+    border: 2px solid #FFD8AB;
+    border-radius: 10px;
+    color: #ffffff9a;
+    font-size: 20px;
+    text-align: start;
+    padding: 0 16px;
+}
+.registered-title{
+    color: #FFD8AB;
+    font-size: 26px;
+}
+.checknum_img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    height: 39px;
+    background: #e9e9e9;
+    border-radius:  0 10px 10px 0;
+    padding: 0 4px;
+    overflow:hidden;
+}
+[name="input-box"]{
+    position: relative;
+    margin-bottom: 4px;
+}
+.input-relative{
+    position: relative;
+}
+.waring{
+    font-size: 12px;
+}
+.waring.error{
+    color: #a52a2a;
+    font-size: 12px;
+}
+.sumbit-btn{
+    background: transparent;
+    border: none;
+}
+
+@media screen and (max-width: 575px){
+    section {
+        padding: 32px 2% 90px;
+    }
+}

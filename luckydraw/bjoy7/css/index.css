@@ -1,0 +1,311 @@
+.title{
+    width: 100%;
+    margin-top: 88px;
+}
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 23.8%;
+    background: url(../images/img_search_frame_normal.webp)no-repeat center/contain;
+}
+.input-main{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.input-title{
+    position: absolute;
+    top: -22%;
+    left: 25%;
+    width: 50%;
+}
+.input-main a{
+    position: absolute;
+    top: -15px;
+    right: -25px;
+    display: flex;
+}
+.input-group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 24%;
+    color: #FFD8AB;
+    margin: 5% 0 24px;
+}
+.input-group span{
+    color: #646E75;
+    font-size: 26px;
+    margin-right: 28px;
+}
+.input-group input{
+    width: 60%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid #FFD8AB;
+    border-radius: 10px;
+    color: #646E75;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 20px;
+}
+.input-group input::placeholder {
+    color: #646e759a;
+}
+input.error{
+    border-color: #dc143c;
+}
+.input-group button{
+    background: transparent;
+    border: 0;
+    height: 100%;
+    cursor: pointer;
+}
+.input-group button img{
+    height: 100%;
+}
+.input-main p{
+    color: #646E75;
+    margin: 0;
+}
+.updata-time{
+    color: #FFB400;
+    margin-bottom: 90px;
+}
+.output-box{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.output-box.active{
+    display: flex;
+    margin-bottom: 48px;
+}
+.word-1{
+    color: #FFB400;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.word-2{
+    color: #646E75;
+    font-size: 20px;
+}
+.word-2 span{
+    margin-left: 8px;
+    font-size: 40px;
+}
+.output-img{
+    position: relative;
+    width: 80%;
+    height: 0;
+    background: url(../images/btn_rules_frame_normal.webp)no-repeat center/contain;
+    padding-bottom: 31%;
+}
+.output-main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 12% 28% 8%;
+}
+.output-main>div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* flex: 1 0 0%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.output-main>div:last-child {
+    flex: .75 0 0%;
+}
+.gifts-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+.gifts-top,
+.gifts-bottom{
+    display: flex;
+    width: 100%;
+    background: url(../images/img_giftshelf_normal.webp)no-repeat bottom/contain;
+    padding: 0 5% 1%;
+}
+.gifts-top{
+    margin-bottom: 32px;
+}
+.gifts-middle{
+    display: none;
+}
+.gifts-box img{
+    width: calc(100% / 3);
+}
+.modal-warp{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: #000000b8;
+    z-index: 100;
+}
+.modal-warp.show{
+    display: block;
+}
+.modal-window{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    background-color: transparent;
+    background: url(../images/img_popup_left.webp),url(../images/img_popup_right.webp),url(../images/img_popup_middle.webp);
+    background-repeat: no-repeat,no-repeat,no-repeat;
+    background-size: 50px 100%,50px 100%,calc(100% - 100px + 2px) 100%;
+    background-position: 0,100%,left calc(50% + 1px) top 50%;
+    color: #646E75;
+    font-size: 26px;
+    transform: translateY(-300%);
+    transition: transform .8s ease;
+    padding: 48px;
+}
+.show .modal-window{
+    transform: translateY(-50%);
+}
+.modal-window img{
+    width: 100%;
+}
+.btn-close{
+    position: absolute;
+    top: -5%;
+    right: -1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    background: transparent;
+    border: none;
+}
+.btn-submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    margin-top: 32px;
+}
+
+@media screen and (max-width:575px) {
+    .break-here {
+        display: block;
+    }
+    .title {
+        width: 100%;
+    }
+    .input-box {
+        width: 98%;
+        padding-bottom: 56.4%;
+        background: url(../images/phone/img_search_frame_normal.webp)no-repeat center/contain;
+    }
+    .input-title {
+        position: absolute;
+        top: -8.5%;
+        left: 10%;
+        width: 80%;
+    }
+    .input-main a {
+        top: unset;
+        bottom: -3.5%;
+        right: -1%;
+        width: 10%;
+    }
+    .input-rule img {
+        width: 100%;
+    }
+    .input-group {
+        flex-direction: column;
+        height: auto;
+        margin: 5% 0 8px;
+    }
+    .input-group span{
+        font-size: 16px;
+        margin: 0 0 8px;
+    }
+    .input-group input{
+        width: 90%;
+        min-height: 32px;
+        border-width: 1px;
+        font-size: 12px;
+        margin: 0 0 8px;
+    }
+    .input-group button{
+        height: 42px;
+    }
+    .input-main p{
+        font-size: 12px;
+    }
+    .updata-time{
+        font-size: 14px;
+        margin: 8px 0 32px;
+    }
+    .output-box.active {
+        margin-bottom: 32px;
+    }
+    .output-main img {
+        margin-right: 2px;
+    }
+    .word-1{
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    .word-2{
+        font-size: 14px;
+    }
+    .word-2 span{
+        margin-left: 4px;
+        font-size: 22px;
+    }
+    .gifts-top img:last-child,
+    .gifts-bottom img:first-child{
+        display: none;
+    }
+    .gifts-middle{
+        display: flex;
+        width: 100%;
+        background: url(../images/img_giftshelf_normal.webp)no-repeat bottom/contain;
+        padding: 0 5% 1%;
+        margin-bottom: 32px;
+    }
+    .gifts-box img{
+        width: calc(100% / 2);
+    }
+    .modal-window {
+        left: 0%;
+        width: 100%;
+        font-size: 22px;
+        padding: 16px;
+    }
+    .modal-window img {
+        width: 75%;
+    }
+}
