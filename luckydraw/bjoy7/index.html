@@ -138,6 +138,7 @@
                                         // 设置新 <div> 的一些属性或内容
                                         newImg.setAttribute('class', 'digits-' + (digits.length - i)); // 將 'path/to/your/image.jpg' 替換成你的圖片路徑
                                         newImg.setAttribute('src', './images/img_ticket_number'+digits[i]+'_normal.webp'); // 將 'path/to/your/image.jpg' 替換成你的圖片路徑
+                                        newImg.setAttribute('style', 'max-width: calc(100% / '+digits.length+');'); // 將 'path/to/your/image.jpg' 替換成你的圖片路徑
 
                                         // 获取具有类名为 "output-main" 的现有元素
                                         var outputMain = document.querySelector('.output-main');
