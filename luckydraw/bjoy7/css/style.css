@@ -58,6 +58,7 @@ nav a{
     display: flex;
     align-items: center;
     height: 100%;
+    color: #646E75;
     text-decoration: none;
 }
 nav a:hover{
@@ -112,9 +113,6 @@ section{
     }
     nav li.active{
         background: linear-gradient(180deg,#CBCCDA, #646E75);
-    }
-    nav a{
-        color: #646E75;
     }
     nav .active>a{
         color: #FFFFFF;
