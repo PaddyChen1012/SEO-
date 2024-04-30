@@ -55,6 +55,7 @@ section{
     font-weight: bolder;
 }
 .promotion-box-main{
+    text-align: start;
     padding: 16px;
 }
 .link-btn{
