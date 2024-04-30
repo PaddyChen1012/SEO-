@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Bjoy7</title>
-    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <title>Bjoy7 মাসিক ড্রজিতে নিন একটি iPhone 15 Pro</title>
+    <link rel="icon" href="./images/favicon.webp" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/favicon.webp" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
         <button class="menu-btn">
             <i class="bi bi-list"></i>
         </button>
-        <img src="./images/img_logo_normal.webp" alt="">
+        <a href=""><img src="./images/img_logo_normal.webp" alt=""></a>
         <ul class="menu">
             <li class="active"><a href="">চেক টিকেট</a></li>
             <li class=""><a href="./rule.html">অংশগ্রহণের নিয়ম</a></li>
@@ -28,7 +28,7 @@
             <li class=""><a href="https://www.bjoy7.online/signUp?pid=DRAWPAGE">রেজিস্টার করুন</a></li>
         </ul>
     </nav>
-    <div class="img-box-flex"><img class="title" src="./images/Bjoy7_1920x520_bd.webp" alt=""></div>
+    <div class="img-box-flex"><img class="title" src="./images/Bjoy7_01_1600x450_en.webp" alt=""></div>
     <section>
         <div class="input-box">
             <div class="input-main">
@@ -128,11 +128,11 @@
                                     $('.bet-total').text(total.toLocaleString());
                                     let result = Math.floor(data[0].TotalPoints / 1000);
                                     let digits = result.toString().split('').map(Number);
-                                    console.log(digits)
+
+                                    // 创建一个新的 <div> 元素
+                                    var newImgDiv = document.createElement('div');
                                     for (let i=0; i<digits.length; i++){
 
-                                        // 创建一个新的 <div> 元素
-                                        var newImgDiv = document.createElement('div');
                                         var newImg = document.createElement('img');
 
                                         // 设置新 <div> 的一些属性或内容
@@ -140,14 +140,13 @@
                                         newImg.setAttribute('src', './images/img_ticket_number'+digits[i]+'_normal.webp'); // 將 'path/to/your/image.jpg' 替換成你的圖片路徑
                                         newImg.setAttribute('style', 'max-width: calc(100% / '+digits.length+');'); // 將 'path/to/your/image.jpg' 替換成你的圖片路徑
 
-                                        // 获取具有类名为 "output-main" 的现有元素
-                                        var outputMain = document.querySelector('.output-main');
-
                                         // 将新 <div> 添加到现有元素中
                                         newImgDiv.appendChild(newImg);
-                                        outputMain.appendChild(newImgDiv);
-
+                                        console.log(newImgDiv)
                                     }
+                                    // 获取具有类名为 "output-main" 的现有元素
+                                    var outputMain = document.querySelector('.output-main');
+                                    outputMain.appendChild(newImgDiv);
 
                                     $('.output-box').addClass('active')
                                 }
