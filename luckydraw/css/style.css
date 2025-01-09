@@ -5,6 +5,10 @@
     font-family: 'Kanit', sans-serif;
     font-family: 'Sriracha', cursive;
 }
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
 button{
     cursor: pointer;
 }
@@ -16,10 +20,10 @@ nav{
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 88px;
+    height: 64px;
     background: #000;
-    padding: 0 66px;
-    z-index: 1;
+    padding: 0 16px;
+    z-index: 2;
 }
 nav button{
     position: absolute;
@@ -35,13 +39,13 @@ nav button{
     color: #FFD8AB;
     padding: 5px;
 }
-.bi::before {
+.bi::before{
     font-size: 2.25rem;
 }
 
 nav img{
     height: 100%;
-    padding: 18px 0;
+    padding: 8px 0;
 }
 nav ul{
     display: flex;
@@ -76,19 +80,17 @@ section{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: url(../images/img_bn_snow_normal.webp)no-repeat 0% -1%/100%,
-                url(../images/img_bg_led_left_normal.webp)no-repeat left 2%/45%, 
-                url(../images/img_bg_led_right_normal.webp)no-repeat right 2%/45%,
-                url(../images/img_bg_ball_left_normal.webp)no-repeat left 2%/20%, 
-                url(../images/img_bg_ball_right_normal.webp)no-repeat right 2%/20%,
-                url(../images/img_bg_normal.webp)no-repeat top/cover;
-    padding: 113px 20% 90px;
-    margin-top: 88px;
+    background: url(../images/bg/bgimg2_signup_normal.webp)no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    padding: 16px 10%;
+    margin-top: 64px;
 }
 
 
 @media screen and (max-width:575px) {
-    nav {
+    nav{
         justify-content: center;
         padding: 0;
     }
@@ -122,14 +124,18 @@ section{
         background: linear-gradient(180deg,#E93B39, #761919);
         border-bottom: 2px solid #FFD8AB;
     }
-    nav a {
+    nav a{
         justify-content: center;
     }
     section{
-        background: url(../images/img_bn_snow_normal.webp)no-repeat 0% -0.75%/100%,
-                    url(../images/img_bg_led_left_normal.webp)no-repeat left 0%/45%, 
-                    url(../images/img_bg_led_right_normal.webp)no-repeat right 0%/45%,
-                    url(../images/img_bg_normal.webp)no-repeat top/cover;
-        padding: 32px 0% 90px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: url(../images/bg/bgimg1_signup_normal.webp)no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        padding: 32px 0% 0;
     }
 }

@@ -1,14 +1,36 @@
 .title{
-    width: 100%;
+    width: 60%;
     margin-bottom: 45px;
+    z-index: 1;
+}
+.title-img-1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 17%;
+    transform: translate(-50%,-50%);
+}
+.title-img-2{
+    position: absolute;
+    top: 48%;
+    left: 15%;
+    width: 15%;
+    transform: translate(-50%,-50%);
+}
+.title-img-3{
+    position: absolute;
+    top: 48%;
+    left: 90%;
+    width: 20%;
+    transform: translate(-50%,-50%);
 }
 .input-box{
     position: relative;
     width: 100%;
     height: 0;
     padding-bottom: 23.8%;
-    background: url(../images/img_search_frame_normal.webp)no-repeat center/contain;
-    margin-bottom: 90px;
+    background: url(../images/frame/frame2_signup_normal.webp)no-repeat center/contain;
+    margin-bottom: 64px;
 }
 .input-main{
     position: absolute;
@@ -36,34 +58,52 @@
 .input-group{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
-    height: 24%;
+    /* height: 24%; */
     color: #FFD8AB;
-    margin: 5% 0 24px;
+    padding: 0 7.5%;
+    margin: 5% 0 16px;
 }
 .input-group span{
     font-size: 26px;
     margin-right: 28px;
 }
 .input-group input{
-    width: 60%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
     background-color: transparent;
-    border: 2px solid #FFD8AB;
-    border-radius: 10px;
+    border: none;
     color: #ffffff9a;
     font-size: 20px;
-    text-align: center;
-    margin-right: 20px;
+    padding: 0 5%;
 }
 input.error{
-    border-color: #dc143c;
+    /* border-color: #dc143c; */
+}
+.input-wd{
+    width: 28%;
+}
+.input-flex{
+    position: relative;
+    display: flex;
+    width: 70%;
+}
+.input-flex>img{
+    width: 100%;
 }
 .input-group button{
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    right: -1px;
+    display: flex;
     background: transparent;
     border: 0;
-    height: 100%;
+    height: calc(100% + 2px);
     cursor: pointer;
 }
 .input-group button img{
@@ -101,7 +141,7 @@ input.error{
     position: relative;
     width: 80%;
     height: 0;
-    background: url(../images/btn_rules_frame_normal.webp)no-repeat center/contain;
+    background: url(../images/bg/bgimg3_signup_normal.webp)no-repeat center/contain;
     padding-bottom: 31%;
 }
 .output-main{
@@ -113,15 +153,15 @@ input.error{
     display: flex;
     align-items: end;
     justify-content: center;
-    padding: 14% 22% 12% 24%;
+    padding: 10% 24% 18% 24%;
 }
-.output-main>div {
+.output-main>div{
     flex: 1 0 0%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.output-main>div:last-child {
+.output-main>div:last-child{
     flex: .75 0 0%;
 }
 .output-main img{
@@ -133,12 +173,18 @@ input.error{
     justify-content: center;
     width: 100%;
 }
+img.gifts-title{
+    width: 50% !important;
+    margin-bottom: 32px;
+}
 .gifts-top,
 .gifts-bottom{
     display: flex;
+    justify-content: space-around;
     width: 100%;
-    background: url(../images/img_giftshelf_normal.webp)no-repeat bottom/contain;
-    padding: 0 5% 1%;
+    /* background: url(../images/img_giftshelf_normal.webp)no-repeat bottom/contain; */
+    /* padding: 0 5% 1%; */
+    flex-wrap: wrap;
 }
 .gifts-top{
     margin-bottom: 32px;
@@ -208,57 +254,77 @@ input.error{
 }
 
 @media screen and (max-width:575px) {
-    .break-here {
+    .break-here{
         display: block;
     }
-    .title {
+    .title{
         width: 100%;
         margin-bottom: 32px;
     }
-    .input-box {
-        width: 98%;
-        padding-bottom: 56.4%;
-        background: url(../images/phone/img_search_frame_normal.webp)no-repeat center/contain;
-        margin-bottom: 32px;
-    }
-    .input-title {
+    .title-img-1{
         position: absolute;
-        top: -12%;
-        left: 10%;
-        width: 80%;
+        top: 75%;
+        left: 90%;
+        width: 30%;
+        transform: translate(-50%,-50%);
+        z-index: 1;
     }
-    .input-main a {
+    .title-img-2,
+    .title-img-3{
+        display: none;
+    }
+    .input-box{
+        width: 98%;
+        padding-bottom: 47.5%;
+        background: url(../images/frame/frame1_signup_normal.webp)no-repeat center/contain;
+        margin-bottom: 16px;
+    }
+    .input-title{
+        position: absolute;
+        top: -20%;
+        left: 12.5%;
+        width: 75%;
+    }
+    .input-wd{
+        width: 45%;
+    }
+    .input-flex{
+        position: relative;
+        display: flex;
+        width: 100%;
+    }
+    .input-group button img{
+        height: 100%;
+    }
+    .input-main a{
         top: unset;
         bottom: -5%;
         right: -1%;
         width: 10%;
     }
-    .input-rule img {
+    .input-rule img{
         width: 100%;
     }
-    .input-group {
+    .input-group{
         flex-direction: column;
         height: auto;
-        margin: 5% 0 8px;
+        margin: -5% 0 8px;
     }
     .input-group span{
         font-size: 16px;
         margin: 0 0 8px;
     }
     .input-group input{
-        width: 90%;
+        width: 100%;
         min-height: 32px;
         border-width: 1px;
         font-size: 12px;
         margin: 0 0 8px;
     }
-    .input-group button{
-        height: 42px;
-    }
-    .output-box.active {
+    .output-box.active{
         margin-bottom: 32px;
     }
-    .output-main img {
+    .output-main img{
         margin-right: 2px;
     }
     .word-1{
@@ -273,9 +339,13 @@ input.error{
         margin-left: 4px;
         font-size: 22px;
     }
+    img.gifts-title{
+        width: 100% !important;
+        margin-bottom: 16px;
+    }
     .gifts-top img:last-child,
     .gifts-bottom img:first-child{
-        display: none;
+        /* display: none; */
     }
     .gifts-middle{
         display: flex;
@@ -287,13 +357,13 @@ input.error{
     .gifts-box img{
         width: calc(100% / 2);
     }
-    .modal-window {
+    .modal-window{
         left: 0%;
         width: 100%;
         font-size: 22px;
         padding: 16px;
     }
-    .modal-window img {
+    .modal-window img{
         width: 75%;
     }
 }
