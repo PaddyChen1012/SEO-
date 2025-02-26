@@ -812,6 +812,10 @@
     .page-4-t .page-4-tr h1 span {
         font-size: calc(1.5rem + .25vw);
     }
+    .page-4-t .page-4-tr {
+        margin-left: 0;
+        margin-right: 0;
+    }
     .page-4-t .page-4-tr .img-btn-1{
         top: 31%;
         left: 14%;
