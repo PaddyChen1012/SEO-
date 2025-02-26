@@ -30,6 +30,16 @@
     justify-content: center;
     width: 15%;
 }
+.icon-2{
+    position: fixed;
+    bottom: 2%;
+    right: 1.25%;
+    width: 8%;
+    z-index: 2;
+}
+.icon-2 img{
+    width: 100%;
+}
 
 /* page 1 */
 .page-1{
@@ -55,7 +65,7 @@
 }
 .page-1-tl h1{
     color: #ffd748;
-    font-size: calc(1.75rem + .25vw);
+    font-size: calc(2.25rem + .25vw);
     text-shadow: 3px 3px #000;
 }
 .page-1-tl p{
@@ -180,13 +190,6 @@
     width: 12%;
     z-index: 1;
 }
-.icon-2{
-    position: absolute;
-    bottom: 2%;
-    right: -3.5%;
-    width: 8%;
-    z-index: 1;
-}
 .icon-3{
     position: absolute;
     top: -5%;
@@ -216,7 +219,7 @@
     display: flex;
     align-items: center;
     color: #ffd748;
-    font-size: calc(1.75rem + .25vw);
+    font-size: calc(2.25rem + .25vw);
     text-shadow: 3px 3px #000;
     padding-left: 5%;
 }
@@ -269,7 +272,7 @@
     display: flex;
     align-items: center;
     color: #ffd748;
-    font-size: calc(1.75rem + .25vw);
+    font-size: calc(2.25rem + .25vw);
     text-shadow: 3px 3px #000;
 }
 .page-2-b h1 .icon-6{
@@ -351,7 +354,7 @@
     display: flex;
     align-items: center;
     color: #ffd748;
-    font-size: calc(1.75rem + .25vw);
+    font-size: calc(2.25rem + .25vw);
     text-shadow: 3px 3px #000;
     margin: 0;
 }
@@ -368,9 +371,9 @@
 }
 .page-3-t .page-3-tl .page-3-tl-phone{
     position: absolute;
-    bottom: 13%;
+    bottom: 10%;
     left: 10%;
-    width: 29%;
+    width: 30%;
 }
 .page-3-t .page-3-tl a{
     position: absolute;
@@ -385,7 +388,7 @@
     display: flex;
     align-items: end;
     color: #ffd748;
-    font-size: calc(1.75rem + .25vw);
+    font-size: calc(2.25rem + .25vw);
     text-shadow: 3px 3px #000;
     margin: 0;
 }
@@ -441,7 +444,7 @@
     display: flex;
     align-items: center;
     color: #ffd748;
-    font-size: calc(1.75rem + .25vw);
+    font-size: calc(2.25rem + .25vw);
     text-shadow: 3px 3px #000;
     margin: 0;
 }
@@ -473,6 +476,7 @@
     display: flex;
     align-items: center;
     gap: 2%;
+    font-size: calc(1.75rem + .25vw);
 }
 .page-3-b .page-3-bl img{
     height: calc(3.375rem + .375vw);;
@@ -556,7 +560,7 @@
     display: flex;
     align-items: center;
     color: #ffd748;
-    font-size: calc(1.75rem + .25vw);
+    font-size: calc(2.25rem + .25vw);
     text-shadow: 3px 3px #000;
     margin: 0 0 0 9vw;
 }
