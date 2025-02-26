@@ -685,6 +685,11 @@
     .bg{
         padding: 0%;
     }
+    .banner-01 a {
+        right: 3%;
+        width: 30%;
+    }
+
     .page-1-t{
         grid-template-columns: 1fr;
     }
