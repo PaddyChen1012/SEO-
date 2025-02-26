@@ -521,7 +521,7 @@
 .page-4-t .page-4-tl{
     position: relative;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     color: #ffffff;
     z-index: 1;
@@ -832,6 +832,9 @@
         bottom: -13%;
         left: 25%;
         width: 50%;
+    }
+    .page-4-t .page-4-tl {
+        grid-template-columns: 1fr;
     }
     .page-4-t .page-4-tl .page-4-tl-a{
         margin-top: -20%;
