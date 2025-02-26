@@ -318,6 +318,9 @@
 }
 .page-2-b .page-2-br{
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .page-2-b .page-2-br a{
     position: absolute;
@@ -640,11 +643,17 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 8px;
+    text-align: center;
 }
 .page-4-b .page-4-bl .community-btn-group{
     display: grid;
     grid-template-columns: repeat(5,1fr);
     width: 80%;
+}
+.page-4-b .page-4-bl .community-btn-group a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .page-4-b .page-4-bl .community-btn-group img{
     width: 100%;
@@ -683,7 +692,7 @@
     .pc{display: none;}
     .ph{display: block;}
     .bg{
-        padding: 0%;
+        padding: 0 2.5%;
     }
     .banner-01 a {
         right: 3%;
@@ -724,6 +733,9 @@
         grid-template-columns: 1fr;
         padding: 0;
     }
+    .page-2-t h1 {
+        margin-bottom: -5%;
+    }
     .page-2-t h1 span {
         font-size: calc(1.5rem + .25vw);
     }
@@ -742,6 +754,7 @@
     }
     .page-2-b h1 {
         justify-content: center;
+        margin-bottom: -5%;
     }
     .page-2-b h1 span {
         font-size: calc(1.5rem + .25vw);
@@ -749,11 +762,20 @@
     .page-2-b h1 .icon-6{
         height: calc(3.5rem + .25vw);
     }
+    
     .page-2-b .page-2-bl .game-group {
         grid-template-columns: repeat(2, 1fr);
+        padding: 0 2.5%;
     }
     .page-2-b .page-2-bl .link-btn {
         width: 50%;
+    }
+    .page-2-b .page-2-br>img {
+        width: 80%;
+    }
+    .page-2-b .page-2-br a {
+        left: 20%;
+        width: 60%;
     }
 
     .page-3-t {
@@ -780,6 +802,7 @@
     .page-3-t .page-3-tr .game-group {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2.5%;
+        padding: 0 2.5%;
     }
     .page-3-b {
         grid-template-columns: 1fr;
@@ -843,6 +866,7 @@
     }
     .page-4-t .page-4-tl {
         grid-template-columns: 1fr;
+        padding: 0 2.5%;
     }
     .page-4-t .page-4-tl .page-4-tl-a{
         margin-top: -20%;
@@ -850,11 +874,12 @@
     .page-4-b {
         grid-template-columns: 1fr;
         gap: 0;
-        padding: 10vw 0 0 0;
-        z-index: 0;
+        padding: 10vw 2.5% 0;
+        z-index: 1;
     }
     .page-4-b .page-4-bl .community-btn-group {
         margin: auto;
+        width: 60%;
     }
     .page-4-b .page-4-br .icon-11 {
         position: initial;
