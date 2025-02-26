@@ -689,6 +689,9 @@
         right: 3%;
         width: 30%;
     }
+    .icon-2{
+        width: 25%;
+    }
 
     .page-1-t{
         grid-template-columns: 1fr;
