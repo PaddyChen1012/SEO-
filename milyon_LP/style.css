@@ -10,8 +10,8 @@
     background: url(./images/bg-1.webp)no-repeat center/cover fixed, url(./images/bg.webp)no-repeat center/cover fixed;
     padding: 0 5%;
 }
-.pc{display: block;}
-.ph{display: none;}
+.pc{display: flex !important;}
+.ph{display: none !important;}
 
 .banner-01{
     position: relative;
@@ -689,8 +689,8 @@
 }
 
 @media screen and (max-width: 756px) {
-    .pc{display: none;}
-    .ph{display: block;}
+    .pc{display: none !important;}
+    .ph{display: flex !important;}
     .bg{
         padding: 0 2.5%;
     }
