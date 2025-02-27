@@ -710,7 +710,7 @@
     }
     .page-1-tl p {
         font-size: calc(1.125rem + .25vw);
-        line-height: calc(2rem + .25vw);
+        line-height: calc(1.5rem + .25vw);
     }
     .page-1-b {
         grid-template-columns: 1fr;
