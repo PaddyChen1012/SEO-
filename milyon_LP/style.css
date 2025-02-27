@@ -842,7 +842,7 @@
     }
     .page-4-t .page-4-tr h1 {
         justify-content: center;
-        margin: 0 0 -5%;
+        margin: 0 0 -7% -6%;
     }
     .page-4-t .page-4-tr h1 span {
         font-size: calc(1.5rem + .25vw);
@@ -867,9 +867,9 @@
         bottom: 15%;
     }
     .page-4-t .page-4-tr>a {
-        bottom: -13%;
-        left: 25%;
-        width: 50%;
+        bottom: -10%;
+        left: 29%;
+        width: 42%;
     }
     .page-4-t .page-4-tl {
         grid-template-columns: 1fr;
@@ -887,14 +887,14 @@
     }
     .page-4-b .page-4-bl .community-btn-group {
         margin: auto;
-        width: 60%;
+        width: 50%;
     }
     .page-4-b .page-4-br .icon-11 {
         position: initial;
         margin-bottom: -5%;
     }
     .page-4-b .page-4-bm>a{
-        width: 90%;
+        width: 75%;
     }
     .page-4-b .page-4-br .icon-12{
         width: 60%;
