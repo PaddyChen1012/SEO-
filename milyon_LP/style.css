@@ -742,6 +742,10 @@
     .page-2-t h1 .icon-4 {
         height: calc(3.5rem + .25vw);
     }
+    .page-2-t .bonus-box .bonus-group {
+        padding: 5%;
+    }
+    
     .page-2-tr{
         position: absolute;
         bottom: 8%;
