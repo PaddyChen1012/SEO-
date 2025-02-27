@@ -734,7 +734,7 @@
         padding: 0;
     }
     .page-2-t h1 {
-        margin-bottom: -5%;
+        margin-bottom: 36%;
     }
     .page-2-t h1 span {
         font-size: calc(1.5rem + .25vw);
@@ -834,7 +834,7 @@
     }
     .page-4-t .page-4-tr h1 {
         justify-content: center;
-        margin: 0;
+        margin: 0 0 -5%;
     }
     .page-4-t .page-4-tr h1 span {
         font-size: calc(1.5rem + .25vw);
@@ -844,20 +844,20 @@
         margin-right: -13vw;
     }
     .page-4-t .page-4-tr .img-btn-1{
-        top: 31%;
+        top: 25%;
         left: 14%;
     }
     .page-4-t .page-4-tr .img-btn-2{
-        top: 67%;
+        top: 64%;
         left: 39%;
     }
     .page-4-t .page-4-tr .img-btn-3{
         position: absolute;
-        top: 53%;
+        top: 48%;
         left: 64%;
     }
     .page-4-t .page-4-tr p {
-        bottom: 12%;
+        bottom: 15%;
     }
     .page-4-t .page-4-tr>a {
         bottom: -13%;
@@ -874,6 +874,7 @@
     .page-4-b {
         grid-template-columns: 1fr;
         gap: 0;
+        font-size: calc(.75rem + .25vw);
         padding: 10vw 2.5% 0;
         z-index: 1;
     }
@@ -883,5 +884,11 @@
     }
     .page-4-b .page-4-br .icon-11 {
         position: initial;
+    }
+    .page-4-b .page-4-bm>a{
+        width: 90%;
+    }
+    .page-4-b .page-4-br .icon-12{
+        width: 65%;
     }
 }
