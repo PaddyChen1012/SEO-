@@ -51,7 +51,7 @@
     background: hsl(0deg 0% 0% / 85%);
     border-radius: 5vw 5vw 0 0;
     gap: 2.5%;
-    padding: 5% 7%;
+    padding: 5% 5%;
 }
 .page-1-t{
     position: relative;
@@ -807,6 +807,9 @@
     .page-3-b {
         grid-template-columns: 1fr;
     }
+    .page-3-b .ribbon {
+        height: 15%;
+    }
     .page-3-b .page-3-b-title {
         grid-column: span 1;
     }
@@ -820,6 +823,9 @@
         font-size: calc(.875rem + .125vw);
         line-height: calc(1rem + .125vw);;
         margin: calc(-1.5rem - .05125vw) 0 0 calc(1.125rem + 2vw);
+    }
+    .page-3-b .page-3-bl {
+        padding-left: 0%;
     }
     .page-3-b .page-3-bl div {
         font-size: calc(1rem + .25vw);
