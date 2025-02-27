@@ -866,7 +866,7 @@
     }
     .page-4-t .page-4-tl {
         grid-template-columns: 1fr;
-        padding: 0 2.5%;
+        padding: 0 5%;
     }
     .page-4-t .page-4-tl .page-4-tl-a{
         margin-top: -20%;
